@@ -1,0 +1,17 @@
+<ul class="notification-body">
+	<li ng-repeat="not in currentActivityItems">
+		<span class="padding-10">
+
+			<em class="badge padding-5 no-border-radius bg-color-blueLight pull-left margin-right-5">
+				<i class="fa {{not.icon}} fa-fw fa-2x"></i>
+			</em>
+			
+			<span>
+				 {{not.message}}
+				 <br>
+				 <span class="pull-right font-xs text-muted"><i>{{not.time}}</i></span>
+			</span>
+			
+		</span>
+	</li>
+</ul>
