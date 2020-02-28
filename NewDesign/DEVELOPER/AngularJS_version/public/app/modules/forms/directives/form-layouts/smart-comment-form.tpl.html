@@ -1,0 +1,55 @@
+<form action="/api/plug" method="post" id="comment-form" class="smart-form">
+    <header>
+        Comment form
+    </header>
+
+    <fieldset>
+        <div class="row">
+            <section class="col col-4">
+                <label class="label">Name</label>
+                <label class="input"> <i class="icon-append fa fa-user"></i>
+                    <input type="text" name="name">
+                </label>
+            </section>
+            <section class="col col-4">
+                <label class="label">E-mail</label>
+                <label class="input"> <i class="icon-append fa fa-envelope-o"></i>
+                    <input type="email" name="email">
+                </label>
+            </section>
+            <section class="col col-4">
+                <label class="label">Website</label>
+                <label class="input"> <i class="icon-append fa fa-globe"></i>
+                    <input type="url" name="url">
+                </label>
+            </section>
+        </div>
+
+        <section>
+            <label class="label">Comment</label>
+            <label class="textarea"> <i class="icon-append fa fa-comment"></i> <textarea rows="4"
+                                                                                         name="comment"></textarea>
+            </label>
+
+            <div class="note">
+                You may use these HTML tags and attributes: &lt;a href="" title=""&gt;, &lt;abbr title=""&gt;,
+                &lt;acronym title=""&gt;, &lt;b&gt;, &lt;blockquote cite=""&gt;, &lt;cite&gt;, &lt;code&gt;,
+                &lt;del datetime=""&gt;, &lt;em&gt;, &lt;i&gt;, &lt;q cite=""&gt;, &lt;strike&gt;, &lt;strong&gt;.
+            </div>
+        </section>
+    </fieldset>
+
+    <footer>
+        <button type="submit" name="submit" class="btn btn-primary">
+            Validate Form
+        </button>
+    </footer>
+
+    <div class="message">
+        <i class="fa fa-check fa-lg"></i>
+
+        <p>
+            Your comment was successfully added!
+        </p>
+    </div>
+</form>
