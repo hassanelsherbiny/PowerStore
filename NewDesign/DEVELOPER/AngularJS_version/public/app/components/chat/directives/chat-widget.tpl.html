@@ -1,0 +1,93 @@
+<div id="chat-widget" jarvis-widget data-widget-color="blueDark" data-widget-editbutton="false"
+     data-widget-fullscreenbutton="false">
+
+
+    <header>
+        <span class="widget-icon"> <i class="fa fa-comments txt-color-white"></i> </span>
+
+        <h2> SmartMessage </h2>
+
+        <div class="widget-toolbar">
+            <!-- add: non-hidden - to disable auto hide -->
+
+            <div class="btn-group" data-dropdown>
+                <button class="btn dropdown-toggle btn-xs btn-success">
+                    Status <i class="fa fa-caret-down"></i>
+                </button>
+                <ul class="dropdown-menu pull-right js-status-update">
+                    <li>
+                        <a href-void><i class="fa fa-circle txt-color-green"></i> Online</a>
+                    </li>
+                    <li>
+                        <a href-void><i class="fa fa-circle txt-color-red"></i> Busy</a>
+                    </li>
+                    <li>
+                        <a href-void><i class="fa fa-circle txt-color-orange"></i> Away</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href-void><i class="fa fa-power-off"></i> Log Off</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- widget div-->
+    <div>
+        <div class="widget-body widget-hide-overflow no-padding">
+            <!-- content goes here -->
+
+            <chat-users></chat-users>
+
+            <!-- CHAT BODY -->
+            <div id="chat-body" class="chat-body custom-scroll">
+                <ul>
+                    <li class="message" ng-repeat="message in chatMessages">
+                        <img class="message-picture online" ng-src="{{message.user.picture}}">
+
+                        <div class="message-text">
+                            <time>
+                                {{message.date | date }}
+                            </time>
+                            <a ng-click="messageTo(message.user)" class="username">{{message.user.username}}</a>
+                            <div ng-bind-html="message.body"></div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- CHAT FOOTER -->
+            <div class="chat-footer">
+
+                <!-- CHAT TEXTAREA -->
+                <div class="textarea-div">
+
+                    <div class="typearea">
+                        <textarea placeholder="Write a reply..." id="textarea-expand"
+                                  class="custom-scroll" ng-model="newMessage"></textarea>
+                    </div>
+
+                </div>
+
+                <!-- CHAT REPLY/SEND -->
+											<span class="textarea-controls">
+												<button class="btn btn-sm btn-primary pull-right" ng-click="sendMessage()">
+                                                    Reply
+                                                </button> <span class="pull-right smart-form"
+                                                                style="margin-top: 3px; margin-right: 10px;"> <label
+                                                    class="checkbox pull-right">
+                                                <input type="checkbox" name="subscription" id="subscription">
+                                                <i></i>Press <strong> ENTER </strong> to send </label> </span> <a
+                                                    href-void class="pull-left"><i
+                                                    class="fa fa-camera fa-fw fa-lg"></i></a> </span>
+
+            </div>
+
+            <!-- end content -->
+        </div>
+
+    </div>
+    <!-- end widget div -->
+</div>
