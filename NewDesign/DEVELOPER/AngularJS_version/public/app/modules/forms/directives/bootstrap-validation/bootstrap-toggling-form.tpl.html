@@ -1,0 +1,98 @@
+<form id="togglingForm" method="post" class="form-horizontal">
+
+    <fieldset>
+        <legend>
+            Default Form Elements
+        </legend>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Full name <sup>*</sup></label>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" name="firstName" placeholder="First name" />
+            </div>
+            <div class="col-lg-4">
+                <input type="text" class="form-control" name="lastName" placeholder="Last name" />
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Company <sup>*</sup></label>
+            <div class="col-lg-5">
+                <input type="text" class="form-control" name="company"
+                       required data-bv-notempty-message="The company name is required" />
+            </div>
+            <div class="col-lg-2">
+                <button type="button" class="btn btn-info btn-sm" data-toggle="#jobInfo">
+                    Add more info
+                </button>
+            </div>
+        </div>
+    </fieldset>
+
+    <!-- These fields will not be validated as long as they are not visible -->
+    <div id="jobInfo" style="display: none;">
+        <fieldset>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Job title <sup>*</sup></label>
+                <div class="col-lg-5">
+                    <input type="text" class="form-control" name="job" />
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Department <sup>*</sup></label>
+                <div class="col-lg-5">
+                    <input type="text" class="form-control" name="department" />
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <fieldset>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Mobile phone <sup>*</sup></label>
+            <div class="col-lg-5">
+                <input type="text" class="form-control" name="mobilePhone" />
+            </div>
+            <div class="col-lg-2">
+                <button type="button" class="btn btn-info btn-sm" data-toggle="#phoneInfo">
+                    Add more phone numbers
+                </button>
+            </div>
+        </div>
+    </fieldset>
+    <!-- These fields will not be validated as long as they are not visible -->
+    <div id="phoneInfo" style="display: none;">
+
+        <fieldset>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Home phone</label>
+                <div class="col-lg-5">
+                    <input type="text" class="form-control" name="homePhone" />
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Office phone</label>
+                <div class="col-lg-5">
+                    <input type="text" class="form-control" name="officePhone" />
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="form-actions">
+        <div class="row">
+            <div class="col-md-12">
+                <button class="btn btn-default" type="submit">
+                    <i class="fa fa-eye"></i>
+                    Validate
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
