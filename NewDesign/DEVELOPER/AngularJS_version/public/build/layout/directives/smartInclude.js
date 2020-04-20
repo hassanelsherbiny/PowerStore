@@ -1,0 +1,1 @@
+define(["layout/module"],function(a){"use strict";return a.registerDirective("smartInclude",function(){return{replace:!0,restrict:"A",templateUrl:function(a,b){return b.smartInclude},compile:function(a){a[0].className=a[0].className.replace(/placeholder[^\s]+/g,"")}}})});

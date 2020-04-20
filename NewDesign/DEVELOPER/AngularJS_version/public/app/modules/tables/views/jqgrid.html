@@ -1,0 +1,28 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+    <div class="row">
+        <big-breadcrumbs items="['Table', 'Jquery Grid']" icon="table"
+                         class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></big-breadcrumbs>
+        <div smart-include="app/layout/partials/sub-header.tpl.html"></div>
+    </div>
+    <!-- widget grid -->
+    <section widget-grid id="widget-grid">
+
+
+        <div class="row">
+            <article class="col-sm-12">
+
+                <jq-grid grid-data="gridData"></jq-grid>
+
+                <br>
+                <a ng-click="getSelection()">Get Selected id's</a>
+                <br>
+                <a ng-click="selectRow(13)">Select(Unselect) row 13</a>
+
+            </article>
+
+
+        </div>
+
+    </section>
+</div>
