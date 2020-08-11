@@ -1,0 +1,43 @@
+<div class="demo"><span id="demo-setting"><i class="fa fa-cog txt-color-blueDark"></i></span>
+
+    <form>
+        <legend class="no-padding margin-bottom-10">Layout Options</legend>
+        <section>
+            <label><input type="checkbox" ng-model="fixedHeader"
+                          class="checkbox style-0"><span>Fixed Header</span></label>
+            <label><input type="checkbox"
+                          ng-model="fixedNavigation"
+                          class="checkbox style-0"><span>Fixed Navigation</span></label>
+            <label><input type="checkbox"
+                          ng-model="fixedRibbon"
+                          class="checkbox style-0"><span>Fixed Ribbon</span></label>
+            <label><input type="checkbox"
+                          ng-model="fixedPageFooter"
+                          class="checkbox style-0"><span>Fixed Footer</span></label>
+            <label><input type="checkbox"
+                          ng-model="insideContainer"
+                          class="checkbox style-0"><span>Inside <b>.container</b></span></label>
+            <label><input type="checkbox"
+                          ng-model="rtl"
+                          class="checkbox style-0"><span>RTL</span></label>
+            <label><input type="checkbox"
+                          ng-model="menuOnTop"
+                          class="checkbox style-0"><span>Menu on <b>top</b></span></label>
+            <label><input type="checkbox"
+                          ng-model="colorblindFriendly"
+                          class="checkbox style-0"><span>For Colorblind <div
+                    class="font-xs text-right">(experimental)
+            </div></span>
+            </label><span id="smart-bgimages"></span></section>
+        <section><h6 class="margin-top-10 semi-bold margin-bottom-5">Clear Localstorage</h6><a
+                ng-click="factoryReset()" class="btn btn-xs btn-block btn-primary" id="reset-smart-widget"><i
+                class="fa fa-refresh"></i> Factory Reset</a></section>
+
+        <h6 class="margin-top-10 semi-bold margin-bottom-5">SmartAdmin Skins</h6>
+
+
+        <section id="smart-styles">
+            <a ng-repeat="skin in skins" ng-click="setSkin(skin)" class="{{skin.class}}" style="{{skin.style}}"><i ng-if="skin.name == $parent.smartSkin" class="fa fa-check fa-fw"></i> {{skin.label}}</a>
+        </section>
+    </form>
+</div>
