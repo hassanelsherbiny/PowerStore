@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title> SmartAdmin </title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+			
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- #CSS Links -->
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+
+		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+
+		<!-- SmartAdmin RTL Support -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> 
+
+		<!-- We recommend you use "your_style.css" to override SmartAdmin
+		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+
+		<!-- #FAVICONS -->
+		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+
+		<!-- #GOOGLE FONT -->
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+		<!-- #APP SCREEN / ICONS -->
+		<!-- Specifying a Webpage Icon for Web Clip 
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
+		
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<!-- Startup image for web apps -->
+		<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+
+
+		<style type="text/css">
+			/* Apply these styles only when #preview-pane has
+			 been placed within the Jcrop widget */
+			.jcrop-holder #preview-pane {
+				display: block;
+				position: absolute;
+				z-index: 200;
+				right: -280px;
+				padding: 3px;
+				border: 1px rgba(0,0,0,.4) solid;
+				background-color: white;
+				-webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+				-moz-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+				box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.1);
+			}
+
+			/* The Javascript code will set the aspect ratio of the crop
+			 area based on the size of the thumbnail preview,
+			 specified here */
+			#preview-pane .preview-container {
+				width: 250px;
+				height: 170px;
+				overflow: hidden;
+			}
+			
+			.optdual {
+				position: relative;
+			}
+			.optdual .offset {
+				position: absolute;
+				left: 18em;
+			}
+			.optlist label {
+				width: 16em;
+				display: block;
+			}
+			#dl_links {
+				margin-top: .5em;
+			}
+
+		</style>
+
+	</head>
+	
+	<!--
+
+	TABLE OF CONTENTS.
+	
+	Use search to find needed section.
+	
+	===================================================================
+	
+	|  01. #CSS Links                |  all CSS links and file paths  |
+	|  02. #FAVICONS                 |  Favicon links and file paths  |
+	|  03. #GOOGLE FONT              |  Google font link              |
+	|  04. #APP SCREEN / ICONS       |  app icons, screen backdrops   |
+	|  05. #BODY                     |  body tag                      |
+	|  06. #HEADER                   |  header tag                    |
+	|  07. #PROJECTS                 |  project lists                 |
+	|  08. #TOGGLE LAYOUT BUTTONS    |  layout buttons and actions    |
+	|  09. #MOBILE                   |  mobile view dropdown          |
+	|  10. #SEARCH                   |  search field                  |
+	|  11. #NAVIGATION               |  left panel & navigation       |
+	|  12. #RIGHT PANEL              |  right panel userlist          |
+	|  13. #MAIN PANEL               |  main panel                    |
+	|  14. #MAIN CONTENT             |  content holder                |
+	|  15. #PAGE FOOTER              |  page footer                   |
+	|  16. #SHORTCUT AREA            |  dropdown shortcuts area       |
+	|  17. #PLUGINS                  |  all scripts and plugins       |
+	
+	===================================================================
+	
+	-->
+	
+	<!-- #BODY -->
+	<!-- Possible Classes
+
+		* 'smart-style-{SKIN#}'
+		* 'smart-rtl'         - Switch theme mode to RTL
+		* 'menu-on-top'       - Switch to top navigation (no DOM change required)
+		* 'no-menu'			  - Hides the menu completely
+		* 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
+		* 'fixed-header'      - Fixes the header
+		* 'fixed-navigation'  - Fixes the main menu
+		* 'fixed-ribbon'      - Fixes breadcrumb
+		* 'fixed-page-footer' - Fixes footer
+		* 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
+	-->
+	<body class="">
+
+		<!-- HEADER -->
+		<header id="header">
+			<div id="logo-group">
+
+				<!-- PLACE YOUR LOGO HERE -->
+				<span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
+				<!-- END LOGO PLACEHOLDER -->
+
+				<!-- Note: The activity badge color changes when clicked and resets the number to 0
+				Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+				<span id="activity" class="activity-dropdown"> <i class="fa fa-user"></i> <b class="badge"> 21 </b> </span>
+
+				<!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
+				<div class="ajax-dropdown">
+
+					<!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
+					<div class="btn-group btn-group-justified" data-toggle="buttons">
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="ajax/notify/mail.html">
+							Msgs (14) </label>
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="ajax/notify/notifications.html">
+							notify (3) </label>
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="ajax/notify/tasks.html">
+							Tasks (4) </label>
+					</div>
+
+					<!-- notification content -->
+					<div class="ajax-notifications custom-scroll">
+
+						<div class="alert alert-transparent">
+							<h4>Click a button to show messages here</h4>
+							This blank page message helps protect your privacy, or you can show the first message here automatically.
+						</div>
+
+						<i class="fa fa-lock fa-4x fa-border"></i>
+
+					</div>
+					<!-- end notification content -->
+
+					<!-- footer: refresh area -->
+					<span> Last updated on: 12/12/2013 9:43AM
+						<button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
+							<i class="fa fa-refresh"></i>
+						</button> </span>
+					<!-- end footer -->
+
+				</div>
+				<!-- END AJAX-DROPDOWN -->
+			</div>
+
+			<!-- projects dropdown -->
+			<div class="project-context hidden-xs">
+
+				<span class="label">Projects:</span>
+				<span class="project-selector dropdown-toggle" data-toggle="dropdown">Recent projects <i class="fa fa-angle-down"></i></span>
+
+				<!-- Suggestion: populate this list with fetch and push technique -->
+				<ul class="dropdown-menu">
+					<li>
+						<a href="javascript:void(0);">Online e-merchant management system - attaching integration with the iOS</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">Notes on pipeline upgradee</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">Assesment Report for merchant account</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="javascript:void(0);"><i class="fa fa-power-off"></i> Clear</a>
+					</li>
+				</ul>
+				<!-- end dropdown-menu-->
+
+			</div>
+			<!-- end projects dropdown -->
+
+			<!-- pulled right: nav area -->
+			<div class="pull-right">
+				
+				<!-- collapse menu button -->
+				<div id="hide-menu" class="btn-header pull-right">
+					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+				</div>
+				<!-- end collapse menu -->
+				
+				<!-- #MOBILE -->
+				<!-- Top menu profile link : this shows only when top menu is active -->
+				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
+					<li class="">
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
+							<img src="img/avatars/sunny.png" alt="John Doe" class="online" />  
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> Setting</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="toggleShortcut"><i class="fa fa-arrow-down"></i> <u>S</u>hortcut</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> Full <u>S</u>creen</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="login.html" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<!-- logout button -->
+				<div id="logout" class="btn-header transparent pull-right">
+					<span> <a href="login.html" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
+				</div>
+				<!-- end logout button -->
+
+				<!-- search mobile button (this is hidden till mobile view port) -->
+				<div id="search-mobile" class="btn-header transparent pull-right">
+					<span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
+				</div>
+				<!-- end search mobile button -->
+
+				<!-- input: search field -->
+				<form action="search.html" class="header-search pull-right">
+					<input id="search-fld"  type="text" name="param" placeholder="Find reports and more" data-autocomplete='[
+					"ActionScript",
+					"AppleScript",
+					"Asp",
+					"BASIC",
+					"C",
+					"C++",
+					"Clojure",
+					"COBOL",
+					"ColdFusion",
+					"Erlang",
+					"Fortran",
+					"Groovy",
+					"Haskell",
+					"Java",
+					"JavaScript",
+					"Lisp",
+					"Perl",
+					"PHP",
+					"Python",
+					"Ruby",
+					"Scala",
+					"Scheme"]'>
+					<button type="submit">
+						<i class="fa fa-search"></i>
+					</button>
+					<a href="javascript:void(0);" id="cancel-search-js" title="Cancel Search"><i class="fa fa-times"></i></a>
+				</form>
+				<!-- end input: search field -->
+
+				<!-- fullscreen button -->
+				<div id="fullscreen" class="btn-header transparent pull-right">
+					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
+				</div>
+				<!-- end fullscreen button -->
+				
+				<!-- #Voice Command: Start Speech -->
+				<div id="speech-btn" class="btn-header transparent pull-right hidden-sm hidden-xs">
+					<div> 
+						<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a> 
+						<div class="popover bottom"><div class="arrow"></div>
+							<div class="popover-content">
+								<h4 class="vc-title">Voice command activated <br><small>Please speak clearly into the mic</small></h4>
+								<h4 class="vc-title-error text-center">
+									<i class="fa fa-microphone-slash"></i> Voice command failed
+									<br><small class="txt-color-red">Must <strong>"Allow"</strong> Microphone</small>
+									<br><small class="txt-color-red">Must have <strong>Internet Connection</strong></small>
+								</h4>
+								<a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a> 
+								<a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a> 
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end voice command -->
+
+				<!-- multiple lang dropdown : find all flags in the flags page -->
+				<ul class="header-dropdown-list hidden-xs">
+					<li>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="img/blank.gif" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
+						<ul class="dropdown-menu pull-right">
+							<li class="active">
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-us" alt="United States"> English (US)</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-fr" alt="France"> Français</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-es" alt="Spanish"> Español</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-de" alt="German"> Deutsch</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-jp" alt="Japan"> 日本語</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-cn" alt="China"> 中文</a>
+							</li>	
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-it" alt="Italy"> Italiano</a>
+							</li>	
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-pt" alt="Portugal"> Portugal</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-ru" alt="Russia"> Русский язык</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-kr" alt="Korea"> 한국어</a>
+							</li>						
+							
+						</ul>
+					</li>
+				</ul>
+				<!-- end multiple lang -->
+
+			</div>
+			<!-- end pulled right: nav area -->
+
+		</header>
+		<!-- END HEADER -->
+
+		<!-- Left panel : Navigation area -->
+		<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+		<aside id="left-panel">
+
+			<!-- User info -->
+			<div class="login-info">
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
+					
+					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+						<img src="img/avatars/sunny.png" alt="me" class="online" /> 
+						<span>
+							john.doe 
+						</span>
+						<i class="fa fa-angle-down"></i>
+					</a> 
+					
+				</span>
+			</div>
+			<!-- end user info -->
+
+			<!-- NAVIGATION : This navigation is also responsive-->
+			<nav>
+				<ul>
+					<li>
+						<a href="index.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
+					</li>
+					<li>
+						<a href="inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Inbox</span><span class="badge pull-right inbox-badge">14</span></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Graphs</span></a>
+						<ul>
+							<li>
+								<a href="flot.html">Flot Chart</a>
+							</li>
+							<li>
+								<a href="morris.html">Morris Charts</a>
+							</li>
+							<li>
+								<a href="inline-charts.html">Inline Charts</a>
+							</li>
+							<li>
+								<a href="dygraphs.html">Dygraphs</a>
+							</li>
+							<li>
+								<a href="chartjs.html">Chart.js <span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Tables</span></a>
+						<ul>
+							<li>
+								<a href="table.html">Normal Tables</a>
+							</li>
+							<li>
+								<a href="datatables.html">Data Tables <span class="badge inbox-badge bg-color-greenLight">v1.10</span></a>
+							</li>
+							<li>
+								<a href="jqgrid.html">Jquery Grid</a>
+							</li>
+						</ul>
+					</li>
+					<li class="active">
+						<a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Forms</span></a>
+						<ul>
+							<li>
+								<a href="form-elements.html">Smart Form Elements</a>
+							</li>
+							<li>
+								<a href="form-templates.html">Smart Form Layouts</a>
+							</li>
+							<li>
+								<a href="validation.html">Smart Form Validation</a>
+							</li>
+							<li>
+								<a href="bootstrap-forms.html">Bootstrap Form Elements</a>
+							</li>
+							<li>
+								<a href="bootstrap-validator.html">Bootstrap Form Validation</a>
+							</li>
+							<li>
+								<a href="plugins.html">Form Plugins</a>
+							</li>
+							<li>
+								<a href="wizard.html">Wizards</a>
+							</li>
+							<li>
+								<a href="other-editors.html">Bootstrap Editors</a>
+							</li>
+							<li>
+								<a href="dropzone.html">Dropzone </a>
+							</li>
+							<li class="active">
+								<a href="image-editor.html">Image Cropping <span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i> <span class="menu-item-parent">UI Elements</span></a>
+						<ul>
+							<li>
+								<a href="general-elements.html">General Elements</a>
+							</li>
+							<li>
+								<a href="buttons.html">Buttons</a>
+							</li>
+							<li>
+								<a href="#">Icons</a>
+								<ul>
+									<li>
+										<a href="fa.html"><i class="fa fa-plane"></i> Font Awesome</a>
+									</li>	
+									<li>
+										<a href="glyph.html"><i class="glyphicon glyphicon-plane"></i> Glyph Icons</a>
+									</li>	
+									<li>
+										<a href="flags.html"><i class="fa fa-flag"></i> Flags</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="grid.html">Grid</a>
+							</li>
+							<li>
+								<a href="treeview.html">Tree View</a>
+							</li>
+							<li>
+								<a href="nestable-list.html">Nestable Lists</a>
+							</li>
+							<li>
+								<a href="jqui.html">JQuery UI</a>
+							</li>
+							<li>
+								<a href="typography.html">Typography</a>
+							</li>
+							<li>
+								<a href="#">Six Level Menu</a>
+								<ul>
+									<li>
+										<a href="#"><i class="fa fa-fw fa-folder-open"></i> Item #2</a>
+										<ul>
+											<li>
+												<a href="#"><i class="fa fa-fw fa-folder-open"></i> Sub #2.1 </a>
+												<ul>
+													<li>
+														<a href="#"><i class="fa fa-fw fa-file-text"></i> Item #2.1.1</a>
+													</li>
+													<li>
+														<a href="#"><i class="fa fa-fw fa-plus"></i> Expand</a>
+														<ul>
+															<li>
+																<a href="#"><i class="fa fa-fw fa-file-text"></i> File</a>
+															</li>
+															<li>
+																<a href="#"><i class="fa fa-fw fa-trash-o"></i> Delete</a></li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-fw fa-folder-open"></i> Item #3</a>
+		
+										<ul>
+											<li>
+												<a href="#"><i class="fa fa-fw fa-folder-open"></i> 3ed Level </a>
+												<ul>
+													<li>
+														<a href="#"><i class="fa fa-fw fa-file-text"></i> File</a>
+													</li>
+													<li>
+														<a href="#"><i class="fa fa-fw fa-file-text"></i> File</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+		
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				
+					<li>
+						<a href="calendar.html"><i class="fa fa-lg fa-fw fa-calendar"><em>3</em></i> <span class="menu-item-parent">Calendar</span></a>
+					</li>
+					<li>
+						<a href="widgets.html"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent">Widgets</span></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-puzzle-piece"></i> <span class="menu-item-parent">App Views</span></a>
+						<ul>
+							<li>
+								<a href="projects.html"><i class="fa fa-file-text-o"></i> Projects</a>
+							</li>
+							<li>
+								<a href="blog.html"><i class="fa fa-paragraph"></i> Blog</a>
+							</li>
+							<li>
+								<a href="gallery.html"><i class="fa fa-picture-o"></i> Gallery</a>
+							</li>
+
+							<li>
+								<a href="#"><i class="fa fa-comments"></i> Forum Layout</a>
+								<ul>
+									<li><a href="forum.html">General View</a></li>
+									<li><a href="forum-topic.html">Topic View</a></li>
+									<li><a href="forum-post.html">Post View</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="profile.html"><i class="fa fa-group"></i> Profile</a>
+							</li>
+							<li>
+								<a href="timeline.html"><i class="fa fa-clock-o"></i> Timeline</a>
+							</li>
+						</ul>		
+					</li>
+					<li>
+						<a href="gmap-xml.html"><i class="fa fa-lg fa-fw fa-map-marker"></i> <span class="menu-item-parent">GMap Skins</span><span class="badge bg-color-greenLight pull-right inbox-badge">9</span></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-windows"></i> <span class="menu-item-parent">Miscellaneous</span></a>
+						<ul>
+							<li>
+								<a href="http://bootstraphunter.com/smartadmin-landing/" target="_blank">Landing Page <i class="fa fa-external-link"></i></a>
+							</li>
+							<li>
+								<a href="pricing-table.html">Pricing Tables</a>
+							</li>
+							<li>
+								<a href="invoice.html">Invoice</a>
+							</li>
+							<li>
+								<a href="login.html" target="_top">Login</a>
+							</li>
+							<li>
+								<a href="register.html" target="_top">Register</a>
+							</li>
+							<li>
+								<a href="lock.html" target="_top">Locked Screen</a>
+							</li>
+							<li>
+								<a href="error404.html">Error 404</a>
+							</li>
+							<li>
+								<a href="error500.html">Error 500</a>
+							</li>
+							<li>
+								<a href="blank_.html">Blank Page</a>
+							</li>
+							<li>
+								<a href="email-template.html">Email Template</a>
+							</li>
+							<li>
+								<a href="search.html">Search Page</a>
+							</li>
+							<li>
+								<a href="ckeditor.html">CK Editor</a>
+							</li>
+						</ul>
+					</li>
+					<li class="top-menu-invisible">
+						<a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">SmartAdmin Intel</span></a>
+						<ul>
+							<li>
+								<a href="difver.html"><i class="fa fa-stack-overflow"></i> Different Versions</a>
+							</li>
+							<li>
+								<a href="applayout.html"><i class="fa fa-cube"></i> App Settings</a>
+							</li>
+							<li>
+								<a href="http://bootstraphunter.com/smartadmin/BUGTRACK/track_/documentation/index.html" target="_blank"><i class="fa fa-book"></i> Documentation</a>
+							</li>
+							<li>
+								<a href="http://bootstraphunter.com/smartadmin/BUGTRACK/track_/" target="_blank"><i class="fa fa-bug"></i> Bug Tracker</a>
+							</li>
+						</ul>
+					</li>
+					<li class="chat-users top-menu-invisible">
+						<a href="#"><i class="fa fa-lg fa-fw fa-comment-o"><em class="bg-color-pink flash animated">!</em></i> <span class="menu-item-parent">Smart Chat API <sup>beta</sup></span></a>
+						<ul>
+							<li>
+								<!-- DISPLAY USERS -->
+								<div class="display-users">
+
+									<input class="form-control chat-user-filter" placeholder="Filter" type="text">
+									
+								  	<a href="#" class="usr" 
+									  	data-chat-id="cha1" 
+									  	data-chat-fname="Sadi" 
+									  	data-chat-lname="Orlaf" 
+									  	data-chat-status="busy" 
+									  	data-chat-alertmsg="Sadi Orlaf is in a meeting. Please do not disturb!" 
+									  	data-chat-alertshow="true" 
+									  	data-rel="popover-hover" 
+									  	data-placement="right" 
+									  	data-html="true" 
+									  	data-content="
+											<div class='usr-card'>
+												<img src='img/avatars/5.png' alt='Sadi Orlaf'>
+												<div class='usr-card-content'>
+													<h3>Sadi Orlaf</h3>
+													<p>Marketing Executive</p>
+												</div>
+											</div>
+										"> 
+									  	<i></i>Sadi Orlaf
+								  	</a>
+								  
+									<a href="#" class="usr" 
+										data-chat-id="cha2" 
+									  	data-chat-fname="Jessica" 
+									  	data-chat-lname="Dolof" 
+									  	data-chat-status="online" 
+									  	data-chat-alertmsg="" 
+									  	data-chat-alertshow="false" 
+									  	data-rel="popover-hover" 
+									  	data-placement="right" 
+									  	data-html="true" 
+									  	data-content="
+											<div class='usr-card'>
+												<img src='img/avatars/1.png' alt='Jessica Dolof'>
+												<div class='usr-card-content'>
+													<h3>Jessica Dolof</h3>
+													<p>Sales Administrator</p>
+												</div>
+											</div>
+										"> 
+									  	<i></i>Jessica Dolof
+									</a>
+								  
+									<a href="#" class="usr" 
+									  	data-chat-id="cha3" 
+									  	data-chat-fname="Zekarburg" 
+									  	data-chat-lname="Almandalie" 
+									  	data-chat-status="online" 
+									  	data-rel="popover-hover" 
+									  	data-placement="right" 
+									  	data-html="true" 
+									  	data-content="
+											<div class='usr-card'>
+												<img src='img/avatars/3.png' alt='Zekarburg Almandalie'>
+												<div class='usr-card-content'>
+													<h3>Zekarburg Almandalie</h3>
+													<p>Sales Admin</p>
+												</div>
+											</div>
+										"> 
+									  	<i></i>Zekarburg Almandalie
+									</a>
+								 
+									<a href="#" class="usr" 
+									  	data-chat-id="cha4" 
+									  	data-chat-fname="Barley" 
+									  	data-chat-lname="Krazurkth" 
+									  	data-chat-status="away" 
+									  	data-rel="popover-hover" 
+									  	data-placement="right" 
+									  	data-html="true" 
+									  	data-content="
+											<div class='usr-card'>
+												<img src='img/avatars/4.png' alt='Barley Krazurkth'>
+												<div class='usr-card-content'>
+													<h3>Barley Krazurkth</h3>
+													<p>Sales Director</p>
+												</div>
+											</div>
+										"> 
+									  	<i></i>Barley Krazurkth
+									</a>
+								  
+									<a href="#" class="usr offline" 
+									  	data-chat-id="cha5" 
+									  	data-chat-fname="Farhana" 
+									  	data-chat-lname="Amrin" 
+									  	data-chat-status="incognito" 
+									  	data-rel="popover-hover" 
+									  	data-placement="right" 
+									  	data-html="true" 
+									  	data-content="
+											<div class='usr-card'>
+												<img src='img/avatars/female.png' alt='Farhana Amrin'>
+												<div class='usr-card-content'>
+													<h3>Farhana Amrin</h3>
+													<p>Support Admin <small><i class='fa fa-music'></i> Playing Beethoven Classics</small></p>
+												</div>
+											</div>
+										"> 
+									  	<i></i>Farhana Amrin (offline)
+									</a>
+								  
+									<a href="#" class="usr offline" 
+										data-chat-id="cha6" 
+									  	data-chat-fname="Lezley" 
+									  	data-chat-lname="Jacob" 
+									  	data-chat-status="incognito" 
+									  	data-rel="popover-hover" 
+									  	data-placement="right" 
+									  	data-html="true" 
+									  	data-content="
+											<div class='usr-card'>
+												<img src='img/avatars/male.png' alt='Lezley Jacob'>
+												<div class='usr-card-content'>
+													<h3>Lezley Jacob</h3>
+													<p>Sales Director</p>
+												</div>
+											</div>
+										"> 
+									  	<i></i>Lezley Jacob (offline)
+									</a>
+									
+									<a href="ajax/chat.html" class="btn btn-xs btn-default btn-block sa-chat-learnmore-btn">About the API</a>
+
+								</div>
+								<!-- END DISPLAY USERS -->
+							</li>
+						</ul>	
+					</li>
+					
+				</ul>
+			</nav>
+			<span class="minifyme" data-action="minifyMenu"> 
+				<i class="fa fa-arrow-circle-left hit"></i> 
+			</span>
+
+		</aside>
+		<!-- END NAVIGATION -->
+
+		<!-- MAIN PANEL -->
+		<div id="main" role="main">
+
+			<!-- RIBBON -->
+			<div id="ribbon">
+
+				<span class="ribbon-button-alignment"> 
+					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+						<i class="fa fa-refresh"></i>
+					</span> 
+				</span>
+
+				<!-- breadcrumb -->
+				<ol class="breadcrumb">
+					<li>Home</li><li>Forms</li><li>Image Cropping</li>
+				</ol>
+				<!-- end breadcrumb -->
+
+				<!-- You can also add more buttons to the
+				ribbon for further usability
+
+				Example below:
+
+				<span class="ribbon-button-alignment pull-right">
+				<span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+				<span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+				<span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+				</span> -->
+
+			</div>
+			<!-- END RIBBON -->
+			
+			<!-- MAIN CONTENT -->
+			<div id="content">
+				<!-- row -->
+				<div class="row">
+
+					<!-- col -->
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-pencil-square-o"></i> Forms <span>>
+							Image Editor </span></h1>
+					</div>
+					<!-- end col -->
+
+				</div>
+				<!-- end row -->
+
+				<!--
+				The ID "widget-grid" will start to initialize all widgets below
+				You do not need to use widgets if you dont want to. Simply remove
+				the <section></section> and you can use wells or panels instead
+				-->
+
+				<!-- widget grid -->
+				<section id="widget-grid" class="">
+
+					<!-- row -->
+					<div class="row">
+
+						<!-- NEW WIDGET START -->
+						<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+							<div class="alert alert-danger hidden-lg hidden-md hidden-sm">
+								<b>Please note:</b>
+								This plugin is non-responsive
+							</div>
+
+							<!-- Widget ID (each widget will need unique ID)-->
+
+							<div class="jarviswidget jarviswidget-sortable" id="wid-id-0" data-widget-togglebutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false" role="widget" style="">
+								<!-- widget options:
+								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+								data-widget-colorbutton="false"
+								data-widget-editbutton="false"
+								data-widget-togglebutton="false"
+								data-widget-deletebutton="false"
+								data-widget-fullscreenbutton="false"
+								data-widget-custombutton="false"
+								data-widget-collapsed="true"
+								data-widget-sortable="false"
+
+								-->
+								<header role="heading">
+									<span class="widget-icon"> <i class="fa fa-file-image-o txt-color-darken"></i> </span>
+									<h2 class="hidden-xs hidden-sm">jcrop </h2>
+
+									<ul class="nav nav-tabs pull-right in" id="myTab">
+										
+										<li class="active">
+											<a data-toggle="tab" href="#s1"><i class="fa fa-crop text-success"></i> <span class="hidden-mobile hidden-tablet">API</span></a>
+										</li>
+										
+										<li>
+											<a data-toggle="tab" href="#s2"><i class="fa fa-crop text-primary"></i> <span class="hidden-mobile hidden-tablet">Default</span></a>
+										</li>
+
+										<li>
+											<a data-toggle="tab" href="#s3"><i class="fa fa-crop text-warning"></i> <span class="hidden-mobile hidden-tablet">Basic</span></a>
+										</li>
+
+										<li>
+											<a data-toggle="tab" href="#s4"><i class="fa fa-crop text-danger"></i> <span class="hidden-mobile hidden-tablet">Aspect Ratio</span></a>
+										</li>
+
+										<li>
+											<a data-toggle="tab" href="#s5"><i class="fa fa-crop txt-color-purple"></i> <span class="hidden-mobile hidden-tablet">Animations</span></a>
+										</li>
+
+										<li>
+											<a data-toggle="tab" href="#s6"><i class="fa fa-crop txt-color-pink"></i> <span class="hidden-mobile hidden-tablet">Styling</span></a>
+										</li>
+
+									</ul>
+
+									<span class="jarviswidget-loader"><i class="fa fa-refresh fa-spin"></i></span>
+								</header>
+
+								<!-- widget div-->
+								<div role="content">
+									<!-- widget edit box -->
+
+									<div class="widget-body">
+										<!-- content -->
+										<div id="myTabContent" class="tab-content">
+
+											<!-- new tab: API interface -->
+											<div class="tab-pane fade active in" id="s1">
+
+												<h4 class="margin-bottom-10">API Interface — real-time API example</h4>
+												
+												<div class="alert alert-info">
+													<b>Experimental shader active.</b>
+													Jcrop now includes a shading mode that facilitates building
+													better transparent Jcrop instances. The experimental shader is less
+													robust than Jcrop's default shading method and should only be
+													used if you require this functionality.
+													<br>
+													View jcrop's documentation by going to: <a href="http://deepliquid.com/content/Jcrop.html" target="_blank">http://deepliquid.com/content/Jcrop.html</a>
+												</div>
+												
+												<img src="img/superbox/superbox-full-7.jpg" id="target-5" alt="[Jcrop Example]" class="pull-left" />
+						
+												<div class="pull-left padding-gutter padding-top-0 padding-bottom-0">
+													
+													<fieldset>
+
+														<legend>
+															Option Toggles
+														</legend>										
+
+														<span class="requiresjcrop">
+															<button id="setSelect" class="btn btn-default btn-sm">
+																setSelect
+															</button>
+															<button id="animateTo" class="btn btn-default btn-sm">
+																animateTo
+															</button>
+															<button id="release" class="btn btn-default btn-sm">
+																Release
+															</button>
+															<button id="disable" class="btn btn-default btn-sm">
+																Disable
+															</button> 
+														</span>
+														<button id="enable" class="btn btn-default btn-sm" style="display:none;">
+															Re-Enable
+														</button>
+														<button id="unhook" class="btn btn-default btn-sm">
+															Destroy!
+														</button>
+														<button id="rehook" class="btn btn-default btn-sm" style="display:none;">
+															Attach Jcrop
+														</button>
+													</fieldset>
+													
+													<fieldset class="optdual requiresjcrop">
+														<legend>
+															Option Toggles
+														</legend>
+														<div class="optlist offset">
+															<label class="margin-top-0">
+															  <input type="checkbox" class="checkbox style-0" id="ar_lock">
+															  <span>Aspect ratio</span>
+															</label>
+															
+															<label class="">
+															  <input type="checkbox" class="checkbox style-0" id="size_lock">
+															  <span>minSize/maxSize setting</span>
+															</label>
+														</div>
+														<div class="optlist">
+															<label class="margin-top-0">
+															  <input type="checkbox" class="checkbox style-0" id="can_click">
+															  <span>Allow new selections</span>
+															</label>
+															
+															<label class="">
+															  <input type="checkbox" class="checkbox style-0" id="can_move">
+															  <span>Selection can be moved</span>
+															</label>
+															
+															<label class="">
+															  <input type="checkbox" class="checkbox style-0" id="can_size">
+															  <span>Resizable selection</span>
+															</label>
+
+														</div>
+													</fieldset>
+						
+													<fieldset class="requiresjcrop">
+														<legend>
+															Change Image
+														</legend>
+														<div class="btn-group">
+															<button class="btn btn-default" id="img2">
+																Lego
+															</button>
+															<button class="btn btn-default active" id="img1">
+																Breakdance
+															</button>
+															<button class="btn btn-default" id="img3">
+																Dragon Fly
+															</button>
+														</div>
+													</fieldset>
+												
+												</div>	
+
+											</div>
+											<!-- end s1 tab pane -->
+
+											<!-- new tab: Default -->
+											<div class="tab-pane fade" id="s2">
+
+												<h4 class="margin-bottom-10">Default Behaviour</h4>
+
+												<div class="alert alert-info">
+													<b>This example demonstrates the default behavior of Jcrop.</b>
+													<br />
+													Since no event handlers have been attached it only performs
+													the cropping behavior.
+												</div>
+
+												<img src="img/superbox/superbox-full-11.jpg" id="target" alt="[Jcrop Example]" />
+
+											</div>
+											<!-- end s1 tab pane -->
+
+											<!-- new tab: Basic handler -->
+											<div class="tab-pane fade" id="s3">
+
+												<h4 class="margin-bottom-10">Basic Handler — basic form integration</h4>
+
+												<div class="alert alert-info">
+													<b>An example with a basic event handler.</b> Here we've tied
+													several form values together with a simple event handler invocation.
+													The result is that the form values are updated in real-time as
+													the selection is changed using Jcrop's <em>onChange</em> handler.
+												</div>
+
+												<!-- This is the image we're attaching Jcrop to -->
+												<img src="img/superbox/superbox-full-10.jpg" id="target-2" alt="[Jcrop Example]" />
+
+												<!-- This is the form that our event handler fills -->
+												<form id="coords"
+												class="coords margin-top-10"
+												onsubmit="return false;"
+												action="http://example.com/post.php">
+
+													<div class="inline-labels">
+														<label>X1
+															<input type="text" size="4" id="x1" name="x1" />
+														</label>
+														<label>Y1
+															<input type="text" size="4" id="y1" name="y1" />
+														</label>
+														<label>X2
+															<input type="text" size="4" id="x2" name="x2" />
+														</label>
+														<label>Y2
+															<input type="text" size="4" id="y2" name="y2" />
+														</label>
+														<label>W
+															<input type="text" size="4" id="w" name="w" />
+														</label>
+														<label>H
+															<input type="text" size="4" id="h" name="h" />
+														</label>
+													</div>
+												</form>
+
+											</div>
+											<!-- end s2 tab pane -->
+
+											<!-- new tab: Aspect ratio -->
+											<div class="tab-pane fade" id="s4">
+
+												<h4 class="margin-bottom-10">Aspect Ratio w/ Preview Pane — nice visual example</h4>
+
+												<div class="alert alert-info">
+													<b>An example implementing a preview pane.</b>
+													Obviously the most visual demo, the preview pane is accomplished
+													entirely outside of Jcrop with a simple jQuery-flavored callback.
+													This type of interface could be useful for creating a thumbnail
+													or avatar. The onChange event handler is used to update the
+													view in the preview pane.
+												</div>
+
+												<img src="img/superbox/superbox-full-9.jpg" id="target-3" alt="[Jcrop Example]" />
+
+												<div id="preview-pane">
+													<div class="preview-container">
+														<img src="img/superbox/superbox-full-9.jpg" class="jcrop-preview" id="target-3a" alt="Preview" />
+													</div>
+												</div>
+
+											</div>
+											<!-- end s3 tab pane -->
+
+											<!-- new tab: animation/transitions -->
+											<div class="tab-pane fade" id="s5">
+
+												<h4 class="margin-bottom-10">Animation/Transitions — animation/fading demo</h4>
+
+												<div class="alert alert-info">
+													<b>Experimental shader active.</b>
+													Jcrop now includes a shading mode that facilitates building
+													better transparent Jcrop instances. The experimental shader is less
+													robust than Jcrop's default shading method and should only be
+													used if you require this functionality.
+												</div>
+
+												<div class="row">
+
+													<div class="col-sm-12 col-md-12 col-lg-12">
+
+														<img src="img/superbox/superbox-full-7.jpg" id="target-4" alt="Jcrop Image" class="pull-left" />
+
+							
+														<div id="interface" class="pull-left padding-gutter padding-top-0 padding-bottom-0">
+															
+															<label class="checkbox">
+															  <input type="checkbox" class="checkbox style-0" id="fadetog">
+															  <span>Enable fading (bgFade: true)</span>
+															</label>
+															<label class="checkbox">
+															  <input type="checkbox" class="checkbox style-0" id="shadetog">
+															  <span>Use experimental shader (shade: true)</span>
+															</label>
+														
+														</div>
+													</div>
+
+												</div>
+
+											</div>
+											<!-- end s4 tab pane -->
+
+											<!-- new tab: Styling -->
+											<div class="tab-pane fade padding-10 no-padding-bottom" id="s6">
+
+												<h4 class="margin-bottom-10">Styling Example — style Jcrop dynamically with CSS</h4>
+
+												<img src="img/superbox/superbox-full-16.jpg" id="target-6" alt="[Jcrop Example]" />
+						
+												<div class="pull-left pull-left padding-gutter padding-top-0 padding-bottom-0">
+													<fieldset>
+														<legend>
+															Manipulate classes
+														</legend>
+														<div class="btn-group" id="buttonbar">
+															<button class="btn btn-default active" data-setclass="jcrop-light" id="radio1">
+																jcrop-light
+															</button>
+															<button class="btn btn-default" data-setclass="jcrop-dark" id="radio2">
+																jcrop-dark
+															</button>
+															<button class="btn btn-default" data-setclass="jcrop-normal" id="radio3">
+																normal
+															</button>
+														</div>
+													</fieldset>
+												</div>
+
+											</div>
+											<!-- end s6 tab pane -->
+
+										</div>
+
+										<!-- end content -->
+									</div>
+
+								</div>
+								<!-- end widget div -->
+							</div>
+							<!-- end widget -->
+
+						</article>
+						<!-- WIDGET END -->
+
+					</div>
+
+					<!-- end row -->
+
+				</section>
+				<!-- end widget grid -->
+			</div>
+			<!-- END MAIN CONTENT -->
+
+		</div>
+		<!-- END MAIN PANEL -->
+
+		<!-- PAGE FOOTER -->
+		<div class="page-footer">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<span class="txt-color-white">SmartAdmin 1.5 <span class="hidden-xs"> - Web Application Framework</span> © 2014-2015</span>
+				</div>
+
+				<div class="col-xs-6 col-sm-6 text-right hidden-xs">
+					<div class="txt-color-white inline-block">
+						<i class="txt-color-blueLight hidden-mobile">Last account activity <i class="fa fa-clock-o"></i> <strong>52 mins ago &nbsp;</strong> </i>
+						<div class="btn-group dropup">
+							<button class="btn btn-xs dropdown-toggle bg-color-blue txt-color-white" data-toggle="dropdown">
+								<i class="fa fa-link"></i> <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu pull-right text-left">
+								<li>
+									<div class="padding-5">
+										<p class="txt-color-darken font-sm no-margin">Download Progress</p>
+										<div class="progress progress-micro no-margin">
+											<div class="progress-bar progress-bar-success" style="width: 50%;"></div>
+										</div>
+									</div>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<div class="padding-5">
+										<p class="txt-color-darken font-sm no-margin">Server Load</p>
+										<div class="progress progress-micro no-margin">
+											<div class="progress-bar progress-bar-success" style="width: 20%;"></div>
+										</div>
+									</div>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<div class="padding-5">
+										<p class="txt-color-darken font-sm no-margin">Memory Load <span class="text-danger">*critical*</span></p>
+										<div class="progress progress-micro no-margin">
+											<div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+										</div>
+									</div>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<div class="padding-5">
+										<button class="btn btn-block btn-default">refresh</button>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END PAGE FOOTER -->
+
+		<!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+		Note: These tiles are completely responsive,
+		you can add as many as you like
+		-->
+		<div id="shortcut">
+			<ul>
+				<li>
+					<a href="inbox.html" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="calendar.html" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span> </span> </a>
+				</li>
+				<li>
+					<a href="gmap-xml.html" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span> </span> </a>
+				</li>
+				<li>
+					<a href="invoice.html" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>Invoice <span class="label pull-right bg-color-darken">99</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="gallery.html" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
+				</li>
+				<li>
+					<a href="profile.html" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>My Profile </span> </span> </a>
+				</li>
+			</ul>
+		</div>
+		<!-- END SHORTCUT AREA -->
+
+		<!--================================================== -->
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+
+		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			if (!window.jQuery) {
+				document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
+			}
+		</script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script>
+			if (!window.jQuery.ui) {
+				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+			}
+		</script>
+
+		<!-- IMPORTANT: APP CONFIG -->
+		<script src="js/app.config.js"></script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+
+		<!-- BOOTSTRAP JS -->
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- CUSTOM NOTIFICATION -->
+		<script src="js/notification/SmartNotification.min.js"></script>
+
+		<!-- JARVIS WIDGETS -->
+		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+
+		<!-- EASY PIE CHARTS -->
+		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+		<!-- SPARKLINES -->
+		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+		<!-- JQUERY MASKED INPUT -->
+		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+		<!-- JQUERY SELECT2 INPUT -->
+		<script src="js/plugin/select2/select2.min.js"></script>
+
+		<!-- JQUERY UI + Bootstrap Slider -->
+		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+		<!-- browser msie issue fix -->
+		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+		<!-- FastClick: For mobile devices -->
+		<script src="js/plugin/fastclick/fastclick.min.js"></script>
+
+		<!--[if IE 8]>
+
+		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+		<![endif]-->
+
+		<!-- Demo purpose only -->
+		<script src="js/demo.min.js"></script>
+
+		<!-- MAIN APP JS FILE -->
+		<script src="js/app.min.js"></script>
+
+		<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
+		<!-- Voice command : plugin -->
+		<script src="js/speech/voicecommand.min.js"></script>
+
+		<!-- SmartChat UI : plugin -->
+		<script src="js/smart-chat-ui/smart.chat.ui.min.js"></script>
+		<script src="js/smart-chat-ui/smart.chat.manager.min.js"></script>
+
+		<!-- PAGE RELATED PLUGIN(S) 
+		<script src="..."></script>-->
+
+		<script src="js/plugin/jcrop/jquery.Jcrop.min.js"></script>
+		<script src="js/plugin/jcrop/jquery.color.min.js"></script>
+
+		<script type="text/javascript">
+			
+			$(document).ready(function() {
+				pageSetUp();
+
+
+				//console.log("load and ready");
+
+
+				// api_handler
+				
+				var api_handler = function() {
+
+					// The variable jcrop_api will hold a reference to the
+					// Jcrop API once Jcrop is instantiated.
+					var jcrop_api;
+
+
+					// The function is pretty simple
+					var initJcrop = function(){
+						// Hide any interface elements that require Jcrop
+						// (This is for the local user interface portion.)
+						$('.requiresjcrop').hide();
+
+						// Invoke Jcrop in typical fashion
+						$('#target-5').Jcrop({
+							onRelease : releaseCheck
+						}, function() {
+
+							jcrop_api = this;
+							jcrop_api.animateTo([100, 100, 400, 300]);
+
+							// Setup and dipslay the interface for "enabled"
+							$('#can_click,#can_move,#can_size').attr('checked', 'checked');
+							$('#ar_lock,#size_lock,#bg_swap').attr('checked', false);
+							$('.requiresjcrop').show();
+
+						});
+
+					};
+
+					// In this example, since Jcrop may be attached or detached
+					// at the whim of the user, I've wrapped the call into a function	
+					initJcrop();
+
+					// Use the API to find cropping dimensions
+					// Then generate a random selection
+					// This function is used by setSelect and animateTo buttons
+					// Mainly for demonstration purposes
+					function getRandom() {
+						var dim = jcrop_api.getBounds();
+						return [Math.round(Math.random() * dim[0]), Math.round(Math.random() * dim[1]), Math.round(Math.random() * dim[0]), Math.round(Math.random() * dim[1])];
+					};
+
+					// This function is bound to the onRelease handler...
+					// In certain circumstances (such as if you set minSize
+					// and aspectRatio together), you can inadvertently lose
+					// the selection. This callback re-enables creating selections
+					// in such a case. Although the need to do this is based on a
+					// buggy behavior, it's recommended that you in some way trap
+					// the onRelease callback if you use allowSelect: false
+					function releaseCheck() {
+						jcrop_api.setOptions({
+							allowSelect : true
+						});
+						$('#can_click').attr('checked', false);
+					};
+
+					// Attach interface buttons
+					// This may appear to be a lot of code but it's simple stuff
+					$('#setSelect').click(function(e) {
+						// Sets a random selection
+						jcrop_api.setSelect(getRandom());
+					});
+					$('#animateTo').click(function(e) {
+						// Animates to a random selection
+						jcrop_api.animateTo(getRandom());
+					});
+					$('#release').click(function(e) {
+						// Release method clears the selection
+						jcrop_api.release();
+					});
+					$('#disable').click(function(e) {
+						// Disable Jcrop instance
+						jcrop_api.disable();
+						// Update the interface to reflect disabled state
+						$('#enable').show();
+						$('.requiresjcrop').hide();
+					});
+					$('#enable').click(function(e) {
+						// Re-enable Jcrop instance
+						jcrop_api.enable();
+						// Update the interface to reflect enabled state
+						$('#enable').hide();
+						$('.requiresjcrop').show();
+					});
+					$('#rehook').click(function(e) {
+						// This button is visible when Jcrop has been destroyed
+						// It performs the re-attachment and updates the UI
+						$('#rehook,#enable').hide();
+						initJcrop();
+						$('#unhook,.requiresjcrop').show();
+						return false;
+					});
+					$('#unhook').click(function(e) {
+						// Destroy Jcrop widget, restore original state
+						jcrop_api.destroy();
+						// Update the interface to reflect un-attached state
+						$('#unhook,#enable,.requiresjcrop').hide();
+						$('#rehook').show();
+						return false;
+					});
+
+					// Hook up the three image-swapping buttons
+					$('#img1').click(function(e) {
+						$(this).addClass('active').closest('.btn-group').find('button.active').not(this).removeClass('active');
+
+						jcrop_api.setImage('img/superbox/superbox-full-7.jpg');
+						jcrop_api.setOptions({
+							bgOpacity : .6
+						});
+						return false;
+					});
+					$('#img2').click(function(e) {
+						$(this).addClass('active').closest('.btn-group').find('button.active').not(this).removeClass('active');
+
+						jcrop_api.setImage('img/superbox/superbox-full-24.jpg');
+						jcrop_api.setOptions({
+							bgOpacity : .6
+						});
+						return false;
+					});
+					$('#img3').click(function(e) {
+						$(this).addClass('active').closest('.btn-group').find('button.active').not(this).removeClass('active');
+
+						jcrop_api.setImage('img/superbox/superbox-full-20.jpg', function() {
+							this.setOptions({
+								bgOpacity : 1,
+								outerImage : 'img/superbox/superbox-full-20-bw.jpg'
+							});
+							this.animateTo(getRandom());
+						});
+						return false;
+					});
+
+					// The checkboxes simply set options based on it's checked value
+					// Options are changed by passing a new options object
+
+					// Also, to prevent strange behavior, they are initially checked
+					// This matches the default initial state of Jcrop
+
+					$('#can_click').change(function(e) {
+						jcrop_api.setOptions({
+							allowSelect : !!this.checked
+						});
+						jcrop_api.focus();
+					});
+					$('#can_move').change(function(e) {
+						jcrop_api.setOptions({
+							allowMove : !!this.checked
+						});
+						jcrop_api.focus();
+					});
+					$('#can_size').change(function(e) {
+						jcrop_api.setOptions({
+							allowResize : !!this.checked
+						});
+						jcrop_api.focus();
+					});
+					$('#ar_lock').change(function(e) {
+						jcrop_api.setOptions(this.checked ? {
+							aspectRatio : 4 / 3
+						} : {
+							aspectRatio : 0
+						});
+						jcrop_api.focus();
+					});
+					$('#size_lock').change(function(e) {
+						jcrop_api.setOptions(this.checked ? {
+							minSize : [80, 80],
+							maxSize : [350, 350]
+						} : {
+							minSize : [0, 0],
+							maxSize : [0, 0]
+						});
+						jcrop_api.focus();
+					});
+
+				}
+				
+				// end api_handler
+
+				// default
+				
+				var default_handler = function(){
+					$('#target').Jcrop();
+				}
+
+				// basic handler
+
+				var basic_handler = function() {
+
+					var jcrop_api;
+
+					$('#target-2').Jcrop({
+						onChange : showCoords,
+						onSelect : showCoords,
+						onRelease : clearCoords
+					}, function() {
+						jcrop_api = this;
+					});
+
+					$('#coords').on('change', 'input', function(e) {
+						var x1 = $('#x1').val(), x2 = $('#x2').val(), y1 = $('#y1').val(), y2 = $('#y2').val();
+						jcrop_api.setSelect([x1, y1, x2, y2]);
+					});
+
+					// Simple event handler, called from onChange and onSelect
+					// event handlers, as per the Jcrop invocation above
+					function showCoords(c) {
+						$('#x1').val(c.x);
+						$('#y1').val(c.y);
+						$('#x2').val(c.x2);
+						$('#y2').val(c.y2);
+						$('#w').val(c.w);
+						$('#h').val(c.h);
+					};
+
+					function clearCoords() {
+						$('#coords input').val('');
+					};
+
+				};
+
+				// end basic_handler
+
+				// aspect ratio
+
+				var aspect_ratio = function() {
+
+					// Create variables (in this scope) to hold the API and image size
+					var jcrop_api, boundx, boundy,
+
+					// Grab some information about the preview pane
+					$preview = $('#preview-pane'), $pcnt = $('#preview-pane .preview-container'), $pimg = $('#preview-pane .preview-container img'), xsize = $pcnt.width(), ysize = $pcnt.height();
+
+					console.log('init', [xsize, ysize]);
+					$('#target-3').Jcrop({
+						onChange : updatePreview,
+						onSelect : updatePreview,
+						aspectRatio : xsize / ysize
+					}, function() {
+						// Use the API to get the real image size
+						var bounds = this.getBounds();
+						boundx = bounds[0];
+						boundy = bounds[1];
+						// Store the API in the jcrop_api variable
+						jcrop_api = this;
+
+						// Move the preview into the jcrop container for css positioning
+						$preview.appendTo(jcrop_api.ui.holder);
+					});
+
+					function updatePreview(c) {
+						if (parseInt(c.w) > 0) {
+							var rx = xsize / c.w;
+							var ry = ysize / c.h;
+
+							$pimg.css({
+								width : Math.round(rx * boundx) + 'px',
+								height : Math.round(ry * boundy) + 'px',
+								marginLeft : '-' + Math.round(rx * c.x) + 'px',
+								marginTop : '-' + Math.round(ry * c.y) + 'px'
+							});
+						}
+					};
+
+				}
+				// end aspect_ratio
+
+				// animation_handler
+
+				var animation_handler = function() {
+
+					var jcrop_api;
+
+					$('#target-4').Jcrop({
+						bgFade : true,
+						bgOpacity : .2,
+						setSelect : [60, 70, 540, 330]
+					}, function() {
+						jcrop_api = this;
+					});
+
+					$('#fadetog').change(function() {
+						jcrop_api.setOptions({
+							bgFade : this.checked
+						});
+					}).attr('checked', 'checked');
+
+					$('#shadetog').change(function() {
+						if (this.checked)
+							$('#shadetxt').slideDown();
+						else
+							$('#shadetxt').slideUp();
+						jcrop_api.setOptions({
+							shade : this.checked
+						});
+					}).attr('checked', false);
+
+					// Define page sections
+					var sections = {
+						bgc_buttons : 'Change bgColor',
+						bgo_buttons : 'Change bgOpacity',
+						anim_buttons : 'Animate Selection'
+					};
+					// Define animation buttons
+					var ac = {
+						anim1 : [217, 122, 382, 284],
+						anim2 : [20, 20, 580, 380],
+						anim3 : [24, 24, 176, 376],
+						anim4 : [347, 165, 550, 355],
+						anim5 : [136, 55, 472, 183]
+					};
+					// Define bgOpacity buttons
+					var bgo = {
+						Low : .2,
+						Mid : .5,
+						High : .8,
+						Full : 1
+					};
+					// Define bgColor buttons
+					var bgc = {
+						R : '#900',
+						B : '#4BB6F0',
+						Y : '#F0B207',
+						G : '#46B81C',
+						W : 'white',
+						K : 'black'
+					};
+					// Create fieldset targets for buttons
+					for (i in sections)insertSection(i, sections[i]);
+
+					function create_btn(c) {
+						var $o = $('<button />').addClass('btn btn-default btn-small');
+						if (c)
+							$o.append(c);
+						return $o;
+					}
+
+					var a_count = 1;
+					// Create animation buttons
+					for (i in ac) {
+						$('#anim_buttons .btn-group').append(create_btn(a_count++).click(animHandler(ac[i])), ' ');
+					}
+
+					$('#anim_buttons .btn-group').append(create_btn('Bye!').click(function(e) {
+						$(e.target).addClass('active');
+						jcrop_api.animateTo([300, 200, 300, 200], function() {
+							this.release();
+							$(e.target).closest('.btn-group').find('.active').removeClass('active');
+						});
+						return false;
+					}));
+
+					// Create bgOpacity buttons
+					for (i in bgo) {
+						$('#bgo_buttons .btn-group').append(create_btn(i).click(setoptHandler('bgOpacity', bgo[i])), ' ');
+					}
+					// Create bgColor buttons
+					for (i in bgc) {
+						$('#bgc_buttons .btn-group').append(create_btn(i).css({
+							background : bgc[i],
+							color : ((i == 'K') || (i == 'R')) ? 'white' : 'black'
+						}).click(setoptHandler('bgColor', bgc[i])), ' ');
+					}
+					// Function to insert named sections into interface
+					function insertSection(k, v) {
+						$('#interface').prepend($('<fieldset></fieldset>').attr('id', k).append($('<legend></legend>').append(v), '<div class="btn-toolbar"><div class="btn-group"></div></div>'));
+					};
+					// Handler for option-setting buttons
+					function setoptHandler(k, v) {
+						return function(e) {
+							$(e.target).closest('.btn-group').find('.active').removeClass('active');
+							$(e.target).addClass('active');
+							var opt = { };
+							opt[k] = v;
+							jcrop_api.setOptions(opt);
+							return false;
+						};
+					};
+					// Handler for animation buttons
+					function animHandler(v) {
+						return function(e) {
+							$(e.target).addClass('active');
+							jcrop_api.animateTo(v, function() {
+								$(e.target).closest('.btn-group').find('.active').removeClass('active');
+							});
+							return false;
+						};
+					};
+
+					$('#bgo_buttons .btn:first,#bgc_buttons .btn:last').addClass('active');
+					$('#interface').show();
+
+				}
+				// end animation_handler
+				
+				// styling_handler
+				
+				var styling_handler = function () {
+					
+					var api;
+
+					$('#target-6').Jcrop({
+						// start off with jcrop-light class
+						bgOpacity : 0.5,
+						bgColor : 'white',
+						addClass : 'jcrop-light'
+					}, function() {
+						api = this;
+						api.setSelect([130, 65, 130 + 350, 65 + 285]);
+						api.setOptions({
+							bgFade : true
+						});
+						api.ui.selection.addClass('jcrop-selection');
+					});
+
+					$('#buttonbar').on('click', 'button', function(e) {
+						var $t = $(this), $g = $t.closest('.btn-group');
+						$g.find('button.active').removeClass('active');
+						$t.addClass('active');
+						$g.find('[data-setclass]').each(function() {
+							var $th = $(this), c = $th.data('setclass'), a = $th.hasClass('active');
+							if (a) {
+								api.ui.holder.addClass(c);
+								switch(c) {
+
+									case 'jcrop-light':
+										api.setOptions({
+											bgColor : 'white',
+											bgOpacity : 0.5
+										});
+										break;
+
+									case 'jcrop-dark':
+										api.setOptions({
+											bgColor : 'black',
+											bgOpacity : 0.4
+										});
+										break;
+
+									case 'jcrop-normal':
+										api.setOptions({
+											bgColor : $.Jcrop.defaults.bgColor,
+											bgOpacity : $.Jcrop.defaults.bgOpacity
+										});
+										break;
+								}
+							} else
+								api.ui.holder.removeClass(c);
+						});
+					});
+					
+				}
+				
+				// end styling_handler
+				
+				//run functions
+				
+				api_handler();
+				default_handler();
+				basic_handler();
+				aspect_ratio();
+				animation_handler();
+				styling_handler();
+			});
+
+		</script>
+
+		<!-- Your GOOGLE ANALYTICS CODE Below -->
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+				_gaq.push(['_trackPageview']);
+			
+			(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
+
+	</body>
+
+</html>
