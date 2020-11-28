@@ -1,0 +1,177 @@
+<div class="table-wrap custom-scroll">
+    <h2 class="email-open-header">
+        Compose New Email <span class="label txt-color-white">draft</span>
+        <a tooltip-placement="left" tooltip="Print" class="txt-color-darken pull-right"><i class="fa fa-print"></i></a>
+    </h2>
+
+    <form enctype="multipart/form-data" action="/api/plug" method="POST" class="form-horizontal">
+
+        <div class="inbox-info-bar no-padding">
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-md-1"><strong>To</strong></label>
+
+                    <div class="col-md-11">
+                        <select multiple style="width:100%" data-select-search="true" data-smart-select2>
+                            <option value="sunny.orlaf@smartadmin.com">sunny.orlaf@smartadmin.com
+                            </option>
+                            <option value="rachael.hawi@smartadmin.com">rachael.hawi@smartadmin.com</option>
+                            <option value="michael.safiel@smartadmin.com">michael.safiel@smartadmin.com</option>
+                            <option value="alex.jones@infowars.com">alex.jones@infowars.com</option>
+                            <option value="oruf.matalla@gmail.com">oruf.matalla@gmail.com</option>
+                            <option value="hr@smartadmin.com">hr@smartadmin.com</option>
+                            <option value="IT@smartadmin.com"  selected="selected">IT@smartadmin.com</option>
+                        </select>
+                        <em><a ng-click="composeCtrl.carbonCopy = true" ng-hide="composeCtrl.carbonCopy" tooltip-placement="bottom"
+                               tooltip="Carbon Copy">CC</a></em>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="inbox-info-bar no-padding" ng-show="composeCtrl.carbonCopy">
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-md-1"><strong>CC</strong></label>
+
+                    <div class="col-md-11">
+                        <select multiple style="width:100%" data-smart-select2 data-select-search="true">
+                            <option value="sunny.orlaf@smartadmin.com">sunny.orlaf@smartadmin.com</option>
+                            <option value="rachael.hawi@smartadmin.com">rachael.hawi@smartadmin.com</option>
+                            <option value="michael.safiel@smartadmin.com">michael.safiel@smartadmin.com</option>
+                            <option value="alex.jones@infowars.com">alex.jones@infowars.com</option>
+                            <option value="oruf.matalla@gmail.com">oruf.matalla@gmail.com</option>
+                            <option value="hr@smartadmin.com">hr@smartadmin.com</option>
+                            <option value="IT@smartadmin.com">IT@smartadmin.com</option>
+                        </select>
+                        <em><a ng-click="composeCtrl.blindCarbonCopy=true" ng-hide="composeCtrl.blindCarbonCopy" tooltip-placement="bottom"
+                               tooltip="Blind Carbon Copy">BCC</a></em>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="inbox-info-bar no-padding" ng-show="composeCtrl.blindCarbonCopy">
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-md-1"><strong>BCC</strong></label>
+
+                    <div class="col-md-11">
+                        <select multiple style="width:100%" data-smart-select2 data-select-search="true">
+                            <option value="sunny.orlaf@smartadmin.com">sunny.orlaf@smartadmin.com</option>
+                            <option value="rachael.hawi@smartadmin.com">rachael.hawi@smartadmin.com</option>
+                            <option value="michael.safiel@smartadmin.com">michael.safiel@smartadmin.com</option>
+                            <option value="alex.jones@infowars.com">alex.jones@infowars.com</option>
+                            <option value="oruf.matalla@gmail.com">oruf.matalla@gmail.com</option>
+                            <option value="hr@smartadmin.com">hr@smartadmin.com</option>
+                            <option value="IT@smartadmin.com">IT@smartadmin.com</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="inbox-info-bar no-padding">
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-md-1"><strong>Subject</strong></label>
+
+                    <div class="col-md-11">
+                        <input class="form-control" placeholder="Email Subject" type="text"
+                               value="{{replayTo.subject}}">
+                        <em><a class="show-next" ng-click="composeCtrl.attachments = true" tooltip-placement="bottom" tooltip="Attachments"><i
+                                class="fa fa-paperclip fa-lg"></i></a></em>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="inbox-info-bar no-padding " ng-show="composeCtrl.attachments">
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-md-1"><strong>Attachments</strong></label>
+
+                    <div class="col-md-11">
+                        <input class="form-control fileinput" type="file" multiple="multiple">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="inbox-message no-padding">
+
+            <div id="emailbody" data-smart-summernote-editor>
+
+
+                <br><br>Thanks,<br><strong>John Doe</strong><br><br>
+
+
+            </div>
+        </div>
+
+        <div class="inbox-compose-footer">
+
+            <button class="btn btn-danger" type="button">
+                Disregard
+            </button>
+
+            <button class="btn btn-info" type="button">
+                Draft
+            </button>
+
+            <button ng-hide="sending" ng-click="send()"
+                    class="btn btn-primary pull-right" type="button">
+                Send <i class="fa fa-arrow-circle-right fa-lg"></i>
+            </button>
+            <button ng-show="sending" class="btn btn-primary pull-right" type="button">
+                <i class="fa fa-refresh fa-spin"></i>   Sending...
+            </button>
+
+
+        </div>
+
+    </form>
+
+
+
+    <div class="email-infobox">
+
+        <div class="well well-sm well-light">
+            <h5>Related Invoice</h5>
+            <ul class="list-unstyled">
+                <li>
+                    <i class="fa fa-file fa-fw text-success"></i><a href-void> #4831 - Paid</a>
+                </li>
+                <li>
+                    <i class="fa fa-file fa-fw text-danger"></i><a href-void><strong> #4835 - Unpaid</strong></a>
+                </li>
+            </ul>
+
+
+        </div>
+
+        <div class="well well-sm well-light">
+            <h5>Upcoming Meetings</h5>
+
+            <p>
+                <span class="label label-success"><i class="fa fa-check"></i> <strike>Agenda Review @ 10 AM</strike> </span>
+            </p>
+
+            <p>
+                <span class="label label-primary"><i class="fa fa-clock-o"></i> Client Meeting @ 2:30 PM</span>
+            </p>
+
+            <p>
+                <span class="label label-warning"><i class="fa fa-clock-o"></i> Salary Review @ 4:00 PM</span>
+            </p>
+        </div>
+
+        <ul class="list-inline">
+            <li><img src="styles/img/avatars/5.png" alt="me" width="30px"></li>
+            <li><img src="styles/img/avatars/3.png" alt="me" width="30px"></li>
+            <li><img src="styles/img/avatars/sunny.png" alt="me" width="30px"></li>
+            <li><a href-void>1 more</a></li>
+        </ul>
+
+    </div>
+</div>
