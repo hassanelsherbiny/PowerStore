@@ -1,0 +1,105 @@
+<div id="content">
+    <div class="row">
+        <big-breadcrumbs items="['Projects', 'Overview']" icon="file-text-o"
+                         class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></big-breadcrumbs>
+        <div smart-include="build/layout/partials/sub-header.tpl.html"></div>
+    </div>
+    <!--
+        The ID "widget-grid" will start to initialize all widgets below
+        You do not need to use widgets if you dont want to. Simply remove
+        the <section></section> and you can use wells or panels instead
+        -->
+    <!-- widget grid -->
+    <section id="widget-grid" data-widget-grid>
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="alert alert-info">
+                    <strong>NOTE:</strong> All the data is loaded from a seperate JSON file
+                </div>
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="well" id="widget-title-widget" data-jarvis-widget>
+                    <!-- widget options:
+                        usage: <div data-jarvis-widget id="wid-id-0" data-widget-editbutton="false">
+                        data-widget-colorbutton="false"
+                        data-widget-editbutton="false"
+                        data-widget-togglebutton="false"
+                        data-widget-deletebutton="false"
+                        data-widget-fullscreenbutton="false"
+                        data-widget-custombutton="false"
+                        data-widget-collapsed="true"
+                        data-widget-sortable="false"
+                    -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-comments"></i> </span>
+
+                        <h2>Widget Title </h2>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget content -->
+                        <div class="widget-body no-padding" data-sparkline-container>
+
+                            <table datatable-basic data-table-options="tableOptions"
+                                   class="display projects-table table table-striped table-bordered table-hover"
+                                   cellspacing="0" width="100%">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Projects</th>
+                                    <th><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> EST
+                                    </th>
+                                    <th>Contacts</th>
+                                    <th>Status</th>
+                                    <th><i class="fa fa-circle txt-color-darken font-xs"></i> Target/ <i
+                                            class="fa fa-circle text-danger font-xs"></i> Actual
+                                    </th>
+                                    <th><i class="fa fa-fw fa-calendar text-muted hidden-md hidden-sm hidden-xs"></i>
+                                        Starts
+                                    </th>
+                                    <th><i class="fa fa-fw fa-calendar text-muted hidden-md hidden-sm hidden-xs"></i>
+                                        Ends
+                                    </th>
+                                    <th>Tracker</th>
+                                </tr>
+                                </thead>
+                                <caption class="smart-datatable-child-format" data-child-control="td.details-control">
+                                    <table cellpadding="5" cellspacing="0" border="0"
+                                           class="table table-hover table-condensed">
+                                        <tr>
+                                            <td style="width:100px">Project Title:</td>
+                                            <td ng-bind-html="d.name"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Deadline:</td>
+                                            <td ng-bind-html="d.ends">}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Extra info:</td>
+                                            <td >And any further details here (images etc)...</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Comments:</td>
+                                            <td ng-bind-html="d.comments"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Action:</td>
+                                            <td ng-bind-html="d.action"></td>
+                                        </tr>
+                                    </table>
+                                </caption>
+                            </table>
+                        </div>
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+            </article>
+            <!-- WIDGET END -->
+        </div>
+        <!-- end row -->
+    </section>
+    <!-- end widget grid -->
+</div>
