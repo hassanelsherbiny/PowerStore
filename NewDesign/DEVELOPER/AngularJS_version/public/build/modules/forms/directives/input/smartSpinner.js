@@ -1,0 +1,1 @@
+define(["modules/forms/module","jquery-ui"],function(a){"use strict";return a.registerDirective("smartSpinner",function(){return{restrict:"A",compile:function(a,b){a.removeAttr("smart-spinner");var c={};"deicimal"==b.smartSpinner?c={step:.01,numberFormat:"n"}:"currency"==b.smartSpinner&&(c={min:5,max:2500,step:25,start:1e3,numberFormat:"C"}),a.spinner(c)}}})});
