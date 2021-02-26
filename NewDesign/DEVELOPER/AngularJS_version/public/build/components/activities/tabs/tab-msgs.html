@@ -1,0 +1,13 @@
+<ul class="notification-body">
+	<li ng-repeat="msg in currentActivityItems">
+		<span ng-class="{unread : msg.status == 'unread'}">
+			<a href="javascript:void(0);" class="msg">
+				<img ng-src="{{msg.image}}" alt="" class="air air-top-left margin-top-5" width="40" height="40"/>
+				<span class="from">{{msg.title}}</span>
+				<time>{{imsgnfo.time}}</time>
+				<span class="subject">{{msg.subject}}</span>
+				<span class="msg-body">{{msg.message}}</span>
+			</a>
+		</span>
+	</li>
+</ul>
