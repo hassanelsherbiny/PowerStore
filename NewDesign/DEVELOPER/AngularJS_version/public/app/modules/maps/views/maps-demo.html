@@ -1,0 +1,49 @@
+<div id="content">
+    <div class="row">
+        <big-breadcrumbs items="['Google Map', 'Custom Skins']" icon="map-marker"
+                         class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></big-breadcrumbs>
+        <div class="hidden-xs" smart-include="app/layout/partials/sub-header.tpl.html"></div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-default" ng-class="{active: currentType == key}" ng-click="setType(key)" ng-repeat="(key, style) in styles">{{style.name}}</button>
+        </div>
+        <hr/>
+    </div>
+    <!-- @link: widgetGrid directive  -->
+    <section id="widget-grid" data-widget-grid>
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- @link: jarvisWidget -->
+                <div data-jarvis-widget id="data-attribute-driven-widget" data-widget-editbutton="false"
+                     data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-color="white"
+                        style="margin-bottom: 0;">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-map-marker"></i> </span>
+                        <h2>Map demo</h2>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget content -->
+                        <div class="widget-body no-padding" data-smart-fit-app-view="#map_canvas" data-leading-y="160">
+                            <div id="map_canvas" data-smart-fill-content>
+                                <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" data-smart-map-instance="demoMap"
+                                                    options="options"></ui-gmap-google-map>
+                            </div>
+                        </div>
+                        <!-- end widget content data-gmap-src="xml/gmap/pins.xml" -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+            </article>
+            <!-- WIDGET END -->
+        </div>
+        <!-- end row -->
+    </section>
+    <!-- end widget grid -->
+</div>
