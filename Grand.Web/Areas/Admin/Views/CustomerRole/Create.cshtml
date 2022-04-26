@@ -1,0 +1,29 @@
+﻿@model CustomerRoleModel
+@{
+    //page title
+    ViewBag.Title = T("Admin.Customers.CustomerRoles.AddNew").Text;
+}
+<form asp-area="@Constants.AreaAdmin" asp-controller="CustomerRole" asp-action="Create" method="post" id="customerrole-form">
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel light form-fit">
+                <div class="x_title">
+                    <div class="caption">
+                        <i class="fa fa-users"></i>
+                        @T("Admin.Customers.CustomerRoles.AddNew")
+                        <small><i class="fa fa-arrow-circle-left"></i>@Html.ActionLink(T("Admin.Customers.CustomerRoles.BackToList").Text, "List")</small>
+                    </div>
+                    <div class="actions">
+                        <button class="btn btn-success" type="submit" name="save"><i class="fa fa-check"></i> @T("Admin.Common.Save") </button>
+                        <button class="btn btn-success" type="submit" name="save-continue"><i class="fa fa-check-circle"></i> @T("Admin.Common.SaveContinue") </button>
+                        <vc:admin-widget widget-zone="customer_role_details_buttons" additional-data="null" />
+                    </div>
+                </div>
+                <div class="x_content form">
+                   <partial name="_CreateOrUpdate" model="Model" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
