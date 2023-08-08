@@ -1,0 +1,28 @@
+﻿@model ReturnRequestReasonModel
+@{
+    //page title
+    ViewBag.Title = T("Admin.Configuration.Settings.Order.ReturnRequestReasons.AddNew").Text;
+}
+<form asp-area="@Constants.AreaAdmin" asp-controller="Setting" asp-action="ReturnRequestReasonCreate" method="post">
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel light form-fit">
+                <div class="x_title">
+                    <div class="caption">
+                        <i class="fa fa-list-alt"></i>
+                        @T("Admin.Configuration.Settings.Order.ReturnRequestReasons.AddNew")
+                        <small><i class="fa fa-arrow-circle-left"></i>@Html.ActionLink(T("Admin.Configuration.Settings.Order.ReturnRequestReasons.BackToList").Text, "ReturnRequestReasonList")</small>
+                    </div>
+                    <div class="actions">
+                        <button class="btn btn-success" type="submit" name="save"><i class="fa fa-check"></i> @T("Admin.Common.Save") </button>
+                        <button class="btn btn-success" type="submit" name="save-continue"><i class="fa fa-check-circle"></i> @T("Admin.Common.SaveContinue") </button>
+                    </div>
+                </div>
+                <div class="x_content form">
+                   <partial name="_CreateOrUpdate.ReturnRequestReason" model="Model" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
