@@ -1,0 +1,531 @@
+{
+  "format": 1,
+  "restore": {
+    "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Plugins\\Grand.Plugin.Payments.PayPalStandard\\Grand.Plugin.Payments.PayPalStandard.csproj": {}
+  },
+  "projects": {
+    "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Core\\Grand.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Core\\Grand.Core.csproj",
+        "projectName": "Grand.Core",
+        "projectPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Core\\Grand.Core.csproj",
+        "packagesPath": "C:\\Users\\PRinCe Hassan\\.nuget\\packages\\",
+        "outputPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\NuGet.Config",
+          "C:\\Users\\PRinCe Hassan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Domain\\Grand.Domain.csproj": {
+                "projectPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Domain\\Grand.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[9.3.0, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[9.3.0, )"
+            },
+            "GoogleAuthenticator": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.CodeAnalysis.CSharp": {
+              "target": "Package",
+              "version": "[3.8.0, )"
+            },
+            "Microsoft.CodeAnalysis.CSharp.Scripting": {
+              "target": "Package",
+              "version": "[3.8.0, )"
+            },
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.Extensions.DependencyModel": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[3.4.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Domain\\Grand.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Domain\\Grand.Domain.csproj",
+        "projectName": "Grand.Domain",
+        "projectPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Domain\\Grand.Domain.csproj",
+        "packagesPath": "C:\\Users\\PRinCe Hassan\\.nuget\\packages\\",
+        "outputPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\NuGet.Config",
+          "C:\\Users\\PRinCe Hassan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "DotLiquid": {
+              "target": "Package",
+              "version": "[2.0.366, )"
+            },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.11.5, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.11.5, )"
+            },
+            "MongoDB.Driver.Core": {
+              "target": "Package",
+              "version": "[2.11.5, )"
+            },
+            "MongoDB.Driver.GridFS": {
+              "target": "Package",
+              "version": "[2.11.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Framework\\Grand.Framework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Framework\\Grand.Framework.csproj",
+        "projectName": "Grand.Framework",
+        "projectPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Framework\\Grand.Framework.csproj",
+        "packagesPath": "C:\\Users\\PRinCe Hassan\\.nuget\\packages\\",
+        "outputPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Framework\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\NuGet.Config",
+          "C:\\Users\\PRinCe Hassan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Core\\Grand.Core.csproj": {
+                "projectPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Core\\Grand.Core.csproj"
+              },
+              "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Services\\Grand.Services.csproj": {
+                "projectPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Services\\Grand.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AspNetCore.HealthChecks.MongoDb": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "BundlerMinifier.Core": {
+              "target": "Package",
+              "version": "[3.2.449, )"
+            },
+            "Microsoft.AspNetCore.DataProtection.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "MiniProfiler.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[4.2.22, )"
+            },
+            "NetEscapades.AspNetCore.SecurityHeaders": {
+              "target": "Package",
+              "version": "[0.12.1, )"
+            },
+            "System.IO.FileSystem.AccessControl": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Wangkanai.Detection": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "WebEssentials.AspNetCore.PWA": {
+              "target": "Package",
+              "version": "[1.0.65, )"
+            },
+            "WebMarkupMin.AspNetCore3": {
+              "target": "Package",
+              "version": "[2.9.1, )"
+            },
+            "WebMarkupMin.Core": {
+              "target": "Package",
+              "version": "[2.9.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Services\\Grand.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Services\\Grand.Services.csproj",
+        "projectName": "Grand.Services",
+        "projectPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Services\\Grand.Services.csproj",
+        "packagesPath": "C:\\Users\\PRinCe Hassan\\.nuget\\packages\\",
+        "outputPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\NuGet.Config",
+          "C:\\Users\\PRinCe Hassan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Core\\Grand.Core.csproj": {
+                "projectPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Core\\Grand.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AWSSDK.Core": {
+              "target": "Package",
+              "version": "[3.5.1.57, )"
+            },
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[3.5.7.4, )"
+            },
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.7.0, )"
+            },
+            "Google.Apis": {
+              "target": "Package",
+              "version": "[1.49.0, )"
+            },
+            "Google.Apis.AnalyticsReporting.v4": {
+              "target": "Package",
+              "version": "[1.49.0.2197, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[2.10.1, )"
+            },
+            "MaxMind.GeoIP2": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.5.2, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.80.2, )"
+            },
+            "SkiaSharp.NativeAssets.Linux.NoDependencies": {
+              "target": "Package",
+              "version": "[2.80.2, )"
+            },
+            "Wkhtmltopdf.NetCore": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Plugins\\Grand.Plugin.Payments.PayPalStandard\\Grand.Plugin.Payments.PayPalStandard.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Plugins\\Grand.Plugin.Payments.PayPalStandard\\Grand.Plugin.Payments.PayPalStandard.csproj",
+        "projectName": "Grand.Plugin.Payments.PayPalStandard",
+        "projectPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Plugins\\Grand.Plugin.Payments.PayPalStandard\\Grand.Plugin.Payments.PayPalStandard.csproj",
+        "packagesPath": "C:\\Users\\PRinCe Hassan\\.nuget\\packages\\",
+        "outputPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Plugins\\Grand.Plugin.Payments.PayPalStandard\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\NuGet.Config",
+          "C:\\Users\\PRinCe Hassan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Core\\Grand.Core.csproj": {
+                "projectPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Core\\Grand.Core.csproj"
+              },
+              "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Domain\\Grand.Domain.csproj": {
+                "projectPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Domain\\Grand.Domain.csproj"
+              },
+              "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Framework\\Grand.Framework.csproj": {
+                "projectPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Framework\\Grand.Framework.csproj"
+              },
+              "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Services\\Grand.Services.csproj": {
+                "projectPath": "H:\\Developments\\grandnode-4.90.X\\grandnode-4.90.X\\Grand.Services\\Grand.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
