@@ -35,7 +35,7 @@ namespace Grand.Web.Controllers
             };
 
             if (model.ApplicationDBVersion == model.DatabaseVersion)
-                return RedirectToRoute("Homepage");
+                return RedirectToRoute("Home");
 
             return View(model);
         }
