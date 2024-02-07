@@ -18,6 +18,7 @@ namespace Grand.Web.Events
         {
             Customer = customer;
             Model = model;
+            Model = model;
             Form = form;
             CustomerAttributes = customerAttributes;
         }
