@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html use-lang="true">
+<head>
+    <title asp-default-title="true"></title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta-description>
+    <meta-keywords>
+    <head-custom>
+    @*This is used so that themes can inject content into the header*@
+    <partial name="Head" />
+    <css-files asp-location="Head">
+    <script-files asp-location="Head">
+    <canonical-urls> 
+    @*Favicon - upload favicon.ico file to the root directory*@
+    <vc:favicon></vc:favicon>
+    <vc:widget widget-zone="head_html_tag" additional-data="null"></vc:widget>
+</head>
+<body class="popup-window text-center px-3">
+    <vc:widget widget-zone="body_start_html_tag_after" additional-data="null"></vc:widget>
+    @RenderBody()
+    <vc:widget widget-zone="body_end_html_tag_before" additional-data="null"></vc:widget>
+    <css-files asp-location="Footer">
+    <script-files asp-location="Footer">
+</body>
+</html>
