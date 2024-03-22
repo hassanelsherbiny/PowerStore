@@ -1,0 +1,117 @@
+﻿@inject AdminAreaSettings adminAreaSettings
+@{
+    //page title
+    ViewBag.Title = T("Admin.RecurringPayments").Text;
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel light form-fit">
+            <div class="x_title">
+                <div class="caption level-caption">
+                    <i class="fa fa-refresh"></i>
+                    @T("Admin.RecurringPayments")
+                </div>
+                <vc:admin-widget widget-zone="reccuring_payment_list_buttons" additional-data="null" />
+            </div>
+            <div class="x_content form">
+                <div class="form-horizontal">
+                    <div class="form-body">
+                        <div class="x_content">
+                            <div id="recurringpayments-grid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#recurringpayments-grid").kendoGrid({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "@Html.Raw(Url.Action("List", "RecurringPayment"))",
+                        type: "POST",
+                        dataType: "json",
+                        data: addAntiForgeryToken
+                    }
+                },
+                schema: {
+                    data: "Data",
+                    total: "Total",
+                    errors: "Errors"
+                },
+                error: function(e) {
+                    display_kendoui_grid_error(e);
+                    // Cancel the changes
+                    this.cancelChanges();
+                },
+                pageSize: @(adminAreaSettings.DefaultGridPageSize),
+                serverPaging: true,
+                serverFiltering: true,
+                serverSorting: true
+            },
+            pageable: {
+                refresh: true,
+                pageSizes: [@(adminAreaSettings.GridPageSizes)]
+            },
+            editable: {
+                confirmation: false,
+                mode: "inline"
+            },
+            scrollable: false,
+            columns: [
+                {
+                    field: "Id",
+                    title: "@T("Admin.RecurringPayments.Fields.ID")",
+                    width: 120,
+                    template: '<a class="k-link" href="Edit/#=Id#">#=Id#</a>',
+                }, {
+                    field: "CustomerId",
+                    title: "@T("Admin.RecurringPayments.Fields.Customer")",
+                    width: 170,
+                    template: '<a href="@Url.Action("Edit", "Customer")/#=CustomerId#">#:CustomerEmail#</a>'
+                }, {
+                    field: "CycleLength",
+                    title: "@T("Admin.RecurringPayments.Fields.CycleLength")",
+                    width: 80
+                }, {
+                    field: "CyclePeriodStr",
+                    title: "@T("Admin.RecurringPayments.Fields.CyclePeriod")",
+                    width: 80
+                }, {
+                    field: "IsActive",
+                    title: "@T("Admin.RecurringPayments.Fields.IsActive")",
+                    width: 80,
+                    headerAttributes: { style: "text-align:center" },
+                    attributes: { style: "text-align:center" },
+                    template: '# if(IsActive) {# <i class="fa fa-check" aria-hidden="true" style="color:green"></i> #} else {# <i class="fa fa-times" aria-hidden="true" style="color:red"></i> #} #'
+                }, {
+                    field: "StartDate",
+                    title: "@T("Admin.RecurringPayments.Fields.StartDate")",
+                    width: 180,
+                    type: "date",
+                    format: "{0:G}"
+                }, {
+                    field: "NextPaymentDate",
+                    title: "@T("Admin.RecurringPayments.Fields.NextPaymentDate")",
+                    width: 180,
+                    type: "date",
+                    format: "{0:G}"
+                }, {
+                    field: "TotalCycles",
+                    title: "@T("Admin.RecurringPayments.Fields.TotalCycles")",
+                    width: 80
+                }, {
+                    field: "CyclesRemaining",
+                    title: "@T("Admin.RecurringPayments.Fields.CyclesRemaining")",
+                    width: 100
+                }
+            ]
+        });
+    });
+</script>
