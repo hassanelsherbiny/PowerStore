@@ -1,0 +1,21 @@
+﻿@model CustomerModel
+<vc:admin-widget widget-zone="customer_details_customer_roles_top" additional-data="Model" />
+@if (Model.AvailableCustomerRoles != null && Model.AvailableCustomerRoles.Count > 0)
+{
+
+    <div class="mt-checkbox-list">
+        @foreach (var customerRole in Model.AvailableCustomerRoles)
+        {
+        <label class="mt-checkbox mt-checkbox-outline control control-checkbox">
+            <input type="checkbox" name="SelectedCustomerRoleIds" value="@customerRole.Id" checked="@(Model.SelectedCustomerRoleIds!=null && Model.SelectedCustomerRoleIds.Contains(customerRole.Id))" />
+            <a href="@Url.Action("Edit", "CustomerRole")/@customerRole.Id">@customerRole.Name</a>
+            <div class="control__indicator"></div>
+        </label>
+        }
+    </div>
+}
+else
+{
+    @T("Admin.Customers.Customers.Fields.CustomerRoles.NoRoles")
+}
+<vc:admin-widget widget-zone="customer_details_customer_roles_bottom" additional-data="Model" />
