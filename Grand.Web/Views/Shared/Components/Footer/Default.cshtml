@@ -1,0 +1,233 @@
+﻿@model FooterModel
+@await Component.InvokeAsync("NewsletterBox")
+<footer>
+    <div class="container max-100">
+        <div class="row flex-row">
+            <div id="footer-block-information" class="col-lg-12 col-md-12 col-sm-12 footer-block information block">
+                <div class="step-title card mb-1 p-3 d-lg-none">
+                    <blockquote class="card-bodyquote">
+                        <span class="h5"><strong>@T("Footer.Information")</strong></span>
+                    </blockquote>
+                </div>
+                <div class="viewBox">
+                    <ul class="list-group pl-0 list-pad">
+                        @if (Model.SitemapEnabled)
+                        {
+                            <li class="list-group-item"><a href="@Url.RouteUrl("Sitemap")">@T("Sitemap")</a></li>
+                        }
+                        @if (Model.PrivacyPreference)
+                        {
+                            <li class="list-group-item"><a id="btnPrivacyPreference" href="@Url.RouteUrl("PrivacyPreference")" onclick="GetPrivacyPreference(this.href); return false;">@T("PrivacyPreference")</a></li>
+                        }
+                        @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterRow1).ToList())
+                        {
+                            <li class="list-group-item"><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name</a></li>
+                        }
+                        <li class="list-group-item"><a href="@Url.RouteUrl("ContactUs")">@T("ContactUs")</a></li>
+                        <li class="list-group-item"><a href="@Url.RouteUrl("ProductSearch")">@T("Search")</a> </li>
+                        @if (Model.NewsEnabled)
+                        {
+                            <li class="list-group-item"><a href="@Url.RouteUrl("NewsArchive")">@T("News")</a></li>
+                        }
+                        @if (Model.BlogEnabled)
+                        {
+                            <li class="list-group-item"><a href="@Url.RouteUrl("Blog")">@T("Blog")</a></li>
+                        }
+                        @if (Model.KnowledgebaseEnabled)
+                        {
+                            <li class="list-group-item"><a href="@Url.RouteUrl("Knowledgebase")">@T("Knowledgebase")</a></li>
+                        }
+                        @if (Model.RecentlyViewedProductsEnabled)
+                        {
+                            <li class="list-group-item"><a href="@Url.RouteUrl("RecentlyViewedProducts")">@T("Products.RecentlyViewedProducts")</a></li>
+                        }
+                        @if (Model.CompareProductsEnabled)
+                        {
+                            <li class="list-group-item"><a href="@Url.RouteUrl("CompareProducts")">@T("Products.Compare.List")</a></li>
+                        }
+                        @if (Model.NewProductsEnabled)
+                        {
+                            <li class="list-group-item"><a href="@Url.RouteUrl("NewProducts")">@T("Products.NewProducts")</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div id="footer-block-my-account" class="col-lg-12 col-md-12 col-sm-12 footer-block my-account block">
+                <div class="step-title card mb-1 p-3 d-lg-none">
+                    <blockquote class="card-bodyquote">
+                        <span class="h5"><strong>@T("Footer.MyAccount")</strong></span>
+
+                    </blockquote>
+                </div>
+                <div class="viewBox">
+                    <ul class="pl-0 list-group list-pad">
+                        <li class="list-group-item"><a href="@Url.RouteUrl("CustomerInfo")">@T("Account.MyAccount")</a></li>
+                        <li class="list-group-item"><a href="@Url.RouteUrl("CustomerOrders")">@T("Account.CustomerOrders")</a></li>
+                        <li class="list-group-item"><a href="@Url.RouteUrl("CustomerAddresses")">@T("Account.CustomerAddresses")</a></li>
+                        @if (Model.ShoppingCartEnabled)
+                        {
+                            <li class="list-group-item"><a href="@Url.RouteUrl("ShoppingCart")">@T("ShoppingCart")</a></li>
+                        }
+                        @if (Model.WishlistEnabled)
+                        {
+                            <li class="list-group-item"><a href="@Url.RouteUrl("Wishlist")">@T("Wishlist")</a></li>
+                        }
+                        @if (Model.AllowCustomersToApplyForVendorAccount)
+                        {
+                            <li class="list-group-item"><a href="@Url.RouteUrl("ApplyVendorAccount")">@T("Vendors.ApplyAccount")</a></li>
+                        }
+                        @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterRow2).ToList())
+                        {
+                            <li class="list-group-item"><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })" target="_blank">@topic.Name</a></li>
+                        }
+                    </ul>
+
+
+                </div>
+                <div class="viewBox">
+                    <ul class="pl-0 list-group list-pad">
+                        @foreach (var topic in Model.Topics.Where(x => x.IncludeInFooterRow3).ToList())
+                        {
+                            <li class="list-group-item"><a href="@Url.RouteUrl("Topic", new { SeName = topic.SeName })">@topic.Name</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div id="footer-block-about-us" class="col-lg-12 col-md-12 col-sm-12 footer-block about-us block">
+                <div class="step-title card mb-1 p-3 d-lg-none">
+                    <blockquote class="card-bodyquote">
+                        <span class="h5"><strong>@T("Footer.AboutUs")</strong></span>
+                    </blockquote>
+                </div>
+                <div class="viewBox">
+                    <ul class="pl-0 list-group list-pad">
+                        @if (!string.IsNullOrEmpty(Model.CompanyName))
+                        {
+                            <li class="list-group-item">
+                                <span>@T("Footer.CompanyName.Title")</span>
+                                <span>@Model.CompanyName</span>
+                            </li>
+                        }
+                        @if (!string.IsNullOrEmpty(Model.CompanyAddress))
+                        {
+                            <li class="list-group-item">
+                                <span>@T("Footer.Address.Title")</span>
+                                <span>@Model.CompanyAddress</span>
+                            </li>
+                        }
+                        @if (!string.IsNullOrEmpty(Model.CompanyEmail))
+                        {
+                            <li class="list-group-item">
+                                <span>@T("footer.Email.Title")</span>
+                                <span>@Model.CompanyEmail</span>
+                            </li>
+                        }
+                        @if (!string.IsNullOrEmpty(Model.CompanyPhone))
+                        {
+                            <li class="list-group-item">
+                                <span>@T("Footer.Phone.Title")</span>
+                                <span>@Model.CompanyPhone</span>
+                            </li>
+                        }
+                        @if (!string.IsNullOrEmpty(Model.CompanyHours))
+                        {
+                            <li class="list-group-item">
+                                <span>@T("Footer.Hour.Title")</span>
+                                <span>@Model.CompanyHours</span>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <ol class="d-flex flex-row list-group justify-content-center w-100 flex-wrap social-icons list-pad pb-0">
+                @if (!string.IsNullOrEmpty(Model.FacebookLink))
+                {
+                    <li class="list-group-item facebook">
+                        <a title="facebook" href="@Model.FacebookLink" rel="noopener" target="_blank">
+                            <span class="mdi mdi-facebook"></span>
+                            <span class="sr-only">Facebook</span>
+
+                        </a>
+                    </li>
+                }
+                @if (!string.IsNullOrEmpty(Model.TwitterLink))
+                {
+                    <li class="list-group-item twitter">
+                        <a title="twitter" href="@Model.TwitterLink" rel="noopener" target="_blank">
+                            <span class="mdi  mdi-twitter"></span>
+                            <span class="sr-only">twitter</span>
+                        </a>
+                    </li>
+                }
+                @if (Model.NewsEnabled)
+                {
+                    <li class="list-group-item rss">
+                        <a title="rss" href="@Url.RouteUrl("NewsRSS", new {languageId = Model.WorkingLanguageId})" rel="noopener" target="_blank">
+                            <span class="mdi mdi-rss"></span>
+                            <span class="sr-only">@T("NewsRSS")</span>
+                        </a>
+                    </li>
+                }
+                @if (!string.IsNullOrEmpty(Model.YoutubeLink))
+                {
+                    <li class="list-group-item youtube">
+                        <a title="youtube" href="@Model.YoutubeLink" rel="noopener" target="_blank">
+                            <span class="mdi mdi-youtube"></span>
+                            <span class="sr-only">youtube</span>
+                        </a>
+                    </li>
+                }
+                @if (!string.IsNullOrEmpty(Model.InstagramLink))
+                {
+                    <li class="list-group-item instagram">
+                        <a href="@Model.InstagramLink" rel="noopener" target="_blank">
+                            <span class="mdi mdi-instagram"></span>
+                            <span class="sr-only">instagram</span>
+                        </a>
+                    </li>
+                }
+                @if (!string.IsNullOrEmpty(Model.LinkedInLink))
+                {
+                    <li class="list-group-item linkedin">
+                        <a href="@Model.LinkedInLink" rel="noopener" target="_blank">
+                            <span class="mdi mdi-linkedin"></span>
+                            <span class="sr-only">linkedin</span>
+                        </a>
+                    </li>
+                }
+                @if (!string.IsNullOrEmpty(Model.PinterestLink))
+                {
+                    <li class="list-group-item pinterest">
+                        <a href="@Model.PinterestLink" rel="noopener" target="_blank">
+                            <span class="sr-only">pinterest</span>
+                            <span class="mdi mdi-pinterest"></span>
+                        </a>
+                    </li>
+                }
+            </ol>
+        </div>
+        <div class="footer-lower small">
+            <div class="row">
+                <div class="col-12 col-md pb-1 pt-1 flex-column text-lg-left text-center copyright">
+                    <span class="footer-disclaimer">@T("Content.CopyrightNotice", DateTime.Now.Year, Model.StoreName)</span>
+                    @if (Model.DisplayTaxShippingInfoFooter)
+                    {
+                        <span class="footer-tax-shipping">
+                            @T(Model.InclTax ? "Footer.TaxShipping.InclTax" : "Footer.TaxShipping.ExclTax", Url.RouteUrl("Topic", new { SeName = TopicSeNameConstants.Shippinginfo }))
+                        </span>
+                    }
+                </div>
+                @await Component.InvokeAsync("StoreThemeSelector")
+                <div class="col-12 col-md-6  pb-1 pt-1 text-center text-lg-right">
+                <span>Shopping cart software by </span><a class="pr-1 text-success" href="https://grandnode.com/">GrandNode</a>™
+                powered by <a class="pr-1" href="https://nopcommerce.com/">nopCommerce</a>
+            </div>
+            </div>
+        </div>
+    </div>
+    @await Component.InvokeAsync("Widget", new { widgetZone = "footer" })
+</footer>
+<a href="#" id="back-to-top" title="Back to top">
+    <span class="mdi mdi-chevron-up"></span>
+    <span class="sr-only">back to top</span>
+</a>
