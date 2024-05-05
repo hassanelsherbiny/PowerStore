@@ -1,0 +1,164 @@
+﻿@model GiftCardListModel
+@inject AdminAreaSettings adminAreaSettings
+
+@{
+    //page title
+    ViewBag.Title = T("Admin.GiftCards").Text;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel light form-fit">
+            <div class="x_title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i>
+                    @T("Admin.GiftCards")
+                </div>
+                <div class="actions btn-group btn-group-devided">
+                    <a href="@Url.Action("Create")" class="btn green"><i class="fa fa-plus"></i><span class="d-none d-sm-inline"> @T("Admin.Common.AddNew") </span></a>
+                    <vc:admin-widget widget-zone="gift_card_list_buttons" additional-data="null" />
+                </div>
+            </div>
+            <div class="x_content form">
+                <div class="form-horizontal">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <admin-label asp-for="ActivatedId" />
+                            <div class="col-md-9 col-sm-9">
+                                <admin-select asp-for="ActivatedId" asp-items="Model.ActivatedList" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <admin-label asp-for="CouponCode" />
+                            <div class="col-md-9 col-sm-9">
+                                <admin-input asp-for="CouponCode" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <admin-label asp-for="RecipientName" />
+                            <div class="col-md-9 col-sm-9">
+                                <admin-input asp-for="RecipientName" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="offset-md-3 offset-sm-3 col-md-9 col-sm-9">
+                                <button class="btn btn-success filter-submit" id="search-giftcards">
+                                    <i class="fa fa-search"></i> @T("Admin.Common.Search")
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="x_content">
+                <div id="giftcards-grid"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+        $(document).ready(function () {
+            $("#giftcards-grid").kendoGrid({
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: "@Html.Raw(Url.Action("GiftCardList", "GiftCard"))",
+                            type: "POST",
+                            dataType: "json",
+                            data: additionalData
+                        }
+                    },
+                    schema: {
+                        data: "Data",
+                        total: "Total",
+                        errors: "Errors"
+                    },
+                    error: function(e) {
+                        display_kendoui_grid_error(e);
+                        // Cancel the changes
+                        this.cancelChanges();
+                    },
+                    pageSize: @(adminAreaSettings.DefaultGridPageSize),
+                    serverPaging: true,
+                    serverFiltering: true,
+                    serverSorting: true
+                },
+                pageable: {
+                    refresh: true,
+                    pageSizes: [@(adminAreaSettings.GridPageSizes)]
+                },
+                editable: {
+                    confirmation: false,
+                    mode: "inline"
+                },
+                scrollable: false,
+                columns: [{
+                    field: "AmountStr",
+                    title: "@T("Admin.GiftCards.Fields.Amount")",
+                    template: '<a class="k-link" href="Edit/#=Id#">#=AmountStr#</a>',
+                    width: 100,
+                }, {
+                    field: "RemainingAmountStr",
+                    title: "@T("Admin.GiftCards.Fields.RemainingAmount")",
+                    template: '<a class="k-link" href="Edit/#=Id#">#=RemainingAmountStr#</a>',
+                    width: 100,
+                }, {
+                    field: "GiftCardCouponCode",
+                    title: "@T("Admin.GiftCards.Fields.GiftCardCouponCode")",
+                    template: '<a class="k-link" href="Edit/#=Id#">#=GiftCardCouponCode#</a>',
+                    width: 120,
+                }, {
+                    field: "RecipientName",
+                    title: "@T("Admin.GiftCards.Fields.RecipientName")",
+                    minScreenWidth: 750,
+                    width: 150,
+                }, {
+                    field: "IsGiftCardActivated",
+                    title: "@T("Admin.GiftCards.Fields.IsGiftCardActivated")",
+                    width: 100,
+                    headerAttributes: { style: "text-align:center" },
+                    attributes: { style: "text-align:center" },
+                    template: '# if(IsGiftCardActivated) {# <i class="fa fa-check" aria-hidden="true" style="color:green"></i> #} else {# <i class="fa fa-times" aria-hidden="true" style="color:red"></i> #} #'
+                }, {
+                    field: "CreatedOn",
+                    title: "@T("Admin.GiftCards.Fields.CreatedOn")",
+                    width: 180,
+                    type: "date",
+                    format: "{0:G}"
+                }]
+            });
+        });
+</script>
+<script>
+
+        $(document).ready(function () {
+
+            $('#search-giftcards').click(function () {
+                var grid = $('#giftcards-grid').data('kendoGrid');
+                grid.dataSource.page(1); //new search. Set page size to 1
+                //grid.dataSource.read(); we already loaded the grid above using "page" function
+                return false;
+            });
+        });
+
+        $("#@Html.FieldIdFor(model => model.CouponCode)").keydown(function (event) {
+            if (event.keyCode == 13) {
+                $("#search-giftcards").click();
+                return false;
+            }
+        });
+
+        function additionalData() {
+            var data = {
+                ActivatedId: $('#@Html.FieldIdFor(model => model.ActivatedId)').val(),
+                CouponCode: $('#@Html.FieldIdFor(model => model.CouponCode)').val(),
+                RecipientName: $('#@Html.FieldIdFor(model => model.RecipientName)').val()
+            };
+            addAntiForgeryToken(data);
+            return data;
+        }
+
+</script>

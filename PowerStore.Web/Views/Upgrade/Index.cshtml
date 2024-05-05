@@ -1,0 +1,72 @@
+﻿@model UpgradeModel
+@using PowerStore.Web.Models.Upgrade;
+@{
+    Layout = "";
+}
+<link href="@Url.Content("~/content/install/style.css")" type="text/css" rel="stylesheet" />
+<script src="@Url.Content("~/scripts/jquery-3.3.1.min.js")"></script>
+<script src="@Url.Content("~/scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/scripts/jquery.validate.unobtrusive.min.js")"></script>
+<script src="@Url.Content("~/scripts/public.common.js")"></script>
+<link href="@Url.Content("~/content/bootstrap/bootstrap.min.css")" rel="stylesheet">
+<script src="@Url.Content("~/content/bootstrap/popper.min.js")"></script>
+<script src="@Url.Content("~/content/bootstrap/bootstrap.min.js")"></script>
+
+<div class="container">
+    <div class="page upgrade-page">
+        @if (Model.ApplicationVersion != Model.DatabaseVersion)
+        {
+            <h1 class="h4 generalTitle"> @T("UpgradeSystem.NonActual")</h1>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card text-xs-center">
+                        <div class="card-body">
+                            <h2 class="h4">@T("UpgradeSystem.DatabaseVersion"): @Model.DatabaseVersion</h2>
+                            <h2 class="h4">@T("UpgradeSystem.ApplicationVersion"): @Model.ApplicationVersion</h2>
+                            <h2 class="h6 mt-1 mb-1 text-success">@T("UpgradeSystem.Message1")</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form asp-controller="Upgrade" asp-action="Index" method="post" id="upgrade-form">
+                <div class="btn-group my-3">
+                    <input type="submit" name="run-upgrade" class="btn btn-success upgrade-page" value="@T("UpgradeSystem.RunUpgrade")">
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        $('#upgrade-form').submit(function () {
+                            $('html,body').animate({
+                                scrollTop: 0
+                            }, 100);
+                            window.setTimeout(function () {
+                                $(".throbber").show();
+                            }, 1000);
+                            $('input[type=submit]', this).attr('disabled', 'disabled');
+                        });
+                    });
+                </script>
+            </form>
+        }
+        else
+        {
+            <div class="page-title">
+                <h1 class="generalTitle">@T("UpgradeSystem.Actual")</h1>
+            </div>
+        }
+        <div class="throbber">
+            <div class="curtain">
+            </div>
+
+            <div class="curtain-content">
+                <div>
+                    <h1 class="throbber-header">Upgrade process, please wait ...</h1>
+                    <div class="spinner active">
+                        <svg style="width:100px; height:100px" viewBox="0 0 64 64">
+                            <circle cx="32" cy="32" r="29" fill="none" stroke-width="3" stroke-miterlimit="10"></circle>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

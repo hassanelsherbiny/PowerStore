@@ -1,0 +1,83 @@
+﻿@{
+    //page title
+    ViewBag.Title = T("Admin.Configuration.EmailAccounts").Text;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel light form-fit">
+            <div class="x_title">
+                <div class="caption">
+                    <i class="fa fa-users"></i>
+                   @T("Admin.Configuration.EmailAccounts")
+                </div>
+                <div class="actions">
+                    <a href="@Url.Action("Create")" class="btn green"><i class="fa fa-plus"></i><span class="d-none d-sm-inline"> @T("Admin.Common.AddNew") </span></a>
+                    <vc:admin-widget widget-zone="email_account_list_buttons" additional-data="null" />
+                </div>
+            </div>
+            <div class="x_content form">
+                <div id="email-accounts-grid"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#email-accounts-grid").kendoGrid({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "@Html.Raw(Url.Action("List", "EmailAccount"))",
+                        type: "POST",
+                        dataType: "json",
+                        data: addAntiForgeryToken
+                    }
+                },
+                schema: {
+                    data: "Data",
+                    total: "Total",
+                    errors: "Errors"
+                },
+                error: function(e) {
+                    display_kendoui_grid_error(e);
+                    // Cancel the changes
+                    this.cancelChanges();
+                },
+                serverPaging: true,
+                serverFiltering: true,
+                serverSorting: true
+            },
+            pageable: {
+                refresh: true,
+                numeric: false,
+                previousNext: false,
+                info: false
+            },
+            editable: {
+                confirmation: false,
+                mode: "inline"
+            },
+            scrollable: false,
+            columns: [{
+                field: "Email",
+                title: "@T("Admin.Configuration.EmailAccounts.Fields.Email")",
+                template: '<a class="k-link" href="Edit/#=Id#">#=Email#</a>',
+            }, {
+                field: "DisplayName",
+                title: "@T("Admin.Configuration.EmailAccounts.Fields.DisplayName")"
+            }, {
+                field: "IsDefaultEmailAccount",
+                title: "@T("Admin.Configuration.EmailAccounts.Fields.IsDefaultEmailAccount")",
+                width: 100,
+                headerAttributes: { style: "text-align:center" },
+                attributes: { style: "text-align:center" },
+                template: '# if(IsDefaultEmailAccount) {# <i class="fa fa-check" aria-hidden="true" style="color:green"></i> #} else {# <i class="fa fa-times" aria-hidden="true" style="color:red"></i> #} #'
+            }, {
+                field: "Id",
+                title: "@T("Admin.Configuration.EmailAccounts.Fields.MarkAsDefaultEmail")",
+                template: '<a href="@Url.Action("MarkAsDefaultEmail", "EmailAccount")/#=Id#" class="k-button">@T("Admin.Configuration.EmailAccounts.Fields.MarkAsDefaultEmail")</a>'
+            }]
+        });
+    });
+</script>

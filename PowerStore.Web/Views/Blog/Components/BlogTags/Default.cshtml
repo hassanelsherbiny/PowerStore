@@ -1,0 +1,18 @@
+﻿@model BlogPostTagListModel
+@using PowerStore.Web.Models.Blogs
+@if (Model.Tags.Any())
+{
+    <div id="block-popular-blogtags" class="block block-popular-blogtags">
+        <h5 class="generalTitle"><strong>@T("Blog.TagCloud")</strong></h5>
+        <div class="viewBox">
+            <div class="product-tags-list">
+                @foreach (var item in Model.Tags)
+                {
+                    <a class="btn btn-sm btn-outline-secondary" href="@Url.RouteUrl("BlogByTag", new { tag = item.Name })" style="font-size:@(Model.GetFontSize(item))%;">
+                        @item.Name
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,18 @@
+﻿@using PowerStore.Core.Infrastructure
+@using PowerStore.Framework.Themes
+@inject IThemeContext themeContext
+@{
+    var themeName = themeContext.WorkingThemeName;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title asp-default-title="true"></title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <link href="@Url.Content(string.Format("~/Themes/{0}/Content/css/print.css", themeName))" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/scripts/jquery-3.3.1.min.js")"></script>
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>

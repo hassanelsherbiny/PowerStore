@@ -1,0 +1,69 @@
+﻿@inject IPageHeadBuilder pagebuilder
+@{
+    //page title
+    ViewBag.Title = T("Admin.Catalog.Categories.Manage").Text;
+    pagebuilder.AppendScriptParts(ResourceLocation.Head, "~/scripts/bootstrap-treeview.js");
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel light form-fit">
+            <div class="x_title">
+                <div class="caption">
+                    <i class="fa fa-sitemap"></i>
+                    @T("Admin.Catalog.Categories.Manage")
+                    <small>@Html.ActionLink("(" + T("Admin.Catalog.Categories.SwitchToListView") + ")", "List")</small>
+                </div>
+                <div class="actions btn-group btn-group-devided">
+                    <a href="@Url.Action("Create")" class="btn green"><i class="fa fa-plus"></i><span class="d-none d-sm-inline"> @T("Admin.Common.AddNew") </span></a>
+                </div>
+            </div>
+            <div class="x_content">
+                <div id="tree"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            cache: false,
+            url: "@(Url.Action("NodeList", "Category"))",
+            dataType: 'json',
+            data: addAntiForgeryToken,
+            success: function (data) {
+                $('#tree').treeview({
+                    data: createTree(data),
+                    collapseIcon: "fa fa-folder-open",
+                    expandIcon: "fa fa-folder",
+                    emptyIcon: "fa fa-folder-open",
+                    backColor: "#e9ecef",
+                    showTags: true,
+                    levels: 0,
+                    enableLinks: true
+                });
+            },
+            error: function () {
+                alert('Error');
+            }
+        });
+    });
+
+    function createTree(data) {
+        markAsArticle(data);
+        return data;
+    }
+
+    function markAsArticle(nodes) {
+        for (var i = 0; i < nodes.length; i++){
+            nodes[i].tags = ["@(Url.Action("Edit"))" + "/" + nodes[i].id];
+            nodes[i].selectable = false;
+            nodes[i].backColor = "#ffffff";
+
+            if (nodes[i].nodes.length > 0) {
+                markAsArticle(nodes[i].nodes);
+            }
+        }
+    }
+</script>

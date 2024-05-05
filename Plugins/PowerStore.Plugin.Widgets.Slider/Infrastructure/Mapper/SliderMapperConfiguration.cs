@@ -1,0 +1,64 @@
+﻿using AutoMapper;
+using PowerStore.Core.Mapper;
+using PowerStore.Plugin.Widgets.Slider.Domain;
+using PowerStore.Plugin.Widgets.Slider.Models;
+
+namespace PowerStore.Plugin.Widgets.Slider.Infrastructure.Mapper
+{
+    public class SliderMapperConfiguration : Profile, IAutoMapperProfile
+    {
+        protected string SetObjectEntry(SlideModel model)
+        {
+            if(model.SliderTypeId == (int)SliderType.HomePage)
+                return "";
+
+            if (model.SliderTypeId == (int)SliderType.Category)
+                return model.CategoryId;
+
+            if (model.SliderTypeId == (int)SliderType.Manufacturer)
+                return model.ManufacturerId;
+
+            return "";
+        }
+        protected string GetCategoryId(PictureSlider pictureSlider)
+        {
+            if (pictureSlider.SliderType == SliderType.Category)
+                return pictureSlider.ObjectEntry;
+
+            return "";
+        }
+
+        protected string GetManufacturerId(PictureSlider pictureSlider)
+        {
+            if (pictureSlider.SliderType == SliderType.Manufacturer)
+                return pictureSlider.ObjectEntry;
+
+            return "";
+        }
+
+        public SliderMapperConfiguration()
+        {
+            CreateMap<SlideModel, PictureSlider>()
+                .ForMember(dest => dest.ObjectEntry, mo => mo.MapFrom(x=>SetObjectEntry(x)))
+                .ForMember(dest => dest.Locales, mo => mo.Ignore());
+
+            CreateMap<PictureSlider, SlideModel>()
+                .ForMember(dest => dest.CategoryId, mo => mo.MapFrom(x => GetCategoryId(x)))
+                .ForMember(dest => dest.ManufacturerId, mo => mo.MapFrom(x => GetManufacturerId(x)))
+                .ForMember(dest => dest.Locales, mo => mo.Ignore());
+
+            CreateMap<SlideListModel, PictureSlider>()
+                .ForMember(dest => dest.Locales, mo => mo.Ignore())
+                .ForMember(dest => dest.Stores, mo => mo.Ignore());
+
+            CreateMap<PictureSlider, SlideListModel>()
+                .ForMember(dest => dest.GenericAttributes, mo => mo.Ignore())
+                .ForMember(dest => dest.PictureUrl, mo => mo.Ignore())
+                .ForMember(dest => dest.ObjectType, mo => mo.MapFrom(y=>y.SliderType.ToString()));
+        }
+        public int Order
+        {
+            get { return 0; }
+        }
+    }
+}

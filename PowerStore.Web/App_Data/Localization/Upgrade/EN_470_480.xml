@@ -1,0 +1,278 @@
+<Language>
+  <LocaleResource Name="Sitemap.KnowledgebaseArticles">
+    <Value>Knowledgebase Articles</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ContentManagement.Blog.BlogPosts.Fields.CreateDate">
+    <Value>Create date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ContentManagement.Blog.BlogPosts.Fields.CreateDate.Hint">
+    <Value>Allow user to change create date for the blog post.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.EncryptionKey.TooShort">
+    <Value>Encryption private key must be 24 characters long</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.Fields.Owner">
+    <Value>Owner</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.Fields.Owner.hint">
+    <Value>Allow to assign owner email account</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.Fields.OrderTags">
+    <Value>Order's tags</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.Fields.OrderTags.Hint">
+    <Value>
+      Order's tags are keywords that this order can also be identified by.
+      Enter a comma separated list of the tags to be associated with this order.
+    </Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.OrderTags">
+    <Value>Order's tags</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.OrderTags.BackToList">
+    <Value>Back to tag list</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.OrderTags.EditTagDetails">
+    <Value>Edit order's tag details</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.OrderTags.Fields.Name">
+    <Value>Tag name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.OrderTags.Fields.Name.Hint">
+    <Value>The name of the order's tag.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.OrderTags.Fields.Name.Required">
+    <Value>Please provide a name.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.ProductTags.Fields.OrderCount">
+    <Value>Tagged orders</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.OrderTags.Fields.OrderNumber">
+    <Value>Order's number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.OrderTags.Info">
+    <Value>Order's tag info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.OrderTags.Orders">
+    <Value>Orders</Value>
+  </LocaleResource>
+  <LocaleResource Name="Permission.ManageOrderTags">
+    <Value>Admin area. Manage Order Tags</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.Fields.SaveOrderTags">
+    <Value>Save</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.Fields.CancelOrderTags">
+    <Value>Cancel</Value>
+  </LocaleResource>
+  <LocaleResource Name="PageTitle.SubAccounts">
+    <Value>Subaccounts</Value>
+  </LocaleResource>
+  <LocaleResource Name="Account.SubAccounts">
+    <Value>Subaccounts</Value>
+  </LocaleResource>
+  <LocaleResource Name="Account.SubAccounts.NotExists">
+    <Value>No subaccounts</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.fields.active">
+    <Value>Active account</Value>
+  </LocaleResource>
+  <LocaleResource Name="Account.SubAccount.AddNew">
+    <Value>Add new account</Value>
+  </LocaleResource>
+  <LocaleResource Name="Account.SubAccount.Edit">
+    <Value>Edit account</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.List.OrderTagId">
+    <Value>Order's tag</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.CustomerRoles.Fields.MinOrderAmount">
+    <Value>Min order total amount</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.CustomerRoles.Fields.MinOrderAmount.Hint">
+    <Value>Enter minimum order total amount.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.CustomerRoles.Fields.MaxOrderAmount">
+    <Value>Max order total amount</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.CustomerRoles.Fields.MaxOrderAmount.Hint">
+    <Value>Enter maximum order total amount.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Checkout.MinMaxOrderTotalAmount">
+    <Value>Order total amount does not meet the requirements.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.ACL.Actions">
+    <Value>Actions</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.CustomerRoles.Acl">
+    <Value>Access control list</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.CustomerRoles.Acl.Fields.Access">
+    <Value>Access</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.CustomerRoles.Acl.Fields.Actions">
+    <Value>Actions</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.CustomerRoles.Acl.Fields.Name">
+    <Value>Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.CustomerRoles.Acl.SaveBeforeEdit">
+    <Value>You need to save before you can edit access control list.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.System.AdditionsRobotsTxt">
+    <Value>Additions Robots.txt </Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Categories.Fields.BottomDescription">
+    <Value>Bottom description</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Categories.Fields.BottomDescription.Hint">
+    <Value>Additional category description, which will be visible at the bottom of the page.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Manufacturers.Fields.BottomDescription">
+    <Value>Bottom description</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Manufacturers.Fields.BottomDescription.Hint">
+    <Value>Additional manufacturer description, which will be visible at the bottom of the page.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.StorePicture">
+    <Value>Open Graph/Twitter Store Picture</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.StorePicture.Hint">
+    <Value>Upload the picture of the store. It will be visible as a store preview when you will share your store on social media.</Value>
+  </LocaleResource>
+  <LocaleResource Name="PrivacyPreference">
+    <Value>Privacy Settings</Value>
+  </LocaleResource>
+  <LocaleResource Name="PrivacyPreference.Center">
+    <Value>Privacy Preference Center</Value>
+  </LocaleResource>
+  <LocaleResource Name="PrivacyPreference.Description">
+    <Value>PowerStorenode uses necessary cookies for the correct operation of the website. Other categories of cookies may be used to personalize your experience.</Value>
+  </LocaleResource>
+  <LocaleResource Name="PrivacyPreference.System.Name">
+    <Value>Application cookies</Value>
+  </LocaleResource>
+  <LocaleResource Name="PrivacyPreference.System.FullDescription">
+    <Value>These cookies are necessary for the correct functioning of our website and allow the use of essential functionalities during your navigation. </Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.InvoiceHeaderText">
+    <Value>Invoice header text</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.InvoiceHeaderText.Hint">
+    <Value>Enter the text that will appear at the header of generated invoices.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.InvoiceFooterText">
+    <Value>Invoice footer text</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.InvoiceFooterText.Hint">
+    <Value>Enter the text that will appear at the bottom of generated invoices.</Value>
+  </LocaleResource>
+  <LocaleResource Name="EUCookieLaw.Accept">
+    <Value>I accept cookies</Value>
+  </LocaleResource>
+  <LocaleResource Name="EUCookieLaw.Refuse">
+    <Value>I refuse cookies</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayPrivacyPreference">
+    <Value>Display Privacy Preference</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayPrivacyPreference.Hint">
+    <Value>Check this box if you want to display privacy preferences</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.PremiumThemes">
+    <Value>Customize your store with one of a premium theme</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.Order.DaysToCancelUnpaidOrder">
+    <Value>Automatically cancel unpaid and pending orders after X days</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.Order.DaysToCancelUnpaidOrder.Hint">
+    <Value>Enter the number of days after which the unpaid and pending orders will be canceled.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.Order.DaysToCancelUnpaidOrder.Validator">
+    <Value>Days To Cancel Unpaid and pending Orders Must Be Greater Than Zero</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.settings.generalcommon.premiumthemes">
+    <Value>Customize your store with one of our premium themes</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.Addresses">
+    <Value>Billing and Shipping</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Shipping.DeliveryDates.Info">
+    <Value>Info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.Orders.DaysToCancelUnpaidOrder.Note">
+    <Value>Scheduled task responsible for automatically cancel unpaid and pending orders is disabled by default. Please enable it before use.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.Orders.MinOrderSubtotalAmount.Note">
+    <Value>Min/Max Order subtotal amount can be configured also on a specified customer role.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Login.Email">
+    <Value>Email</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Login.ForgotPassword">
+    <Value>Forgot password?</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Login.LoginButton">
+    <Value>Log in</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Login.PageTitle">
+    <Value>PowerStoreNode admin</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Login.Password">
+    <Value>Password</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Login.RememberMe">
+    <Value>Remember me?</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Login.Title">
+    <Value>Welcome, please sign in</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Login.Unsuccessful">
+    <Value>Login was unsuccessful. Please correct the errors and try again.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Login.UserName">
+    <Value>Username</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Login.TwoFactorAuth.DigitCode">
+    <Value>Code:</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Login.TwoFactorAuth.EnterCode">
+    <Value>Please enter the security code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Login.TwoFactorAuth.PageTitle.Login">
+    <Value>Two factory authentication login</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Login.TwoFactorAuth.SendCode">
+    <Value>Send code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.PushNotifications.AppId">
+    <Value>AppId</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.PushNotifications.AppId.Hint">
+    <Value>Provide the AppId</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.CustomerUser.HideSubaccountsTab">
+    <Value>Hide Subaccounts Tab</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.CustomerUser.HideSubaccountsTab.Hint">
+    <Value>Check if you want to hide the Subaccounts tab in "My Account" section.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.CustomerUser.AllowUsersToChangeEmail">
+    <Value>Allow users to change email</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.CustomerUser.AllowUsersToChangeEmail.Hint">
+    <Value>Check if you want to allow users to change their main email accounts</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Plugins.Description.Note">
+    <Value>NOTE: Due to the fact that we provide all possible versions of the plugin, please make sure you want to upload the correct ZIP file (with the correct structure). The correct file structure is Plugin.zip -> Plugin directory -> Content of the plugin. Otherwise, each attempt to use the Upload Plugin form will fail.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Currencies.Fields.NumberDecimal">
+    <Value>The number of decimal places in the return value</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Currencies.Fields.NumberDecimal.Hint">
+    <Value>Allow to set the number of decimal places in the return value (round price).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Account.Login.NewCustomer">
+    <Value>Don't have an account?</Value>
+  </LocaleResource>
+</Language>

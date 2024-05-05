@@ -1,0 +1,125 @@
+﻿@{
+    //page title
+    ViewBag.Title = T("Admin.ContentManagement.Widgets").Text;
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel light form-fit">
+            <div class="x_title">
+                <div class="caption level-caption">
+                    <i class="fa fa-tasks"></i>
+                    @T("Admin.ContentManagement.Widgets")
+                </div>
+                <vc:admin-widget widget-zone="widget_list_buttons" additional-data="Model" />
+            </div>
+            <div class="x_content form">
+                <div class="form-horizontal">
+                    <div class="form-body">
+                        <div class="x_content">
+                            <div id="widgets-grid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $("#widgets-grid").kendoGrid({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "@Html.Raw(Url.Action("List", "Widget"))",
+                        type: "POST",
+                        dataType: "json",
+                        data: addAntiForgeryToken
+                    },
+                    update: {
+                        url: "@Html.Raw(Url.Action("WidgetUpdate", "Widget"))",
+                        type: "POST",
+                        dataType: "json",
+                        data: addAntiForgeryToken
+                    }
+                },
+                schema: {
+                    data: "Data",
+                    total: "Total",
+                    errors: "Errors",
+                    model: {
+                        id: "SystemName",
+                        fields: {
+                            FriendlyName: { editable: false, type: "string" },
+                            SystemName: { editable: false, type: "string" },
+                            DisplayOrder: { editable: true, type: "number" },
+                            IsActive: { editable: true, type: "boolean" }
+                        }
+                    }
+                },
+                requestEnd: function (e) {
+                    if (e.type == "update") {
+                        this.read();
+                    }
+                },
+                error: function (e) {
+                    display_kendoui_grid_error(e);
+                    // Cancel the changes
+                    this.cancelChanges();
+                },
+                serverPaging: true,
+                serverFiltering: true,
+                serverSorting: true
+            },
+            pageable: {
+                refresh: true,
+                numeric: false,
+                previousNext: false,
+                info: false
+            },
+            editable: {
+                confirmation: false,
+                mode: "inline"
+            },
+            scrollable: false,
+            columns: [{
+                field: "FriendlyName",
+                title: "@T("Admin.ContentManagement.Widgets.Fields.FriendlyName")",
+                width: 250,
+                template: '<a class="k-link" href="#=ConfigurationUrl#">#=FriendlyName#</a>',
+            }, {
+                field: "SystemName",
+                title: "@T("Admin.ContentManagement.Widgets.Fields.SystemName")",
+                width: 250,
+                template: '<a class="k-link" href="#=ConfigurationUrl#">#=SystemName#</a>',
+            }, {
+                field: "DisplayOrder",
+                title: "@T("Admin.ContentManagement.Widgets.Fields.DisplayOrder")",
+                //integer format
+                format: "{0:0}",
+                width: 100
+            }, {
+                field: "IsActive",
+                title: "@T("Admin.ContentManagement.Widgets.Fields.IsActive")",
+                width: 100,
+                headerAttributes: { style: "text-align:center" },
+                attributes: { style: "text-align:center" },
+                template: '# if(IsActive) {# <i class="fa fa-check" aria-hidden="true" style="color:green"></i> #} else {# <i class="fa fa-times" aria-hidden="true" style="color:red"></i> #} #'
+            }, {
+                command: {
+                    name: "edit",
+                    text: {
+                        edit: "@T("Admin.Common.Edit")",
+                        update: "@T("Admin.Common.Update")",
+                        cancel: "@T("Admin.Common.Cancel")"
+                    }
+                },
+                title: "@T("Admin.Common.Edit")",
+                width: 150
+            }]
+        });
+    });
+</script>

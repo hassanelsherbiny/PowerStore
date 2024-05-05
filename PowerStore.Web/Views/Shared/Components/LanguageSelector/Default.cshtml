@@ -1,0 +1,54 @@
+﻿@model LanguageSelectorModel
+@inject IWebHelper webHelper
+@if (Model.AvailableLanguages.Count > 1)
+{
+    var returnurl = webHelper.GetRawUrl(Context.Request);
+
+    if (Model.UseImages)
+    {
+        <div class="btn-group language-selector btn-group-sm float-xs-right align-self-center d-block pr-1">
+            <ul class="list-inline language-list pl-0 mb-0 d-flex align-items-center">
+                @foreach (var lang in Model.AvailableLanguages)
+                {
+                    <li class="list-inline-item">
+                        <a  href="@Url.RouteUrl("ChangeLanguage", new {langid = lang.Id, returnurl})" title="@lang.Name">
+                            <img title='@lang.Name' alt='@lang.Name' @(lang.Id == Model.CurrentLanguageId ? " class=selected" : null)
+                                 src="@Url.Content("~/content/images/flags/" + @lang.FlagImageFileName) " />
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+    else
+    {
+        var languages = Model.AvailableLanguages.Select(lang => new SelectListItem
+        {
+            Text = lang.Name,
+            Value = Url.RouteUrl("ChangeLanguage", new { langid = lang.Id, returnurl }),
+            Selected = lang.Id.Equals(Model.CurrentLanguageId)
+        });
+
+        <div class="language-selector d-block btn-group btn-group-sm float-xs-right pr-1">
+            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                <span>
+                    @languages.FirstOrDefault(x => x.Selected).Text
+                </span>
+                <span class="sr-only">Toggle Dropdown</span>
+                <span class="mdi mdi-chevron-down"></span>
+            </button>
+            <div class="dropdown-menu">
+                <ul class="pl-0 mb-0">
+                    @foreach (var item in languages)
+                    {
+                        var className = item.Selected ? "active" : "";
+                        <li class="@className">
+                            <a class="text-dark" href="@item.Value">@item.Text</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+    }
+}

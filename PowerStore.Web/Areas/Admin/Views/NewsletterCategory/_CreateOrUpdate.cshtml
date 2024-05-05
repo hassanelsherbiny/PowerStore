@@ -1,0 +1,23 @@
+﻿@model NewsletterCategoryModel
+
+<div asp-validation-summary="All"></div>
+<input asp-for="Id" type="hidden" />
+<admin-tabstrip name="newslettercategory-edit">
+    <items>
+        <tabstrip-item text="@T("Admin.Promotions.NewsletterCategory.Info")" tab-index="0">
+            <content>
+                <div>
+                    <partial name="_CreateOrUpdate.TabInfo" model="Model" />
+                </div>
+            </content>
+        </tabstrip-item>
+        <tabstrip-item text="@T("Admin.Promotions.NewsletterCategory.Stores")" tab-index="1">
+            <content>
+                <div>
+                    <partial name="_TabStores" model="Model" />
+                </div>
+            </content>
+        </tabstrip-item>
+        <vc:admin-widget widget-zone="newslettercateogry_details_tabs" additional-data="Model" />
+    </items>
+</admin-tabstrip>

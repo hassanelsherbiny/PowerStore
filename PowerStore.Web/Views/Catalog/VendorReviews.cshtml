@@ -1,0 +1,144 @@
+﻿@model VendorReviewsModel
+@inject IPageHeadBuilder pagebuilder
+@{
+    Layout = "_ColumnsOne";
+
+    //title
+    pagebuilder.AddTitleParts(Model.VendorName);
+    pagebuilder.AddTitleParts(T("PageTitle.VendorReviews").Text);
+}
+<div class="page vendor-reviews-page">
+    <h2 class="generalTitle text-center">@T("Reviews.VendorReviewsFor") <a href="@Url.RouteUrl("Vendor", new { SeName = Model.VendorSeName })">@Model.VendorName</a></h2>
+    @await Component.InvokeAsync("Widget", new { widgetZone = "vendorreviews_page_top", additionalData = Model.VendorId })
+    @if (Model.AddVendorReview.SuccessfullyAdded)
+    {
+        <h4 class="text-center p-3">
+            @Model.AddVendorReview.Result
+        </h4>
+    }
+    else
+    {
+        <div class="write-review" id="review-form">
+            <h5 class="generalTitle"><strong>@T("Reviews.Write")</strong></h5>
+            <form asp-route="VendorReviews" method="post">
+                <div asp-validation-summary="ModelOnly" class="message-error"></div>
+                <fieldset>
+                    <div class="form-fields">
+                        <div class="form-group">
+                            <label asp-for="AddVendorReview.Title" class="col-form-label">@T("Reviews.Fields.Title"):</label>
+                            <input asp-for="AddVendorReview.Title" class="form-control review-title" asp-disabled="@(!Model.AddVendorReview.CanCurrentCustomerLeaveReview)" />
+                            <span asp-validation-for="AddVendorReview.Title"></span>
+                        </div>
+                        <label asp-for="AddVendorReview.ReviewText" class="col-form-label">@T("Reviews.Fields.ReviewText"):</label>
+                        <textarea asp-for="AddVendorReview.ReviewText" class="form-control review-text" asp-disabled="@(!Model.AddVendorReview.CanCurrentCustomerLeaveReview)"></textarea>
+                        <span asp-validation-for="AddVendorReview.ReviewText"></span>
+                        <div class="form-group review-rating d-flex align-items-center">
+                            <label asp-for="AddVendorReview.Rating" class="col-form-label d-inline-flex">@T("Reviews.Fields.Rating"):</label>
+                            <div class="d-inline-flex justify-content-center rating-options text-center ml-3">
+                                <label class="custom-control pl-0 custom-radio d-flex full-star">
+                                    <input asp-for="AddVendorReview.Rating" value="1" type="radio" id="addvendorrating_1" class="custom-control-input" />
+                                    <span class="custom-control-label">&#9733;</span>
+                                    <span class="custom-control-description"></span>
+                                </label>
+                                <label class="custom-control pl-0 custom-radio d-flex full-star">
+                                    <input asp-for="AddVendorReview.Rating" value="2" type="radio" id="addvendorrating_2" class="custom-control-input" />
+                                    <span class="custom-control-label">&#9733;</span>
+                                    <span class="custom-control-description"></span>
+                                </label>
+                                <label class="custom-control pl-0 custom-radio d-flex full-star">
+                                    <input asp-for="AddVendorReview.Rating" value="3" type="radio" id="addvendorrating_3" class="custom-control-input" />
+                                    <span class="custom-control-label">&#9733;</span>
+                                    <span class="custom-control-description"></span>
+                                </label>
+                                <label class="custom-control pl-0 custom-radio d-flex full-star">
+                                    <input asp-for="AddVendorReview.Rating" value="4" type="radio" id="addvendorrating_4" class="custom-control-input" />
+                                    <span class="custom-control-label">&#9733;</span>
+                                    <span class="custom-control-description"></span>
+                                </label>
+                                <label class="custom-control pl-0 custom-radio d-flex full-star">
+                                    <input asp-for="AddVendorReview.Rating" value="5" type="radio" id="addvendorrating_5" class="custom-control-input" />
+                                    <span class="custom-control-label">&#9733;</span>
+                                    <span class="custom-control-description"></span>
+                                </label>
+                            </div>
+                        </div>
+                        @if (Model.AddVendorReview.DisplayCaptcha)
+                        {
+                            <div class="captcha-box">
+                                <captcha />
+                            </div>
+                        }
+                    </div>
+                </fieldset>
+                <div class="buttons text-left my-3">
+                    <input type="submit" name="add-review" class="btn btn-info write-vendor-review-button" value="@T("Reviews.SubmitButton")" />
+                </div>
+            </form>
+        </div>
+    }
+    @if (Model.Items.Any())
+    {
+        <div class="vendor-review-list">
+            <h5><strong>@T("Reviews.ExistingReviews")</strong></h5>
+            @foreach (var review in Model.Items)
+            {
+                int ratingPercent = review.Rating * 20;
+                <div class="card comment vendor-review-item pb-3 mb-3">
+                    <div class="card-header review-item-head pt-0 pr-0">
+                        <div class="ratings justify-content-start">
+                            <div class="rating-box">
+                                <div class="rating" style="width: @(ratingPercent)%">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-info">
+                            <span class="user">
+                                <span>@T("Reviews.From"):</span>
+                                @if (review.AllowViewingProfiles)
+                                {
+                                    <a href="@Url.RouteUrl("CustomerProfile", new { id = review.CustomerId })">@(review.CustomerName)</a>
+                                }
+                                else
+                                {
+                                    @review.CustomerName
+                                }
+                            </span>
+                            <span class="separator">|</span>
+                            <span class="date">
+                                <span>@T("Reviews.Date"):</span>
+                                <span>@review.WrittenOnStr</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-body mb-3">
+                        <div class="review-title">
+                            <strong>@review.Title</strong>
+                        </div>
+                        <div class="review-content">
+                            <div class="review-text">
+                                @review.ReviewText
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-right">
+                        @await Component.InvokeAsync("Widget", new { widgetZone = "productreviews_page_inside_review", additionalData = review.Id })
+                        <partial name="_VendorReviewHelpfulness" model="review.Helpfulness" />
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    @await Component.InvokeAsync("Widget", new { widgetZone = "productreviews_page_bottom", additionalData = Model.VendorId })
+</div>
+
+<script asp-location="Footer">
+    $(document).ready(function () {
+        $('.rating-options .custom-radio').on("click", function () {
+            if (!$(this).find('input').is(':checked')) {
+                $(this).find('.custom-control-label').html('&#9733;');
+                $(this).prevAll('.custom-radio').find('.custom-control-label').html('&#9733;');
+                $(this).nextAll('.custom-radio').find('.custom-control-label').html('&#x2606;');
+            }
+        });
+    });
+</script>

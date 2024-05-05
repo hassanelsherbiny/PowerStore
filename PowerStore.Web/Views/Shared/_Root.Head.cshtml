@@ -1,0 +1,36 @@
+﻿@inject PowerStore.Core.Configuration.PowerStoreConfig config
+<!DOCTYPE html>
+<html use-lang="true">
+<head>
+    <title asp-default-title="true"></title>
+    <meta charset="utf-8">
+    <meta-description>
+    <meta-keywords>
+    <meta name="generator" content="PowerStorenode">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    @*<link rel="manifest" href="/manifest.webmanifest" />*@
+    <head-custom>
+    @*This is used so that themes can inject content into the header*@
+    <partial name="Head" />
+    <vc:widget widget-zone="head_html_tag" additional-data="null"></vc:widget>
+    @*@Html.PowerStoreCssFiles(this.Url, ResourceLocation.Head)*@
+    <css-files asp-location="Head">
+    <canonical-urls>
+    <vc:news-rss-header-link></vc:news-rss-header-link>
+    <vc:blog-rss-header-link></vc:blog-rss-header-link>
+    @*Favicon - upload favicon.ico file to the root directory*@
+    <vc:favicon></vc:favicon>
+    @if (config.DisplayMiniProfilerInPublicStore)
+    {
+        <mini-profiler />
+    }
+    <script-files asp-location="Head">
+</head>
+<body>
+    <resources asp-type="ScriptHeader" />
+    @RenderBody()
+    <css-files asp-location="Footer">
+    <script-files asp-location="Footer">
+    <resources asp-type="ScriptFooter" />
+</body>
+</html>

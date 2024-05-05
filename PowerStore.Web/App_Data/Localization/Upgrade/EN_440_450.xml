@@ -1,0 +1,623 @@
+<Language>
+  <LocaleResource Name="Admin.Customers.Customers.Reviews">
+    <Value>Reviews</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.Reviews.Product">
+    <Value>Product</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.Reviews.Title">
+    <Value>Title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.Reviews.Review">
+    <Value>Review</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.Reviews.Rating">
+    <Value>Rating</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.Reviews.EditReview">
+    <Value>Edit review</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.Reviews.Updated">
+    <Value>The review has been updated successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Review.Fields.Title.Required">
+    <Value>Review title is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Review.Fields.ReviewText.Required">
+    <Value>Review text is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.settings.pushnotifications.privateapikey.hint">
+    <Value>API Key used for sending notifications. See documentation for instructions.</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.settings.pushnotifications.pushapikey.hint">
+    <Value>API Key used for receiving notifications. See documentation for instructions.</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.settings.pushnotifications.authdomain.hint">
+    <Value>Copy your auth domain here. See documentation for instructions.</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.settings.pushnotifications.databaseurl.hint">
+    <Value>Copy your database url here. See documentation for instructions.</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.settings.pushnotifications.projectid.hint">
+    <Value>Copy your project id here. See documentation for instructions.</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.settings.pushnotifications.storagebucket.hint">
+    <Value>Copy your storage bucket here. See documentation for instructions.</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.settings.pushnotifications.senderid.hint">
+    <Value>Copy your sender id here. See documentation for instructions.</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.settings.pushnotifications.privateapikey">
+    <Value>Private Api Key</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.settings.pushnotifications.pushapikey">
+    <Value>Public Api Key</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.settings.pushnotifications.senderid">
+    <Value>Sender Id</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.settings.pushnotifications.authdomain">
+    <Value>Auth Domain</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.settings.pushnotifications.databaseurl">
+    <Value>Database URL</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.settings.pushnotifications.projectid">
+    <Value>Project Id</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.settings.pushnotifications.storagebucket">
+    <Value>Storage Bucket</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.PushNotifications.AllowGuestNotifications">
+    <Value>Allow guest notifications</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.PushNotifications.AllowGuestNotifications.Hint">
+    <Value>Should be checked if you want to allow guest to register for push notifications</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.PushNotifications.NotificationsEnabled">
+    <Value>Enabled</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.PushNotifications.NotificationsEnabled.Hint">
+    <Value>If left unchecked, registration script won't be added to homepage.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.PushNotifications.PushNotifications.Info">
+    <Value>We are using firebase for push notifications. You can find more info in our manuals or on firebase docs.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.PushNotifications.PushNotifications.Warning">
+    <Value>Warning! Press "Save" button every time you upgrade PowerStoreNode to new version, as the settings will be wiped out in registration script.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.Message.Fields.CustomerEmail">
+    <Value>Email</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.Message.Fields.Allowed">
+    <Value>Allowed</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.MessageTextPlaceholder">
+    <Value>Message text</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.MessageTitlePlaceholder">
+    <Value>Message title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.Message.Fields.Id">
+    <Value>Id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.Message.Fields.Title">
+    <Value>Title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.Message.Fields.Text">
+    <Value>Text</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.Message.Fields.NumberOfReceivers">
+    <Value>Number of receivers</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.Message.Fields.SentOn">
+    <Value>Sent on</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.Fields.Picture">
+    <Value>Picture</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.Fields.Picture.Hint">
+    <Value>Upload picture of your push notification</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.Fields.PushTitle">
+    <Value>Title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.Fields.PushTitle.Hint">
+    <Value>Title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.Fields.PushMessageText">
+    <Value>Message text</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.Fields.PushMessageText.Hint">
+    <Value>Enter your message text</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.Error.NoReceivers">
+    <Value>No receviers yet. Wait for someone to register for push notifications.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.MessageSent">
+    <Value>Notification sent</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.Fields.ClickUrl">
+    <Value>Click Url</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.PushNotifications.Fields.ClickUrl.Hint">
+    <Value>Page that will be opened after user clicks on notification</Value>
+  </LocaleResource>
+  <LocaleResource Name="BackInStockSubscriptions.DeleteNotifyWhenAvailable">
+    <Value>Cancel notification</Value>
+  </LocaleResource>
+  <LocaleResource Name="BackInStockSubscriptions.Title">
+    <Value>Notify about availability</Value>
+  </LocaleResource>
+  <LocaleResource Name="backinstocksubscriptions.subscribed">
+    <Value>You are successfully subscribed</Value>
+  </LocaleResource>
+  <LocaleResource Name="backinstocksubscriptions.unsubscribed">
+    <Value>You are successfully unsubscribed</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.Catalog.NewProductsOnHomePage">
+    <Value>Show 'New products' on home page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.Catalog.NewProductsOnHomePage.Hint">
+    <Value>Check to enable the 'New products' on home page in your store</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.Catalog.NewProductsNumberOnHomePage">
+    <Value>Number of products 'New products' on home page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.Catalog.NewProductsNumberOnHomePage.Hint">
+    <Value>The number of products to display when 'New products' on home page is enabled.</Value>
+  </LocaleResource>
+  <LocaleResource Name="HomePage.NewProducts">
+    <Value>New Products</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Stores.Fields.DefaultCountry">
+    <Value>Default country</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Stores.Fields.DefaultCountry.Hint">
+    <Value>This property allows a store owner to specify a default country for a store.</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Admin.ContentManagement.Blog.BlogPosts.Products">
+    <Value>Products</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ContentManagement.Blog.BlogPosts.Products.AddNew">
+    <Value>Add new product</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ContentManagement.Blog.Product.Fields.ProductName">
+    <Value>Product name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ContentManagement.Blog.Product.Fields.DisplayOrder">
+    <Value>Display order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Blog.Products">
+    <Value>Products related with this blog post</Value>
+  </LocaleResource>
+  <LocaleResource Name="Products.Availability.AllowAddingOnlyExistingAttributeCombinations.Yes">
+    <Value>Please select combination</Value>
+  </LocaleResource>
+  <LocaleResource Name="Products.Availability.AllowAddingOnlyExistingAttributeCombinations.No">
+    <Value>Please select combination</Value>
+  </LocaleResource>
+  <LocaleResource Name="ShoppingCart.Combination.NotExist">
+    <Value>This combination doesn't exist</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.catalog.products.similarproducts">
+    <Value>Similar products</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.catalog.products.similarproducts.addnew">
+    <Value>Add new product</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.catalog.products.similarproducts.fields.product">
+    <Value>Products</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.catalog.products.similarproducts.fields.displayorder">
+    <Value>Display order</Value>
+  </LocaleResource>
+  <LocaleResource Name="products.similarproducts">
+    <Value>Similar products</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.catalog.products.similarproducts.savebeforeedit">
+    <Value>You need to save the product before you can add similar products for this product page.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.GiftCards.PreventDeleted">
+    <Value>You can't remove gift card because was used in the order.</Value>
+  </LocaleResource>
+  <LocaleResource Name="ShoppingCart.Discount.CannotBeUsedInStore">
+    <Value>This coupon code can't be used in this store.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Permission.ManageCustomerRoles">
+    <Value>Admin area. Manage Customer roles</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.ACL.Installed">
+    <Value>Missing permissions has been installed</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.ACL.InstallMissingPermisions">
+    <Value>Install permissions</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports">
+    <Value>Reports</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Average">
+    <Value>Order totals</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Average.OrderStatus">
+    <Value>Order Status</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Average.SumAllTimeOrders">
+    <Value>All time</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Average.SumThisMonthOrders">
+    <Value>This Month</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Average.SumThisWeekOrders">
+    <Value>This Week</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Average.SumThisYearOrders">
+    <Value>This Year</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Average.SumTodayOrders">
+    <Value>Today</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers">
+    <Value>Bestsellers</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.BillingCountry">
+    <Value>Billing country</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.BillingCountry.Hint">
+    <Value>Filter by order billing country</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.ByAmount">
+    <Value>Bestsellers by amount</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.ByQuantity">
+    <Value>Bestsellers by quantity</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.Category">
+    <Value>Category</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.Category.Hint">
+    <Value>Search in a specific category.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.EndDate">
+    <Value>End date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.EndDate.Hint">
+    <Value>The end date for the search.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.Fields.Name">
+    <Value>Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.Fields.TotalAmount">
+    <Value>Total amount (excl tax)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.Fields.TotalQuantity">
+    <Value>Total quantity</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.Manufacturer">
+    <Value>Manufacturer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.Manufacturer.Hint">
+    <Value>Search in a specific manufacturer.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.OrderStatus">
+    <Value>Order status</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.OrderStatus.Hint">
+    <Value>Search by a specific order status e.g. Complete.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.PaymentStatus">
+    <Value>Payment status</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.PaymentStatus.Hint">
+    <Value>Search by a specific payment status e.g. Paid.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.RunReport">
+    <Value>Run report</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.StartDate">
+    <Value>Start date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.StartDate.Hint">
+    <Value>The start date for the search</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.Store">
+    <Value>Store</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.Store.Hint">
+    <Value>Filter report by orders placed in a specific store.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.Vendor">
+    <Value>Vendor</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Bestsellers.Vendor.Hint">
+    <Value>Search by a specific vendor.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Country">
+    <Value>Country report</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers">
+    <Value>Customer reports</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.BestBy.BestByNumberOfOrders">
+    <Value>Customers by number of orders</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.BestBy.BestByOrderTotal">
+    <Value>Customers by order total</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.BestBy.EndDate">
+    <Value>End date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.BestBy.EndDate.Hint">
+    <Value>The end date for the search.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.BestBy.Fields.Customer">
+    <Value>Customer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.BestBy.Fields.OrderCount">
+    <Value>Number of orders</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.BestBy.Fields.OrderTotal">
+    <Value>Order total</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.BestBy.OrderStatus">
+    <Value>Order status</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.BestBy.OrderStatus.Hint">
+    <Value>Search by a specific order status e.g. Complete.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.BestBy.PaymentStatus">
+    <Value>Payment status</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.BestBy.PaymentStatus.Hint">
+    <Value>Search by a specific payment status e.g. Paid.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.BestBy.ShippingStatus">
+    <Value>Shipping status</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.BestBy.ShippingStatus.Hint">
+    <Value>Search by a specific shipping status e.g. Not yet shipped.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.BestBy.StartDate">
+    <Value>Start date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.BestBy.StartDate.Hint">
+    <Value>The start date for the search</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.RegisteredCustomers">
+    <Value>Registered customers</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.RegisteredCustomers.Fields.Customers">
+    <Value>Count</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.RegisteredCustomers.Fields.Period">
+    <Value>Period</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.RegisteredCustomers.Fields.Period.14days">
+    <Value>In the last 14 days</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.RegisteredCustomers.Fields.Period.7days">
+    <Value>In the last 7 days</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.RegisteredCustomers.Fields.Period.month">
+    <Value>In the last month</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.RegisteredCustomers.Fields.Period.year">
+    <Value>In the last year</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Customers.RunReport">
+    <Value>Run report</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Country.EndDate">
+    <Value>End date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Country.EndDate.Hint">
+    <Value>The end date for the search.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Country.Fields.CountryName">
+    <Value>Country</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Country.Fields.SumOrders">
+    <Value>Order total</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Country.Fields.TotalOrders">
+    <Value>Number of orders</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Country.OrderStatus">
+    <Value>Order status</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Country.OrderStatus.Hint">
+    <Value>Search by a specific order status e.g. Complete.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Country.PaymentStatus">
+    <Value>Payment status</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Country.PaymentStatus.Hint">
+    <Value>Search by a specific payment status e.g. Paid.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Country.RunReport">
+    <Value>Run report</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Country.StartDate">
+    <Value>Start date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Country.StartDate.Hint">
+    <Value>The start date for the search</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Incomplete">
+    <Value>Incomplete orders</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Incomplete.Count">
+    <Value>Count</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Incomplete.Item">
+    <Value>Item</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Incomplete.Total">
+    <Value>Total</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Incomplete.TotalIncompleteOrders">
+    <Value>Total incomplete orders (pending order status)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Incomplete.TotalNotShippedOrders">
+    <Value>Total not yet shipped orders</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Incomplete.TotalUnpaidOrders">
+    <Value>Total unpaid orders (pending payment status)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Incomplete.View">
+    <Value>view all</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.NeverSold">
+    <Value>Products never purchased</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.NeverSold.EndDate">
+    <Value>End date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.NeverSold.EndDate.Hint">
+    <Value>The end date for the search.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.NeverSold.Fields.Name">
+    <Value>Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.NeverSold.RunReport">
+    <Value>Run report</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.NeverSold.StartDate">
+    <Value>Start date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.NeverSold.StartDate.Hint">
+    <Value>The start date for the search.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.LowStockReport">
+    <Value>Low stock report</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Period">
+    <Value>Sales report in period</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Period.14days">
+    <Value>In the last 14 days</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Period.7days">
+    <Value>In the last 7 days</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Period.Amount">
+    <Value>Amount</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Period.Count">
+    <Value>Count</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Period.month">
+    <Value>In the last month</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Period.Name">
+    <Value>Period</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Reports.Period.year">
+    <Value>In the last year</Value>
+  </LocaleResource>
+  <LocaleResource Name="Permission.ManageReports">
+    <Value>Admin area. Manage Reports</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Dashboard.Summary">
+    <Value>Summary</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.Fields.StaffStore">
+    <Value>Manager of store</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.Fields.StaffStore.Hint">
+    <Value>Choose a manage store owner associated to this customer account.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.Fields.StaffStore.None">
+    <Value>Not a staff</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Categories.Permisions">
+    <Value>You can't edit this category, because it can be used in many stores.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Manufacturers.Permisions">
+    <Value>You can't edit this manufacturer, because it can be used in many stores.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Products.Permisions">
+    <Value>You can't edit this product, because it can be used in many stores.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.VendorShouldNotbeStaff">
+    <Value>A customer with a vendor associated should not be a staff</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Products.LinkedProducts">
+    <Value>Linked products</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Promotions.Newsletter">
+    <Value>Newsletter</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.system.developertools">
+    <Value>Developer Tools</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.GoogleAnalytics_help6">
+    <Value>
+      6. The last step is to enable Google Analytics API in your Google Cloud Platform here - https://console.developers.google.com/apis/api/analyticsreporting.googleapis.com/
+    </Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.Addresses">
+    <Value>Billing and Shipping info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Api.Catalog.ProductTierPrice.Fields.CustomerRoleId.NotExists">
+    <Value>Customer role ID doesn't exist</Value>
+  </LocaleResource>
+  <LocaleResource Name="Api.Catalog.ProductTierPrice.Fields.Price.GreaterThan0">
+    <Value>Price field must be greater than 0</Value>
+  </LocaleResource>
+  <LocaleResource Name="Api.Catalog.ProductTierPrice.Fields.Quantity.GreaterThan0">
+    <Value>Quantity field must be greater than 0</Value>
+  </LocaleResource>
+  <LocaleResource Name="Api.Catalog.ProductTierPrice.Fields.StoreId.NotExists">
+    <Value>Store ID doesn't exist</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.catalog.products.list.skunotfound">
+    <Value>Provided SKU doesn't exist</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Categories.Fields.DefaultSort">
+    <Value>Default sorting</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Categories.Fields.DefaultSort.hint">
+    <Value>Allow to set default sorting for this category</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.System.SystemInfo.ApplicationTime">
+    <Value>Application time</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.System.SystemInfo.ApplicationTime.hint">
+    <Value>Application time based on default store time zone</Value>
+  </LocaleResource>
+  <LocaleResource Name="messages.wishlist.product(s).quantity">
+    <Value>Quantity</Value>
+  </LocaleResource>
+  <LocaleResource Name="messages.wishlist.product(s).name">
+    <Value>Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="messages.wishlist.product(s).picture">
+    <Value>Picture</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ContentManagement.Topics.Fields.IncludeInFooterRow1">
+    <Value>Include in footer (row 1)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ContentManagement.Topics.Fields.IncludeInFooterRow1.Hint">
+    <Value>Check to include this topic in the footer (row 1). Ensure that your theme supports it.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ContentManagement.Topics.Fields.IncludeInFooterRow2">
+    <Value>Include in footer (row 2)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ContentManagement.Topics.Fields.IncludeInFooterRow2.Hint">
+    <Value>Check to include this topic in the footer (row 2). Ensure that your theme supports it.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ContentManagement.Topics.Fields.IncludeInFooterRow3">
+    <Value>Include in footer (row 3)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ContentManagement.Topics.Fields.IncludeInFooterRow3.Hint">
+    <Value>Check to include this topic in the footer (row 3). Ensure that your theme supports it.</Value>
+  </LocaleResource>
+  <LocaleResource Name="pushnotifications.message.fields.text">
+    <Value>Message content</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.CannotBeInStaffRoleWithoutStaffAssociated">
+    <Value>A customer in the Staff role should have a staff account associated.</Value>
+  </LocaleResource>
+</Language>

@@ -1,0 +1,15 @@
+DiscountRequirements.Standard
+CurrencyExchange.MoneyConverter
+ExternalAuth.Facebook
+ExternalAuth.Google
+Payments.BrainTree
+Payments.CashOnDelivery
+Payments.PayPalStandard
+Shipping.ByWeight
+Shipping.FixedRate
+Shipping.ShippingPoint
+Tax.CountryStateZip
+Tax.FixedRate
+Widgets.FacebookPixel
+Widgets.GoogleAnalytics
+Widgets.Slider

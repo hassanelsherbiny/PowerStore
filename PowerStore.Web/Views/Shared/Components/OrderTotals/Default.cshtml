@@ -1,0 +1,185 @@
+﻿@model OrderTotalsModel
+
+<div class="total-info table-responsive pl-0 pr-0">
+    <table class="table table-hover">
+        <tbody>
+            <tr class="col-12 pr-0 order-subtotal d-flex justify-content-start">
+                <td class="col-6 cart-total-left">
+                    <span>@T("ShoppingCart.Totals.SubTotal"):</span>
+                </td>
+                <td class="col-6 cart-total-right  text-right">
+                    <span class="value-summary">@Model.SubTotal</span>
+                </td>
+            </tr>
+            @if (!String.IsNullOrEmpty(Model.SubTotalDiscount))
+            {
+                <tr class="col-12 pr-0 order-subtotal-discount d-flex justify-content-start">
+                    <td class="col-6 cart-total-left">
+                        <span>@T("ShoppingCart.Totals.SubTotalDiscount"):</span>
+                    </td>
+                    <td class="col-6 cart-total-right  text-right">
+                        <span class="value-summary">@Model.SubTotalDiscount</span>
+                    </td>
+                </tr>
+            }
+            <tr class="col-12 pr-0 shipping-cost d-flex justify-content-start">
+                <td class="col-6 cart-total-left">
+                    <span>@T("ShoppingCart.Totals.Shipping"):</span>
+                    @if (Model.RequiresShipping && !String.IsNullOrEmpty(Model.SelectedShippingMethod))
+                    {
+                        <span class="selected-shipping-method">@T("ShoppingCart.Totals.Shipping.Method", Model.SelectedShippingMethod)</span>
+                    }
+                </td>
+                <td class="col-6 cart-total-right  text-right">
+                    @if (Model.RequiresShipping)
+                    {
+                        if (!String.IsNullOrEmpty(Model.Shipping))
+                        {
+                            <span class="value-summary">@Model.Shipping</span>
+                        }
+                        else
+                        {
+                            <span>@T("ShoppingCart.Totals.CalculatedDuringCheckout")</span>
+                        }
+                    }
+                    else
+                    {
+                        <span>@T("ShoppingCart.Totals.Shipping.NotRequired")</span>
+                    }
+                </td>
+            </tr>
+            @if (!String.IsNullOrEmpty(Model.PaymentMethodAdditionalFee))
+            {
+                <tr class="col-12 pr-0 additional-fees d-flex justify-content-start">
+                    <td class="col-6 cart-total-left">
+                        <span>@T("ShoppingCart.Totals.PaymentMethodAdditionalFee"):</span>
+                    </td>
+                    <td class="col-6 cart-total-right text-right">
+                        <span class="value-summary">@Model.PaymentMethodAdditionalFee</span>
+                    </td>
+                </tr>
+            }
+            @if (Model.DisplayTaxRates && Model.TaxRates.Any())
+            {
+                foreach (var taxRate in Model.TaxRates)
+                {
+                    <tr class="col-12 pr-0 tax-rate d-flex justify-content-start">
+                        <td class="col-6 cart-total-left">
+                            <span>@string.Format(T("ShoppingCart.Totals.TaxRateLine").Text, taxRate.Rate):</span>
+                        </td>
+                        <td class="col-6 cart-total-right text-right">
+                            <span>@taxRate.Value</span>
+                        </td>
+                    </tr>
+                }
+            }
+            @if (Model.DisplayTax)
+            {
+                <tr class="col-12 pr-0 tax-value d-flex justify-content-start">
+                    <td class="col-6 cart-total-left">
+                        <span>@T("ShoppingCart.Totals.Tax"):</span>
+                    </td>
+                    <td class="col-6 cart-total-right  text-right">
+                        <span class="value-summary">@Model.Tax</span>
+                    </td>
+                </tr>
+            }
+            @if (!String.IsNullOrEmpty(Model.OrderTotalDiscount))
+            {
+                <tr class="col-12 pr-0 discount-total d-flex justify-content-start">
+                    <td class="col-6 cart-total-left">
+                        <span>@T("ShoppingCart.Totals.OrderTotalDiscount"):</span>
+                    </td>
+                    <td class="col-6 cart-total-right  text-right">
+                        <span class="value-summary">@Model.OrderTotalDiscount</span>
+                    </td>
+                </tr>
+            }
+            @if (Model.GiftCards.Any())
+            {
+                foreach (var gc in Model.GiftCards)
+                {
+                    <tr class="col-12 pr-0 giftcard-summary d-flex justify-content-start">
+                        <td class="col-6 cart-total-left">
+                            <span>@T("ShoppingCart.Totals.GiftCardInfo"):</span>
+                            <span>@T("ShoppingCart.Totals.GiftCardInfo.Code", gc.CouponCode)</span>
+                            <span class="giftcard-remaining">@string.Format(T("ShoppingCart.Totals.GiftCardInfo.Remaining").Text, gc.Remaining)</span>
+                        </td>
+                        <td class="col-6 cart-total-right  text-right">
+                            <span class="value-summary">@gc.Amount</span>
+                            @if (Model.IsEditable)
+                            {
+                                //little hack here with empty "value" element
+                                <button type="button" name="removegiftcard"
+                                        data-href="@Url.RouteUrl("RemoveGiftCardCode", new { giftCardId = gc.Id})"
+                                        title="@T("Common.Remove")" class="btn btn-sm btn-secondary remove-gift-card-button">
+                                    <span class="mdi mdi-close" aria-hidden="true"></span>
+                                </button>
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+            @if (Model.RedeemedRewardPoints > 0)
+            {
+                <tr class="col-12 pr-0 reward-points d-flex justify-content-start">
+                    <td class="col-6 cart-total-left">
+                        <span>@string.Format(T("ShoppingCart.Totals.RewardPoints").Text, Model.RedeemedRewardPoints):</span>
+                    </td>
+                    <td class="col-6 cart-total-right  text-right">
+                        <span class="value-summary">@Model.RedeemedRewardPointsAmount</span>
+                    </td>
+                </tr>
+            }
+            <tr class="col-12 pr-0 order-total d-flex justify-content-start">
+                <td class="col-6 cart-total-left">
+                    <span>@T("ShoppingCart.Totals.OrderTotal"):</span>
+                </td>
+                <td class="col-6 cart-total-right  text-right">
+                    @if (!String.IsNullOrEmpty(Model.OrderTotal))
+                    {
+                        <span class="value-summary"><strong>@Model.OrderTotal</strong></span>
+                    }
+                    else
+                    {
+                        <span>@T("ShoppingCart.Totals.CalculatedDuringCheckout")</span>
+                    }
+                </td>
+            </tr>
+            @if (Model.WillEarnRewardPoints > 0)
+            {
+                <tr class="col-12 pr-0 earn-reward-points d-flex justify-content-start">
+                    <td class="col-6 cart-total-left">
+                        <span>@T("ShoppingCart.Totals.RewardPoints.WillEarn"):</span>
+                    </td>
+                    <td class="col-6 cart-total-right text-right">
+
+                        <span class="value-summary">@string.Format(T("ShoppingCart.Totals.RewardPoints.WillEarn.Point").Text, Model.WillEarnRewardPoints)</span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@if (Model.GiftCards.Any() && Model.IsEditable)
+{
+    <script asp-location="Footer">
+        $(document).ready(function () {
+            $(".remove-gift-card-button").click(function () {
+                var href = $(this).closest('[data-href]').data('href');
+                $.ajax({
+                    cache: false,
+                    type: "POST",
+                    data: addAntiForgeryToken(),
+                    url: href,
+                    success: function (data) {
+                        $('#ordersummarypagecart').replaceWith(data.cart);
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert('Failed to retrieve Shopping Cart Page.');
+                    }
+                });
+            });
+        });
+    </script>
+}

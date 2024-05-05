@@ -1,0 +1,32 @@
+﻿@model ReturnRequestReasonModel
+@{
+    //page title
+    ViewBag.Title = T("Admin.Configuration.Settings.Order.ReturnRequestReasons.EditDetails").Text;
+}
+<form asp-area="@Constants.AreaAdmin" asp-controller="Setting" asp-action="ReturnRequestReasonEdit" method="post">
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel light form-fit">
+                <div class="x_title">
+                    <div class="caption">
+                        <i class="fa fa-list-alt"></i>
+                        @T("Admin.Configuration.Settings.Order.ReturnRequestReasons.EditDetails") - @Model.Name
+                        <small><i class="fa fa-arrow-circle-left"></i>@Html.ActionLink(T("Admin.Configuration.Settings.Order.ReturnRequestReasons.BackToList").Text, "ReturnRequestReasonList")</small>
+                    </div>
+                    <div class="actions">
+                        <div class="btn-group btn-group-devided util-btn-margin-bottom-5">
+                            <button class="btn btn-success" type="submit" name="save"><i class="fa fa-check"></i> @T("Admin.Common.Save") </button>
+                            <button class="btn btn-success" type="submit" name="save-continue"><i class="fa fa-check-circle"></i> @T("Admin.Common.SaveContinue") </button>
+                            <span id="returnrequestreason-delete" class="btn red"><i class="fa fa-trash-o"></i> <span class="d-none d-sm-inline"> @T("Admin.Common.Delete")</span></span>
+                        </div>
+                    </div>
+                    </div>
+                <div class="x_content form">
+                   <partial name="_CreateOrUpdate.ReturnRequestReason" model="Model" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<admin-delete-confirmation button-id="returnrequestreason-delete" action-name="ReturnRequestReasonDelete" />

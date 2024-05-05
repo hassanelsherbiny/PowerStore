@@ -1,0 +1,485 @@
+﻿@model CustomerListModel
+@inject AdminAreaSettings adminAreaSettings
+@{
+    //page title
+    ViewBag.Title = T("Admin.Customers.Customers").Text;
+}
+
+<form asp-area="@Constants.AreaAdmin" asp-controller="Customer" asp-action="List" method="post">
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel light form-fit">
+                <div class="x_title">
+                    <div class="caption">
+                        <i class="fa fa-users"></i>
+                        @T("Admin.Customers.Customers")
+                    </div>
+                    <div class="actions btn-group btn-group-devided">
+                        <a href="@Url.Action("Create")" class="btn green"><i class="fa fa-plus"></i><span class="d-none d-sm-inline"> @T("Admin.Common.AddNew") </span></a>
+
+                        <div class="btn-group btn-group-devided">
+                            <a class="btn default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <i class="fa fa-download"></i>
+                                @T("Admin.Common.Export")
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li>
+                                    <input type="submit" name="exportxml-all" class="btn default" style="width: 100%;" value="@T("Admin.Common.ExportToXml.All")" />
+                                </li>
+                                <li>
+                                    <input type="button" id="exportxml-selected" class="btn default" style="width: 100%;" value="@T("Admin.Common.ExportToXml.Selected")" />
+                                </li>
+                                <li>
+                                    <input type="submit" name="exportexcel-all" class="btn default" style="width: 100%;" value="@T("Admin.Common.ExportToExcel.All")" />
+                                </li>
+                                <li>
+                                    <input type="button" id="exportexcel-selected" class="btn default" style="width: 100%;" value="@T("Admin.Common.ExportToExcel.Selected")" />
+                                </li>
+                            </ul>
+                            <vc:admin-widget widget-zone="customer_list_buttons" additional-data="null" />
+                        </div>
+                        <button type="button" name="delete-selected" id="delete-selected" class="btn red" onclick=" return confirm('@T("Admin.Common.AreYouSure")'); ">
+                            <i class="fa fa-trash-o"></i>
+                            @T("Admin.Common.Delete.Selected")
+                        </button>
+                    </div>
+                </div>
+                <div class="x_content form">
+                    <div class="form-horizontal">
+
+                        <div class="form-body">
+                            <div class="form-group popup">
+                                <admin-label asp-for="SearchEmail" class="col-2 control-label col-sm-2" />
+                                <div class="col-10 col-md-4 col-sm-4">
+                                    <admin-input asp-for="SearchEmail" />
+                                </div>
+                                <div class="col-8 col-md-6 col-sm-4 mt-mobile-10">
+                                    <div class="btn-group btn-group-devided">
+                                        <button class="btn btn-success filter-submit" id="search-customers">
+                                            <i class="fa fa-search"></i> @T("Admin.Common.Search")
+                                        </button>
+                                        <button type="button" class="btn btn-default filter-extend-button">
+                                            <i class="fa fa-filter"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-body col-md-6 extend-collapse">
+                            @if (Model.UsernamesEnabled)
+                            {
+                                <div class="form-group">
+                                    <admin-label asp-for="SearchUsername" class="control-label col-4 col-md-4 col-sm-4" />
+                                    <div class="col-8 col-md-8 col-sm-8">
+                                        <admin-input asp-for="SearchUsername" />
+                                    </div>
+                                </div>
+                            }
+                            <div class="form-group">
+                                <admin-label asp-for="SearchFirstName" class="control-label col-4 col-md-4 col-sm-4" />
+                                <div class="col-8 col-md-8 col-sm-8">
+                                    <admin-input asp-for="SearchFirstName" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <admin-label asp-for="SearchLastName" class="control-label col-4 col-md-4 col-sm-4" />
+                                <div class="col-8 col-md-8 col-sm-8">
+                                    <admin-input asp-for="SearchLastName" />
+                                </div>
+                            </div>
+                            @if (Model.CompanyEnabled)
+                            {
+                                <div class="form-group">
+                                    <admin-label asp-for="SearchCompany" class="control-label col-4 col-md-4 col-sm-4" />
+                                    <div class="col-8 col-md-8 col-sm-8">
+                                        <admin-input asp-for="SearchCompany" />
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="form-body col-md-6 extend-collapse">
+                            <div class="form-group">
+                                <admin-label asp-for="SearchCustomerRoleIds" class="control-label col-4 col-md-4 col-sm-4" />
+                                <div class="col-8 col-md-8 col-sm-8">
+                                    <admin-input asp-for="SearchCustomerRoleIds" asp-template="MultiSelect" asp-selectitem="Model.AvailableCustomerRoles" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <admin-label asp-for="SearchCustomerTagIds" class="control-label col-4 col-md-4 col-sm-4" />
+                                <div class="col-8 col-md-8 col-sm-8">
+                                    <admin-input asp-for="SearchCustomerTagIds" asp-template="MultiSelect" asp-selectitem="Model.AvailableCustomerTags" />
+                                </div>
+                            </div>
+                            @if (Model.PhoneEnabled)
+                            {
+                                <div class="form-group">
+                                    <admin-label asp-for="SearchPhone" class="control-label col-4 col-md-4 col-sm-4" />
+                                    <div class="col-8 col-md-8 col-sm-8">
+                                        <admin-input asp-for="SearchPhone" />
+                                    </div>
+                                </div>
+                            }
+                            @if (Model.ZipPostalCodeEnabled)
+                            {
+                                <div class="form-group">
+                                    <admin-label asp-for="SearchZipPostalCode" class="control-label col-4 col-md-4 col-sm-4" />
+                                    <div class="col-8 col-md-8 col-sm-8">
+                                        <admin-input asp-for="SearchZipPostalCode" />
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="x_content">
+                    <div id="customers-grid"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        $(document).ready(function () {
+
+            $('.extend-collapse').hide();
+            $('.filter-extend-button').click(function () {
+                $('.extend-collapse').toggle("slow");
+                $('.filter-text-close').toggle();
+            });
+
+                $("#customers-grid").kendoGrid({
+                    dataSource: {
+                        transport: {
+                            read: {
+                                url: "@Html.Raw(Url.Action("CustomerList", "Customer"))",
+                                type: "POST",
+                                dataType: "json",
+                                data: additionalData
+                            }
+                        },
+                        schema: {
+                            data: "Data",
+                            total: "Total",
+                            errors: "Errors"
+                        },
+                        error: function(e) {
+                            display_kendoui_grid_error(e);
+                            // Cancel the changes
+                            this.cancelChanges();
+                        },
+                        pageSize: @(adminAreaSettings.DefaultGridPageSize),
+                        serverPaging: true,
+                        serverFiltering: true,
+                        serverSorting: true
+                    },
+                    pageable: {
+                        refresh: true,
+                        pageSizes: [@(adminAreaSettings.GridPageSizes)]
+                    },
+                    scrollable: false,
+                    dataBound: onDataBound,
+                    columns: [{
+                            field: "Id",
+                            headerTemplate: "<label class='mt-checkbox mt-checkbox-outline control control-checkbox '><input id='mastercheckbox' type='checkbox'/><div class='control__indicator control__indicator_customers mt-top'></div></label>",
+                            headerAttributes: { style: "text-align:center" },
+                            attributes: { style: "text-align:center" },
+                            template: "<label class='mt-checkbox mt-checkbox-outline control control-checkbox mt-NoMargin'><input type='checkbox' value='#=Id#' class='checkboxGroups'/><div class='control__indicator control__indicator_customers mt-NoMargin'></div></label>",
+                            width: 40
+                        }, {
+                            field: "Email",
+                            title: "@T("Admin.Customers.Customers.Fields.Email")",
+                            width: 200,
+                            template: '<a class="k-link" href="Edit/#=Id#">#=Email#</a>',
+                        },
+                        @if (Model.UsernamesEnabled)
+                        {
+                            <text>{
+                                field: "Username",
+                                title: "@T("Admin.Customers.Customers.Fields.Username")",
+                                width: 200
+                            },</text>
+                        }
+                        {
+                            field: "FullName",
+                            title: "@T("Admin.Customers.Customers.Fields.FullName")",
+                            width: 200,
+                            encoded: true,
+                        }, {
+                            field: "CustomerRoleNames",
+                            title: "@T("Admin.Customers.Customers.Fields.CustomerRoles")",
+                            width: 200
+                        },
+
+                        @if (Model.CompanyEnabled)
+                        {
+                          <text>{
+                            field: "Company",
+                            title: "@T("Admin.Customers.Customers.Fields.Company")",
+                            width: 200,
+                            minScreenWidth: 770,
+                            },</text>
+                        }
+/**/
+                        @if (Model.PhoneEnabled)
+                        {
+                            <text>{
+                            field: "Phone",
+                            title: "@T("Admin.Customers.Customers.Fields.Phone")",
+                            width: 200,
+                            minScreenWidth: 770,
+                            },</text>
+                        }
+/**/
+                        @if (Model.ZipPostalCodeEnabled)
+                        {
+                            <text>{
+                            field: "ZipPostalCode",
+                            title: "@T("Admin.Customers.Customers.Fields.ZipPostalCode")",
+                            width: 200,
+                            minScreenWidth: 770,
+                            },</text>
+                        }
+                    {
+                        field: "Active",
+                        title: "@T("Admin.Customers.Customers.Fields.Active")",
+                        width: 100,
+                        headerAttributes: { style: "text-align:center" },
+                        attributes: { style: "text-align:center" },
+                        template: '# if(Active) {# <i class="fa fa-check" aria-hidden="true" style="color:green"></i> #} else {# <i class="fa fa-times" aria-hidden="true" style="color:red"></i> #} #'
+                    }, {
+                        field: "CreatedOn",
+                        title: "@T("Admin.Customers.Customers.Fields.CreatedOn")",
+                        width: 200,
+                        type: "date",
+                        format: "{0:G}",
+                        minScreenWidth: 770,
+                    }, {
+                        field: "LastActivityDate",
+                        title: "@T("Admin.Customers.Customers.Fields.LastActivityDate")",
+                        width: 200,
+                        type: "date",
+                        format: "{0:G}"
+                    }]
+                });
+            });
+    </script>
+
+    <script>
+
+            var selectedIds = [];
+
+            $(document).ready(function () {
+
+                //search button
+                $('#search-customers').click(function () {
+                    var grid = $('#customers-grid').data('kendoGrid');
+                    grid.dataSource.page(1); //new search. Set page size to 1
+                    //grid.dataSource.read(); we already loaded the grid above using "page" function
+                    //clear selected checkboxes
+                    $('.checkboxGroups').prop('checked', false).change();
+                    selectedIds = [];
+                    return false;
+                });
+                $("#@Html.FieldIdFor(model => model.SearchCustomerTagIds)").keydown(function (event) {
+                    if (event.keyCode == 13) {
+                        $("#search-customers").click();
+                        return false;
+                    }
+                });
+
+                $("#@Html.FieldIdFor(model => model.SearchCustomerTagIds)").data().kendoMultiSelect.input.on('keydown',function(e){
+                    if (event.keyCode == 13) {
+                        $("#search-customers").click();
+                        return false;
+                    }
+                })
+
+
+                $("#@Html.FieldIdFor(model => model.SearchEmail)").keydown(function (event) {
+                    if (event.keyCode == 13) {
+                        $("#search-customers").click();
+                        return false;
+                    }
+                });
+                $("#@Html.FieldIdFor(model => model.SearchUsername)").keydown(function (event) {
+                    if (event.keyCode == 13) {
+                        $("#search-customers").click();
+                        return false;
+                    }
+                });
+                $("#@Html.FieldIdFor(model => model.SearchFirstName)").keydown(function (event) {
+                    if (event.keyCode == 13) {
+                        $("#search-customers").click();
+                        return false;
+                    }
+                });
+                $("#@Html.FieldIdFor(model => model.SearchLastName)").keydown(function (event) {
+                    if (event.keyCode == 13) {
+                        $("#search-customers").click();
+                        return false;
+                    }
+                });
+                $("#@Html.FieldIdFor(model => model.SearchCompany)").keydown(function (event) {
+                    if (event.keyCode == 13) {
+                        $("#search-customers").click();
+                        return false;
+                    }
+                });
+                $("#@Html.FieldIdFor(model => model.SearchPhone)").keydown(function (event) {
+                    if (event.keyCode == 13) {
+                        $("#search-customers").click();
+                        return false;
+                    }
+                });
+                $("#@Html.FieldIdFor(model => model.SearchZipPostalCode)").keydown(function (event) {
+                    if (event.keyCode == 13) {
+                        $("#search-customers").click();
+                        return false;
+                    }
+                });
+
+                //delete selected
+                $('#delete-selected').click(function(e) {
+
+                    e.preventDefault();
+
+                    var postData = {
+                        selectedIds: selectedIds
+                    };
+                    addAntiForgeryToken(postData);
+
+                    $.ajax({
+                        cache: false,
+                        type: "POST",
+                        url: "@(Url.Action("DeleteSelected", "Customer"))",
+                        data: postData,
+                        complete: function(data) {
+                            //reload grid
+                            var grid = $('#customers-grid').data('kendoGrid');
+                            grid.dataSource.read();
+                        },
+                        error: function(xhr, ajaxOptions, thrownError) {
+                            alert(thrownError);
+                        },
+                        traditional: true
+                    });
+                    return false;
+                });
+
+                $('#mastercheckbox').click(function () {
+                    $('.checkboxGroups').prop('checked', $(this).is(':checked')).change();
+                });
+
+                //wire up checkboxes.
+                $('#customers-grid').on('change', 'input[type=checkbox][id!=mastercheckbox]', function (e) {
+                    var $check = $(this);
+                    if ($check.is(":checked") == true) {
+                        var checked = jQuery.inArray($check.val(), selectedIds);
+                        if (checked == -1) {
+                            //add id to selectedIds.
+                            selectedIds.push($check.val());
+                        }
+                    }
+                    else {
+                        var checked = jQuery.inArray($check.val(), selectedIds);
+                        if (checked > -1) {
+                            //remove id from selectedIds.
+                            selectedIds = $.grep(selectedIds, function (item, index) {
+                                return item != $check.val();
+                            });
+                        }
+                    }
+                    updateMasterCheckbox();
+                });
+            });
+
+            function onDataBound(e) {
+
+                $('#customers-grid input[type=checkbox][id!=mastercheckbox]').each(function () {
+                    var currentId = $(this).val();
+                    var checked = jQuery.inArray(currentId, selectedIds);
+                    //set checked based on if current checkbox's value is in selectedIds.
+                    $(this).prop('checked', checked > -1);
+                });
+
+                updateMasterCheckbox();
+            }
+
+            function updateMasterCheckbox() {
+                var numChkBoxes = $('#customers-grid input[type=checkbox][id!=mastercheckbox]').length;
+                var numChkBoxesChecked = $('#customers-grid input[type=checkbox][id!=mastercheckbox]:checked').length;
+                $('#mastercheckbox').prop('checked', numChkBoxes == numChkBoxesChecked && numChkBoxes > 0);
+            }
+
+            function additionalData() {
+                var customerRoleIds = [];
+                if($('#@Html.FieldIdFor(model => model.SearchCustomerRoleIds)').val()!=null){
+                    customerRoleIds = $('#@Html.FieldIdFor(model => model.SearchCustomerRoleIds)').val();
+                }
+
+                var customerTagIds = [];
+                if($('#@Html.FieldIdFor(model => model.SearchCustomerTagIds)').val()!=null){
+                    customerTagIds = $('#@Html.FieldIdFor(model => model.SearchCustomerTagIds)').val();
+                }
+
+                var data = {
+                    SearchCustomerRoleIds: customerRoleIds,
+                    SearchCustomerTagIds: customerTagIds,
+                    SearchEmail: $('#@Html.FieldIdFor(model => model.SearchEmail)').val(),
+                    SearchUsername: $('#@Html.FieldIdFor(model => model.SearchUsername)').val(),
+                    SearchFirstName: $('#@Html.FieldIdFor(model => model.SearchFirstName)').val(),
+                    SearchLastName: $('#@Html.FieldIdFor(model => model.SearchLastName)').val(),
+                    SearchCompany: $('#@Html.FieldIdFor(model => model.SearchCompany)').val(),
+                    SearchPhone: $('#@Html.FieldIdFor(model => model.SearchPhone)').val(),
+                    SearchZipPostalCode: $('#@Html.FieldIdFor(model => model.SearchZipPostalCode)').val()
+                };
+                addAntiForgeryToken(data);
+                return data;
+            }
+    </script>
+</form>
+
+@*export selected (XML). We don't use GET approach because it's limited to 2K-4K chars and won't work for large number of entities*@
+<form asp-area="@Constants.AreaAdmin" asp-controller="Customer" asp-action="ExportXmlSelected" method="post" id="export-xml-selected-form">
+    
+    <input type="hidden" id="selectedIds" name="selectedIds" value="" />
+</form>
+
+<script>
+    $(document).ready(function () {
+        $('#exportxml-selected').click(function (e) {
+            e.preventDefault();
+            var ids = selectedIds.join(",");
+            $('#export-xml-selected-form #selectedIds').val(ids);
+            $('#export-xml-selected-form').submit();
+            return false;
+        });
+    });
+
+</script>
+
+@*export selected (Excel). We don't use GET approach because it's limited to 2K-4K chars and won't work for large number of entities*@
+<form asp-area="@Constants.AreaAdmin" asp-controller="Customer" asp-action="ExportExcelSelected" method="post" id="export-excel-selected-form">
+    
+    <input type="hidden" id="selectedIds" name="selectedIds" value="" />
+</form>
+
+<script>
+
+    $(document).ready(function () {
+        $('#exportexcel-selected').click(function (e) {
+            e.preventDefault();
+            var ids = selectedIds.join(",");
+            $('#export-excel-selected-form #selectedIds').val(ids);
+            $('#export-excel-selected-form').submit();
+            return false;
+        });
+    });
+
+</script>
+

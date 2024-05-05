@@ -1,0 +1,34 @@
+﻿using PowerStore.Domain.Stores;
+using System.Threading.Tasks;
+
+namespace PowerStore.Core
+{
+    /// <summary>
+    /// Store context
+    /// </summary>
+    public interface IStoreContext
+    {
+        /// <summary>
+        /// Gets or sets the current store
+        /// </summary>
+        Store CurrentStore { get; }
+
+        /// <summary>
+        /// Set the current store by Middleware
+        /// </summary>
+        /// <returns></returns>
+        Task<Store> SetCurrentStore();
+
+        /// <summary>
+        /// Set the current store by BackgroundService
+        /// </summary>
+        /// <returns></returns>
+        Task<Store> SetCurrentStore(string storeId);
+
+        /// <summary>
+        /// Set store cookie
+        /// </summary>
+        /// <param name="storeId">Store ident</param>
+        Task SetStoreCookie(string storeId);
+    }
+}

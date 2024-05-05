@@ -1,0 +1,32 @@
+﻿@model StoreSelectorModel
+@inject IWebHelper webHelper
+@if (Model != null && Model.AvailableStores.Count > 1)
+{
+    var stores = Model.AvailableStores.Select(x => new
+    {
+        Name = x.Name,
+        Selected = x.Id.Equals(Model.CurrentStoreId),
+        Value = Url.RouteUrl("ChangeStore", new { store = x.Id, returnUrl = webHelper.GetRawUrl(Context.Request) }),
+    });
+    <div class="store-selector d-block btn-group btn-group-sm float-xs-right pr-1">
+        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+            <span>
+                @stores.FirstOrDefault(x => x.Selected).Name
+            </span>
+            <span class="sr-only">Toggle Dropdown</span>
+            <span class="mdi mdi-chevron-down"></span>
+        </button>
+        <div class="dropdown-menu">
+            <ul class="pl-0 mb-0">
+                @foreach (var item in stores)
+                {
+                    var className = item.Selected ? "active" : "";
+                    <li class="@className">
+                        <a class="text-dark" href="@item.Value">@item.Name</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+}

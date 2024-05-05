@@ -1,0 +1,132 @@
+﻿@model VendorListModel
+@inject AdminAreaSettings adminAreaSettings
+@{
+//page title
+ViewBag.Title = T("Admin.Vendors").Text;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel light form-fit">
+            <div class="x_title">
+                <div class="caption">
+                    <i class="fa fa-cubes"></i>
+                    @T("Admin.Vendors")
+                </div>
+                <div class="actions btn-group btn-group-devided">
+                    <a href="@Url.Action("Create")" class="btn green"><i class="fa fa-plus"></i><span class="d-none d-sm-inline"> @T("Admin.Common.AddNew") </span></a>
+                    <vc:admin-widget widget-zone="vendor_list_buttons" additional-data="null" />
+                </div>
+            </div>
+            <div class="x_content form">
+                <div class="form-horizontal">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <admin-label asp-for="SearchName" />
+                            <div class="col-md-4 col-sm-6">
+                                <admin-input asp-for="SearchName" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="offset-md-3 offset-sm-3 col-md-9 col-sm-9">
+                                <button class="btn btn-success filter-submit" id="search-vendors">
+                                    <i class="fa fa-search"></i> @T("Admin.Common.Search")
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="x_content">
+                <div id="vendors-grid"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#vendors-grid").kendoGrid({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "@Html.Raw(Url.Action("List", "Vendor"))",
+                        type: "POST",
+                        dataType: "json",
+                        data: additionalData
+                    }
+                },
+                schema: {
+                    data: "Data",
+                    total: "Total",
+                    errors: "Errors"
+                },
+                error: function(e) {
+                    display_kendoui_grid_error(e);
+                    // Cancel the changes
+                    this.cancelChanges();
+                },
+                pageSize: @(adminAreaSettings.DefaultGridPageSize),
+                serverPaging: true,
+                serverFiltering: true,
+                serverSorting: true
+            },
+            pageable: {
+                refresh: true,
+                pageSizes: [@(adminAreaSettings.GridPageSizes)]
+            },
+            editable: {
+                confirmation: false,
+                mode: "inline"
+            },
+            scrollable: false,
+            columns: [{
+                field: "Name",
+                title: "@T("Admin.Vendors.Fields.Name")",
+                width: 300,
+                template: '<a class="k-link" href="Edit/#=Id#">#:Name#</a>',
+            }, {
+                field: "Email",
+                title: "@T("Admin.Vendors.Fields.Email")",
+                width: 300,
+                template: '<a class="k-link" href="Edit/#=Id#">#:Email#</a>',
+            }, {
+                field: "Active",
+                title: "@T("Admin.Vendors.Fields.Active")",
+                width: 100,
+                headerAttributes: { style: "text-align:center" },
+                attributes: { style: "text-align:center" },
+                template: '# if(Active) {# <i class="fa fa-check" aria-hidden="true" style="color:green"></i> #} else {# <i class="fa fa-times" aria-hidden="true" style="color:red"></i> #} #'
+            }]
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        //search button
+        $('#search-vendors').click(function () {
+            //search
+            var grid = $('#vendors-grid').data('kendoGrid');
+            grid.dataSource.page(1); //new search. Set page size to 1
+            //grid.dataSource.read(); we already loaded the grid above using "page" function
+            return false;
+        });
+
+        $("#@Html.FieldIdFor(model => model.SearchName)").keydown(function (event) {
+            if (event.keyCode == 13) {
+                $("#search-vendors").click();
+                return false;
+            }
+        });
+    });
+
+    function additionalData() {
+        var data = {
+            SearchName: $('#@Html.FieldIdFor(model => model.SearchName)').val()
+        };
+        addAntiForgeryToken(data);
+        return data;
+    }
+</script>

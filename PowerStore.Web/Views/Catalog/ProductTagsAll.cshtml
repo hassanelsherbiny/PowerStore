@@ -1,0 +1,23 @@
+﻿@model PopularProductTagsModel
+@using PowerStore.Web.Models.Catalog
+@inject IPageHeadBuilder pagebuilder
+@{
+    Layout = "_ColumnsTwo";
+
+    //title
+    pagebuilder.AddTitleParts(T("PageTitle.AllProductTags").Text);
+}
+<div class="page product-tags-all-page">
+    <h2 class="generalTitle">@T("Products.Tags.All")</h2>
+    @if (Model.Tags.Any())
+    {
+        <div class="product-tags-list">
+            @foreach (var item in Model.Tags)
+            {
+                <a class="btn btn-outline-secondary" href="@Url.RouteUrl("ProductsByTagName", new { SeName = item.SeName })" style="font-size:@(Model.GetFontSize(item))%;">
+                    @item.Name
+                </a>
+            }
+        </div>
+    }
+</div>

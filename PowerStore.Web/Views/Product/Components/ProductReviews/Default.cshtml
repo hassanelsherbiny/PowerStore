@@ -1,0 +1,82 @@
+﻿@model ProductReviewsModel
+
+<div class="mb-4">
+    <a class="btn btn-sm btn-outline-secondary" href="@Url.RouteUrl("ProductReviews", new { productId = Model.ProductId })">@T("Reviews.Overview.AddNew")</a>
+</div>
+
+@if (Model.Items.Any())
+{
+    <div class="product-review-list">
+        <h5><strong>@T("Reviews.ExistingReviews")</strong></h5>
+        @foreach (var review in Model.Items)
+        {
+            int ratingPercent = review.Rating * 20;
+            <div class="card comment product-review-item pb-3">
+                <div class="card-header review-item-head pt-0">
+                    <div class="ratings justify-content-start">
+                        <div class="rating-box">
+                            <div class="rating" style="width: @(ratingPercent)%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-info">
+                        <span class="user">
+                            <span>@T("Reviews.From"):</span>
+                            @if (review.AllowViewingProfiles)
+                            {
+                                <a href="@Url.RouteUrl("CustomerProfile", new { id = review.CustomerId })">@(review.CustomerName)</a>
+                            }
+                            else
+                            {
+                                @review.CustomerName
+                            }
+                        </span>
+                        <span class="separator">|</span>
+                        <span class="date">
+                            <span>@T("Reviews.Date"):</span>
+                            <span>@review.WrittenOnStr</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body mb-3">
+                    <div class="review-title">
+                        <strong>@review.Title</strong>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-text">
+                            @review.ReviewText
+                        </div>
+                    </div>
+                    @if (!string.IsNullOrEmpty(review.ReplyText))
+                    {
+                        <div class="reply-content">
+                            <blockquote class="administration-response">
+                                <h5 class="administration-response-header">@T("Reviews.AdministrationResponse")</h5>
+                                @review.ReplyText
+                                <p>@review.Signature</p>
+                            </blockquote>
+                        </div>
+                    }
+                </div>
+                <div class="card-footer text-right">
+                    <partial name="_ProductReviewHelpfulness" model="review.Helpfulness" />
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p class="text-muted">@T("Products.Reviews.Empty")</p>
+}
+
+<script asp-location="Footer">
+    $(document).ready(function () {
+        $(".rating-options .custom-radio").click(function () {
+            $(".custom-radio").removeClass("full-star");
+            $(".custom-radio").removeClass("empty-star");
+            $(this).prevAll(".custom-radio").addClass("full-star");
+            $(this).nextAll(".custom-radio").addClass("empty-star");
+        });
+    });
+</script>

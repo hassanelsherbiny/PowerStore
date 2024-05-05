@@ -1,0 +1,31 @@
+﻿@model CustomerAttributeModel
+@{
+    //page title
+    ViewBag.Title = T("Admin.Customers.CustomerAttributes.AddNew").Text;
+}
+<form asp-area="@Constants.AreaAdmin" asp-controller="CustomerAttribute" asp-action="Create" method="post" id="customerattribute-form">
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel light form-fit">
+                <div class="x_title">
+                    <div class="caption">
+                        <i class="fa fa-list-ol"></i>
+                        @T("Admin.Customers.CustomerAttributes.AddNew")
+                        <small><i class="fa fa-arrow-circle-left"></i>@Html.ActionLink(T("Admin.Address.AddressAttributes.BackToList").Text, "List")</small>
+                    </div>
+                    <div class="actions">
+                        <div class="btn-group btn-group-devided">
+                            <button class="btn btn-success" type="submit" name="save"><i class="fa fa-check"></i> @T("Admin.Common.Save") </button>
+                            <button class="btn btn-success" type="submit" name="save-continue"><i class="fa fa-check-circle"></i> @T("Admin.Common.SaveContinue") </button>
+                            <vc:admin-widget widget-zone="customer_attribute_details_buttons" additional-data="null" />
+                        </div>
+                    </div>
+                </div>
+                <div class="x_content form">
+                   <partial name="_CreateOrUpdate" model="Model" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,35 @@
+﻿@model PluginModel
+
+<div asp-validation-summary="All"></div>
+<input asp-for="SystemName" type="hidden" />
+@if (ViewBag.RefreshPage == true)
+{
+    <script>
+        try {window.opener.document.forms['@(Context.Request.Query["formId"])'].@(Context.Request.Query["btnId"]).click();}
+        catch (e){}
+        window.close();
+    </script>
+}
+<vc:admin-widget widget-zone="plugin_details_top" additional-data="Model" />
+
+<admin-tabstrip name="plugin-edit">
+    <items>
+        <tabstrip-item text="@T("Admin.Configuration.Plugins.Info")" tab-index="0">
+            <content>
+                <div>
+                    <partial name="_CreateOrUpdatePlugin.TabInfo" model="Model" />
+                </div>
+            </content>
+        </tabstrip-item>
+        <tabstrip-item text="@T("Admin.Configuration.Plugins.Stores")" tab-index="1">
+            <content>
+                <div>
+                    <partial name="_TabStores" model="Model" />
+                </div>
+            </content>
+        </tabstrip-item>
+        <vc:admin-widget widget-zone="plugin_details_tabs" additional-data="Model" />
+    </items>
+</admin-tabstrip>
+
+<vc:admin-widget widget-zone="plugin_details_bottom" additional-data="Model" />

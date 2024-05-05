@@ -1,0 +1,11 @@
+﻿@inject IPageHeadBuilder pagebuilder
+@{
+    Layout = "_ColumnsOneClean";
+
+    //title
+    pagebuilder.AddTitleParts(T("PageTitle.StoreClosed").Text);
+}
+<div class="page store-closed-page">
+    <h1 class="h2 generalTitle">@T("StoreClosed")</h1>
+    @T("StoreClosed.Hint")
+</div>

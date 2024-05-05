@@ -1,0 +1,38 @@
+﻿@model DeleteAccountModel
+@using PowerStore.Web.Models.Customer;
+@inject IPageHeadBuilder pagebuilder
+@{
+    Layout = "_ColumnsTwo";
+
+    //title
+    pagebuilder.AddTitleParts(T("PageTitle.Account").Text);
+}
+@section left
+{
+    @await Component.InvokeAsync("CustomerNavigation", new { selectedTabId = CustomerNavigationEnum.DeleteAccount })
+}
+<vc:widget widget-zone="customer-delete-account-before" additional-data="@Model"></vc:widget>
+<form asp-route="CustomerDeleteAccount" method="post" autocomplete="off">
+    <section class="page account-page change-password-page pl-lg-3 pt-3 pt-lg-0">
+        <a class="js-offcanvas-trigger blog-filter filter-button btn btn-outline-info d-lg-none d-flex mb-3" data-offcanvas-trigger="leftSide" href="#leftSide"><span class="mdi mdi-tune"></span><span class="ml-3">@T("Account.Navigation")</span></a>
+        <h1 class="h2 generalTitle">@T("Account.DeleteAccount")</h1>
+
+        <div asp-validation-summary="ModelOnly" class="message-error"></div>
+        <div class="alert alert-danger" role="alert">
+            @T("Account.DeleteAccount.DangerAlert")
+        </div>
+        <fieldset>
+            <div class="form-fields">
+                <fieldset class="form-group">
+                    <label asp-for="Password" class="col-form-label">@T("Account.DeleteAccount.Fields.Password"):</label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password"></span>
+                </fieldset>
+            </div>
+        </fieldset>
+        <div class="text-xs-center">
+            <input type="submit" class="btn btn-danger change-password-button" value="@T("Account.DeleteAccount.Button")" onclick="return confirm('@T("Admin.Common.AreYouSure")'); " />
+        </div>
+    </section>
+</form>
+<vc:widget widget-zone="customer-delete-account-after" additional-data="@Model"></vc:widget>

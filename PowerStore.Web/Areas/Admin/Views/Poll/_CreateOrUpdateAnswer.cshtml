@@ -1,0 +1,53 @@
+﻿@model PollAnswerModel
+
+<div asp-validation-summary="All"></div>
+<input asp-for="Id" type="hidden" />
+
+<input asp-for="PollId" type="hidden" />
+@if (ViewBag.RefreshPage == true)
+{
+    <script>
+        try {window.opener.document.forms['@(Context.Request.Query["formId"])'].@(Context.Request.Query["btnId"]).click();}
+        catch (e){} 
+        window.close();
+    </script>
+}
+
+@(await Html.LocalizedEditor<PollAnswerModel, PollAnswerLocalizedModel>("pollanswer-localized",
+@<div class="form-horizontal">
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="@Model.Locales[item].Name" class="col-sm-3 control-label"/>
+            <div class="col-md-9 col-sm-9">
+                <admin-input asp-for="@Model.Locales[item].Name" />
+                <span asp-validation-for="@Model.Locales[item].Name"></span>
+            </div>
+        </div>
+        <input asp-for="@Model.Locales[item].LanguageId" type="hidden" />        
+    </div>
+</div>
+,
+@<div class="form-horizontal">
+     <div class="form-body">
+         <div class="form-group">
+             <admin-label asp-for="Name" class="col-sm-3 control-label"/>
+             <div class="col-md-9 col-sm-9">
+                 <admin-input asp-for="Name" />
+                 <span asp-validation-for="Name"></span>
+             </div>
+         </div>
+     </div>
+</div>
+))
+<div class="form-horizontal">
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="DisplayOrder" class="col-sm-3 control-label"/>
+            <div class="col-md-9 col-sm-9">
+                <admin-input asp-for="DisplayOrder" />
+                <span asp-validation-for="DisplayOrder"></span>
+            </div>
+        </div>
+    </div>
+</div>
+

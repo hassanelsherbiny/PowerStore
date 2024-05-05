@@ -1,0 +1,33 @@
+﻿@model ReturnRequestModel
+@{
+    //page title
+    ViewBag.Title = T("Admin.ReturnRequests.EditReturnRequestDetails").Text;
+}
+<form asp-area="@Constants.AreaAdmin" asp-controller="ReturnRequest" asp-action="Edit" method="post">
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel light form-fit">
+                <div class="x_title">
+                    <div class="caption">
+                        <i class="fa fa-truck"></i>
+                        @T("Admin.ReturnRequests.EditReturnRequestDetails")
+                        <small><i class="fa fa-arrow-circle-left"></i> @Html.ActionLink(T("Admin.ReturnRequests.BackToList").Text, "List")</small>
+                    </div>
+                    <div class="actions">
+                        <div class="btn-group btn-group-devided">
+                            <button class="btn btn-success" type="submit" name="save"><i class="fa fa-check"></i> @T("Admin.Common.Save") </button>
+                            <button class="btn btn-success" type="submit" name="save-continue"><i class="fa fa-check-circle"></i> @T("Admin.Common.SaveContinue") </button>
+                            <span id="returnrequest-delete" class="btn red"><i class="fa fa-trash-o"></i> @T("Admin.Common.Delete")</span>
+                            <vc:admin-widget widget-zone="return_request_details_buttons" additional-data="Model" />
+                        </div>
+                    </div>
+                </div>
+                <div class="x_content form">
+                   <partial name="_CreateOrUpdate" model="Model" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<admin-delete-confirmation button-id="returnrequest-delete"/>

@@ -1,0 +1,163 @@
+﻿@model RewardPointsSettingsModel
+@using PowerStore.Domain.Orders;
+@{
+    //page title
+    ViewBag.Title = T("Admin.Configuration.Settings.RewardPoints").Text;
+}
+<form asp-area="@Constants.AreaAdmin" asp-controller="Setting" asp-action="RewardPoints" method="post">
+    
+    <div asp-validation-summary="All"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel light form-fit">
+                <div class="x_title">
+                    <div class="caption">
+                        <i class="fa fa-fw fa-sliders"></i>
+                        @T("Admin.Configuration.Settings.RewardPoints")
+                    </div>
+                    <div class="actions">
+                        <div class="btn-group btn-group-devided">
+                            <button class="btn btn-success" type="submit" name="save"><i class="fa fa-check"></i> @T("Admin.Common.Save") </button>
+                        </div>
+                    </div>
+                    <vc:admin-widget widget-zone="reward_points_settings_buttons" additional-data="null" />
+                </div>
+                <div class="x_content">
+                    <div class="form-horizontal">
+                        <div class="form-body">
+                            @await Component.InvokeAsync("StoreScopeConfiguration")
+                        </div>
+                    </div>
+                </div>
+                <div class="x_content form">
+                    <vc:admin-widget widget-zone="reward_points_settings_top" additional-data="null" />
+                    <div class="form-horizontal">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <div class="note note-info">
+                                    @T("Admin.Configuration.Settings.RewardPoints.Description")
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-8 col-md-4 col-sm-4 text-right">
+                                    @Html.OverrideStoreCheckboxFor(model => model.Enabled_OverrideForStore, model => model.Enabled, Model.ActiveStoreScopeConfiguration)
+                                    <admin-label asp-for="Enabled" class="control-label" />
+                                </div>
+                                <div class="col-4 col-md-8 col-sm-8">
+                                    <label class="mt-checkbox mt-checkbox-outline control control-checkbox">
+                                        <admin-input asp-for="Enabled" />
+                                         <div class="control__indicator"></div>
+                                    </label>
+                                    <span asp-validation-for="Enabled"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-8 col-md-4 col-sm-4 text-right">
+                                    @Html.OverrideStoreCheckboxFor(model => model.ExchangeRate_OverrideForStore, model => model.ExchangeRate, Model.ActiveStoreScopeConfiguration)
+                                    <admin-label asp-for="ExchangeRate" class="control-label" />
+                                </div>
+                                <div class="col-4 col-md-8 col-sm-8">
+                                    @T("Admin.Configuration.Settings.RewardPoints.ExchangeRate.Hint2")
+                                    <admin-input asp-for="ExchangeRate" />
+                                    @Model.PrimaryStoreCurrencyCode
+                                    <span asp-validation-for="ExchangeRate"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-8 col-md-4 col-sm-4 text-right">
+                                    @Html.OverrideStoreCheckboxFor(model => model.MinimumRewardPointsToUse_OverrideForStore, model => model.MinimumRewardPointsToUse, Model.ActiveStoreScopeConfiguration)
+                                    <admin-label asp-for="MinimumRewardPointsToUse" class="control-label" />
+                                </div>
+                                <div class="col-4 col-md-8 col-sm-8">
+                                    <admin-input asp-for="MinimumRewardPointsToUse" />
+                                    <span asp-validation-for="MinimumRewardPointsToUse"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="note note-info">
+                                    @T("Admin.Configuration.Settings.RewardPoints.Earning")
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-8 col-md-4 col-sm-4 text-right">
+                                    @Html.OverrideStoreCheckboxFor(model => model.PointsForRegistration_OverrideForStore, model => model.PointsForRegistration, Model.ActiveStoreScopeConfiguration)
+                                    <admin-label asp-for="PointsForRegistration" class="control-label" />
+                                </div>
+                                <div class="col-4 col-md-8 col-sm-8">
+                                    <admin-input asp-for="PointsForRegistration" />
+                                    <span asp-validation-for="PointsForRegistration"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-8 col-md-4 col-sm-4 text-right">
+                                    @Html.OverrideStoreCheckboxFor(model => model.PointsForPurchases_OverrideForStore, model => model.PointsForPurchases_Amount, model => model.PointsForPurchases_Points, Model.ActiveStoreScopeConfiguration)
+                                    <admin-label asp-for="PointsForPurchases_Amount" class="control-label" />
+                                </div>
+                                <div class="col-4 col-md-8 col-sm-8">
+                                    @T("Admin.Configuration.Settings.RewardPoints.Earning.Hint1")
+                                    <admin-input asp-for="PointsForPurchases_Amount" />
+                                    @Model.PrimaryStoreCurrencyCode
+                                    &nbsp;
+                                    @T("Admin.Configuration.Settings.RewardPoints.Earning.Hint2")
+                                    <admin-input asp-for="PointsForPurchases_Points" />
+                                    @T("Admin.Configuration.Settings.RewardPoints.Earning.Hint3")
+                                    <span asp-validation-for="PointsForPurchases_Amount"></span>
+                                    <span asp-validation-for="PointsForPurchases_Points"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-8 col-md-4 col-sm-4 text-right">
+                                    @Html.OverrideStoreCheckboxFor(model => model.PointsForPurchases_Awarded_OverrideForStore, model => model.PointsForPurchases_Awarded, Model.ActiveStoreScopeConfiguration)
+                                    <admin-label asp-for="PointsForPurchases_Awarded" class="control-label" />
+                                </div>
+                                <div class="col-4 col-md-8 col-sm-8">
+                                    <admin-select asp-for="PointsForPurchases_Awarded" asp-items="Model.PointsForPurchases_Awarded_OrderStatuses" />
+                                    <span asp-validation-for="PointsForPurchases_Awarded"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-8 col-md-4 col-sm-4 text-right">
+                                    @Html.OverrideStoreCheckboxFor(model => model.ReduceRewardPointsAfterCancelOrder_OverrideForStore, model => model.ReduceRewardPointsAfterCancelOrder, Model.ActiveStoreScopeConfiguration)
+                                    <admin-label asp-for="ReduceRewardPointsAfterCancelOrder" class="control-label" />
+                                </div>
+                                <div class="col-4 col-md-8 col-sm-8">
+                                    <label class="mt-checkbox mt-checkbox-outline control control-checkbox">
+                                        <admin-input asp-for="ReduceRewardPointsAfterCancelOrder" />
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <span asp-validation-for="ReduceRewardPointsAfterCancelOrder"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-8 col-md-4 col-sm-4 text-right">
+                                    @Html.OverrideStoreCheckboxFor(model => model.DisplayHowMuchWillBeEarned_OverrideForStore, model => model.DisplayHowMuchWillBeEarned, Model.ActiveStoreScopeConfiguration)
+                                    <admin-label asp-for="DisplayHowMuchWillBeEarned" class="control-label" />
+                                </div>
+                                <div class="col-4 col-md-8 col-sm-8">
+                                    <label class="mt-checkbox mt-checkbox-outline control control-checkbox">
+                                        <admin-input asp-for="DisplayHowMuchWillBeEarned" />
+                                         <div class="control__indicator"></div>
+                                    </label>
+                                    <span asp-validation-for="DisplayHowMuchWillBeEarned"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-8 col-md-4 col-sm-4 text-right">
+                                    <admin-label asp-for="PointsAccumulatedForAllStores" class="control-label" />
+                                </div>
+                                <div class="col-4 col-md-8 col-sm-8">
+                                    <label class="mt-checkbox mt-checkbox-outline control control-checkbox">
+                                        <admin-input asp-for="PointsAccumulatedForAllStores" />
+                                         <div class="control__indicator"></div>
+                                    </label>
+                                    <span asp-validation-for="PointsAccumulatedForAllStores"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <vc:admin-widget widget-zone="reward_points_settings_bottom" additional-data="null" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

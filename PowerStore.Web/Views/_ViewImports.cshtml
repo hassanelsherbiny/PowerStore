@@ -1,0 +1,39 @@
+﻿@inherits PowerStore.Framework.Mvc.Razor.PowerStoreRazorPage<TModel>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@*we remove the default InputTagHelper to prevent the checkbox duplicating: https://stackoverflow.com/questions/42544961/asp-net-core-custom-input-tag-helper-rendering-duplicate-checkboxes*@
+@removeTagHelper Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, PowerStore.Framework
+@addTagHelper *, PowerStore.Web
+@addTagHelper *, MiniProfiler.AspNetCore.Mvc
+
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@using System.Net
+@using PowerStore.Framework
+@using PowerStore.Framework.UI
+@using PowerStore.Framework.Extensions
+@using PowerStore.Framework.Security.Captcha
+@using PowerStore.Framework.Themes
+@using PowerStore.Web.Extensions
+@using PowerStore.Web.Models.Blogs
+@using PowerStore.Web.Models.Catalog
+@using PowerStore.Web.Models.Checkout
+@using PowerStore.Web.Models.Cms
+@using PowerStore.Web.Models.Common
+@using PowerStore.Web.Models.Course
+@using PowerStore.Web.Models.Customer
+@using PowerStore.Web.Models.Knowledgebase
+@using PowerStore.Web.Models.Media
+@using PowerStore.Web.Models.News
+@using PowerStore.Web.Models.Newsletter
+@using PowerStore.Web.Models.Orders
+@using PowerStore.Web.Models.Polls
+@using PowerStore.Web.Models.ShoppingCart
+@using PowerStore.Web.Models.Topics
+@using PowerStore.Web.Models.Vendors
+@using PowerStore.Core
+@using PowerStore.Domain
+@using PowerStore.Domain.Catalog
+@using PowerStore.Domain.Common
+@using PowerStore.Domain.Orders
+@using PowerStore.Domain.Tax
+@using PowerStore.Domain.Seo

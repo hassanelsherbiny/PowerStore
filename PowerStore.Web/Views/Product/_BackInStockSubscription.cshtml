@@ -1,0 +1,40 @@
+﻿@model ProductDetailsModel
+@if (Model.DisplayBackInStockSubscription)
+{
+    <input type="button" id="back-in-stock-subscribe-@Model.Id" class="btn btn-secondary btn-sm subscribe-button" value="@T("BackInStockSubscriptions.NotifyMeWhenAvailable")" />
+    <script asp-location="Footer">
+        $(document).ready(function () {
+            $("#back-in-stock-subscribe-@Model.Id").click(function (event) {
+                var posting = $.post('@Url.RouteUrl("BackInStockSubscribePopup", new { productId = Model.Id })', $('#product-details-form').serialize());
+                posting.done(function (result) {
+                    $('#modal-subscribe').html(result.resource);
+                    $('.subscribe-button').val(result.buttontext);
+                });
+                $('#subscribe-modal-form').modal('show');
+                $("body.modal-open").removeAttr("style");
+                $(".navUp").removeAttr("style");
+            });
+            var checkstatusButton = $.get('@Url.RouteUrl("BackInStockSubscribeButton", new { productId = Model.Id, warehouseId = "" })');
+            checkstatusButton.done(function (result) {
+                $('.subscribe-button').val(result);
+            });
+        });
+    </script>
+
+    <div class="modal fade" id="subscribe-modal-form">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">@T("BackInStockSubscriptions.Title")</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modal-subscribe">
+                    @T("BackInStockSubscriptions.PleaseWait")
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

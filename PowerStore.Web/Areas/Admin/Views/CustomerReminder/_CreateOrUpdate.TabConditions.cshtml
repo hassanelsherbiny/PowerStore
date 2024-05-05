@@ -1,0 +1,87 @@
+﻿@model CustomerReminderModel
+@{
+
+    if (String.IsNullOrEmpty(Model.Id))
+    {
+        <div class="note note-info">
+            @T("Admin.Customers.CustomerReminder.SaveBeforeEdit")
+        </div>
+    }
+    if (!String.IsNullOrEmpty(Model.Id))
+    {
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div id="conditions-grid"></div>
+            </div>
+            <div class="panel-footer">
+                <button type="submit" id="btnAddNewCondition" name="btnAddNewCondition" onclick="javascript:setLocation('@(Url.Action("AddCondition", "CustomerReminder", new { customerReminderId = Model.Id }))'); return false;" class="k-button"><i class="fa fa-plus"></i>&nbsp;@T("Admin.Customers.CustomerReminder.Conditions.AddNew")</button>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("#conditions-grid").kendoGrid({
+                    dataSource: {
+                        transport: {
+                            read: {
+                                url: "@Html.Raw(Url.Action("Conditions", "CustomerReminder", new { customerReminderId = Model.Id }))",
+                                type: "POST",
+                                dataType: "json",
+                                data: addAntiForgeryToken
+                            },
+                            destroy: {
+                                url: "@Html.Raw(Url.Action("ConditionDelete", "CustomerReminder", new { customerReminderId = Model.Id }))",
+                                type: "POST",
+                                dataType: "json",
+                                data: addAntiForgeryToken
+                            }
+                        },
+                        schema: {
+                            data: "Data",
+                            total: "Total",
+                            errors: "Errors",
+                            model: {
+                                id: "Id",
+                            }
+                        },
+                        error: function (e) {
+                            display_kendoui_grid_error(e);
+                            // Cancel the changes
+                            this.cancelChanges();
+                        },
+                        serverPaging: true,
+                        serverFiltering: true,
+                        serverSorting: true
+                    },
+                    pageable: {
+                        refresh: true,
+                        numeric: false,
+                        previousNext: false,
+                        info: false
+                    },
+                    editable: {
+                        confirmation: true,
+                        mode: "inline"
+                    },
+                    scrollable: false,
+                    columns: [
+                    {
+                        field: "Name",
+                        title: "@T("Admin.Customers.CustomerReminder.Fields.Name")",
+                        width: 300,
+                        template: '<a class="k-link" href="@Url.Action("EditCondition", "CustomerReminder")/?customerReminderId=@(Model.Id)&cid=#=Id#">#=kendo.htmlEncode(Name)#</a>',
+                    },
+                    {
+                        field: "Condition",
+                        title: "@T("Admin.Customers.CustomerReminder.Fields.ConditionType")",
+                        width: 100,
+                    },
+                    {
+                        command: { name: "destroy", text: "@T("Admin.Common.Delete")" },
+                        title: "@T("Admin.Common.Delete")",
+                        width: 100
+                    }]
+                });
+            });
+        </script>
+    }
+}

@@ -1,0 +1,218 @@
+<Language>
+  <LocaleResource Name="ActivityLog.UpdateCartCustomer">
+    <Value>Edited price for customer {0} (ID: {1}) price: {2}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.System.QueuedEmails.List.Text">
+    <Value>Text</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.System.QueuedEmails.List.Text.Hint">
+    <Value>Allow searching by subject or body email</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Shipping.Warehouses.Fields.Latitude">
+    <Value>Latitude</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Shipping.Warehouses.Fields.Latitude.Hint">
+    <Value>Enter a warehouse latitude.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Shipping.Warehouses.Fields.Longitude">
+    <Value>Longitude</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Shipping.Warehouses.Fields.Longitude.Hint">
+    <Value>Enter a warehouse longitude.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Shipping.PickupPoint.Fields.Latitude">
+    <Value>Latitude</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Shipping.PickupPoint.Fields.Latitude.Hint">
+    <Value>Enter a pickup point latitude.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Shipping.PickupPoint.Fields.Longitude">
+    <Value>Longitude</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Shipping.PickupPoint.Fields.Longitude.Hint">
+    <Value>Enter a pickup point longitude.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Shipping.Warehouses.Fields.DisplayOrder">
+    <Value>Display order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Shipping.Warehouses.Fields.DisplayOrder.hint">
+    <Value>Display order of the warehouse.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Stores.Fields.DefaultCurrency">
+    <Value>Default currency</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Stores.Fields.DefaultCurrency.Hint">
+    <Value>This property allows a store owner to specify a default currency for a store.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.Blog.ShowBlogPostsInSearchAutoComplete">
+    <Value>Show blog posts in search autocomplete</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.Blog.ShowBlogPostsInSearchAutoComplete.Hint">
+    <Value>Check this box if you want to show blog posts in search autocomplete</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.System.ScheduleTasks.StoreId">
+    <Value>Store</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.System.ScheduleTasks.StoreId.Hint">
+    <Value>A store name in which this task run (storecontext).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Products.ProductPrices.Fields.CurrencyCode">
+    <Value>Currency code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Products.ProductPrices.Fields.Price">
+    <Value>Price</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Products.TierPrices.Fields.CurrencyCode">
+    <Value>Currency code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Products.TierPrices.Fields.CurrencyCode.Hint">
+    <Value>The currency code.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.GiftCards.Fields.CurrencyCode">
+    <Value>Currency code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.GiftCards.Fields.CurrencyCode.Hint">
+    <Value>The currency code.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.CustomerUser.GeoEnabled">
+    <Value>Geo-coordinates enabled</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.CustomerUser.GeoEnabled.Hint">
+    <Value>Check if you want to save the geo coordinates on each customer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Stores.Fields.DefaultAdminTheme">
+    <Value>Default admin theme</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Stores.Fields.DefaultAdminTheme.Hint">
+    <Value>Enter the name of the default admin theme</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.Vendor.DefaultAdminTheme">
+    <Value>Default admin theme</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.Vendor.DefaultAdminTheme.Hint">
+    <Value>Enter the name of the default admin theme</Value>
+  </LocaleResource>
+  <LocaleResource Name="Account.Fields.Password.Validation">
+    <Value>Your password does not meet our requirements</Value>
+  </LocaleResource>
+  <LocaleResource Name="Account.ChangePassword.Fields.NewPassword.Validation">
+    <Value>Your password does not meet our requirements</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.CustomerUser.PasswordRegularExpression">
+    <Value>Regular Expression for password validation</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.CustomerUser.PasswordRegularExpression.hint">
+    <Value>Enter the regular expression for password validation</Value>
+  </LocaleResource>
+  <LocaleResource Name="Search.Products">
+    <Value>Products</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.SalesEmployees">
+    <Value>Sales employees</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Salesemployee.Fields.Active">
+    <Value>Active</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.SalesEmployee.Fields.DisplayOrder">
+    <Value>Display order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.SalesEmployee.Fields.Email">
+    <Value>Email</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.SalesEmployee.Fields.Name">
+    <Value>Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.SalesEmployee.Fields.Phone">
+    <Value>Phone</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.SalesEmployee.Fields.Name.Required">
+    <Value>Sales employee name is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.SalesEmployee.Fields.Commission">
+    <Value>Commisssion</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.SalesEmployee.Fields.Commission.Hint">
+    <Value>Commission percentage rate for each sales employee</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.SalesEmployee.Fields.Commission.IsCommissionValid">
+    <Value>Commission`s rate is no valid</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.Fields.SeId">
+    <Value>Sales employee</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.Fields.SeId.hint">
+    <Value>Choose a sales employee associated to this customer account.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.Fields.SalesEmployee">
+    <Value>Sales employee</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.Fields.SalesEmployee.None">
+    <Value>Not set</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Customers.Customers.CannotBeInSalesManagerRoleWithoutSalesEmployeeAssociated">
+    <Value>A customer in the Sales manager role should have a sales employee account associated.</Value>
+  </LocaleResource>
+  <LocaleResource Name="ActivityLog.AddNewSalesEmployee">
+    <Value>Added a new sales employee ('{0}')</Value>
+  </LocaleResource>
+  <LocaleResource Name="ActivityLog.EditSalesEmployee">
+    <Value>Edited a sales employee ('{0}')</Value>
+  </LocaleResource>
+  <LocaleResource Name="ActivityLog.DeleteSalesEmployee">
+    <Value>Deleted a sales employee ('{0}')</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Documents.Document.Fields.SeId">
+    <Value>Sales employee</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Documents.Document.Fields.SeId.hint">
+    <Value>Choose a sales employee associated to this document.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Documents.Document.Fields.SeId.None">
+    <Value>None</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Promotions.InteractiveForms.Fields.SystemName">
+    <Value>System Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Promotions.InteractiveForms.Fields.SystemName.hint">
+    <Value>Enter system name of the interactive form</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Promotions.InteractiveForms.Fields.SystemName.Required">
+    <Value>System name is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="ActivityLog.AddNewRewardPoints">
+    <Value>Added a reward points {1} to customer {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Common.Activate">
+    <Value>Activate</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Common.Deactivate">
+    <Value>Deactivate</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.System.SeNames.Active">
+    <Value>Active</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.System.SeNames.Active.Hint">
+    <Value>Search by a "Active" property.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.System.SeNames.Search.All">
+    <Value>All</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.System.SeNames.Search.ActiveOnly">
+    <Value>Active only</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.System.SeNames.Search.InActiveOnly">
+    <Value>InActive only</Value>
+  </LocaleResource>
+  <LocaleResource Name="Fields.IsRequired">
+    <Value>The value of the field {0} is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="PDFProductCatalog.SKU">
+    <Value>SKU: {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="PDFProductCatalog.StockQuantity">
+    <Value>Stock quantity: {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="PDFProductCatalog.Weight">
+    <Value>Weight: {0}</Value>
+  </LocaleResource>
+</Language>

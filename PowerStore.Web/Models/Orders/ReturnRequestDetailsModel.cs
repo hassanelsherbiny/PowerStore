@@ -1,0 +1,72 @@
+﻿using PowerStore.Domain.Orders;
+using PowerStore.Core.Models;
+using PowerStore.Web.Models.Common;
+using System;
+using System.Collections.Generic;
+
+namespace PowerStore.Web.Models.Orders
+{
+    public class ReturnRequestDetailsModel : BaseModel
+    {
+        public ReturnRequestDetailsModel()
+        {
+            ReturnRequestItems = new List<ReturnRequestItemModel>();
+            PickupAddress = new AddressModel();
+            ReturnRequestNotes = new List<ReturnRequestNote>();
+        }
+
+        public IList<ReturnRequestItemModel> ReturnRequestItems { get; set; }
+
+        public string Comments { get; set; }
+
+        public int ReturnNumber { get; set; }
+
+        public string ExternalId { get; set; }
+
+        public ReturnRequestStatus ReturnRequestStatus { get; set; }
+
+        public DateTime CreatedOnUtc { get; set; }
+
+        public bool ShowPickupDate { get; set; }
+
+        public bool ShowPickupAddress { get; set; }
+
+        public AddressModel PickupAddress { get; set; }
+
+        public DateTime PickupDate { get; set; }
+
+        public IList<ReturnRequestNote> ReturnRequestNotes { get; set; }
+
+        public bool ShowAddReturnRequestNote { get; set; }
+
+
+        #region Nested Classes
+
+        public partial class ReturnRequestNote : BaseEntityModel
+        {
+            public bool HasDownload { get; set; }
+            public string Note { get; set; }
+            public DateTime CreatedOn { get; set; }
+            public string ReturnRequestId { get; set; }
+        }
+
+        public class ReturnRequestItemModel : BaseModel
+        {
+            public string OrderItemId { get; set; }
+
+            public string ReasonForReturn { get; set; }
+
+            public int Quantity { get; set; }
+
+            public string RequestedAction { get; set; }
+
+            public string ProductSeName { get; set; }
+
+            public string ProductName { get; set; }
+
+            public string ProductPrice { get; set; }
+        }
+
+        #endregion
+    }
+}

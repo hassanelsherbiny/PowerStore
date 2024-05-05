@@ -1,0 +1,55 @@
+﻿@model CatalogPagingFilteringModel
+
+<div class="generalMarginSupporter categoryGrid catalog-selectors">
+    @*mobile left side trigger*@
+    <a class="js-offcanvas-trigger filter-button btn btn-outline-info d-lg-none d-flex mb-3" data-offcanvas-trigger="leftSide" href="#leftSide"><span class="mdi mdi-tune"></span><span class="ml-3">@T("catalog.selectors.fiters")</span></a>
+    <div class="d-flex flex-row row px-3">
+        @*sorting*@
+        @if (Model.AllowProductSorting)
+        {
+            <div class="sort-container">
+                <label class="mb-0">@T("Catalog.OrderBy")</label>
+                <div class="selectdiv ml-4">
+                    <select class="custom-select form-control" asp-for="AvailableSortOption" asp-items="Model.AvailableSortOptions" onchange="setLocation(this.value);" aria-label="@T("Catalog.OrderBy")"></select>
+                </div>
+            </div>
+        }
+        <div class="d-sm-flex d-none align-items-center mx-auto order-2" id="items_statistics">
+            <div class="items-page-size d-none">@Model.PageSize</div>
+            <div class="items-per-page d-lg-inline-flex"><span>@T("catalog.selectors.items")</span><span class="number"></span></div>
+            <div class="items-separator">@T("catalog.selectors.of")</div>
+            <div class="items-total">@Model.TotalItems</div>
+        </div>
+        @*page size*@
+        @if (Model.AllowCustomersToSelectPageSize)
+        {
+            <div class="sort-container">
+                <label class="mb-0">@T("Catalog.PageSize")</label>
+                <div class="selectdiv ml-4">
+                    <select class="custom-select form-control" asp-for="PageSizeOption" asp-items="Model.PageSizeOptions" onchange="setLocation(this.value);" aria-label="@T("Catalog.PageSize")"></select>
+                </div>
+            </div>
+        }
+        @*view mode*@
+        @if (Model.AllowProductViewModeChanging)
+        {
+
+            <div class="sort-container order-3 d-inline-flex ml-sm-0 ml-auto">
+                @if (Model.AvailableViewModes.Count > 1)
+                {
+                    var gridMode = Model.AvailableViewModes[0];
+                    var listMode = Model.AvailableViewModes[1];
+                    @*<label class="mb-0">@T("Catalog.ViewMode")</label>*@
+                    <a class="viewmode-icon grid mr-3 @if(gridMode.Selected){<text>selected</text>}" href="@gridMode.Value" title="@gridMode.Text">
+                        <span class="mdi mdi-view-grid"></span>
+                        <span class="sr-only">viewmode grid</span>
+                    </a>
+                    <a class="viewmode-icon list @if (listMode.Selected){<text>selected</text>}" href="@listMode.Value" title="@listMode.Text">
+                        <span class="mdi mdi-view-list"></span>
+                        <span class="sr-only">viewmode list</span>
+                    </a>
+                }
+            </div>
+        }
+    </div>
+</div>

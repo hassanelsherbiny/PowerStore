@@ -1,0 +1,36 @@
+﻿@model IList<VendorModel>
+@using PowerStore.Web.Models.Catalog
+@inject IPageHeadBuilder pagebuilder
+@{
+    Layout = "_ColumnsTwo";
+
+    //title
+    pagebuilder.AddTitleParts(T("PageTitle.Vendors").Text);
+}
+
+<div class="page vendor-list-page">
+    <h2 class="generalTitle">@T("Vendors.List")</h2>
+    <div class="vendor-grid customGrid text-center">
+        <div class="flex-grid form-row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-2">
+                    <div class="card border-0 pb-0">
+                        <div class="list-picture">
+                            <a href="@Url.RouteUrl("Vendor", new { SeName = item.SeName })" title="@item.PictureModel.Title">
+                                <img class="img-fluid" alt="@item.PictureModel.AlternateText" src="@item.PictureModel.ImageUrl" title="@item.PictureModel.Title" />
+                            </a>
+                        </div>
+                        <div class="list-title mt-3">
+                            <h3 class="h5 card-title m-0 p-0">
+                                <a href="@Url.RouteUrl("Vendor", new { SeName = item.SeName })">
+                                    @item.Name
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

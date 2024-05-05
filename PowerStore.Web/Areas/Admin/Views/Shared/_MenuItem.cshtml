@@ -1,0 +1,61 @@
+﻿@model SiteMapNode
+@using PowerStore.Core
+@using PowerStore.Framework.Menu
+@inject IWebHelper webHelper
+
+@{
+    string url = "javascript:;";
+    if (!string.IsNullOrEmpty(Model.ControllerName) && !string.IsNullOrEmpty(Model.ActionName))
+    {
+        url = Url.Action(Model.ActionName, Model.ControllerName);
+    }
+    else if (!string.IsNullOrEmpty(Model.Url))
+    {
+        url = Model.Url.StartsWith("~/", StringComparison.Ordinal) ? Url.Content(Model.Url) : Model.Url;
+    }
+    <li>
+        @{
+            var childNodes = Model.ChildNodes.Where(x => x.Visible).ToList();
+        }
+        @if (childNodes.Any())
+        {
+            <a class="nav-link">
+                @if (!String.IsNullOrEmpty(Model.IconClass))
+                {
+                    <i class="@Model.IconClass"></i>
+                }
+                <span class="title">@T(Model.ResourceName)</span>
+                @if (childNodes.Any())
+                {
+                    <span class="fa fa-chevron-right"></span>
+                }
+
+            </a>
+        }
+        else
+        {
+            <a href="@url" class="nav-link" @(Model.OpenUrlInNewTab ? Html.Raw(" target=\"_blank\"") : null)>
+                @if (!String.IsNullOrEmpty(Model.IconClass))
+                {
+                    <i class="@Model.IconClass"></i>
+                }
+                <span class="title">@T(Model.ResourceName)</span>
+                @if (childNodes.Any())
+                {
+                    <span class="fa fa-chevron-right"></span>
+                }
+
+            </a>
+        }
+
+        @if (childNodes.Any())
+        {
+            <ul class="nav child_menu">
+                @foreach (var childItem in childNodes)
+                {
+                    <partial name="_MenuItem" model="childItem" />
+                }
+            </ul>
+        }
+    </li>
+}
