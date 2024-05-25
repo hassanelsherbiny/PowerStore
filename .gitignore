@@ -151,3 +151,4 @@ $RECYCLE.BIN/
 *.dll
 *.Pdf
 /PowerStore.Web/wwwroot/content/images/thumbs
+/PowerStore.Web/App_Data/Settings.txt
