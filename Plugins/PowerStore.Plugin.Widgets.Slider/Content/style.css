@@ -89,13 +89,13 @@
      opacity: .9;
      padding: 0 0 15px 0;
 }
- #PowerStoreCarousel .carousel-item .animate-bottom.btn {
-     width: 100%;
-     margin: 15px 0 0 0;
-     color: #fff;
-     background-color: #87C255;
-     border-color: #87C255;
-}
+    #PowerStoreCarousel .carousel-item .animate-bottom.btn {
+        width: 100%;
+        margin: 15px 0 0 0;
+        color: #fff;
+        background-color: darkred;
+        border-color: darkred;
+    }
  #PowerStoreCarousel .carousel-item .slide-button {
      display: table;
 }

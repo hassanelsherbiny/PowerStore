@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Company>UNIT-SOFT Sp. z o.o.</Company>
-    <Authors>UNIT-SOFT Sp. z o.o.</Authors>
+    <Company>Bits Developments</Company>
+    <Authors>Bits Developments</Authors>
     <PackageProjectUrl>https://PowerStore.com/</PackageProjectUrl>
   </PropertyGroup>
   

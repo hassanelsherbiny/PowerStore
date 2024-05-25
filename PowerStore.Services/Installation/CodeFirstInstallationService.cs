@@ -419,7 +419,7 @@ namespace PowerStore.Services.Installation
             var language = _languageRepository.Table.Single(l => l.Name == "English");
 
             //save resources
-            foreach (var filePath in System.IO.Directory.EnumerateFiles(CommonHelper.MapPath("~/App_Data/Localization/"), "*.PowerStoreres.xml", SearchOption.TopDirectoryOnly))
+            foreach (var filePath in System.IO.Directory.EnumerateFiles(CommonHelper.MapPath("~/App_Data/Localization/"), "*.PowerStore.xml", SearchOption.TopDirectoryOnly))
             {
                 var localesXml = File.ReadAllText(filePath);
                 var localizationService = _serviceProvider.GetRequiredService<ILocalizationService>();
@@ -4667,7 +4667,7 @@ namespace PowerStore.Services.Installation
                                            IsPasswordProtected = false,
                                            DisplayOrder = 1,
                                            Title = "Welcome to our store",
-                                           Body = "<p>Online shopping is the process consumers go through to purchase products or services over the Internet. You can edit this in the admin site.</p><p>If you have questions, see the <a href=\"http://www.PowerStore.com/\">Documentation</a>, or post in the <a href=\"http://www.PowerStore.com/boards/\">Forums</a> at <a href=\"http://www.PowerStore.com\">PowerStore.com</a></p>",
+                                           Body = "<p>Online shopping is the process consumers go through to purchase products or services over the Internet. You can edit this in the admin site.</p>",
                                            TopicTemplateId = defaultTopicTemplate.Id,
                                            Published = true
                                        },
@@ -5080,19 +5080,7 @@ namespace PowerStore.Services.Installation
                 PhoneRequired = true,
                 FaxEnabled = false,
             });
-
-            await _settingService.SaveSetting(new StoreInformationSettings {
-                StoreClosed = false,
-                DefaultStoreTheme = "VueTheme",
-                AllowCustomerToSelectTheme = false,
-                DisplayEuCookieLawWarning = false,
-                FacebookLink = "https://www.facebook.com/PowerStorecom",
-                TwitterLink = "https://twitter.com/PowerStore",
-                YoutubeLink = "http://www.youtube.com/user/PowerStore",
-                InstagramLink = "https://www.instagram.com/PowerStore/",
-                LinkedInLink = "https://www.linkedin.com/company/PowerStore.com/",
-                PinterestLink = "",
-            });
+             
 
             await _settingService.SaveSetting(new RewardPointsSettings {
                 Enabled = true,

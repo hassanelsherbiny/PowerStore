@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Copyright>Copyright © UNIT-SOFT Sp. z o.o.</Copyright>
-    <Authors>UNIT-SOFT Sp. z o.o.</Authors>
-    <Company>UNIT-SOFT Sp. z o.o.</Company>
+    <Copyright>Copyright © Bits Developments</Copyright>
+    <Authors>Bits Developments</Authors>
+    <Company>Bits Developments</Company>
     <PackageProjectUrl>https://PowerStore.com/</PackageProjectUrl>
     <TieredCompilation>true</TieredCompilation>
   </PropertyGroup>

@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Copyright>Copyright © UNIT-SOFT Sp. z o.o.</Copyright>
-    <Company>UNIT-SOFT Sp. z o.o.</Company>
-    <Authors>UNIT-SOFT Sp. z o.o.</Authors>
+    <Copyright>Copyright © Bits Developments</Copyright>
+    <Company>Bits Developments</Company>
+    <Authors>Bits Developments</Authors>
     <Product>PowerStore</Product>
     <PackageProjectUrl>https://PowerStore.com/</PackageProjectUrl>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>

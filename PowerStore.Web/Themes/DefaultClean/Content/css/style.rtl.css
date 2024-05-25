@@ -1188,9 +1188,9 @@ nav .nav-item.list-inline {
 	padding-right: 1rem;
 }
 .mainNav a {
-    color: #364150;
-    font-size: 16px;
-    font-weight: 500;
+	color: #364150;
+	font-size: 18px;
+	font-weight: 800;
 }
 .mainNav .dropdown-menu a {
     font-weight: 400;

@@ -1087,27 +1087,6 @@ namespace PowerStore.Services.Admin
                     }
                 },
                 new AdminSiteMap {
-                    SystemName = "Help",
-                    ResourceName = "Admin.Help",
-                    IconClass = "icon-question",
-                    ChildNodes = new List<AdminSiteMap>() {
-                        new AdminSiteMap {
-                            SystemName = "Community forums",
-                            ResourceName = "Admin.Help.Forums",
-                            Url = "https://PowerStore.com/boards?utm_source=web&utm_medium=admin&utm_term=web&utm_campaign=Community",
-                            IconClass = "fa fa-dot-circle-o",
-                            OpenUrlInNewTab = true
-                        },
-                        new AdminSiteMap {
-                            SystemName = "Premium support services",
-                            ResourceName = "Admin.Help.SupportServices",
-                            Url = "https://PowerStore.com/premium-support-packages?utm_source=web&utm_medium=admin&utm_term=web&utm_campaign=Support",
-                            IconClass = "fa fa-dot-circle-o",
-                            OpenUrlInNewTab = true
-                        }
-                    }
-                },
-                new AdminSiteMap {
                     SystemName = "Third party plugins",
                     ResourceName = "Admin.Plugins"
                 }
