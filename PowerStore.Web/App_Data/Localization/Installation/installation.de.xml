@@ -78,10 +78,10 @@
     <Value>Wählen Sie den Daten Provider</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Wenn Sie Hilfe bei der Verwendung von PowerStorenode benötigen, besuchen Sie</Value>
+    <Value>Wenn Sie Hilfe bei der Verwendung von PowerStore benötigen, besuchen Sie</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>die Dokumentation auf PowerStorenode.com</Value>
+    <Value>die Dokumentation auf PowerStore.com</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Beispiel</Value>
@@ -90,7 +90,7 @@
     <Value>Installieren</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Installation PowerStorenode...</Value>
+    <Value>Installation PowerStore...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Die Passwörter sind nicht gleich</Value>
@@ -141,10 +141,10 @@
     <Value>Shop Information</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>PowerStorenode Installation</Value>
+    <Value>PowerStore Installation</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode ist die führende Shop E-Commerce Lösung. Dieser Wizard führt Sie durch die Konfiguration von PowerStorenode</Value>
+    <Value>PowerStore ist die führende Shop E-Commerce Lösung. Dieser Wizard führt Sie durch die Konfiguration von PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
  <Value>Um den Wizard abzuschliessen müssen Sie die Daten Ihres Datenbankservers kennen ("connection string"). Bitte kontaktieren Sie gegebenenfalls Ihren ISP. Falls Sie auf einem lokalen Computer installieren benötigen Sie eventuell Informationen von Ihrem Systemadministrator</Value> 

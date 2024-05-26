@@ -78,10 +78,10 @@
     <Value>Изберете провайдер на данните</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Ако ви е нужна информация за това, как да използвате и настроите PowerStorenode, моля, посетете</Value>
+    <Value>Ако ви е нужна информация за това, как да използвате и настроите PowerStore, моля, посетете</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>раздел "Документация" на сайта PowerStorenode.com</Value>
+    <Value>раздел "Документация" на сайта PowerStore.com</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Пример</Value>
@@ -90,7 +90,7 @@
     <Value>Инсталирай</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Инсталиране на PowerStorenode...</Value>
+    <Value>Инсталиране на PowerStore...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Паролите не съвпадат</Value>
@@ -141,13 +141,13 @@
     <Value>Информация за магазина</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>Инсталиране на PowerStorenode</Value>
+    <Value>Инсталиране на PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode - е водещо ASP.NET решение за създаване на интернет магазини. На тази страница Вие можете да инсталирате PowerStorenode.</Value>
+    <Value>PowerStore - е водещо ASP.NET решение за създаване на интернет магазини. На тази страница Вие можете да инсталирате PowerStore.</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
-    <Value>За да инсталирате успешно PowerStorenode, е нужно да знаете низа за връзка с базата данни. Ако нямате тази информация, може да я узнаете от вашия хостинг провайдер. Ако искате да инсталирате PowerStorenode на локалния ви компютър, то вие можете да я узнаете от вашия системен администратор.</Value>
+    <Value>За да инсталирате успешно PowerStore, е нужно да знаете низа за връзка с базата данни. Ако нямате тази информация, може да я узнаете от вашия хостинг провайдер. Ако искате да инсталирате PowerStore на локалния ви компютър, то вие можете да я узнаете от вашия системен администратор.</Value>
   </LocaleResource>
   <LocaleResource Name="WindowsAuthentication">
     <Value>

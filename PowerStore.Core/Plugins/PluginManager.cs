@@ -105,7 +105,7 @@ namespace PowerStore.Core.Plugins
                     foreach (var pluginDescriptor in GetDescriptions())
                     {
                         //ensure that version of plugin is valid
-                        if (!pluginDescriptor.SupportedVersions.Contains(PowerStoreVersion.SupportedPluginVersion, StringComparer.OrdinalIgnoreCase))
+                        if (!pluginDescriptor.SupportedVersions.Contains(PowerStoreVersions.SupportedPluginVersion, StringComparer.OrdinalIgnoreCase))
                         {
                             incompatiblePlugins.Add(pluginDescriptor.SystemName);
                             continue;
@@ -426,7 +426,7 @@ namespace PowerStore.Core.Plugins
             catch (Exception ex)
             {
                 Log.Error(ex, "PluginManager");
-                throw new InvalidOperationException($"The plugin directory for the {systemName} file exists in a folder outside of the allowed PowerStorenode folder hierarchy - exception because of {filename} - exception: {ex.Message}");
+                throw new InvalidOperationException($"The plugin directory for the {systemName} file exists in a folder outside of the allowed PowerStore folder hierarchy - exception because of {filename} - exception: {ex.Message}");
             }
         }
 

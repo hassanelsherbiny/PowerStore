@@ -78,10 +78,10 @@
     <Value>Selectați furnizorul de date</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Daca aveți nevoie de informații cum să folosiți PowerStorenode, vizitați</Value>
+    <Value>Daca aveți nevoie de informații cum să folosiți PowerStore, vizitați</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>secțiunea de documente pe PowerStorenode.com</Value>
+    <Value>secțiunea de documente pe PowerStore.com</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Exemplu</Value>
@@ -90,7 +90,7 @@
     <Value>Instalare</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>PowerStorenode se instalează...</Value>
+    <Value>PowerStore se instalează...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Parolele nu se potrivesc</Value>
@@ -141,10 +141,10 @@
     <Value>Informații magazin</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>Instalare PowerStorenode</Value>
+    <Value>Instalare PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode este soluția lider, de magazin online, pe platforma ASP.NET. Acestă pagină vă va ghida prin procesul de configurare al PowerStorenode</Value>
+    <Value>PowerStore este soluția lider, de magazin online, pe platforma ASP.NET. Acestă pagină vă va ghida prin procesul de configurare al PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Pentru a completa toți pașii, trebuie să cunoașteți câteva infomații referitoare la serverul de baze de date ("șirul de conectare"). Vă rugăm să contactați ISP-ul dumneavoastră dacă este necesar. Dacă instalați pe o mașină locală sau server local, este posibil sa aveți nevoie de informații din partea administratului dumneavoastră de sistem.</Value>

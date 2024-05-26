@@ -5827,7 +5827,7 @@
     <Value>NOTE: Due to the fact that we provide all possible versions of the plugin, please make sure you want to upload the correct ZIP file (with the correct structure). The correct file structure is Plugin.zip -> Plugin directory -> Content of the plugin. Otherwise, each attempt to use the Upload Plugin form will fail.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Plugins.Description.Step1">
-    <Value>Upload the plugin to the /plugins folder in your PowerStorenode directory.</Value>
+    <Value>Upload the plugin to the /plugins folder in your PowerStore directory.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Plugins.Description.Step2">
     <Value>Restart your application (or click 'Reload list of plugins' button).</Value>
@@ -5839,7 +5839,7 @@
     <Value>Click on the 'Install' link to install the plugin.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Plugins.Description.Step5">
-    <Value>Note: If you're running PowerStorenode in medium trust, then it's recommended to clear your \Plugins\bin\ directory</Value>
+    <Value>Note: If you're running PowerStore in medium trust, then it's recommended to clear your \Plugins\bin\ directory</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Plugins.EditDetails">
     <Value>Edit plugin details</Value>
@@ -7291,7 +7291,7 @@
     <Value>You can get more themes on</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DefaultStoreTheme.Hint">
-    <Value>The public store theme. You can download themes from the extensions page at www.PowerStorenode.com.</Value>
+    <Value>The public store theme. You can download themes from the extensions page at www.PowerStore.com.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DefaultTitle">
     <Value>Default title</Value>
@@ -7360,7 +7360,7 @@
     <Value>CSS bundling and minification</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.EnableCssBundling.Hint">
-    <Value>Enable to combine (bundle) multiple CSS files into a single file. Do not enable if you're running PowerStorenode in IIS virtual directory. Note that this functionality requires significant server resources (not recommended to use with cheap shared hosting plans).</Value>
+    <Value>Enable to combine (bundle) multiple CSS files into a single file. Do not enable if you're running PowerStore in IIS virtual directory. Note that this functionality requires significant server resources (not recommended to use with cheap shared hosting plans).</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.EnableJsBundling">
     <Value>JavaScript bundling and minification</Value>
@@ -8283,7 +8283,7 @@
     <Value>We are using firebase for push notifications. You can find more info in our manuals or on firebase docs.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.PushNotifications.PushNotifications.Warning">
-    <Value>Warning! Press "Save" button every time you upgrade PowerStoreNode to new version, as the settings will be wiped out in registration script.</Value>
+    <Value>Warning! Press "Save" button every time you upgrade PowerStore to new version, as the settings will be wiped out in registration script.</Value>
   </LocaleResource>
   <LocaleResource Name="admin.configuration.settings.pushnotifications.senderid">
     <Value>Sender Id</Value>
@@ -9324,7 +9324,7 @@
     <Value>Secure URL</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Stores.Fields.SecureUrl.Hint">
-    <Value>The secure URL of your store e.g. https://www.yourstore.com/ or http://sharedssl.yourstore.com/. Leave it empty if you want PowerStorenode to detect secure URL automatically.</Value>
+    <Value>The secure URL of your store e.g. https://www.yourstore.com/ or http://sharedssl.yourstore.com/. Leave it empty if you want PowerStore to detect secure URL automatically.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Stores.Fields.Shortcut">
     <Value>Shortcut</Value>
@@ -13193,13 +13193,13 @@
   <LocaleResource Name="Admin.GiftCards.Updated">
     <Value>The gift card has been updated successfully.</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.PowerStorenodeNews">
-    <Value>PowerStorenode News</Value>
+  <LocaleResource Name="Admin.PowerStoreNews">
+    <Value>PowerStore News</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.PowerStorenodeNews.HideAdv">
+  <LocaleResource Name="Admin.PowerStoreNews.HideAdv">
     <Value>Hide advertisements</Value>
   </LocaleResource>
-  <LocaleResource Name="Admin.PowerStorenodeNews.ShowAdv">
+  <LocaleResource Name="Admin.PowerStoreNews.ShowAdv">
     <Value>Show advertisements</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Header.ClearCacheMemory">
@@ -13257,7 +13257,7 @@
     <Value>Log in</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Login.PageTitle">
-    <Value>PowerStoreNode admin</Value>
+    <Value>PowerStore admin</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Login.Password">
     <Value>Password</Value>
@@ -14390,7 +14390,7 @@
     <Value>Shipping not required</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.PageTitle">
-    <Value>PowerStorenode administration</Value>
+    <Value>PowerStore administration</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Picture.RemovePicture">
     <Value>Remove picture</Value>
@@ -16625,10 +16625,10 @@
     <Value>ASP.NET info</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.System.SystemInfo.PowerStoreVersion">
-    <Value>PowerStorenode version</Value>
+    <Value>PowerStore version</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.System.SystemInfo.PowerStoreVersion.Hint">
-    <Value>PowerStorenode version</Value>
+    <Value>PowerStore version</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.System.SystemInfo.HTTPHOST">
     <Value>HTTP_HOST</Value>
@@ -16823,7 +16823,7 @@
     <Value>The '{0}' account is not granted with Modify permission on file '{1}'. Please configure these permissions.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.System.Warnings.IncompatiblePlugin">
-    <Value>'{0}' plugin is incompatible with your PowerStorenode version. Delete it or update to the latest version.</Value>
+    <Value>'{0}' plugin is incompatible with your PowerStore version. Delete it or update to the latest version.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.System.Warnings.MachineKey.NotSpecified">
     <Value>A custom machine key is not specified (web.config file)</Value>
@@ -19637,7 +19637,7 @@
     <Value>Privacy Preference Center</Value>
   </LocaleResource>
   <LocaleResource Name="PrivacyPreference.Description">
-    <Value>PowerStorenode uses necessary cookies for the correct operation of the website. Other categories of cookies may be used to personalize your experience.</Value>
+    <Value>PowerStore uses necessary cookies for the correct operation of the website. Other categories of cookies may be used to personalize your experience.</Value>
   </LocaleResource>
   <LocaleResource Name="PrivacyPreference.System.FullDescription">
     <Value>These cookies are necessary for the correct functioning of our website and allow the use of essential functionalities during your navigation. </Value>

@@ -5,7 +5,7 @@ using PowerStore.Core.Plugins;
     FriendlyName = "BrainTree",
     Group = "Payment methods",
     SystemName = "Payments.BrainTree",
-    SupportedVersion = PowerStoreVersion.SupportedPluginVersion,
-    Author = "PowerStorenode team",
+    SupportedVersion = PowerStoreVersions.SupportedPluginVersion,
+    Author = "PowerStore team",
     Version = "1.06"
 )]

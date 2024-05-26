@@ -78,10 +78,10 @@
     <Value>Veljið tengileið</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Ef þig vantar upplýsingar um hvernig nota á PowerStorenode, farðu þá á</Value>
+    <Value>Ef þig vantar upplýsingar um hvernig nota á PowerStore, farðu þá á</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>upplýsingasíður á PowerStorenode.com</Value>
+    <Value>upplýsingasíður á PowerStore.com</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Dæmi</Value>
@@ -90,7 +90,7 @@
     <Value>Setja upp</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Set upp PowerStorenode...</Value>
+    <Value>Set upp PowerStore...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Lykilorðin eru ekki eins</Value>
@@ -141,10 +141,10 @@
     <Value>Vista upplýsingar</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>Uppsetning á PowerStorenode</Value>
+    <Value>Uppsetning á PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode er leiðandi ASP.NET vefverslun. Þessi álfur leiðir þig í gegnum uppsetningu á PowerStorenode</Value>
+    <Value>PowerStore er leiðandi ASP.NET vefverslun. Þessi álfur leiðir þig í gegnum uppsetningu á PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Til að ljúka þessum álfi, þá þarftu að hafa upplýsingar um gagnaþjón ("tengistreng"). Hafðu samband við vistunaraðila ef þörf er. Ef þú ert að setja upp á eigin þjón þá gæti þig vantað upplýsingar frá kerfisstjóra.</Value>

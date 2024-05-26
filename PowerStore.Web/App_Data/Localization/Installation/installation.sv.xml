@@ -79,10 +79,10 @@
     <Value>Välj data provider</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Om du behöver information om hur du använder PowerStorenode, besök</Value>
+    <Value>Om du behöver information om hur du använder PowerStore, besök</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>dokumentationsavdelningen på PowerStorenode.com</Value>
+    <Value>dokumentationsavdelningen på PowerStore.com</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Exempel</Value>
@@ -91,7 +91,7 @@
     <Value>Installera</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Installerar PowerStorenode...</Value>
+    <Value>Installerar PowerStore...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Lösenorden matchar inte</Value>
@@ -142,10 +142,10 @@
     <Value>Lagra information</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>PowerStorenode installation</Value>
+    <Value>PowerStore installation</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode är den ledande  ASP.NET-lösningen för onlinebutik och e-handel. Den här guiden hjälper dig igenom processen att konfigurera PowerStorenode</Value>
+    <Value>PowerStore är den ledande  ASP.NET-lösningen för onlinebutik och e-handel. Den här guiden hjälper dig igenom processen att konfigurera PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>För att genomföra den här guiden behöver du känna till en del information om din databasserver ("connection string"). Vänligen kontakta din internetleverantör vid behov. Om du installerar på en lokal maskin eller server, kanske du behöver kontakta din systemadministratör.</Value>

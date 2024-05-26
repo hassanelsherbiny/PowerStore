@@ -78,10 +78,10 @@
     <Value>데이터 공급자 선택</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>PowerStorenode 사용 방법에 대한 정보가 필요하면, </Value>
+    <Value>PowerStore 사용 방법에 대한 정보가 필요하면, </Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>PowerStorenode.com의 문서 섹션을 방문하십시오</Value>
+    <Value>PowerStore.com의 문서 섹션을 방문하십시오</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>예</Value>
@@ -90,7 +90,7 @@
     <Value>설치</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>PowerStorenode 설치중...</Value>
+    <Value>PowerStore 설치중...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>비밀번호가 일치하지 않습니다</Value>
@@ -144,10 +144,10 @@
     <Value>상점 정보</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>PowerStorenode 설치</Value>
+    <Value>PowerStore 설치</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode는 최고의 ASP.NET 온라인 상점 전자 상거래 솔루션입니다. 이 설치 마법사는 PowerStorenode 구성 프로세스를 안내합니다.</Value>
+    <Value>PowerStore는 최고의 ASP.NET 온라인 상점 전자 상거래 솔루션입니다. 이 설치 마법사는 PowerStore 구성 프로세스를 안내합니다.</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>이 설치 마법사를 완료하려면 데이터베이스 서버와 관련된 일부 정보 ( "연결 문자열")를 알아야합니다. 필요한 경우 ISP에 문의하십시오. 로컬 컴퓨터 나 서버에 설치하는 경우 시스템 관리자의 정보가 필요할 수 있습니다.</Value>
@@ -159,6 +159,6 @@
     <Value>응용 프로그램이 성공적으로 설치되었습니다. 응용 프로그램을 다시 시작하십시오.</Value>
   </LocaleResource>
   <LocaleResource Name="AlreadyInstalled">
-    <Value>이 데이터베이스는 이미 존재하며 PowerStoreNode가 설치되어 있습니다. 다른 데이터베이스를 선택하십시오.</Value>
+    <Value>이 데이터베이스는 이미 존재하며 PowerStore가 설치되어 있습니다. 다른 데이터베이스를 선택하십시오.</Value>
   </LocaleResource>
 </Language>

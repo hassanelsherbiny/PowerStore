@@ -80,10 +80,10 @@
 		<Value>Vyberte poskytovatele dat (data provider)</Value>
 	</LocaleResource>
 	<LocaleResource Name="Documentation1">
-		<Value>Potřebujete-li informace o tom, jak používat PowerStorenode (v angličtině), navštivte</Value>
+		<Value>Potřebujete-li informace o tom, jak používat PowerStore (v angličtině), navštivte</Value>
 	</LocaleResource>
 	<LocaleResource Name="Documentation2">
-		<Value>sekci documentation na PowerStorenode.com</Value>
+		<Value>sekci documentation na PowerStore.com</Value>
 	</LocaleResource>
 	<LocaleResource Name="Example">
 		<Value>Příklad</Value>
@@ -92,7 +92,7 @@
 		<Value>Instalace</Value>
 	</LocaleResource>
 	<LocaleResource Name="Installing">
-		<Value>Instaluji PowerStorenode...</Value>
+		<Value>Instaluji PowerStore...</Value>
 	</LocaleResource>
 	<LocaleResource Name="PasswordsDoNotMatch">
 		<Value>Hesla se neshodují</Value>
@@ -143,10 +143,10 @@
 		<Value>Informaced o obchodu</Value>
 	</LocaleResource>
 	<LocaleResource Name="Title">
-		<Value>Instalace PowerStorenode</Value>
+		<Value>Instalace PowerStore</Value>
 	</LocaleResource>
 	<LocaleResource Name="Tooltip1">
-		<Value>PowerStorenode je významné řešení pro on-line elektronické obchodování postavené na platformě ASP.NET. Tento průvodce Vás provede instalačí a konfigurací PowerStorenode</Value>
+		<Value>PowerStore je významné řešení pro on-line elektronické obchodování postavené na platformě ASP.NET. Tento průvodce Vás provede instalačí a konfigurací PowerStore</Value>
 	</LocaleResource>
 	<LocaleResource Name="Tooltip2">
 		<Value>Abyste úspěšně dokončili instalaci a nastavení musíte mít k dispozici informace o databázovém serveru a databázi (připojovací řetězec - "connection string"). Pokud budete potřebovat, zeptejte se Vašeho poskytovatele internetových služeb (ISP) Pokud instalujete na místní počítač nebo server, pravděpodobně získáte požaované informace u vašeho systémového administrátora.</Value>

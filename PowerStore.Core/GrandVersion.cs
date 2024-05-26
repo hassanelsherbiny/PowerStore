@@ -1,6 +1,6 @@
 ﻿namespace PowerStore.Core
 {
-    public static class PowerStoreVersion
+    public static class PowerStoreVersions
     {
 
         /// <summary>

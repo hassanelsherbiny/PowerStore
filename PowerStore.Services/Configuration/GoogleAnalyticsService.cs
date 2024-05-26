@@ -31,7 +31,7 @@ namespace PowerStore.Services.Configuration
 
                 return new AnalyticsReportingService(new BaseClientService.Initializer() {
                     HttpClientInitializer = credential,
-                    ApplicationName = "PowerStoreNode",
+                    ApplicationName = "PowerStore",
                 });
             }
             catch (Exception ex)

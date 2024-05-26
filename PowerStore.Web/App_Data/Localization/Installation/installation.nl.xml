@@ -78,10 +78,10 @@
     <Value>Selecteer de data provider</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Als u informatie nodig heeft over hoe PowerStorenode te gebruiken, bezoek</Value>
+    <Value>Als u informatie nodig heeft over hoe PowerStore te gebruiken, bezoek</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>de Documentatie sectie op PowerStorenode.com</Value>
+    <Value>de Documentatie sectie op PowerStore.com</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Voorbeeld</Value>
@@ -90,7 +90,7 @@
     <Value>Installeer</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>PowerStorenode installeren...</Value>
+    <Value>PowerStore installeren...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>De wachtwoord komen niet overeen</Value>
@@ -141,13 +141,13 @@
     <Value>Webshop informatie</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>PowerStorenode installatie</Value>
+    <Value>PowerStore installatie</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode is de toonaangevende ASP.NET webshop e-commerce oplossing. Deze wizard zal u  door de PowerStorenode configuratie stappen leiden</Value>
+    <Value>PowerStore is de toonaangevende ASP.NET webshop e-commerce oplossing. Deze wizard zal u  door de PowerStore configuratie stappen leiden</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
-    <Value>Om deze wizard volledig en succesvol te doorlopen, heeft u wat informatie over uw database nodig (de "connectie string"). Indien nodig, neem contact hierover op met uw ISP. Als u PowerStorenode op een lokaal systeem installeert, heeft u wellicht informatie van uw Systeembeheerder nodig.</Value>
+    <Value>Om deze wizard volledig en succesvol te doorlopen, heeft u wat informatie over uw database nodig (de "connectie string"). Indien nodig, neem contact hierover op met uw ISP. Als u PowerStore op een lokaal systeem installeert, heeft u wellicht informatie van uw Systeembeheerder nodig.</Value>
   </LocaleResource>
   <LocaleResource Name="WindowsAuthentication">
     <Value>Gebruik geïntegreerde Windows authenticatie</Value>

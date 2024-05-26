@@ -78,10 +78,10 @@
     <Value>Escolha seu provedor</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Se você precisa de informações em como usar o PowerStorenode, visite</Value>
+    <Value>Se você precisa de informações em como usar o PowerStore, visite</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>a sessão de documentação em PowerStorenode.com</Value>
+    <Value>a sessão de documentação em PowerStore.com</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Exemplo</Value>
@@ -90,7 +90,7 @@
     <Value>Instalar</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Instalando PowerStorenode...</Value>
+    <Value>Instalando PowerStore...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>As senhas não são iguais</Value>
@@ -141,10 +141,10 @@
     <Value>Informações da Loja</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>Instalação PowerStorenode</Value>
+    <Value>Instalação PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode é a solução ASP.NET online líder em lojas de e-commerce. Este passo a passo irá guiar você no processo de configuração do PowerStorenode</Value>
+    <Value>PowerStore é a solução ASP.NET online líder em lojas de e-commerce. Este passo a passo irá guiar você no processo de configuração do PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Para completar o passo a passo você precisa saber algumas informações sobre seu servidor de banco de dados ("string de conexão"). Por favor entre em contato com seu provedor de hospedagem se necessário. Se você está instalando em um computador local ou servidor talvez seja necessário informações do seu Administrador de Sistemas.</Value>

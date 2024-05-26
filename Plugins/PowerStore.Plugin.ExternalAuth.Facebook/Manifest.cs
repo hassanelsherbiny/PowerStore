@@ -5,7 +5,7 @@ using PowerStore.Core.Plugins;
     FriendlyName = "Facebook authentication",
     Group = "ExternalAuth methods",
     SystemName = "ExternalAuth.Facebook",
-    SupportedVersion = PowerStoreVersion.SupportedPluginVersion,
-    Author = "PowerStorenode team",
+    SupportedVersion = PowerStoreVersions.SupportedPluginVersion,
+    Author = "PowerStore team",
     Version = "1.48"
 )]

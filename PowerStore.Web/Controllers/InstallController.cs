@@ -138,7 +138,7 @@ namespace PowerStore.Web.Controllers
                     var database = client.GetDatabase(databaseName);
                     await database.RunCommandAsync((Command<BsonDocument>)"{ping:1}");
 
-                    var filter = new BsonDocument("name", "PowerStoreNodeVersion");
+                    var filter = new BsonDocument("name", "PowerStoreVersion");
                     var found = database.ListCollectionsAsync(new ListCollectionsOptions { Filter = filter }).Result;
 
                     if (found.Any())

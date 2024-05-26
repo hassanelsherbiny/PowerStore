@@ -1,6 +1,6 @@
 ﻿namespace PowerStore.Domain.Common
 {
-    public partial class PowerStoreNodeVersion: BaseEntity
+    public partial class PowerStoreVersion: BaseEntity
     {
         public string DataBaseVersion { get; set; }
     }

@@ -1094,14 +1094,14 @@ namespace PowerStore.Services.Admin
                         new AdminSiteMap {
                             SystemName = "Community forums",
                             ResourceName = "Admin.Help.Forums",
-                            Url = "https://PowerStorenode.com/boards?utm_source=web&utm_medium=admin&utm_term=web&utm_campaign=Community",
+                            Url = "https://PowerStore.com/boards?utm_source=web&utm_medium=admin&utm_term=web&utm_campaign=Community",
                             IconClass = "fa fa-dot-circle-o",
                             OpenUrlInNewTab = true
                         },
                         new AdminSiteMap {
                             SystemName = "Premium support services",
                             ResourceName = "Admin.Help.SupportServices",
-                            Url = "https://PowerStorenode.com/premium-support-packages?utm_source=web&utm_medium=admin&utm_term=web&utm_campaign=Support",
+                            Url = "https://PowerStore.com/premium-support-packages?utm_source=web&utm_medium=admin&utm_term=web&utm_campaign=Support",
                             IconClass = "fa fa-dot-circle-o",
                             OpenUrlInNewTab = true
                         }

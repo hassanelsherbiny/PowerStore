@@ -78,10 +78,10 @@
     <Value>選擇數據提供程序</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>如果需要了解如何使用PowerStorenode，請訪問</Value>
+    <Value>如果需要了解如何使用PowerStore，請訪問</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>PowerStorenode.com上的文檔部分</Value>
+    <Value>PowerStore.com上的文檔部分</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>例子</Value>
@@ -90,7 +90,7 @@
     <Value>安裝</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>正在安裝PowerStorenode...</Value>
+    <Value>正在安裝PowerStore...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>密碼不匹配</Value>
@@ -147,10 +147,10 @@
     <Value>商店信息</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>PowerStorenode 安裝</Value>
+    <Value>PowerStore 安裝</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode是最優秀的Asp.net在線電子商務解決方案。這個嚮導將引導你完成配置過程。</Value>
+    <Value>PowerStore是最優秀的Asp.net在線電子商務解決方案。這個嚮導將引導你完成配置過程。</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>完成這個嚮導，你必須知道如何連接數據庫（"即連接字符串"）。如有必要，請聯繫你的服務提供商。如果在本機或服務器上安裝，你可能還需要一些管理員的信息。</Value>

@@ -5,7 +5,7 @@ using PowerStore.Core.Plugins;
     FriendlyName = "Money converter exchange rate provider (from EUR: ECB, from PLN: NBP)",
     Group = "Exchange rate providers",
     SystemName = "CurrencyExchange.MoneyConverter",
-    SupportedVersion = PowerStoreVersion.SupportedPluginVersion,
-    Author = "PowerStorenode team",
+    SupportedVersion = PowerStoreVersions.SupportedPluginVersion,
+    Author = "PowerStore team",
     Version = "1.11"
 )]

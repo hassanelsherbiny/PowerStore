@@ -78,10 +78,10 @@
     <Value>データプロバイダの選択</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>PowerStorenodeの利用方法に関する情報については、</Value>
+    <Value>PowerStoreの利用方法に関する情報については、</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>PowerStorenode.comサイトにおけるドキュメンテーション・セクションを参照</Value>
+    <Value>PowerStore.comサイトにおけるドキュメンテーション・セクションを参照</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>例</Value>
@@ -90,7 +90,7 @@
     <Value>インストール</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>PowerStorenodeをインストール中...</Value>
+    <Value>PowerStoreをインストール中...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>パスワードが違います</Value>
@@ -141,10 +141,10 @@
     <Value>ストア情報</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>PowerStorenodeのインストール</Value>
+    <Value>PowerStoreのインストール</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenodeはASP.NETをベースとするリーディングeCommerceソリューションです。このウィザードにより、PowerStorenodeの設定を行っていってください。</Value>
+    <Value>PowerStoreはASP.NETをベースとするリーディングeCommerceソリューションです。このウィザードにより、PowerStoreの設定を行っていってください。</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>このウィザードを完了するためには、データベースに関する情報(接続文字列)などを取得しておく必要があります。必要に応じて、ご契約先のISPに確認をしてください。ローカルのマシン又はサーバにインストールする場合には、システム管理者から情報を得る必要があるかもしれません。</Value>

@@ -355,7 +355,6 @@ namespace PowerStore.Plugin.Payments.PayPalStandard
                 var discountTotal = Math.Round(cartTotal - (postProcessPaymentRequest.Order.OrderTotal), 2);
                 roundedCartTotal -= discountTotal;
 
-                //gift card or rewarded point amount applied to cart in nopCommerce - shows in PayPal as "discount"
                 parameters.Add("discount_amount_cart", discountTotal.ToString("0.00", CultureInfo.InvariantCulture));
             }
 

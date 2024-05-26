@@ -150,7 +150,7 @@ namespace PowerStore.Web.Areas.Admin.Controllers
         public IActionResult SystemInfo()
         {
             var model = new SystemInfoModel();
-            model.PowerStoreVersion = PowerStoreVersion.FullVersion;
+            model.PowerStoreVersion = PowerStoreVersions.FullVersion;
             try
             {
                 model.OperatingSystem = RuntimeInformation.OSDescription;

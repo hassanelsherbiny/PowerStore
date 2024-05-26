@@ -5,7 +5,7 @@ using PowerStore.Core.Plugins;
     FriendlyName = "Bootstrap Slider",
     Group = "Widgets",
     SystemName = "Widgets.Slider",
-    SupportedVersion = PowerStoreVersion.SupportedPluginVersion,
-    Author = "PowerStorenode team",
+    SupportedVersion = PowerStoreVersions.SupportedPluginVersion,
+    Author = "PowerStore team",
     Version = "1.08"
 )]

@@ -78,10 +78,10 @@
     <Value>ডাটা প্রোভাইডার উল্লেখ করুন</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>PowerStorenode কিভাবে ব্যাবহার করতে হয় তা জানতে ভিজিট করুন</Value>
+    <Value>PowerStore কিভাবে ব্যাবহার করতে হয় তা জানতে ভিজিট করুন</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>PowerStorenode.com এ ডকুমেন্টেশন অংশ</Value>
+    <Value>PowerStore.com এ ডকুমেন্টেশন অংশ</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>উদাহরণ</Value>
@@ -90,7 +90,7 @@
     <Value>ইনস্টল করুন</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>PowerStorenode ইনস্টল করা হচ্ছে...</Value>
+    <Value>PowerStore ইনস্টল করা হচ্ছে...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>পাসওয়ার্ড মিলছে না</Value>
@@ -141,10 +141,10 @@
     <Value>দোকানের তথ্য</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>PowerStorenode ইনস্টলেশন</Value>
+    <Value>PowerStore ইনস্টলেশন</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode একটি শীর্ষস্থানীয় ASP.NET অনলাইন দোকানগুলোর ই-কমার্স সমাধান। PowerStorenode কনফিগার করার সম্পূর্ণ প্রক্রিয়াতে এই উইজার্ডটি আপনাকে সাহায্য করবে </Value>
+    <Value>PowerStore একটি শীর্ষস্থানীয় ASP.NET অনলাইন দোকানগুলোর ই-কমার্স সমাধান। PowerStore কনফিগার করার সম্পূর্ণ প্রক্রিয়াতে এই উইজার্ডটি আপনাকে সাহায্য করবে </Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>এই উইজার্ডটি সম্পূর্ণ করতে আপনার ডাটাবেস সার্ভার সংক্রান্ত কিছু তথ্য ("কানেকশন স্ট্রিং") আপনাকে জানতে হবে। প্রয়োজন হলে আপনার ISP-র সাথে যোগাযোগ করুন। যদি আপনি এটি আপনার লোকাল ম্যাশিন অথবা সার্ভারে ইন্সটল করেন তাহলে আপনার সিস্টেম অ্যাডমিন থেকে কিছু তথ্য প্রয়োজন হতে পারে।</Value>

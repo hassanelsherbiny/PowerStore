@@ -29,8 +29,8 @@ namespace PowerStore.Web.Controllers
                 return RedirectToRoute("Install");
 
             var model = new UpgradeModel {
-                ApplicationVersion = PowerStoreVersion.FullVersion,
-                ApplicationDBVersion = PowerStoreVersion.SupportedDBVersion,
+                ApplicationVersion = PowerStoreVersions.FullVersion,
+                ApplicationDBVersion = PowerStoreVersions.SupportedDBVersion,
                 DatabaseVersion = _upgradeService.DatabaseVersion()
             };
 
@@ -44,7 +44,7 @@ namespace PowerStore.Web.Controllers
         public virtual async Task<IActionResult> Index(UpgradeModel m, [FromServices] IWebHelper webHelper)
         {
             var model = new UpgradeModel {
-                ApplicationDBVersion = PowerStoreVersion.SupportedDBVersion,
+                ApplicationDBVersion = PowerStoreVersions.SupportedDBVersion,
                 DatabaseVersion = _upgradeService.DatabaseVersion()
             };
 

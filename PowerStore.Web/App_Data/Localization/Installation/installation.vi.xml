@@ -78,10 +78,10 @@
     <Value>Chọn bộ cấp dữ liệu</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Nếu bạn muốn tìm hiểu thêm về cách sử dụng PowerStorenode, hãy ghé thăm</Value>
+    <Value>Nếu bạn muốn tìm hiểu thêm về cách sử dụng PowerStore, hãy ghé thăm</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>mục tài liệu trên trang PowerStorenode.com</Value>
+    <Value>mục tài liệu trên trang PowerStore.com</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Ví dụ</Value>
@@ -144,7 +144,7 @@
     <Value>Cài đặt website</Value>
   </LocaleResource>
     <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode là giải pháp thương mại điện tử hàng đầu cho cửa hàng trực tuyến bằng ASP.NET. Trình cài đặt này sẽ hướng dẫn bạn từng bước cấu hình PowerStorenode</Value>
+    <Value>PowerStore là giải pháp thương mại điện tử hàng đầu cho cửa hàng trực tuyến bằng ASP.NET. Trình cài đặt này sẽ hướng dẫn bạn từng bước cấu hình PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Để hoàn thành cài đặt, bạn phải cung cấp một số thông tin liên quan đến máy chủ cơ sở dữ liệu ("chuỗi kết nối"). Hãy liên hệ với nhà cung cấp dịch vụ Internet của bạn nếu cần thiết. Nếu bạn đang cài đặt trên máy tính hoặc trên máy chủ, có thể bạn sẽ cần hỏi thông tin từ Quản trị viên Hệ thống của mình.</Value>

@@ -15,7 +15,7 @@ namespace PowerStore.Web.Areas.Admin.Extensions
         /// <returns>tinyMCE language name</returns>
         public static string GetTinyMceLanguage(IWorkContext workContext, IWebHostEnvironment webHostEnvironment)
         {
-            //PowerStoreNode supports TinyMCE's localization for 10 languages:
+            //PowerStore supports TinyMCE's localization for 10 languages:
             //Chinese, Spanish, Arabic, Portuguese, Russian, German, French, Italian, Dutch, Turkish and English out-of-the-box.
             //Additional languages can be downloaded from the website TinyMCE(https://www.tinymce.com/download/language-packages/)
 

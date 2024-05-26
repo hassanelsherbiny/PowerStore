@@ -170,7 +170,7 @@ namespace PowerStore.Framework.Infrastructure.Extensions
         {
             if (config.PersistKeysToRedis)
             {
-                services.AddDataProtection(opt => opt.ApplicationDiscriminator = "PowerStorenode")
+                services.AddDataProtection(opt => opt.ApplicationDiscriminator = "PowerStore")
                     .PersistKeysToStackExchangeRedis(ConnectionMultiplexer.Connect(config.PersistKeysToRedisUrl));
             }
             else

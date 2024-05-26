@@ -59,7 +59,7 @@
                     </ul>
                 </div>
                 <span asp-validation-for="StoreInformationSettings.DefaultStoreTheme"></span>
-                <div class="note note-info">@T("Admin.Configuration.Settings.GeneralCommon.DefaultStoreTheme.GetMore") <a href="http://www.PowerStorenode.com/extensions?category=4&utm_source=admin-panel&utm_medium=theme-settings&utm_campaign=admin-panel" target="_blank">http://www.PowerStorenode.com/extensions</a></div>
+                <div class="note note-info">@T("Admin.Configuration.Settings.GeneralCommon.DefaultStoreTheme.GetMore") <a href="http://www.PowerStore.com/extensions?category=4&utm_source=admin-panel&utm_medium=theme-settings&utm_campaign=admin-panel" target="_blank">http://www.PowerStore.com/extensions</a></div>
                 <input type="button" id="importfile" class="btn yellow" value="@T("Admin.Configuration.Themes.Upload")" />
             </div>
         </div>
@@ -67,12 +67,12 @@
             <div class="col-8 col-md-4 col-sm-4 text-right">
                 <label class="control-label">
                     @T("Admin.Configuration.Settings.GeneralCommon.PremiumThemes")
-                    <i class="help icon-question" data-container="body" data-placement="top" data-toggle="tooltip" title="" data-original-title="You can download themes from the extensions page at www.PowerStorenode.com."></i>
+                    <i class="help icon-question" data-container="body" data-placement="top" data-toggle="tooltip" title="" data-original-title="You can download themes from the extensions page at www.PowerStore.com."></i>
                 </label>
             </div>
             <div class="col-4 col-md-8 col-sm-8" id="premium_themes">
                 <script>
-                    $.getJSON("https://PowerStorenode.com/themes.json", function (data) {
+                    $.getJSON("https://PowerStore.com/themes.json", function (data) {
                         var items = [];
                         $.each(data, function (key, value) {
                             items.push("<li id='theme-" + key + "'><a href='" + value.Url + "' target='_blank' ><img src='" + value.PictureUrl + "' /><span>" + value.Name + "<span></a></li>");

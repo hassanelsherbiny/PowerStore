@@ -5,7 +5,7 @@ using PowerStore.Core.Plugins;
     FriendlyName = "Facebook Pixel",
     Group = "Widgets",
     SystemName = "Widgets.FacebookPixel",
-    SupportedVersion = PowerStoreVersion.SupportedPluginVersion,
-    Author = "PowerStorenode team",
+    SupportedVersion = PowerStoreVersions.SupportedPluginVersion,
+    Author = "PowerStore team",
     Version = "1.05"
 )]

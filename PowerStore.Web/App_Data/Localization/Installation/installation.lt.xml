@@ -78,10 +78,10 @@
     <Value>Pasirinkite duomenų teikėją</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Jeigu reikia daugiau informacijos kaip naudotis PowerStorenode, perskaitykite</Value>
+    <Value>Jeigu reikia daugiau informacijos kaip naudotis PowerStore, perskaitykite</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>dokumentacija PowerStorenode.com svetainėje</Value>
+    <Value>dokumentacija PowerStore.com svetainėje</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Pavyzdys</Value>
@@ -90,7 +90,7 @@
     <Value>Įdiegti</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Diegiama PowerStorenode aplikacija...</Value>
+    <Value>Diegiama PowerStore aplikacija...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Slaptažodžiai nesutampa</Value>
@@ -141,10 +141,10 @@
     <Value>E-parduotuvės informacija</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>PowerStorenode diegimas</Value>
+    <Value>PowerStore diegimas</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode yra labiausiai paplitusi ASP.NET elektroninės prekybos sistema. Šis vedlys pedės jums įdiegti bei sukonfiguruoti PowerStorenode sistemą.</Value>
+    <Value>PowerStore yra labiausiai paplitusi ASP.NET elektroninės prekybos sistema. Šis vedlys pedės jums įdiegti bei sukonfiguruoti PowerStore sistemą.</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Norėdami įdiegti šią aplikaciją, jūs turite žinoti šiek tiek informacijos apie savo MongoDB serverį (prisijugimo informaciją). Prašome susisiekti su savo ISP, jei būtina. Jeigu diegiate į vietinį kompiuterį ar serverį, jums gali prireikti informacijos iš jūsų sistemos administratoriaus.</Value>

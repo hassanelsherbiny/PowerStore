@@ -5,7 +5,7 @@ using PowerStore.Core.Plugins;
     FriendlyName = "PayPal Standard",
     Group = "Payment methods",
     SystemName = "Payments.PayPalStandard",
-    SupportedVersion = PowerStoreVersion.SupportedPluginVersion,
-    Author = "PowerStorenode team",
+    SupportedVersion = PowerStoreVersions.SupportedPluginVersion,
+    Author = "PowerStore team",
     Version = "1.36"
 )]

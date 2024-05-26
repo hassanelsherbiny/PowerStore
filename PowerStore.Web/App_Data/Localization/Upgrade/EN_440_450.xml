@@ -84,7 +84,7 @@
     <Value>We are using firebase for push notifications. You can find more info in our manuals or on firebase docs.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.PushNotifications.PushNotifications.Warning">
-    <Value>Warning! Press "Save" button every time you upgrade PowerStoreNode to new version, as the settings will be wiped out in registration script.</Value>
+    <Value>Warning! Press "Save" button every time you upgrade PowerStore to new version, as the settings will be wiped out in registration script.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.PushNotifications.Message.Fields.CustomerEmail">
     <Value>Email</Value>

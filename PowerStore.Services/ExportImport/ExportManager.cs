@@ -152,7 +152,7 @@ namespace PowerStore.Services.ExportImport
             var xmlWriter = XmlWriter.Create(stringWriter, xwSettings);
             await xmlWriter.WriteStartDocumentAsync();
             xmlWriter.WriteStartElement("Manufacturers");
-            xmlWriter.WriteAttributeString("Version", PowerStoreVersion.FullVersion);
+            xmlWriter.WriteAttributeString("Version", PowerStoreVersions.FullVersion);
 
             foreach (var manufacturer in manufacturers)
             {
@@ -252,7 +252,7 @@ namespace PowerStore.Services.ExportImport
             var xmlWriter = XmlWriter.Create(stringWriter, xwSettings);
             await xmlWriter.WriteStartDocumentAsync();
             xmlWriter.WriteStartElement("Categories");
-            xmlWriter.WriteAttributeString("Version", PowerStoreVersion.FullVersion);
+            xmlWriter.WriteAttributeString("Version", PowerStoreVersions.FullVersion);
             await WriteCategories(xmlWriter, categories.ToList());
             xmlWriter.WriteEndElement();
             xmlWriter.WriteEndDocument();
@@ -309,7 +309,7 @@ namespace PowerStore.Services.ExportImport
             var xmlWriter = XmlWriter.Create(stringWriter, xwSettings);
             await xmlWriter.WriteStartDocumentAsync();
             xmlWriter.WriteStartElement("Products");
-            xmlWriter.WriteAttributeString("Version", PowerStoreVersion.FullVersion);
+            xmlWriter.WriteAttributeString("Version", PowerStoreVersions.FullVersion);
 
             foreach (var product in products)
             {
@@ -698,7 +698,7 @@ namespace PowerStore.Services.ExportImport
             var xmlWriter = XmlWriter.Create(stringWriter, xwSettings);
             await xmlWriter.WriteStartDocumentAsync();
             xmlWriter.WriteStartElement("Orders");
-            xmlWriter.WriteAttributeString("Version", PowerStoreVersion.FullVersion);
+            xmlWriter.WriteAttributeString("Version", PowerStoreVersions.FullVersion);
 
 
             foreach (var order in orders)
@@ -969,7 +969,7 @@ namespace PowerStore.Services.ExportImport
             var xmlWriter = XmlWriter.Create(stringWriter, xwSettings);
             await xmlWriter.WriteStartDocumentAsync();
             xmlWriter.WriteStartElement("Customers");
-            xmlWriter.WriteAttributeString("Version", PowerStoreVersion.FullVersion);
+            xmlWriter.WriteAttributeString("Version", PowerStoreVersions.FullVersion);
 
             foreach (var customer in customers)
             {

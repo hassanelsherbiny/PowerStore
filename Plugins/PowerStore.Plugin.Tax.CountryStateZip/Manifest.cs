@@ -5,7 +5,7 @@ using PowerStore.Core.Plugins;
     FriendlyName = "Tax By Country & State & Zip",
     Group = "Tax providers",
     SystemName = "Tax.CountryStateZip",
-    SupportedVersion = PowerStoreVersion.SupportedPluginVersion,
-    Author = "PowerStorenode team",
+    SupportedVersion = PowerStoreVersions.SupportedPluginVersion,
+    Author = "PowerStore team",
     Version = "1.48"
 )]

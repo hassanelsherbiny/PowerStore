@@ -78,10 +78,10 @@
     <Value>اختر مزود المعلومات</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>إذا كنت تحتاج دليل استخدام موقع PowerStorenode, قم بزيارة</Value>
+    <Value>إذا كنت تحتاج دليل استخدام موقع PowerStore, قم بزيارة</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>قيم بزيارة قسم التوثيق على PowerStorenode.com </Value>
+    <Value>قيم بزيارة قسم التوثيق على PowerStore.com </Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>مثلاُ</Value>
@@ -90,7 +90,7 @@
     <Value>تثبيت</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>جاري تثبيت PowerStorenode...</Value>
+    <Value>جاري تثبيت PowerStore...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>كلمات المرور غير متطابقة</Value>
@@ -141,10 +141,10 @@
     <Value>معلومات المتجر</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>PowerStorenode تنصيب</Value>
+    <Value>PowerStore تنصيب</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode هو مشروع متجر للتسوق عبر الانترنت. هذه الخطوات سوف تساعدك لتنصيب وتثبيت متجر PowerStorenode.</Value>
+    <Value>PowerStore هو مشروع متجر للتسوق عبر الانترنت. هذه الخطوات سوف تساعدك لتنصيب وتثبيت متجر PowerStore.</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>لمتابعة خطوات التثبيت يجب ان تعرف المعلومات التالية حول قاعدة البيانات وخادم MongoDB مثل سلسلة الاتصال (Conncetion String). الرجاء الاتصال بمزود الخدمة إذا دعت الحاجة لذلك. إذا كنت تريد ان تقوم بتثبيت على جهازك (خادم محلي)، قد تحتاج إلى المعلومات من مدير الخادم لديك (Admin)</Value>

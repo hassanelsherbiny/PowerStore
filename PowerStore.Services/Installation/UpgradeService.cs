@@ -50,7 +50,7 @@ namespace PowerStore.Services.Installation
         #region Fields
         private readonly IServiceProvider _serviceProvider;
         private readonly IMediator _mediator;
-        private readonly IRepository<PowerStoreNodeVersion> _versionRepository;
+        private readonly IRepository<Domain.Common.PowerStoreVersion> _versionRepository;
 
         private const string version_400 = "4.00";
         private const string version_410 = "4.10";
@@ -68,7 +68,7 @@ namespace PowerStore.Services.Installation
         #region Ctor
         public UpgradeService(IServiceProvider serviceProvider,
             IMediator mediator,
-            IRepository<PowerStoreNodeVersion> versionRepository)
+            IRepository<Domain.Common.PowerStoreVersion> versionRepository)
         {
             _serviceProvider = serviceProvider;
             _mediator = mediator;
@@ -136,13 +136,13 @@ namespace PowerStore.Services.Installation
                 var databaseversion = _versionRepository.Table.FirstOrDefault();
                 if (databaseversion != null)
                 {
-                    databaseversion.DataBaseVersion = PowerStoreVersion.SupportedDBVersion;
+                    databaseversion.DataBaseVersion = Core.PowerStoreVersions.SupportedDBVersion;
                     await _versionRepository.UpdateAsync(databaseversion);
                 }
                 else
                 {
-                    databaseversion = new PowerStoreNodeVersion {
-                        DataBaseVersion = PowerStoreVersion.SupportedDBVersion
+                    databaseversion = new Domain.Common.PowerStoreVersion {
+                        DataBaseVersion = Core.PowerStoreVersions.SupportedDBVersion
                     };
                     await _versionRepository.InsertAsync(databaseversion);
                 }

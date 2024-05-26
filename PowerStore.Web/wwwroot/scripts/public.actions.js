@@ -1,5 +1,5 @@
 ﻿/*
-** PowerStorenode actions
+** PowerStore actions
 */
 $(document).ready(function () {
 

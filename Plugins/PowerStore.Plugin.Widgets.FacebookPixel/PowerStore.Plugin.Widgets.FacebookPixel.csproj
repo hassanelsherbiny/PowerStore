@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Company>UNIT-SOFT Sp. z o.o.</Company>
     <Authors>UNIT-SOFT Sp. z o.o.</Authors>
-    <PackageProjectUrl>https://PowerStorenode.com/</PackageProjectUrl>
+    <PackageProjectUrl>https://PowerStore.com/</PackageProjectUrl>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

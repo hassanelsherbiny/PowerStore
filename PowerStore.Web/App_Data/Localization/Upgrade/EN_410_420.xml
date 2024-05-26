@@ -784,7 +784,7 @@
     <Value>If left unchecked, registration script won't be added to homepage.</Value>
   </LocaleResource>
   <LocaleResource Name="PushNotifications.PushNotications.Warning">
-    <Value>Warning! Press "Save" button every time you upgrade PowerStoreNode to new version, as the settings will be wiped out in registration script.</Value>
+    <Value>Warning! Press "Save" button every time you upgrade PowerStore to new version, as the settings will be wiped out in registration script.</Value>
   </LocaleResource>
   <LocaleResource Name="Pushnotifications.Pushnotications.Messages">
     <Value>Messages</Value>

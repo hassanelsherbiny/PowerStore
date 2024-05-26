@@ -78,10 +78,10 @@
     <Value>डेटा प्रदाता का चयन करें</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>यदि आप कैसे PowerStorenode का उपयोग करने पर जानकारी की जरूरत है यात्रा,</Value>
+    <Value>यदि आप कैसे PowerStore का उपयोग करने पर जानकारी की जरूरत है यात्रा,</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>दस्तावेज़ीकरण खंड पर PowerStorenode.com</Value>
+    <Value>दस्तावेज़ीकरण खंड पर PowerStore.com</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>उदाहरण</Value>
@@ -90,7 +90,7 @@
     <Value>स्थापित करें</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>PowerStorenode अधिष्ठापन कर रहा है ...</Value>
+    <Value>PowerStore अधिष्ठापन कर रहा है ...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>पासवर्ड मेल नहीं खाते</Value>
@@ -141,10 +141,10 @@
     <Value>स्टोर जानकारी</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>PowerStorenode स्थापना</Value>
+    <Value>PowerStore स्थापना</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode अग्रणी ASP.NET ऑनलाइन दुकान e-वाणिज्य समाधान है. यह विज़ार्ड आपको PowerStorenode विन्यस्त करने की प्रक्रिया के माध्यम से मार्गदर्शन करेगा</Value>
+    <Value>PowerStore अग्रणी ASP.NET ऑनलाइन दुकान e-वाणिज्य समाधान है. यह विज़ार्ड आपको PowerStore विन्यस्त करने की प्रक्रिया के माध्यम से मार्गदर्शन करेगा</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>इस जादूगर को पूरा करने के लिए आप अपने डेटाबेस सर्वर के बारे में कुछ जानकारी ("कनेक्शन स्ट्रिंग") पता होना चाहिए. कृपया अपने ISP से संपर्क करें यदि आवश्यक हो.यदि आप एक स्थानीय मशीन या सर्वर पर स्थापित कर रहे हैं आप अपने सिस्टम व्यवस्थापक से जानकारी की आवश्यकता हो सकती है</Value>

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace PowerStore.Framework.Middleware
 {
     /// <summary>
-    /// Adds the X-Powered-By header with values PowerStorenode.
+    /// Adds the X-Powered-By header with values PowerStore.
     /// </summary>
     public class PoweredByMiddleware
     {
@@ -37,7 +37,7 @@ namespace PowerStore.Framework.Middleware
     public class PoweredByMiddlewareOptions: IPoweredByMiddlewareOptions
     {
         const string PoweredByHeaderName = "X-Powered-By";
-        const string PoweredByHeaderValue = "PowerStoreNode";
+        const string PoweredByHeaderValue = "PowerStore";
 
         public string HeaderName => PoweredByHeaderName;
         public string HeaderValue { get; set; } = PoweredByHeaderValue;

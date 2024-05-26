@@ -24,7 +24,7 @@ namespace PowerStore.Api.Infrastructure
                 application.UseSwagger();
                 application.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "PowerStorenode API V1");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "PowerStore API V1");
                 });
             }
         }
@@ -37,7 +37,7 @@ namespace PowerStore.Api.Infrastructure
 
                 services.AddSwaggerGen(c =>
                 {
-                    c.SwaggerDoc("v1", new OpenApiInfo { Title = "PowerStorenode API", Version = "v1" });
+                    c.SwaggerDoc("v1", new OpenApiInfo { Title = "PowerStore API", Version = "v1" });
                     c.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, //Name the security scheme
                         new OpenApiSecurityScheme {
                             Description = "JWT Authorization header using the Bearer scheme.",

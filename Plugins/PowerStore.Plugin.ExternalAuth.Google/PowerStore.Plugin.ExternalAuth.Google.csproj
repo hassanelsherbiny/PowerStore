@@ -5,7 +5,7 @@
     <Copyright>Copyright © UNIT-SOFT Sp. z o.o.</Copyright>
     <Authors>UNIT-SOFT Sp. z o.o.</Authors>
     <Company>UNIT-SOFT Sp. z o.o.</Company>
-    <PackageProjectUrl>https://PowerStorenode.com/</PackageProjectUrl>
+    <PackageProjectUrl>https://PowerStore.com/</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <OutputPath>..\..\PowerStore.Web\Plugins\ExternalAuth.Google</OutputPath>

@@ -5,7 +5,7 @@ using PowerStore.Core.Plugins;
     FriendlyName = "Shipping Point",
     Group = "Shipping rate computation",
     SystemName = "Shipping.ShippingPoint",
-    SupportedVersion = PowerStoreVersion.SupportedPluginVersion,
-    Author = "PowerStorenode team",
+    SupportedVersion = PowerStoreVersions.SupportedPluginVersion,
+    Author = "PowerStore team",
     Version = "1.04"
 )]

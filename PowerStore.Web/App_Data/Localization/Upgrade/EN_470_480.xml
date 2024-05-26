@@ -147,7 +147,7 @@
     <Value>Privacy Preference Center</Value>
   </LocaleResource>
   <LocaleResource Name="PrivacyPreference.Description">
-    <Value>PowerStorenode uses necessary cookies for the correct operation of the website. Other categories of cookies may be used to personalize your experience.</Value>
+    <Value>PowerStore uses necessary cookies for the correct operation of the website. Other categories of cookies may be used to personalize your experience.</Value>
   </LocaleResource>
   <LocaleResource Name="PrivacyPreference.System.Name">
     <Value>Application cookies</Value>
@@ -216,7 +216,7 @@
     <Value>Log in</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Login.PageTitle">
-    <Value>PowerStoreNode admin</Value>
+    <Value>PowerStore admin</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Login.Password">
     <Value>Password</Value>

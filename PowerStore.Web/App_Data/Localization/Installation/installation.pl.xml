@@ -78,10 +78,10 @@
     <Value>Wybierz dostawcę danych </Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Jeżeli potrzebujesz więcej informacji na temat korzystania z PowerStorenode, zobacz</Value>
+    <Value>Jeżeli potrzebujesz więcej informacji na temat korzystania z PowerStore, zobacz</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>dokumentację na stronie PowerStorenode.com</Value>
+    <Value>dokumentację na stronie PowerStore.com</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Przykład</Value>
@@ -90,7 +90,7 @@
     <Value>Instalacja</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Instalacja PowerStorenode...</Value>
+    <Value>Instalacja PowerStore...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Hasło nie pasuje</Value>
@@ -141,10 +141,10 @@
     <Value>Informacje o sklepie</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>PowerStorenode instalacja</Value>
+    <Value>PowerStore instalacja</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode jest w pełni funkcjonalną platformą e-commerce, stworzoną w oparciu o ASP.NET. Ten kreator poprowadzi cię przez proces instalacji i konfiguracji PowerStorenode</Value>
+    <Value>PowerStore jest w pełni funkcjonalną platformą e-commerce, stworzoną w oparciu o ASP.NET. Ten kreator poprowadzi cię przez proces instalacji i konfiguracji PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Aby ukończyć kreatora należy znać kilka informacji na temat serwera bazy danych ("Connection string - ciąg połączenia"). Proszę skontaktować się z usługodawcą hostingu w razie potrzeby. Jeżeli instalujesz na komputerze lokalnym lub serwerze mogą być potrzebne informacje od administratora systemu.</Value>
@@ -156,6 +156,6 @@
     <Value>Aplikacja została zainstalowana, proszę ponownie uruchomić usługę.</Value>
   </LocaleResource>
   <LocaleResource Name="AlreadyInstalled">
-    <Value>Ta baza danych już istnieje i zainstalowany jest na niej PowerStoreNode. Proszę wybrać inną bazę danych.</Value>
+    <Value>Ta baza danych już istnieje i zainstalowany jest na niej PowerStore. Proszę wybrać inną bazę danych.</Value>
   </LocaleResource>
 </Language>

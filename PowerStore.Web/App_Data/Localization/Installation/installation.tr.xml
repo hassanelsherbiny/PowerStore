@@ -78,10 +78,10 @@
     <Value>Veri kaynağını seçin</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>PowerStorenode'in nasıl kullanıldığı hakkında daha fazla bilgi için </Value>
+    <Value>PowerStore'in nasıl kullanıldığı hakkında daha fazla bilgi için </Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>PowerStorenode.com adresincen document bölümünü ziyaret edin.</Value>
+    <Value>PowerStore.com adresincen document bölümünü ziyaret edin.</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Örnek</Value>
@@ -90,7 +90,7 @@
     <Value>Yükle</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>PowerStorenode yükleniyor...</Value>
+    <Value>PowerStore yükleniyor...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Şifreler uyuşmuyor</Value>
@@ -141,10 +141,10 @@
     <Value>Mağaza bilgisi</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>PowerStorenode Yükle</Value>
+    <Value>PowerStore Yükle</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode ASP.NET ile yazılmış lider online e-ticaret çözümüdür. Bu sihirbaz PowerStorenode kurulumu sırasında size yol gösterecektir.</Value>
+    <Value>PowerStore ASP.NET ile yazılmış lider online e-ticaret çözümüdür. Bu sihirbaz PowerStore kurulumu sırasında size yol gösterecektir.</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Bu sihirbazı tamamlamak için bazı bilgilere ihtiyaç duyacaksınız. MongoDB bağlantı cümleciğinizi ("connection string") bilmiyorsanız lütfen internet servis sağlayıcınız ile iletişime geçin. Kurulumu kendi bilgisayarınız üzerinde gerçekleştirecekseniz sistem yöneticinizden bu bilgileri alabilirsiniz.</Value>

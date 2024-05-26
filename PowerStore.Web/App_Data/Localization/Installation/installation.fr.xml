@@ -78,10 +78,10 @@
     <Value>Sélectionnez le fournisseur de données</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Si vous avez besoin d'informations sur la façon d'utiliser PowerStorenode, visitez le site</Value>
+    <Value>Si vous avez besoin d'informations sur la façon d'utiliser PowerStore, visitez le site</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>la section de documentation sur PowerStorenode.com</Value>
+    <Value>la section de documentation sur PowerStore.com</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>exemple</Value>
@@ -90,7 +90,7 @@
     <Value>installer</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Installation PowerStorenode ...</Value>
+    <Value>Installation PowerStore ...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Les mots de passe ne correspondent pas</Value>
@@ -141,10 +141,10 @@
     <Value>informations sur le magasin</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>l'installation PowerStorenode</Value>
+    <Value>l'installation PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode est le leader ASP.NET boutique en ligne solution e-commerce. Cet assistant va vous guider à travers le processus de configuration PowerStorenode</Value>
+    <Value>PowerStore est le leader ASP.NET boutique en ligne solution e-commerce. Cet assistant va vous guider à travers le processus de configuration PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Pour compléter cet assistant, vous devez connaître certaines informations concernant votre serveur de base de données ("chaîne de connexion"). S'il vous plaît contactez votre FAI si nécessaire. Si vous installez sur une machine locale ou serveur que vous pourriez avoir besoin d'informations à partir de votre système d'administration</Value>

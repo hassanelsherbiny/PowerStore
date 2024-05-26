@@ -5,7 +5,7 @@ using PowerStore.Core.Plugins;
     FriendlyName = "Fixed tax rate provider",
     Group = "Tax providers",
     SystemName = "Tax.FixedRate",
-    SupportedVersion = PowerStoreVersion.SupportedPluginVersion,
-    Author = "PowerStorenode team",
+    SupportedVersion = PowerStoreVersions.SupportedPluginVersion,
+    Author = "PowerStore team",
     Version = "1.16"
 )]

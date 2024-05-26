@@ -519,7 +519,7 @@ namespace PowerStore.Web.Areas.Admin.Controllers
                                 var pluginInfo = assembly.GetCustomAttribute<PluginInfoAttribute>();
                                 if (pluginInfo != null)
                                 {
-                                    if (pluginInfo.SupportedVersion == PowerStoreVersion.SupportedPluginVersion)
+                                    if (pluginInfo.SupportedVersion == PowerStoreVersions.SupportedPluginVersion)
                                     {
                                         supportedVersion = true;
                                         globpath = entry.FullName.Substring(0, entry.FullName.LastIndexOf("/"));
@@ -538,7 +538,7 @@ namespace PowerStore.Web.Areas.Admin.Controllers
                         }
                     }
                     if (!supportedVersion)
-                        throw new Exception($"This plugin doesn't support the current version - {PowerStoreVersion.SupportedPluginVersion}");
+                        throw new Exception($"This plugin doesn't support the current version - {PowerStoreVersions.SupportedPluginVersion}");
                     else
                     {
                         var pluginname = globpath.Substring(globpath.LastIndexOf('/') + 1);

@@ -78,10 +78,10 @@
     <Value>Մուտքագրեք տվյալների բազայի պրովայդերը</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Եթե ցանկանում եք իմանալ ինչպես կարգավորել և օգտագործել PowerStorenode համակարգը, ապա խնդրում ենք այցելել</Value>
+    <Value>Եթե ցանկանում եք իմանալ ինչպես կարգավորել և օգտագործել PowerStore համակարգը, ապա խնդրում ենք այցելել</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>PowerStorenode.com կայքի "Documentation" բաժին</Value>
+    <Value>PowerStore.com կայքի "Documentation" բաժին</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Օրինակ</Value>
@@ -90,7 +90,7 @@
     <Value>Տեղադրել</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>PowerStorenode տեղադրում...</Value>
+    <Value>PowerStore տեղադրում...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Գաղտնաբառերը չեն համընկնում</Value>
@@ -141,13 +141,13 @@
     <Value>Ինֆորմացիա խանութի մասին</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>PowerStorenode տեղադրում</Value>
+    <Value>PowerStore տեղադրում</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode առաջատար ASP.NET համակարգ է ինտերնետ խանութ ստեղծելու համար: Այս էջում Դուք կարող եք տեղադրել PowerStorenode համակարգը:</Value>
+    <Value>PowerStore առաջատար ASP.NET համակարգ է ինտերնետ խանութ ստեղծելու համար: Այս էջում Դուք կարող եք տեղադրել PowerStore համակարգը:</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
-    <Value>PowerStorenode համակարգը հաջողությամբ տեղադրելու համար Դուք պետք է իմանաք տվյալների բազային միանալու կարգավորումների տողը: Եթե Դուք չունեք այդ ինֆորմացիան, ապա կարող եք հարցնել Ձեր հոսթինգ պրովայդերից: Եթե տեղադրում եք լոկալ համակարգչի վրա, ապա կարող եք իմանալ Ձեր ադմինիստրատորից:</Value>
+    <Value>PowerStore համակարգը հաջողությամբ տեղադրելու համար Դուք պետք է իմանաք տվյալների բազային միանալու կարգավորումների տողը: Եթե Դուք չունեք այդ ինֆորմացիան, ապա կարող եք հարցնել Ձեր հոսթինգ պրովայդերից: Եթե տեղադրում եք լոկալ համակարգչի վրա, ապա կարող եք իմանալ Ձեր ադմինիստրատորից:</Value>
   </LocaleResource>
   <LocaleResource Name="WindowsAuthentication">
     <Value>Windows համակարգի ստուգում

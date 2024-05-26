@@ -4,8 +4,8 @@
     <Copyright>Copyright © UNIT-SOFT Sp. z o.o.</Copyright>
     <Company>UNIT-SOFT Sp. z o.o.</Company>
     <Authors>UNIT-SOFT Sp. z o.o.</Authors>
-    <Product>PowerStorenode</Product>
-    <PackageProjectUrl>https://PowerStorenode.com/</PackageProjectUrl>
+    <Product>PowerStore</Product>
+    <PackageProjectUrl>https://PowerStore.com/</PackageProjectUrl>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
     <ServerGarbageCollection>false</ServerGarbageCollection>
     <PreserveCompilationReferences>true</PreserveCompilationReferences>

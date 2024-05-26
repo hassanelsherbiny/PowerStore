@@ -5,7 +5,7 @@ using PowerStore.Core.Plugins;
     FriendlyName = "Google Analytics or Universal Analytics",
     Group = "Widgets",
     SystemName = "Widgets.GoogleAnalytics",
-    SupportedVersion = PowerStoreVersion.SupportedPluginVersion,
-    Author = "PowerStorenode team",
+    SupportedVersion = PowerStoreVersions.SupportedPluginVersion,
+    Author = "PowerStore team",
     Version = "2.07"
 )]

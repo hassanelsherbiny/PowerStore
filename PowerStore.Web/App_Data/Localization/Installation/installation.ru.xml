@@ -78,10 +78,10 @@
     <Value>Выберите провайдер данных</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Если вам необходима информация о том, как пользоваться и настраивать PowerStorenode, пожалуйста, посетите</Value>
+    <Value>Если вам необходима информация о том, как пользоваться и настраивать PowerStore, пожалуйста, посетите</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>раздел "Документация" на сайте PowerStorenode.com</Value>
+    <Value>раздел "Документация" на сайте PowerStore.com</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Пример</Value>
@@ -90,7 +90,7 @@
     <Value>Установить</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Установка PowerStorenode...</Value>
+    <Value>Установка PowerStore...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Пароли не совпадают</Value>
@@ -141,13 +141,13 @@
     <Value>Информация о магазине</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>Установка PowerStorenode</Value>
+    <Value>Установка PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStorenode - это ведущее ASP.NET решение для создания интернет-магазина. На этой странице вы сможете установить PowerStorenode.</Value>
+    <Value>PowerStore - это ведущее ASP.NET решение для создания интернет-магазина. На этой странице вы сможете установить PowerStore.</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
-    <Value>Для того, что успешно установить PowerStorenode, вам необходимо знать строку подключения к вашей базе данных. Если у вас нет этой информации, то вы можете узнать ее у вашего хостинг-провайдера. Если же вы устанавливаете PowerStorenode на локальный компьютер, то вы можете узнать её у вашего системного администратора.</Value>
+    <Value>Для того, что успешно установить PowerStore, вам необходимо знать строку подключения к вашей базе данных. Если у вас нет этой информации, то вы можете узнать ее у вашего хостинг-провайдера. Если же вы устанавливаете PowerStore на локальный компьютер, то вы можете узнать её у вашего системного администратора.</Value>
   </LocaleResource>
   <LocaleResource Name="WindowsAuthentication">
     <Value>Проверка подлинности Windows

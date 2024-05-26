@@ -78,10 +78,10 @@
     <Value>Pilih penyedia data</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Jika anda membutuhkan informasi lebih lanjut tentang PowerStorenode, kunjungi</Value>
+    <Value>Jika anda membutuhkan informasi lebih lanjut tentang PowerStore, kunjungi</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>dokumentasi pada PowerStorenode.com</Value>
+    <Value>dokumentasi pada PowerStore.com</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Contoh</Value>
@@ -90,7 +90,7 @@
     <Value>Install</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Installing PowerStorenode...</Value>
+    <Value>Installing PowerStore...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Password tidak sama</Value>
@@ -144,10 +144,10 @@
     <Value>Informasi Toko</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>Instalasi PowerStoreNode</Value>
+    <Value>Instalasi PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>PowerStoreNode adalah solusi e-commerce dibuat dengan ASP .NET. Proses ini akan menuntun Anda mengkonfigurasi PowerStoreNode</Value>
+    <Value>PowerStore adalah solusi e-commerce dibuat dengan ASP .NET. Proses ini akan menuntun Anda mengkonfigurasi PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Untuk menyelesaikan proses ini Anda harus mengetahui konfigurasi database Anda ("connection string"). Silahkan menghubungi sistem administrator Anda untuk informasi lebih lanjut.</Value>
@@ -159,6 +159,6 @@
     <Value>Aplikasi berhasil diinstall, silahkan jalankan ulang aplikasinya.</Value>
   </LocaleResource>
   <LocaleResource Name="AlreadyInstalled">
-    <Value>Database yang Anda pilih sudah teriinstall PowerStoreNode. Silahkan pilih database yang lain.</Value>
+    <Value>Database yang Anda pilih sudah teriinstall PowerStore. Silahkan pilih database yang lain.</Value>
   </LocaleResource>
 </Language>

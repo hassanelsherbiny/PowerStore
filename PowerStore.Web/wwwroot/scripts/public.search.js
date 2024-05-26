@@ -1,5 +1,5 @@
 ﻿/*
-** PowerStorenode search
+** PowerStore search
 */
 var SearchAction = {
     EnterSearchTerms: '',

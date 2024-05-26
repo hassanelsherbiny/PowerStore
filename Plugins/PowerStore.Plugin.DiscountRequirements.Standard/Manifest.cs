@@ -5,7 +5,7 @@ using PowerStore.Core.Plugins;
     FriendlyName = "Standard discount requirements",
     Group = "Discount requirements",
     SystemName = "DiscountRequirements.Standard",
-    SupportedVersion = PowerStoreVersion.SupportedPluginVersion,
-    Author = "PowerStorenode team",
+    SupportedVersion = PowerStoreVersions.SupportedPluginVersion,
+    Author = "PowerStore team",
     Version = "1.03"
 )]

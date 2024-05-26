@@ -18,7 +18,7 @@
 @{
     var currentCustomer = workContext.CurrentCustomer;
     var usernamesEnabled = customerSettings.UsernamesEnabled;
-    var currentVersion = PowerStoreVersion.FullVersion;
+    var currentVersion = PowerStoreVersions.FullVersion;
     var kendoVersion = "2019.2.514";
     var supportRtl = workContext.WorkingLanguage.Rtl &&
         !localizationSettings.IgnoreRtlPropertyForAdminArea;
@@ -176,21 +176,21 @@
                                     </a>
                                     <ul id="menu1" class="dropdown-menu dropdown-menu-right list-unstyled msg_list overflow-h" role="menu">
                                         <li>
-                                            <a href="http://docs.PowerStorenode.com/" target="_blank">
+                                            <a href="http://docs.PowerStore.com/" target="_blank">
                                                 <i class="icon-book-open"></i>
                                                 @T("Admin.Header.Documentation")
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://PowerStorenode.com/boards" target="_blank">
+                                            <a href="https://PowerStore.com/boards" target="_blank">
                                                 <i class="icon-bubbles"></i>
                                                 @T("Admin.Header.Community")
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://PowerStorenode.com/release-notes" target="_blank">
+                                            <a href="https://PowerStore.com/release-notes" target="_blank">
                                                 <i class="fa fa-dot-circle-o"></i>
-                                                PowerStorenode @currentVersion
+                                                PowerStore @currentVersion
                                             </a>
                                         </li>
                                     </ul>
@@ -262,7 +262,7 @@
                                         <i class="icon-bell"></i>
                                     </a>
                                     <script>
-                                        $.getJSON("https://PowerStorenode.com/version.json", function (data) {
+                                        $.getJSON("https://PowerStore.com/version.json", function (data) {
                                             var items = [];
 
                                             if (data == '@currentVersion') {
@@ -349,7 +349,7 @@
     <script-files asp-location="Footer">
     <div class="page-footer">
         <div class="page-footer-inner">
-            <a href="https://PowerStorenode.com/" target="_blank">@DateTime.UtcNow.Year Powered by PowerStoreNode ®</a>
+            <a href="https://PowerStore.com/" target="_blank">@DateTime.UtcNow.Year Powered by PowerStore ®</a>
         </div>
         <div class="scroll-to-top">
             <i class="icon-arrow-up"></i>

@@ -1,7 +1,7 @@
 ﻿namespace PowerStore.Core.Models
 {
     /// <summary>
-    /// Represents base PowerStorenode entity model
+    /// Represents base PowerStore entity model
     /// </summary>
     public partial class BaseEntityModel : BaseModel
     {

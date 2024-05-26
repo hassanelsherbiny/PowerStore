@@ -78,10 +78,10 @@
     <Value>Επιλέξτε τα πάροχο δεδομένων</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Αν χρειάζεστε πληροφορίες για το πώς να χρησιμοποιήσετε τη PowerStorenode, επισκεφθείτε</Value>
+    <Value>Αν χρειάζεστε πληροφορίες για το πώς να χρησιμοποιήσετε τη PowerStore, επισκεφθείτε</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>το τμήμα τεκμηρίωσης στο PowerStorenode.com</Value>
+    <Value>το τμήμα τεκμηρίωσης στο PowerStore.com</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Παράδειγμα</Value>
@@ -90,7 +90,7 @@
     <Value>Εγκατάσταση</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Εγκατάσταση PowerStorenode ...</Value>
+    <Value>Εγκατάσταση PowerStore ...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>Οι κωδικοί πρόσβασης δεν ταιριάζουν</Value>
@@ -141,10 +141,10 @@
     <Value>Πληροφορίες καταστηματός</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>PowerStorenode εγκατάσταση</Value>
+    <Value>PowerStore εγκατάσταση</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>Η PowerStorenode είναι η κορυφαία ASP.NET λύση για online κατάστημα ηλεκτρονικού εμπορίου. Αυτός ο οδηγός θα σας καθοδηγήσει στη διαδικασία εγκατάστασης της PowerStorenode</Value>
+    <Value>Η PowerStore είναι η κορυφαία ASP.NET λύση για online κατάστημα ηλεκτρονικού εμπορίου. Αυτός ο οδηγός θα σας καθοδηγήσει στη διαδικασία εγκατάστασης της PowerStore</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>Για την ολοκλήρωση αυτού του οδηγού θα πρέπει να γνωρίζουμε κάποιες πληροφορίες σχετικά με server της βάσης δεδομένων σας ("συμβολοσειρά σύνδεσης"). Παρακαλούμε επικοινωνήστε με τον ISP σας, εάν είναι απαραίτητο. Εάν θέλετε να εγκαταστήσετε σε έναν τοπικό υπολογιστή ή διακομιστή μπορεί να χρειαστείτε πληροφορίες από διαχειριστή του συστήματός σας.</Value>

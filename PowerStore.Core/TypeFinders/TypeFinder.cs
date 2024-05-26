@@ -127,7 +127,7 @@ namespace PowerStore.Core.TypeFinders
                 var product = assembly.GetCustomAttribute<AssemblyProductAttribute>();
                 var referencedAssemblies = assembly.GetReferencedAssemblies().ToList();
                 if (referencedAssemblies.Where(x => x.FullName == currentAssem.FullName).Any()
-                    || product?.Product == "PowerStorenode")
+                    || product?.Product == "PowerStore")
                 {
                     if (!addedAssemblyNames.Contains(assembly.FullName))
                     {

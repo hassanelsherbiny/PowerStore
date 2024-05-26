@@ -78,10 +78,10 @@
     <Value>Válassza az adatszolgáltatót</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation1">
-    <Value>Ha információra van szüksége, hogyan kell használni PowerStorenode-t, látogasson el a</Value>
+    <Value>Ha információra van szüksége, hogyan kell használni PowerStore-t, látogasson el a</Value>
   </LocaleResource>
   <LocaleResource Name="Documentation2">
-    <Value>A dokumentáció szakasz PowerStorenode.com-on</Value>
+    <Value>A dokumentáció szakasz PowerStore.com-on</Value>
   </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Példa</Value>
@@ -90,7 +90,7 @@
     <Value>Telepítse</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>PowerStorenode telepítése ...</Value>
+    <Value>PowerStore telepítése ...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>A jelszavak nem egyeznek</Value>
@@ -141,10 +141,10 @@
     <Value>Áruház információk</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>PowerStorenode telepítés</Value>
+    <Value>PowerStore telepítés</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value> A PowerStorenode vezető ASP.NET online bolt, elektronikus kereskedelmi megoldás. Ez a varázsló végigvezeti a  PowerStorenode konfigurálása  folyamatában</Value>
+    <Value> A PowerStore vezető ASP.NET online bolt, elektronikus kereskedelmi megoldás. Ez a varázsló végigvezeti a  PowerStore konfigurálása  folyamatában</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value> A varázsló befejezéséhez, tudnia kell néhány információt az adatbázis szerver ("kapcsolat string"). Kérjük, lépjen kapcsolatba az internetszolgáltatóval, ha szükséges. Ha a telepítés helyi gépen vagy a szerveren, akkor szüksége lehet információkra a Rendszer Admin-tol.</Value>
