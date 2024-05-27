@@ -293,7 +293,7 @@ input {
 
 .btn-info,
 .btn-outline-info:hover {
-    background-color: #ff0000;
+    background-color: #dc3545;
     border-color: #850808;
 }
 
@@ -4588,7 +4588,7 @@ valid mgs .input-validation-error {
 #topcartlink .cart-qty,
 .wishlist-qty {
     border-radius: 100%;
-    background: #ff0000;
+    background: #dc3545;
     color: #fff;
     font-size: 9px;
     font-weight: 300;

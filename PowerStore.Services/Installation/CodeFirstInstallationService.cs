@@ -243,7 +243,8 @@ namespace PowerStore.Services.Installation
 
         protected virtual async Task InstallVersion()
         {
-            var version = new PowerStoreVersion {
+            var version = new PowerStoreVersion
+            {
                 DataBaseVersion = PowerStoreVersions.SupportedDBVersion
             };
             await _versionRepository.InsertAsync(version);
@@ -402,7 +403,8 @@ namespace PowerStore.Services.Installation
 
         protected virtual async Task InstallLanguages()
         {
-            var language = new Language {
+            var language = new Language
+            {
                 Name = "English",
                 LanguageCulture = "en-US",
                 UniqueSeoCode = "en",
@@ -528,7 +530,8 @@ namespace PowerStore.Services.Installation
 
         protected virtual async Task InstallCountriesAndStates()
         {
-            var cUsa = new Country {
+            var cUsa = new Country
+            {
                 Name = "United States",
                 AllowsBilling = true,
                 AllowsShipping = true,
@@ -543,441 +546,504 @@ namespace PowerStore.Services.Installation
             var states = new List<StateProvince>();
             await _countryRepository.InsertAsync(cUsa);
 
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "AA (Armed Forces Americas)",
                 Abbreviation = "AA",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "AE (Armed Forces Europe)",
                 Abbreviation = "AE",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Alabama",
                 Abbreviation = "AL",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Alaska",
                 Abbreviation = "AK",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "American Samoa",
                 Abbreviation = "AS",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "AP (Armed Forces Pacific)",
                 Abbreviation = "AP",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Arizona",
                 Abbreviation = "AZ",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Arkansas",
                 Abbreviation = "AR",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "California",
                 Abbreviation = "CA",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Colorado",
                 Abbreviation = "CO",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Connecticut",
                 Abbreviation = "CT",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Delaware",
                 Abbreviation = "DE",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "District of Columbia",
                 Abbreviation = "DC",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Federated States of Micronesia",
                 Abbreviation = "FM",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Florida",
                 Abbreviation = "FL",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Georgia",
                 Abbreviation = "GA",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Guam",
                 Abbreviation = "GU",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Hawaii",
                 Abbreviation = "HI",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Idaho",
                 Abbreviation = "ID",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Illinois",
                 Abbreviation = "IL",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Indiana",
                 Abbreviation = "IN",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Iowa",
                 Abbreviation = "IA",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Kansas",
                 Abbreviation = "KS",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Kentucky",
                 Abbreviation = "KY",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Louisiana",
                 Abbreviation = "LA",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Maine",
                 Abbreviation = "ME",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Marshall Islands",
                 Abbreviation = "MH",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Maryland",
                 Abbreviation = "MD",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Massachusetts",
                 Abbreviation = "MA",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Michigan",
                 Abbreviation = "MI",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Minnesota",
                 Abbreviation = "MN",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Mississippi",
                 Abbreviation = "MS",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Missouri",
                 Abbreviation = "MO",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Montana",
                 Abbreviation = "MT",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Nebraska",
                 Abbreviation = "NE",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Nevada",
                 Abbreviation = "NV",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "New Hampshire",
                 Abbreviation = "NH",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "New Jersey",
                 Abbreviation = "NJ",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "New Mexico",
                 Abbreviation = "NM",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "New York",
                 Abbreviation = "NY",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "North Carolina",
                 Abbreviation = "NC",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "North Dakota",
                 Abbreviation = "ND",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Northern Mariana Islands",
                 Abbreviation = "MP",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Ohio",
                 Abbreviation = "OH",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Oklahoma",
                 Abbreviation = "OK",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Oregon",
                 Abbreviation = "OR",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Palau",
                 Abbreviation = "PW",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Pennsylvania",
                 Abbreviation = "PA",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Puerto Rico",
                 Abbreviation = "PR",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Rhode Island",
                 Abbreviation = "RI",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "South Carolina",
                 Abbreviation = "SC",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "South Dakota",
                 Abbreviation = "SD",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Tennessee",
                 Abbreviation = "TN",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Texas",
                 Abbreviation = "TX",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Utah",
                 Abbreviation = "UT",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Vermont",
                 Abbreviation = "VT",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Virgin Islands",
                 Abbreviation = "VI",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Virginia",
                 Abbreviation = "VA",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Washington",
                 Abbreviation = "WA",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "West Virginia",
                 Abbreviation = "WV",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Wisconsin",
                 Abbreviation = "WI",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cUsa.Id,
                 Name = "Wyoming",
                 Abbreviation = "WY",
                 Published = true,
                 DisplayOrder = 1,
             });
-            var cCanada = new Country {
+            var cCanada = new Country
+            {
                 Name = "Canada",
                 AllowsBilling = true,
                 AllowsShipping = true,
@@ -990,91 +1056,104 @@ namespace PowerStore.Services.Installation
             };
             await _countryRepository.InsertAsync(cCanada);
 
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cCanada.Id,
                 Name = "Alberta",
                 Abbreviation = "AB",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cCanada.Id,
                 Name = "British Columbia",
                 Abbreviation = "BC",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cCanada.Id,
                 Name = "Manitoba",
                 Abbreviation = "MB",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cCanada.Id,
                 Name = "New Brunswick",
                 Abbreviation = "NB",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cCanada.Id,
                 Name = "Newfoundland and Labrador",
                 Abbreviation = "NL",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cCanada.Id,
                 Name = "Northwest Territories",
                 Abbreviation = "NT",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cCanada.Id,
                 Name = "Nova Scotia",
                 Abbreviation = "NS",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cCanada.Id,
                 Name = "Nunavut",
                 Abbreviation = "NU",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cCanada.Id,
                 Name = "Ontario",
                 Abbreviation = "ON",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cCanada.Id,
                 Name = "Prince Edward Island",
                 Abbreviation = "PE",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cCanada.Id,
                 Name = "Quebec",
                 Abbreviation = "QC",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cCanada.Id,
                 Name = "Saskatchewan",
                 Abbreviation = "SK",
                 Published = true,
                 DisplayOrder = 1,
             });
-            states.Add(new StateProvince {
+            states.Add(new StateProvince
+            {
                 CountryId = cCanada.Id,
                 Name = "Yukon Territory",
                 Abbreviation = "YT",
@@ -3961,7 +4040,8 @@ namespace PowerStore.Services.Installation
 
         protected virtual async Task InstallCustomersAndUsers(string defaultUserEmail, string defaultUserPassword)
         {
-            var crAdministrators = new CustomerRole {
+            var crAdministrators = new CustomerRole
+            {
                 Name = "Administrators",
                 Active = true,
                 IsSystemRole = true,
@@ -3969,7 +4049,8 @@ namespace PowerStore.Services.Installation
             };
             await _customerRoleRepository.InsertAsync(crAdministrators);
 
-            var crRegistered = new CustomerRole {
+            var crRegistered = new CustomerRole
+            {
                 Name = "Registered",
                 Active = true,
                 IsSystemRole = true,
@@ -3977,7 +4058,8 @@ namespace PowerStore.Services.Installation
             };
             await _customerRoleRepository.InsertAsync(crRegistered);
 
-            var crGuests = new CustomerRole {
+            var crGuests = new CustomerRole
+            {
                 Name = "Guests",
                 Active = true,
                 IsSystemRole = true,
@@ -3985,7 +4067,8 @@ namespace PowerStore.Services.Installation
             };
             await _customerRoleRepository.InsertAsync(crGuests);
 
-            var crVendors = new CustomerRole {
+            var crVendors = new CustomerRole
+            {
                 Name = "Vendors",
                 Active = true,
                 IsSystemRole = true,
@@ -3993,7 +4076,8 @@ namespace PowerStore.Services.Installation
             };
             await _customerRoleRepository.InsertAsync(crVendors);
 
-            var crStaff = new CustomerRole {
+            var crStaff = new CustomerRole
+            {
                 Name = "Staff",
                 Active = true,
                 IsSystemRole = true,
@@ -4001,7 +4085,8 @@ namespace PowerStore.Services.Installation
             };
             await _customerRoleRepository.InsertAsync(crStaff);
 
-            var crSalesManager = new CustomerRole {
+            var crSalesManager = new CustomerRole
+            {
                 Name = "Sales manager",
                 Active = true,
                 IsSystemRole = true,
@@ -4010,7 +4095,8 @@ namespace PowerStore.Services.Installation
             await _customerRoleRepository.InsertAsync(crSalesManager);
 
             //admin user
-            var adminUser = new Customer {
+            var adminUser = new Customer
+            {
                 CustomerGuid = Guid.NewGuid(),
                 Email = defaultUserEmail,
                 Username = defaultUserEmail,
@@ -4022,7 +4108,8 @@ namespace PowerStore.Services.Installation
                 LastActivityDateUtc = DateTime.UtcNow,
                 PasswordChangeDateUtc = DateTime.UtcNow,
             };
-            var defaultAdminUserAddress = new Address {
+            var defaultAdminUserAddress = new Address
+            {
                 FirstName = "John",
                 LastName = "Smith",
                 PhoneNumber = "12345678",
@@ -4050,7 +4137,8 @@ namespace PowerStore.Services.Installation
 
 
             //search engine (crawler) built-in user
-            var searchEngineUser = new Customer {
+            var searchEngineUser = new Customer
+            {
                 Email = "builtin@search_engine_record.com",
                 CustomerGuid = Guid.NewGuid(),
                 PasswordFormat = PasswordFormat.Clear,
@@ -4066,7 +4154,8 @@ namespace PowerStore.Services.Installation
 
 
             //built-in user for background tasks
-            var backgroundTaskUser = new Customer {
+            var backgroundTaskUser = new Customer
+            {
                 Email = "builtin@background-task-record.com",
                 CustomerGuid = Guid.NewGuid(),
                 PasswordFormat = PasswordFormat.Clear,
@@ -4759,7 +4848,8 @@ namespace PowerStore.Services.Installation
             foreach (var topic in ltopics)
             {
                 var seName = topic.SystemName.ToLowerInvariant();
-                await _urlRecordRepository.InsertAsync(new UrlRecord {
+                await _urlRecordRepository.InsertAsync(new UrlRecord
+                {
                     EntityId = topic.Id,
                     EntityName = "Topic",
                     LanguageId = "",
@@ -4776,7 +4866,8 @@ namespace PowerStore.Services.Installation
         {
             var _settingService = _serviceProvider.GetRequiredService<ISettingService>();
 
-            await _settingService.SaveSetting(new MenuItemSettings {
+            await _settingService.SaveSetting(new MenuItemSettings
+            {
                 DisplayHomePageMenu = !installSampleData,
                 DisplayNewProductsMenu = true,
                 DisplaySearchMenu = !installSampleData,
@@ -4785,13 +4876,15 @@ namespace PowerStore.Services.Installation
                 DisplayContactUsMenu = true
             });
 
-            await _settingService.SaveSetting(new PdfSettings {
+            await _settingService.SaveSetting(new PdfSettings
+            {
                 LogoPictureId = "",
                 InvoiceHeaderText = null,
                 InvoiceFooterText = null,
             });
 
-            await _settingService.SaveSetting(new CommonSettings {
+            await _settingService.SaveSetting(new CommonSettings
+            {
                 StoreInDatabaseContactUsForm = true,
                 UseSystemEmailForContactUsForm = true,
                 UseStoredProceduresIfSupported = true,
@@ -4807,14 +4900,16 @@ namespace PowerStore.Services.Installation
                 PopupForTermsOfServiceLinks = true,
                 AllowToSelectStore = false,
             });
-            await _settingService.SaveSetting(new SecuritySettings {
+            await _settingService.SaveSetting(new SecuritySettings
+            {
                 EncryptionKey = CommonHelper.GenerateRandomDigitCode(24),
                 AdminAreaAllowedIpAddresses = null,
                 EnableXsrfProtectionForAdminArea = true,
                 EnableXsrfProtectionForPublicStore = true,
                 AllowNonAsciiCharInHeaders = true,
             });
-            await _settingService.SaveSetting(new MediaSettings {
+            await _settingService.SaveSetting(new MediaSettings
+            {
                 BlogThumbPictureSize = 450,
                 ProductThumbPictureSize = 415,
                 ProductDetailsPictureSize = 800,
@@ -4838,7 +4933,8 @@ namespace PowerStore.Services.Installation
                 StoreInDb = true
             });
 
-            await _settingService.SaveSetting(new SeoSettings {
+            await _settingService.SaveSetting(new SeoSettings
+            {
                 PageTitleSeparator = ". ",
                 PageTitleSeoAdjustment = PageTitleSeoAdjustment.PagenameAfterStorename,
                 DefaultTitle = "Your store",
@@ -4909,7 +5005,8 @@ namespace PowerStore.Services.Installation
                     },
             });
 
-            await _settingService.SaveSetting(new AdminAreaSettings {
+            await _settingService.SaveSetting(new AdminAreaSettings
+            {
                 DefaultGridPageSize = 15,
                 GridPageSizes = "10, 15, 20, 50, 100",
                 RichEditorAdditionalSettings = null,
@@ -4917,7 +5014,8 @@ namespace PowerStore.Services.Installation
                 UseIsoDateTimeConverterInJson = true,
             });
 
-            await _settingService.SaveSetting(new CatalogSettings {
+            await _settingService.SaveSetting(new CatalogSettings
+            {
                 AllowViewUnpublishedProductPage = true,
                 DisplayDiscontinuedMessageForUnpublishedProducts = true,
                 PublishBackProductWhenCancellingOrders = false,
@@ -4998,7 +5096,8 @@ namespace PowerStore.Services.Installation
                 SecondPictureOnCatalogPages = true
             });
 
-            await _settingService.SaveSetting(new LocalizationSettings {
+            await _settingService.SaveSetting(new LocalizationSettings
+            {
                 DefaultAdminLanguageId = _languageRepository.Table.Single(l => l.Name == "English").Id,
                 UseImagesForLanguageSelection = false,
                 AutomaticallyDetectLanguage = false,
@@ -5007,7 +5106,8 @@ namespace PowerStore.Services.Installation
                 IgnoreRtlPropertyForAdminArea = false,
             });
 
-            await _settingService.SaveSetting(new CustomerSettings {
+            await _settingService.SaveSetting(new CustomerSettings
+            {
                 UsernamesEnabled = false,
                 CheckUsernameAvailabilityEnabled = false,
                 AllowUsersToChangeUsernames = false,
@@ -5065,7 +5165,8 @@ namespace PowerStore.Services.Installation
                 TwoFactorAuthenticationEnabled = false,
             });
 
-            await _settingService.SaveSetting(new AddressSettings {
+            await _settingService.SaveSetting(new AddressSettings
+            {
                 CompanyEnabled = true,
                 StreetAddressEnabled = true,
                 StreetAddressRequired = true,
@@ -5080,9 +5181,10 @@ namespace PowerStore.Services.Installation
                 PhoneRequired = true,
                 FaxEnabled = false,
             });
-             
 
-            await _settingService.SaveSetting(new RewardPointsSettings {
+
+            await _settingService.SaveSetting(new RewardPointsSettings
+            {
                 Enabled = true,
                 ExchangeRate = 1,
                 PointsForRegistration = 0,
@@ -5094,7 +5196,8 @@ namespace PowerStore.Services.Installation
                 PointsAccumulatedForAllStores = true,
             });
 
-            await _settingService.SaveSetting(new CurrencySettings {
+            await _settingService.SaveSetting(new CurrencySettings
+            {
                 DisplayCurrencyLabel = false,
                 PrimaryStoreCurrencyId = _currencyRepository.Table.Single(c => c.CurrencyCode == "USD").Id,
                 PrimaryExchangeRateCurrencyId = _currencyRepository.Table.Single(c => c.CurrencyCode == "USD").Id,
@@ -5102,12 +5205,14 @@ namespace PowerStore.Services.Installation
                 AutoUpdateEnabled = false
             });
 
-            await _settingService.SaveSetting(new MeasureSettings {
+            await _settingService.SaveSetting(new MeasureSettings
+            {
                 BaseDimensionId = _measureDimensionRepository.Table.Single(m => m.SystemKeyword == "centimetres").Id,
                 BaseWeightId = _measureWeightRepository.Table.Single(m => m.SystemKeyword == "lb").Id,
             });
 
-            await _settingService.SaveSetting(new MessageTemplatesSettings {
+            await _settingService.SaveSetting(new MessageTemplatesSettings
+            {
                 CaseInvariantReplacement = false,
                 Color1 = "#b9babe",
                 Color2 = "#ebecee",
@@ -5115,7 +5220,8 @@ namespace PowerStore.Services.Installation
                 PictureSize = 50,
             });
 
-            await _settingService.SaveSetting(new ShoppingCartSettings {
+            await _settingService.SaveSetting(new ShoppingCartSettings
+            {
                 DisplayCartAfterAddingProduct = false,
                 DisplayWishlistAfterAddingProduct = false,
                 MaximumShoppingCartItems = 1000,
@@ -5138,7 +5244,8 @@ namespace PowerStore.Services.Installation
                 RenderAssociatedAttributeValueQuantity = false
             });
 
-            await _settingService.SaveSetting(new OrderSettings {
+            await _settingService.SaveSetting(new OrderSettings
+            {
                 IsReOrderAllowed = true,
                 MinOrderSubtotalAmount = 0,
                 MinOrderSubtotalAmountIncludingTax = false,
@@ -5167,7 +5274,8 @@ namespace PowerStore.Services.Installation
                 LengthCode = 8
             });
 
-            await _settingService.SaveSetting(new ShippingSettings {
+            await _settingService.SaveSetting(new ShippingSettings
+            {
                 ActiveShippingRateComputationMethodSystemNames = new List<string> { "Shipping.FixedRate" },
                 ShipToSameAddress = true,
                 AllowPickUpInStore = true,
@@ -5184,7 +5292,8 @@ namespace PowerStore.Services.Installation
                 UseCubeRootMethod = true
             });
 
-            await _settingService.SaveSetting(new PaymentSettings {
+            await _settingService.SaveSetting(new PaymentSettings
+            {
                 ActivePaymentMethodSystemNames = new List<string>
                     {
                         "Payments.CashOnDelivery",
@@ -5197,7 +5306,8 @@ namespace PowerStore.Services.Installation
                 SkipPaymentInfoStepForRedirectionPaymentMethods = false,
             });
 
-            await _settingService.SaveSetting(new TaxSettings {
+            await _settingService.SaveSetting(new TaxSettings
+            {
                 TaxBasedOn = TaxBasedOn.BillingAddress,
                 TaxDisplayType = TaxDisplayType.ExcludingTax,
                 ActiveTaxProviderSystemName = "Tax.FixedRate",
@@ -5225,12 +5335,14 @@ namespace PowerStore.Services.Installation
                 EuVatEmailAdminWhenNewVatSubmitted = false
             });
 
-            await _settingService.SaveSetting(new DateTimeSettings {
+            await _settingService.SaveSetting(new DateTimeSettings
+            {
                 DefaultStoreTimeZoneId = "",
                 AllowCustomersToSetTimeZone = false
             });
 
-            await _settingService.SaveSetting(new BlogSettings {
+            await _settingService.SaveSetting(new BlogSettings
+            {
                 Enabled = true,
                 PostsPageSize = 10,
                 AllowNotRegisteredUsersToLeaveComments = false,
@@ -5242,18 +5354,21 @@ namespace PowerStore.Services.Installation
                 MaxTextSizeHomePage = 200
             });
 
-            await _settingService.SaveSetting(new KnowledgebaseSettings {
+            await _settingService.SaveSetting(new KnowledgebaseSettings
+            {
                 Enabled = false,
                 AllowNotRegisteredUsersToLeaveComments = false,
                 NotifyAboutNewArticleComments = false
             });
 
-            await _settingService.SaveSetting(new PushNotificationsSettings {
+            await _settingService.SaveSetting(new PushNotificationsSettings
+            {
                 Enabled = false,
                 AllowGuestNotifications = true
             });
 
-            await _settingService.SaveSetting(new AdminSearchSettings {
+            await _settingService.SaveSetting(new AdminSearchSettings
+            {
                 BlogsDisplayOrder = 0,
                 CategoriesDisplayOrder = 0,
                 CustomersDisplayOrder = 0,
@@ -5276,7 +5391,8 @@ namespace PowerStore.Services.Installation
                 MenuDisplayOrder = -1
             });
 
-            await _settingService.SaveSetting(new NewsSettings {
+            await _settingService.SaveSetting(new NewsSettings
+            {
                 Enabled = true,
                 AllowNotRegisteredUsersToLeaveComments = false,
                 NotifyAboutNewNewsComments = false,
@@ -5286,7 +5402,8 @@ namespace PowerStore.Services.Installation
                 ShowHeaderRssUrl = false,
             });
 
-            await _settingService.SaveSetting(new VendorSettings {
+            await _settingService.SaveSetting(new VendorSettings
+            {
                 DefaultVendorPageSizeOptions = "6, 3, 9",
                 VendorsBlockItemsToDisplay = 0,
                 ShowVendorOnProductDetailsPage = true,
@@ -5302,15 +5419,18 @@ namespace PowerStore.Services.Installation
             var eaGeneral = _emailAccountRepository.Table.FirstOrDefault();
             if (eaGeneral == null)
                 throw new Exception("Default email account cannot be loaded");
-            await _settingService.SaveSetting(new EmailAccountSettings {
+            await _settingService.SaveSetting(new EmailAccountSettings
+            {
                 DefaultEmailAccountId = eaGeneral.Id
             });
 
-            await _settingService.SaveSetting(new WidgetSettings {
+            await _settingService.SaveSetting(new WidgetSettings
+            {
                 ActiveWidgetSystemNames = new List<string> { "Widgets.Slider" },
             });
 
-            await _settingService.SaveSetting(new GoogleAnalyticsSettings() {
+            await _settingService.SaveSetting(new GoogleAnalyticsSettings()
+            {
                 gaprivateKey = "",
                 gaserviceAccountEmail = "",
                 gaviewID = ""
@@ -5319,7 +5439,8 @@ namespace PowerStore.Services.Installation
 
         protected virtual async Task InstallCheckoutAttributes()
         {
-            var ca1 = new CheckoutAttribute {
+            var ca1 = new CheckoutAttribute
+            {
                 Name = "Gift wrapping",
                 IsRequired = true,
                 ShippableProductRequired = true,
@@ -5327,7 +5448,8 @@ namespace PowerStore.Services.Installation
                 DisplayOrder = 1,
             };
             await _checkoutAttributeRepository.InsertAsync(ca1);
-            ca1.CheckoutAttributeValues.Add(new CheckoutAttributeValue {
+            ca1.CheckoutAttributeValues.Add(new CheckoutAttributeValue
+            {
                 Name = "No",
                 PriceAdjustment = 0,
                 DisplayOrder = 1,
@@ -5335,7 +5457,8 @@ namespace PowerStore.Services.Installation
                 CheckoutAttributeId = ca1.Id,
             });
 
-            ca1.CheckoutAttributeValues.Add(new CheckoutAttributeValue {
+            ca1.CheckoutAttributeValues.Add(new CheckoutAttributeValue
+            {
                 Name = "Yes",
                 PriceAdjustment = 10,
                 DisplayOrder = 2,
@@ -5346,102 +5469,119 @@ namespace PowerStore.Services.Installation
 
         protected virtual async Task InstallSpecificationAttributes()
         {
-            var sa1 = new SpecificationAttribute {
+            var sa1 = new SpecificationAttribute
+            {
                 Name = "Screensize",
                 DisplayOrder = 1,
                 SeName = SeoExtensions.GenerateSlug("Screensize", false, false),
             };
             await _specificationAttributeRepository.InsertAsync(sa1);
 
-            sa1.SpecificationAttributeOptions.Add(new SpecificationAttributeOption {
+            sa1.SpecificationAttributeOptions.Add(new SpecificationAttributeOption
+            {
                 Name = "13.0''",
                 DisplayOrder = 2,
                 SeName = SeoExtensions.GenerateSlug("13.0''", false, false),
             });
-            sa1.SpecificationAttributeOptions.Add(new SpecificationAttributeOption {
+            sa1.SpecificationAttributeOptions.Add(new SpecificationAttributeOption
+            {
                 Name = "13.3''",
                 DisplayOrder = 3,
                 SeName = SeoExtensions.GenerateSlug("13.3''", false, false),
             });
-            sa1.SpecificationAttributeOptions.Add(new SpecificationAttributeOption {
+            sa1.SpecificationAttributeOptions.Add(new SpecificationAttributeOption
+            {
                 Name = "14.0''",
                 DisplayOrder = 4,
                 SeName = SeoExtensions.GenerateSlug("14.0''", false, false),
             });
-            sa1.SpecificationAttributeOptions.Add(new SpecificationAttributeOption {
+            sa1.SpecificationAttributeOptions.Add(new SpecificationAttributeOption
+            {
                 Name = "15.0''",
                 DisplayOrder = 4,
                 SeName = SeoExtensions.GenerateSlug("15.0''", false, false),
             });
-            sa1.SpecificationAttributeOptions.Add(new SpecificationAttributeOption {
+            sa1.SpecificationAttributeOptions.Add(new SpecificationAttributeOption
+            {
                 Name = "15.6''",
                 DisplayOrder = 5,
                 SeName = SeoExtensions.GenerateSlug("15.6''", false, false),
             });
             await _specificationAttributeRepository.UpdateAsync(sa1);
 
-            var sa2 = new SpecificationAttribute {
+            var sa2 = new SpecificationAttribute
+            {
                 Name = "CPU Type",
                 DisplayOrder = 2,
                 SeName = SeoExtensions.GenerateSlug("CPU Type", false, false),
             };
             await _specificationAttributeRepository.InsertAsync(sa2);
 
-            sa2.SpecificationAttributeOptions.Add(new SpecificationAttributeOption {
+            sa2.SpecificationAttributeOptions.Add(new SpecificationAttributeOption
+            {
                 Name = "Intel Core i5",
                 DisplayOrder = 1,
                 SeName = SeoExtensions.GenerateSlug("Intel Core i5", false, false),
             });
 
-            sa2.SpecificationAttributeOptions.Add(new SpecificationAttributeOption {
+            sa2.SpecificationAttributeOptions.Add(new SpecificationAttributeOption
+            {
                 Name = "Intel Core i7",
                 DisplayOrder = 2,
                 SeName = SeoExtensions.GenerateSlug("Intel Core i7", false, false),
             });
             await _specificationAttributeRepository.UpdateAsync(sa2);
 
-            var sa3 = new SpecificationAttribute {
+            var sa3 = new SpecificationAttribute
+            {
                 Name = "Memory",
                 DisplayOrder = 3,
                 SeName = SeoExtensions.GenerateSlug("Memory", false, false),
             };
             await _specificationAttributeRepository.InsertAsync(sa3);
 
-            sa3.SpecificationAttributeOptions.Add(new SpecificationAttributeOption {
+            sa3.SpecificationAttributeOptions.Add(new SpecificationAttributeOption
+            {
                 Name = "4 GB",
                 DisplayOrder = 1,
                 SeName = SeoExtensions.GenerateSlug("4 GB", false, false),
             });
-            sa3.SpecificationAttributeOptions.Add(new SpecificationAttributeOption {
+            sa3.SpecificationAttributeOptions.Add(new SpecificationAttributeOption
+            {
                 Name = "8 GB",
                 DisplayOrder = 2,
                 SeName = SeoExtensions.GenerateSlug("8 GB", false, false),
             });
-            sa3.SpecificationAttributeOptions.Add(new SpecificationAttributeOption {
+            sa3.SpecificationAttributeOptions.Add(new SpecificationAttributeOption
+            {
                 Name = "16 GB",
                 DisplayOrder = 3,
                 SeName = SeoExtensions.GenerateSlug("16 GB", false, false),
             });
             await _specificationAttributeRepository.UpdateAsync(sa3);
 
-            var sa4 = new SpecificationAttribute {
+            var sa4 = new SpecificationAttribute
+            {
                 Name = "Hardrive",
                 DisplayOrder = 5,
                 SeName = SeoExtensions.GenerateSlug("Hardrive", false, false),
             };
             await _specificationAttributeRepository.InsertAsync(sa4);
 
-            sa4.SpecificationAttributeOptions.Add(new SpecificationAttributeOption {
+            sa4.SpecificationAttributeOptions.Add(new SpecificationAttributeOption
+            {
                 Name = "128 GB",
                 DisplayOrder = 7,
                 SeName = SeoExtensions.GenerateSlug("128 GB", false, false),
             });
-            sa4.SpecificationAttributeOptions.Add(new SpecificationAttributeOption {
+            sa4.SpecificationAttributeOptions.Add(new SpecificationAttributeOption
+            {
                 Name = "500 GB",
                 DisplayOrder = 4,
                 SeName = SeoExtensions.GenerateSlug("500 GB", false, false),
             });
-            sa4.SpecificationAttributeOptions.Add(new SpecificationAttributeOption {
+            sa4.SpecificationAttributeOptions.Add(new SpecificationAttributeOption
+            {
                 Name = "1 TB",
                 DisplayOrder = 3,
                 SeName = SeoExtensions.GenerateSlug("1 TB", false, false),
@@ -5512,7 +5652,8 @@ namespace PowerStore.Services.Installation
 
             //categories
             var allCategories = new List<Category>();
-            var categoryComputers = new Category {
+            var categoryComputers = new Category
+            {
                 Name = "Computers",
                 CategoryTemplateId = categoryTemplateInGridAndLines.Id,
                 PageSize = 6,
@@ -5530,7 +5671,8 @@ namespace PowerStore.Services.Installation
             };
             allCategories.Add(categoryComputers);
 
-            var categoryTablets = new Category {
+            var categoryTablets = new Category
+            {
                 Name = "Tablets",
                 CategoryTemplateId = categoryTemplateInGridAndLines.Id,
                 PageSize = 6,
@@ -5547,7 +5689,8 @@ namespace PowerStore.Services.Installation
             };
             allCategories.Add(categoryTablets);
 
-            var categoryNotebooks = new Category {
+            var categoryNotebooks = new Category
+            {
                 Name = "Notebooks",
                 CategoryTemplateId = categoryTemplateInGridAndLines.Id,
                 PageSize = 6,
@@ -5563,7 +5706,8 @@ namespace PowerStore.Services.Installation
             };
             allCategories.Add(categoryNotebooks);
 
-            var categorySmartwatches = new Category {
+            var categorySmartwatches = new Category
+            {
                 Name = "Smartwatches",
                 CategoryTemplateId = categoryTemplateInGridAndLines.Id,
                 PageSize = 6,
@@ -5579,7 +5723,8 @@ namespace PowerStore.Services.Installation
             };
             allCategories.Add(categorySmartwatches);
 
-            var categoryElectronics = new Category {
+            var categoryElectronics = new Category
+            {
                 Name = "Electronics",
                 CategoryTemplateId = categoryTemplateInGridAndLines.Id,
                 PageSize = 6,
@@ -5596,7 +5741,8 @@ namespace PowerStore.Services.Installation
             };
             allCategories.Add(categoryElectronics);
 
-            var categoryDisplay = new Category {
+            var categoryDisplay = new Category
+            {
                 Name = "Display",
                 CategoryTemplateId = categoryTemplateInGridAndLines.Id,
                 PageSize = 6,
@@ -5613,7 +5759,8 @@ namespace PowerStore.Services.Installation
             };
             allCategories.Add(categoryDisplay);
 
-            var categorySmartphones = new Category {
+            var categorySmartphones = new Category
+            {
                 Name = "Smartphones",
                 CategoryTemplateId = categoryTemplateInGridAndLines.Id,
                 PageSize = 6,
@@ -5629,7 +5776,8 @@ namespace PowerStore.Services.Installation
             };
             allCategories.Add(categorySmartphones);
 
-            var categoryOthers = new Category {
+            var categoryOthers = new Category
+            {
                 Name = "Others",
                 CategoryTemplateId = categoryTemplateInGridAndLines.Id,
                 PageSize = 6,
@@ -5641,13 +5789,14 @@ namespace PowerStore.Services.Installation
                 IncludeInTopMenu = true,
                 PriceRanges = "-100;100-;",
                 Published = true,
-                DisplayOrder = 3,
+                DisplayOrder = 13,
                 CreatedOnUtc = DateTime.UtcNow,
                 UpdatedOnUtc = DateTime.UtcNow
             };
             allCategories.Add(categoryOthers);
 
-            var categorySport = new Category {
+            var categorySport = new Category
+            {
                 Name = "Sport",
                 CategoryTemplateId = categoryTemplateInGridAndLines.Id,
                 PageSize = 9,
@@ -5664,7 +5813,8 @@ namespace PowerStore.Services.Installation
             };
             allCategories.Add(categorySport);
 
-            var categoryShoes = new Category {
+            var categoryShoes = new Category
+            {
                 Name = "Shoes",
                 CategoryTemplateId = categoryTemplateInGridAndLines.Id,
                 PageSize = 6,
@@ -5681,7 +5831,8 @@ namespace PowerStore.Services.Installation
             };
             allCategories.Add(categoryShoes);
 
-            var categoryApparel = new Category {
+            var categoryApparel = new Category
+            {
                 Name = "Apparel",
                 CategoryTemplateId = categoryTemplateInGridAndLines.Id,
                 PageSize = 6,
@@ -5697,7 +5848,8 @@ namespace PowerStore.Services.Installation
             };
             allCategories.Add(categoryApparel);
 
-            var categoryBalls = new Category {
+            var categoryBalls = new Category
+            {
                 Name = "Balls",
                 CategoryTemplateId = categoryTemplateInGridAndLines.Id,
                 PageSize = 6,
@@ -5708,13 +5860,15 @@ namespace PowerStore.Services.Installation
                 PriceRanges = "0-500;500-700;700-3000;",
                 IncludeInTopMenu = true,
                 Published = true,
-                DisplayOrder = 6,
+                ShowOnHomePage = true,
+                DisplayOrder = 1,
                 CreatedOnUtc = DateTime.UtcNow,
                 UpdatedOnUtc = DateTime.UtcNow
             };
             allCategories.Add(categoryBalls);
 
-            var categoryDigitalDownloads = new Category {
+            var categoryDigitalDownloads = new Category
+            {
                 Name = "Digital downloads",
                 CategoryTemplateId = categoryTemplateInGridAndLines.Id,
                 PageSize = 6,
@@ -5724,14 +5878,15 @@ namespace PowerStore.Services.Installation
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "category_digital_downloads.jpeg"), "image/jpeg", pictureService.GetPictureSeName("Digital downloads"))).Id,
                 IncludeInTopMenu = true,
                 Published = true,
-                ShowOnHomePage = false,
+                ShowOnHomePage = true,
                 DisplayOrder = 4,
                 CreatedOnUtc = DateTime.UtcNow,
                 UpdatedOnUtc = DateTime.UtcNow
             };
             allCategories.Add(categoryDigitalDownloads);
 
-            var categoryLego = new Category {
+            var categoryLego = new Category
+            {
                 Name = "Lego",
                 CategoryTemplateId = categoryTemplateInGridAndLines.Id,
                 MetaKeywords = "Lego, Dictionary, Textbooks",
@@ -5753,7 +5908,8 @@ namespace PowerStore.Services.Installation
             };
             allCategories.Add(categoryLego);
 
-            var categoryGiftCards = new Category {
+            var categoryGiftCards = new Category
+            {
                 Name = "Gift Cards",
                 CategoryTemplateId = categoryTemplateInGridAndLines.Id,
                 PageSize = 6,
@@ -5762,6 +5918,7 @@ namespace PowerStore.Services.Installation
                 PageSizeOptions = "6, 3, 9",
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "category_gift_cards.jpeg"), "image/jpeg", pictureService.GetPictureSeName("Gift Cards"))).Id,
                 IncludeInTopMenu = true,
+                ShowOnHomePage = true,
                 Published = true,
                 DisplayOrder = 7,
                 CreatedOnUtc = DateTime.UtcNow,
@@ -5774,7 +5931,8 @@ namespace PowerStore.Services.Installation
             foreach (var category in allCategories)
             {
                 category.SeName = SeoExtensions.GenerateSlug(category.Name, false, false);
-                await _urlRecordRepository.InsertAsync(new UrlRecord {
+                await _urlRecordRepository.InsertAsync(new UrlRecord
+                {
                     EntityId = category.Id,
                     EntityName = "Category",
                     LanguageId = "",
@@ -5788,21 +5946,24 @@ namespace PowerStore.Services.Installation
         // Install order's tags
         protected virtual async Task InstallOrderTags()
         {
-            var coolTag = new OrderTag {
+            var coolTag = new OrderTag
+            {
                 Name = "cool",
                 Count = 0
 
             };
             await _orderTagRepository.InsertAsync(coolTag);
 
-            var newTag = new OrderTag {
+            var newTag = new OrderTag
+            {
                 Name = "new",
                 Count = 0
 
             };
             await _orderTagRepository.InsertAsync(newTag);
 
-            var oldTag = new OrderTag {
+            var oldTag = new OrderTag
+            {
                 Name = "old",
                 Count = 0
 
@@ -5824,7 +5985,8 @@ namespace PowerStore.Services.Installation
                 throw new Exception("Manufacturer template cannot be loaded");
 
             var allManufacturers = new List<Manufacturer>();
-            var manufacturerXiaomi = new Manufacturer {
+            var manufacturerXiaomi = new Manufacturer
+            {
                 Name = "Xiaomi",
                 ManufacturerTemplateId = manufacturerTemplateInGridAndLines.Id,
                 PageSize = 6,
@@ -5839,8 +6001,24 @@ namespace PowerStore.Services.Installation
             await _manufacturerRepository.InsertAsync(manufacturerXiaomi);
             allManufacturers.Add(manufacturerXiaomi);
 
+            var manufacturerApple = new Manufacturer
+            {
+                Name = "Apple",
+                ManufacturerTemplateId = manufacturerTemplateInGridAndLines.Id,
+                PageSize = 6,
+                AllowCustomersToSelectPageSize = true,
+                PageSizeOptions = "6, 3, 9",
+                Published = true,
+                PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "manufacturer_Apple.jpg"), "image/pjpeg", pictureService.GetPictureSeName("Apple"))).Id,
+                DisplayOrder = 1,
+                CreatedOnUtc = DateTime.UtcNow,
+                UpdatedOnUtc = DateTime.UtcNow
+            };
+            await _manufacturerRepository.InsertAsync(manufacturerApple);
+            allManufacturers.Add(manufacturerApple);
 
-            var manufacturerDell = new Manufacturer {
+            var manufacturerDell = new Manufacturer
+            {
                 Name = "Dell",
                 ManufacturerTemplateId = manufacturerTemplateInGridAndLines.Id,
                 PageSize = 6,
@@ -5856,7 +6034,8 @@ namespace PowerStore.Services.Installation
             allManufacturers.Add(manufacturerDell);
 
 
-            var manufacturerAdidas = new Manufacturer {
+            var manufacturerAdidas = new Manufacturer
+            {
                 Name = "Adidas",
                 ManufacturerTemplateId = manufacturerTemplateInGridAndLines.Id,
                 PageSize = 6,
@@ -5875,7 +6054,8 @@ namespace PowerStore.Services.Installation
             foreach (var manufacturer in allManufacturers)
             {
                 manufacturer.SeName = SeoExtensions.GenerateSlug(manufacturer.Name, false, true);
-                await _urlRecordRepository.InsertAsync(new UrlRecord {
+                await _urlRecordRepository.InsertAsync(new UrlRecord
+                {
                     EntityId = manufacturer.Id,
                     EntityName = "Manufacturer",
                     LanguageId = "",
@@ -5925,7 +6105,8 @@ namespace PowerStore.Services.Installation
             #region Computers
 
 
-            var productBuildComputer = new Product {
+            var productBuildComputer = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Build your own computer",
@@ -6101,12 +6282,14 @@ namespace PowerStore.Services.Installation
 
             await _productRepository.InsertAsync(productBuildComputer);
 
-            var productpicture1 = new ProductPicture {
+            var productpicture1 = new ProductPicture
+            {
                 ProductId = productBuildComputer.Id,
                 PictureId = Picture1.Id,
                 DisplayOrder = 1
             };
-            var productpicture2 = new ProductPicture {
+            var productpicture2 = new ProductPicture
+            {
                 ProductId = productBuildComputer.Id,
                 PictureId = Picture2.Id,
                 DisplayOrder = 1
@@ -6115,7 +6298,8 @@ namespace PowerStore.Services.Installation
             productBuildComputer.ProductPictures.Add(productpicture2);
             await _productRepository.UpdateAsync(productBuildComputer);
 
-            var productSonyPS5Pad = new Product {
+            var productSonyPS5Pad = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Playstation 5 Gamepad",
@@ -6154,17 +6338,20 @@ namespace PowerStore.Services.Installation
             };
 
             allProducts.Add(productSonyPS5Pad);
-            productSonyPS5Pad.ProductPictures.Add(new ProductPicture {
+            productSonyPS5Pad.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_sony_ps5_pad_1.png"), "image/png", pictureService.GetPictureSeName(productSonyPS5Pad.Name))).Id,
                 DisplayOrder = 1,
             });
-            productSonyPS5Pad.ProductPictures.Add(new ProductPicture {
+            productSonyPS5Pad.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_sony_ps5_pad_2.png"), "image/png", pictureService.GetPictureSeName(productSonyPS5Pad.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productSonyPS5Pad);
 
-            var productLenovoIdeaPadDual = new Product {
+            var productLenovoIdeaPadDual = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Lenovo IdeaPad Dual 3i",
@@ -6201,11 +6388,13 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productLenovoIdeaPadDual);
-            productLenovoIdeaPadDual.ProductPictures.Add(new ProductPicture {
+            productLenovoIdeaPadDual.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_lenovo_ideapad_dual_1.png"), "image/png", pictureService.GetPictureSeName(productLenovoIdeaPadDual.Name))).Id,
                 DisplayOrder = 1,
             });
-            productLenovoIdeaPadDual.ProductPictures.Add(new ProductPicture {
+            productLenovoIdeaPadDual.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_lenovo_ideapad_dual_2.png"), "image/png", pictureService.GetPictureSeName(productLenovoIdeaPadDual.Name))).Id,
                 DisplayOrder = 2,
             });
@@ -6215,7 +6404,8 @@ namespace PowerStore.Services.Installation
 
             #region Notebooks
 
-            var productMiNotebook = new Product {
+            var productMiNotebook = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Mi Notebook 14",
@@ -6290,18 +6480,21 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productMiNotebook);
-            productMiNotebook.ProductPictures.Add(new ProductPicture {
+            productMiNotebook.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_mi_notebook_1.png"), "image/png", pictureService.GetPictureSeName(productMiNotebook.Name))).Id,
                 DisplayOrder = 1,
             });
-            productMiNotebook.ProductPictures.Add(new ProductPicture {
+            productMiNotebook.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_mi_notebook_2.png"), "image/png", pictureService.GetPictureSeName(productMiNotebook.Name))).Id,
                 DisplayOrder = 2,
             });
             await _productRepository.InsertAsync(productMiNotebook);
 
 
-            var productLenovoLegionY740 = new Product {
+            var productLenovoLegionY740 = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Lenovo Legion Y740",
@@ -6373,18 +6566,21 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productLenovoLegionY740);
-            productLenovoLegionY740.ProductPictures.Add(new ProductPicture {
+            productLenovoLegionY740.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_lenovo_legion_y740_1.png"), "image/png", pictureService.GetPictureSeName(productLenovoLegionY740.Name))).Id,
                 DisplayOrder = 1,
             });
-            productLenovoLegionY740.ProductPictures.Add(new ProductPicture {
+            productLenovoLegionY740.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_lenovo_legion_y740_2.png"), "image/png", pictureService.GetPictureSeName(productLenovoLegionY740.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productLenovoLegionY740);
 
 
-            var productPs5Camera = new Product {
+            var productPs5Camera = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Playstation 5 Camera",
@@ -6416,7 +6612,7 @@ namespace PowerStore.Services.Installation
                     new ProductCategory
                     {
                         CategoryId = _categoryRepository.Table.Single(c => c.Name == "Others").Id,
-                        DisplayOrder = 1,
+                        DisplayOrder = 10,
                     }
                 },
                 ProductSpecificationAttributes =
@@ -6456,17 +6652,20 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productPs5Camera);
-            productPs5Camera.ProductPictures.Add(new ProductPicture {
+            productPs5Camera.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_ps5_camera_1.png"), "image/png", pictureService.GetPictureSeName(productPs5Camera.Name))).Id,
                 DisplayOrder = 1,
             });
-            productPs5Camera.ProductPictures.Add(new ProductPicture {
+            productPs5Camera.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_ps5_camera_2.png"), "image/png", pictureService.GetPictureSeName(productPs5Camera.Name))).Id,
                 DisplayOrder = 2,
             });
             await _productRepository.InsertAsync(productPs5Camera);
 
-            var productAcerNitro = new Product {
+            var productAcerNitro = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Acer Nitro 5",
@@ -6538,18 +6737,21 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productAcerNitro);
-            productAcerNitro.ProductPictures.Add(new ProductPicture {
+            productAcerNitro.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_acer_nitro_1.png"), "image/png", pictureService.GetPictureSeName(productAcerNitro.Name))).Id,
                 DisplayOrder = 1,
             });
-            productAcerNitro.ProductPictures.Add(new ProductPicture {
+            productAcerNitro.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_acer_nitro_2.png"), "image/png", pictureService.GetPictureSeName(productAcerNitro.Name))).Id,
                 DisplayOrder = 2,
             });
             await _productRepository.InsertAsync(productAcerNitro);
 
 
-            var productDellG5 = new Product {
+            var productDellG5 = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Dell Inspiron G5",
@@ -6629,18 +6831,21 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productDellG5);
-            productDellG5.ProductPictures.Add(new ProductPicture {
+            productDellG5.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_dell_g5_1.png"), "image/png", pictureService.GetPictureSeName(productDellG5.Name))).Id,
                 DisplayOrder = 1,
             });
-            productDellG5.ProductPictures.Add(new ProductPicture {
+            productDellG5.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_dell_g5_2.png"), "image/png", pictureService.GetPictureSeName(productDellG5.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productDellG5);
 
 
-            var productDellXPS = new Product {
+            var productDellXPS = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Dell XPS",
@@ -6704,11 +6909,13 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productDellXPS);
-            productDellXPS.ProductPictures.Add(new ProductPicture {
+            productDellXPS.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_dell_xps_1.png"), "image/png", pictureService.GetPictureSeName(productDellXPS.Name))).Id,
                 DisplayOrder = 1,
             });
-            productDellXPS.ProductPictures.Add(new ProductPicture {
+            productDellXPS.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_dell_xps_2.png"), "image/png", pictureService.GetPictureSeName(productDellXPS.Name))).Id,
                 DisplayOrder = 2,
             });
@@ -6719,7 +6926,8 @@ namespace PowerStore.Services.Installation
             #region Accessories
 
 
-            var productLenovoYogaDuet = new Product {
+            var productLenovoYogaDuet = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Lenovo Yoga Duet",
@@ -6756,18 +6964,21 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productLenovoYogaDuet);
-            productLenovoYogaDuet.ProductPictures.Add(new ProductPicture {
+            productLenovoYogaDuet.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_lenovo_yoga_duet_1.png"), "image/png", pictureService.GetPictureSeName(productLenovoYogaDuet.Name))).Id,
                 DisplayOrder = 1,
             });
-            productLenovoYogaDuet.ProductPictures.Add(new ProductPicture {
+            productLenovoYogaDuet.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_lenovo_yoga_duet_2.png"), "image/png", pictureService.GetPictureSeName(productLenovoYogaDuet.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productLenovoYogaDuet);
 
 
-            var productLenovoSmartTab = new Product {
+            var productLenovoSmartTab = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Lenovo Smart Tab",
@@ -6804,18 +7015,21 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productLenovoSmartTab);
-            productLenovoSmartTab.ProductPictures.Add(new ProductPicture {
+            productLenovoSmartTab.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_lenovo_smart_tab_1.png"), "image/png", pictureService.GetPictureSeName(productLenovoSmartTab.Name))).Id,
                 DisplayOrder = 1,
             });
-            productLenovoSmartTab.ProductPictures.Add(new ProductPicture {
+            productLenovoSmartTab.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_lenovo_smart_tab_2.png"), "image/png", pictureService.GetPictureSeName(productLenovoSmartTab.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productLenovoSmartTab);
 
 
-            var productAsusMixedReality = new Product {
+            var productAsusMixedReality = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Asus Mixed Reality",
@@ -6852,11 +7066,13 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productAsusMixedReality);
-            productAsusMixedReality.ProductPictures.Add(new ProductPicture {
+            productAsusMixedReality.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_asus_mixed_reality_1.png"), "image/png", pictureService.GetPictureSeName(productAsusMixedReality.Name))).Id,
                 DisplayOrder = 1,
             });
-            productAsusMixedReality.ProductPictures.Add(new ProductPicture {
+            productAsusMixedReality.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_asus_mixed_reality_2.png"), "image/png", pictureService.GetPictureSeName(productAsusMixedReality.Name))).Id,
                 DisplayOrder = 1,
             });
@@ -6867,7 +7083,8 @@ namespace PowerStore.Services.Installation
 
             #region Display
 
-            var productAcerProjector = new Product {
+            var productAcerProjector = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Acer Projector C250",
@@ -6904,18 +7121,21 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productAcerProjector);
-            productAcerProjector.ProductPictures.Add(new ProductPicture {
+            productAcerProjector.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_acer_projector_1.png"), "image/png", pictureService.GetPictureSeName(productAcerProjector.Name))).Id,
                 DisplayOrder = 1,
             });
-            productAcerProjector.ProductPictures.Add(new ProductPicture {
+            productAcerProjector.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_acer_projector_2.png"), "image/png", pictureService.GetPictureSeName(productAcerProjector.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productAcerProjector);
 
 
-            var productAcerMonitor = new Product {
+            var productAcerMonitor = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Acer Nitro XZ2",
@@ -6952,11 +7172,13 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productAcerMonitor);
-            productAcerMonitor.ProductPictures.Add(new ProductPicture {
+            productAcerMonitor.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_acer_monitor_1.png"), "image/png", pictureService.GetPictureSeName(productAcerMonitor.Name))).Id,
                 DisplayOrder = 1,
             });
-            productAcerMonitor.ProductPictures.Add(new ProductPicture {
+            productAcerMonitor.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_acer_monitor_2.png"), "image/png", pictureService.GetPictureSeName(productAcerMonitor.Name))).Id,
                 DisplayOrder = 2,
             });
@@ -6966,7 +7188,8 @@ namespace PowerStore.Services.Installation
 
             #region Smartphone
 
-            var productRedmiK30 = new Product {
+            var productRedmiK30 = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Redmi K30 Ultra",
@@ -7014,22 +7237,24 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productRedmiK30);
-            productRedmiK30.ProductPictures.Add(new ProductPicture {
+            productRedmiK30.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_Redmi_K30.png"), "image/png", pictureService.GetPictureSeName(productRedmiK30.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productRedmiK30);
 
 
-            var productRedmiNote9 = new Product {
+            var Iphone13ProMax = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
-                Name = "Redmi Note 9",
-                ShortDescription = "Redmi Note 9 is equipped with a high-performance octa-core processor with a maximum clock frequency of 2.0 GHz. The maximum GPU frequency of 1.0GHz ensures better performance and thus offers a smooth gaming experience.",
-                FullDescription = "<p>Redmi Note 9 is equipped with a high-performance octa-core processor with a maximum clock frequency of 2.0 GHz. The maximum GPU frequency of 1.0GHz ensures better performance and thus offers a smooth gaming experience.</p><p>Thanks to the improved 5020mAh battery, you can enjoy long work on a single charge. In combination with the 18W fast charge, you will get excellent results and charge the battery in no time.</p>",
+                Name = "Iphone 13 Pro Max",
+                ShortDescription = "Iphone 13 Pro Max is equipped with a high-performance octa-core processor with a maximum clock frequency of 2.0 GHz. The maximum GPU frequency of 1.0GHz ensures better performance and thus offers a smooth gaming experience.",
+                FullDescription = "<p>Iphone 13 Pro Max is equipped with a high-performance octa-core processor with a maximum clock frequency of 2.0 GHz. The maximum GPU frequency of 1.0GHz ensures better performance and thus offers a smooth gaming experience.</p><p>Thanks to the improved 5020mAh battery, you can enjoy long work on a single charge. In combination with the 18W fast charge, you will get excellent results and charge the battery in no time.</p>",
                 ProductTemplateId = productTemplateSimple.Id,
                 AllowCustomerReviews = true,
-                Price = 249M,
+                Price = 1249M,
                 IsShipEnabled = true,
                 Weight = 7,
                 Length = 7,
@@ -7052,7 +7277,7 @@ namespace PowerStore.Services.Installation
                 {
                     new ProductManufacturer
                     {
-                        ManufacturerId = _manufacturerRepository.Table.Single(c => c.Name == "Xiaomi").Id,
+                        ManufacturerId = _manufacturerRepository.Table.Single(c => c.Name == "Apple").Id,
                         DisplayOrder = 2,
                     }
                 },
@@ -7065,19 +7290,17 @@ namespace PowerStore.Services.Installation
                     }
                 }
             };
-            allProducts.Add(productRedmiNote9);
-            productRedmiNote9.ProductPictures.Add(new ProductPicture {
-                PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_Redmi_Note_9_1.png"), "image/png", pictureService.GetPictureSeName(productRedmiNote9.Name))).Id,
+            allProducts.Add(Iphone13ProMax);
+            Iphone13ProMax.ProductPictures.Add(new ProductPicture
+            {
+                PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_Iphone13ProMax_1.png"), "image/png", pictureService.GetPictureSeName(Iphone13ProMax.Name))).Id,
                 DisplayOrder = 1,
             });
-            productRedmiNote9.ProductPictures.Add(new ProductPicture {
-                PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_Redmi_Note_9_2.png"), "image/png", pictureService.GetPictureSeName(productRedmiNote9.Name))).Id,
-                DisplayOrder = 2,
-            });
-            await _productRepository.InsertAsync(productRedmiNote9);
+            await _productRepository.InsertAsync(Iphone13ProMax);
 
 
-            var productPocoF2Pro = new Product {
+            var productPocoF2Pro = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "POCO F2 Pro",
@@ -7122,7 +7345,8 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productPocoF2Pro);
-            productPocoF2Pro.ProductPictures.Add(new ProductPicture {
+            productPocoF2Pro.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_POCO_F2_Pro.png"), "image/png", pictureService.GetPictureSeName(productPocoF2Pro.Name))).Id,
                 DisplayOrder = 1,
             });
@@ -7135,7 +7359,8 @@ namespace PowerStore.Services.Installation
 
 
 
-            var productMiSmartBand = new Product {
+            var productMiSmartBand = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Mi Smart Band 3i",
@@ -7202,18 +7427,21 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productMiSmartBand);
-            productMiSmartBand.ProductPictures.Add(new ProductPicture {
+            productMiSmartBand.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_Mi_Smart_Band_3i_1.png"), "image/png", pictureService.GetPictureSeName(productMiSmartBand.Name))).Id,
                 DisplayOrder = 1,
             });
-            productMiSmartBand.ProductPictures.Add(new ProductPicture {
+            productMiSmartBand.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_Mi_Smart_Band_3i_2.png"), "image/png", pictureService.GetPictureSeName(productMiSmartBand.Name))).Id,
                 DisplayOrder = 2,
             });
             await _productRepository.InsertAsync(productMiSmartBand);
 
 
-            var productPs4 = new Product {
+            var productPs4 = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Playstation 4 Slim",
@@ -7250,18 +7478,21 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productPs4);
-            productPs4.ProductPictures.Add(new ProductPicture {
+            productPs4.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_ps4_1.png"), "image/png", pictureService.GetPictureSeName(productPs4.Name))).Id,
                 DisplayOrder = 1,
             });
-            productPs4.ProductPictures.Add(new ProductPicture {
+            productPs4.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_ps4_2.png"), "image/png", pictureService.GetPictureSeName(productPs4.Name))).Id,
                 DisplayOrder = 2,
             });
             await _productRepository.InsertAsync(productPs4);
 
 
-            var productMiBeard = new Product {
+            var productMiBeard = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Xiaomi Mi Beard",
@@ -7306,11 +7537,13 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productMiBeard);
-            productMiBeard.ProductPictures.Add(new ProductPicture {
+            productMiBeard.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_mi_beard_1.png"), "image/png", pictureService.GetPictureSeName(productMiBeard.Name))).Id,
                 DisplayOrder = 1,
             });
-            productMiBeard.ProductPictures.Add(new ProductPicture {
+            productMiBeard.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_mi_beard_2.png"), "image/png", pictureService.GetPictureSeName(productMiBeard.Name))).Id,
                 DisplayOrder = 1,
             });
@@ -7322,7 +7555,8 @@ namespace PowerStore.Services.Installation
             #region Shoes
 
 
-            var productAdidasPredator = new Product {
+            var productAdidasPredator = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "adidas Predator Instinct",
@@ -7424,14 +7658,16 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productAdidasPredator);
-            productAdidasPredator.ProductPictures.Add(new ProductPicture {
+            productAdidasPredator.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_predator_1.png"), "image/png", pictureService.GetPictureSeName(productAdidasPredator.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productAdidasPredator);
 
 
-            var productAdidasNitrocharge = new Product {
+            var productAdidasNitrocharge = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Adidas Nitrocharge",
@@ -7543,19 +7779,23 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productAdidasNitrocharge);
-            productAdidasNitrocharge.ProductPictures.Add(new ProductPicture {
+            productAdidasNitrocharge.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_adidas.png"), "image/png", pictureService.GetPictureSeName(productAdidasNitrocharge.Name))).Id,
                 DisplayOrder = 1,
             });
-            productAdidasNitrocharge.ProductPictures.Add(new ProductPicture {
+            productAdidasNitrocharge.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_adidas_2.png"), "image/png", pictureService.GetPictureSeName(productAdidasNitrocharge.Name))).Id,
                 DisplayOrder = 2,
             });
-            productAdidasNitrocharge.ProductPictures.Add(new ProductPicture {
+            productAdidasNitrocharge.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_adidas_3.png"), "image/png", pictureService.GetPictureSeName(productAdidasNitrocharge.Name))).Id,
                 DisplayOrder = 3,
             });
-            productAdidasNitrocharge.ProductPictures.Add(new ProductPicture {
+            productAdidasNitrocharge.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_adidas_4.png"), "image/png", pictureService.GetPictureSeName(productAdidasNitrocharge.Name))).Id,
                 DisplayOrder = 4,
             });
@@ -7571,7 +7811,8 @@ namespace PowerStore.Services.Installation
             await _productRepository.UpdateAsync(productAdidasNitrocharge);
 
 
-            var productAdidasTurfs = new Product {
+            var productAdidasTurfs = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Adidas Turfs",
@@ -7616,7 +7857,8 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productAdidasTurfs);
-            productAdidasTurfs.ProductPictures.Add(new ProductPicture {
+            productAdidasTurfs.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_adidasturfs.png"), "image/png", pictureService.GetPictureSeName(productAdidasTurfs.Name))).Id,
                 DisplayOrder = 1,
             });
@@ -7628,7 +7870,8 @@ namespace PowerStore.Services.Installation
             #region Apparel
 
             //this one is a grouped product with two associated ones
-            var productDerbyKit = new Product {
+            var productDerbyKit = new Product
+            {
                 ProductType = ProductType.GroupedProduct,
                 VisibleIndividually = true,
                 Name = "Derby County Kit",
@@ -7665,16 +7908,19 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productDerbyKit);
-            productDerbyKit.ProductPictures.Add(new ProductPicture {
+            productDerbyKit.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_derby_awayshirt_1.png"), "image/png", pictureService.GetPictureSeName(productDerbyKit.Name))).Id,
                 DisplayOrder = 1,
             });
-            productDerbyKit.ProductPictures.Add(new ProductPicture {
+            productDerbyKit.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_derby_shirt_1.png"), "image/png", pictureService.GetPictureSeName(productDerbyKit.Name))).Id,
                 DisplayOrder = 2,
             });
             await _productRepository.InsertAsync(productDerbyKit);
-            var productDerbyKit_associated_1 = new Product {
+            var productDerbyKit_associated_1 = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = false, //hide this products
                 ParentGroupedProductId = productDerbyKit.Id,
@@ -7711,12 +7957,14 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productDerbyKit_associated_1);
-            productDerbyKit_associated_1.ProductPictures.Add(new ProductPicture {
+            productDerbyKit_associated_1.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_derby_awayshirt_1.png"), "image/png", pictureService.GetPictureSeName("Derby County Away Shirt"))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productDerbyKit_associated_1);
-            var productDerbyKit_associated_2 = new Product {
+            var productDerbyKit_associated_2 = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = false,
                 ParentGroupedProductId = productDerbyKit.Id,
@@ -7752,13 +8000,15 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productDerbyKit_associated_2);
-            productDerbyKit_associated_2.ProductPictures.Add(new ProductPicture {
+            productDerbyKit_associated_2.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_derby_shirt_1.png"), "image/png", pictureService.GetPictureSeName("Derby County Shirt - Home"))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productDerbyKit_associated_2);
 
-            var productNikeKids = new Product {
+            var productNikeKids = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Nike Kids Kit",
@@ -7844,13 +8094,15 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productNikeKids);
-            productNikeKids.ProductPictures.Add(new ProductPicture {
+            productNikeKids.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_kidskit.png"), "image/png", pictureService.GetPictureSeName(productNikeKids.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productNikeKids);
 
-            var productPsgKit = new Product {
+            var productPsgKit = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Paris Saint Germain Home Kit",
@@ -7905,18 +8157,21 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productPsgKit);
-            productPsgKit.ProductPictures.Add(new ProductPicture {
+            productPsgKit.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_psg_1.png"), "image/png", pictureService.GetPictureSeName(productPsgKit.Name))).Id,
                 DisplayOrder = 1,
             });
-            productPsgKit.ProductPictures.Add(new ProductPicture {
+            productPsgKit.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_psg_2.png"), "image/png", pictureService.GetPictureSeName(productPsgKit.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productPsgKit);
 
 
-            var productDerbyShirt = new Product {
+            var productDerbyShirt = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Derby County Home Shirt",
@@ -7963,13 +8218,15 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productDerbyShirt);
-            productDerbyShirt.ProductPictures.Add(new ProductPicture {
+            productDerbyShirt.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_derby_shirt_1.png"), "image/png", pictureService.GetPictureSeName(productDerbyShirt.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productDerbyShirt);
 
-            var productDerbyShorts = new Product {
+            var productDerbyShorts = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Derby County Home Shorts",
@@ -8006,13 +8263,15 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productDerbyShorts);
-            productDerbyShorts.ProductPictures.Add(new ProductPicture {
+            productDerbyShorts.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_derby_shorts_1.png"), "image/png", pictureService.GetPictureSeName(productDerbyShorts.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productDerbyShorts);
 
-            var productDerbyKitHome = new Product {
+            var productDerbyKitHome = new Product
+            {
                 ProductType = ProductType.BundledProduct,
                 VisibleIndividually = true,
                 Name = "Derby County Home Shirt",
@@ -8049,13 +8308,15 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productDerbyKitHome);
-            productDerbyKitHome.ProductPictures.Add(new ProductPicture {
+            productDerbyKitHome.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_derby_shirt_1.png"), "image/png", pictureService.GetPictureSeName(productDerbyKitHome.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productDerbyKitHome);
 
-            var productChicagoBulls = new Product {
+            var productChicagoBulls = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Chicago Bulls Jersey",
@@ -8112,11 +8373,13 @@ namespace PowerStore.Services.Installation
             };
             allProducts.Add(productChicagoBulls);
 
-            productChicagoBulls.ProductPictures.Add(new ProductPicture {
+            productChicagoBulls.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_chicago_jersey_1.png"), "image/png", pictureService.GetPictureSeName(productChicagoBulls.Name))).Id,
                 DisplayOrder = 1,
             });
-            productChicagoBulls.ProductPictures.Add(new ProductPicture {
+            productChicagoBulls.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_chicago_jersey_2.png"), "image/png", pictureService.GetPictureSeName(productChicagoBulls.Name))).Id,
                 DisplayOrder = 2,
             });
@@ -8128,7 +8391,8 @@ namespace PowerStore.Services.Installation
             #region Smartwatches
 
 
-            var productVivoactive = new Product {
+            var productVivoactive = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Garmin VivoActive",
@@ -8201,7 +8465,8 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productVivoactive);
-            productVivoactive.ProductPictures.Add(new ProductPicture {
+            productVivoactive.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_vivoactive.png"), "image/png", pictureService.GetPictureSeName(productVivoactive.Name))).Id,
                 DisplayOrder = 1,
             });
@@ -8209,7 +8474,8 @@ namespace PowerStore.Services.Installation
 
 
 
-            var productGarminFenix = new Product {
+            var productGarminFenix = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Garmin Fenix 2",
@@ -8246,11 +8512,13 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productGarminFenix);
-            productGarminFenix.ProductPictures.Add(new ProductPicture {
+            productGarminFenix.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_garmin_fenix_1.png"), "image/png", pictureService.GetPictureSeName(productGarminFenix.Name))).Id,
                 DisplayOrder = 1,
             });
-            productGarminFenix.ProductPictures.Add(new ProductPicture {
+            productGarminFenix.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_garmin_fenix_2.png"), "image/png", pictureService.GetPictureSeName(productGarminFenix.Name))).Id,
                 DisplayOrder = 1,
             });
@@ -8258,7 +8526,8 @@ namespace PowerStore.Services.Installation
 
 
 
-            var productForerunner = new Product {
+            var productForerunner = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Garmin Forerunner",
@@ -8295,7 +8564,8 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productForerunner);
-            productForerunner.ProductPictures.Add(new ProductPicture {
+            productForerunner.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_forerunner.png"), "image/png", pictureService.GetPictureSeName(productForerunner.Name))).Id,
                 DisplayOrder = 1,
             });
@@ -8306,7 +8576,8 @@ namespace PowerStore.Services.Installation
             #region Digital Downloads
 
 
-            var downloadCyberpunk1 = new Download {
+            var downloadCyberpunk1 = new Download
+            {
                 DownloadGuid = Guid.NewGuid(),
                 ContentType = "application/x-zip-co",
                 DownloadBinary = File.ReadAllBytes(sampleDownloadsPath + "product_cyberpunk_1.zip"),
@@ -8315,7 +8586,8 @@ namespace PowerStore.Services.Installation
                 IsNew = true,
             };
             await downloadService.InsertDownload(downloadCyberpunk1);
-            var downloadCyberpunk2 = new Download {
+            var downloadCyberpunk2 = new Download
+            {
                 DownloadGuid = Guid.NewGuid(),
                 ContentType = "text/plain",
                 DownloadBinary = File.ReadAllBytes(sampleDownloadsPath + "product_cyberpunk_2.txt"),
@@ -8324,7 +8596,8 @@ namespace PowerStore.Services.Installation
                 IsNew = true,
             };
             await downloadService.InsertDownload(downloadCyberpunk2);
-            var productCyberpunk = new Product {
+            var productCyberpunk = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Cyberpunk 2077",
@@ -8351,6 +8624,7 @@ namespace PowerStore.Services.Installation
                 HasSampleDownload = true,
                 SampleDownloadId = downloadCyberpunk2.Id,
                 Published = true,
+                ShowOnHomePage = true,
                 CreatedOnUtc = DateTime.UtcNow,
                 UpdatedOnUtc = DateTime.UtcNow,
                 ProductCategories =
@@ -8363,7 +8637,8 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productCyberpunk);
-            productCyberpunk.ProductPictures.Add(new ProductPicture {
+            productCyberpunk.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_cyberpunk_1.png"), "image/png", pictureService.GetPictureSeName(productCyberpunk.Name))).Id,
                 DisplayOrder = 1,
             });
@@ -8371,7 +8646,8 @@ namespace PowerStore.Services.Installation
 
 
 
-            var downloadGTA1 = new Download {
+            var downloadGTA1 = new Download
+            {
                 DownloadGuid = Guid.NewGuid(),
                 ContentType = "application/x-zip-co",
                 DownloadBinary = File.ReadAllBytes(sampleDownloadsPath + "product_GTA_1.zip"),
@@ -8380,7 +8656,8 @@ namespace PowerStore.Services.Installation
                 IsNew = true,
             };
             await downloadService.InsertDownload(downloadGTA1);
-            var downloadGTA2 = new Download {
+            var downloadGTA2 = new Download
+            {
                 DownloadGuid = Guid.NewGuid(),
                 ContentType = "text/plain",
                 DownloadBinary = File.ReadAllBytes(sampleDownloadsPath + "product_GTA_2.txt"),
@@ -8389,7 +8666,8 @@ namespace PowerStore.Services.Installation
                 IsNew = true,
             };
             await downloadService.InsertDownload(downloadGTA2);
-            var productGTA = new Product {
+            var productGTA = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "PowerStore Theft Auto 5",
@@ -8429,14 +8707,16 @@ namespace PowerStore.Services.Installation
             };
             allProducts.Add(productGTA);
 
-            productGTA.ProductPictures.Add(new ProductPicture {
+            productGTA.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_gta_1.png"), "image/png", pictureService.GetPictureSeName(productGTA.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productGTA);
 
 
-            var downloadCod = new Download {
+            var downloadCod = new Download
+            {
                 DownloadGuid = Guid.NewGuid(),
                 ContentType = "application/x-zip-co",
                 DownloadBinary = File.ReadAllBytes(sampleDownloadsPath + "product_cod_1.zip"),
@@ -8445,7 +8725,8 @@ namespace PowerStore.Services.Installation
                 IsNew = true,
             };
             await downloadService.InsertDownload(downloadCod);
-            var productCod = new Product {
+            var productCod = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Call of Duty: ColdWar",
@@ -8482,7 +8763,8 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productCod);
-            productCod.ProductPictures.Add(new ProductPicture {
+            productCod.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_cod_1.png"), "image/png", pictureService.GetPictureSeName(productCod.Name))).Id,
                 DisplayOrder = 1,
             });
@@ -8494,7 +8776,8 @@ namespace PowerStore.Services.Installation
 
             #region Lego
 
-            var productLegoFalcon = new Product {
+            var productLegoFalcon = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "LEGO Millennium Falcon",
@@ -8533,11 +8816,13 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productLegoFalcon);
-            productLegoFalcon.ProductPictures.Add(new ProductPicture {
+            productLegoFalcon.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_lego_falcon_1.png"), "image/png", pictureService.GetPictureSeName(productLegoFalcon.Name))).Id,
                 DisplayOrder = 1,
             });
-            productLegoFalcon.ProductPictures.Add(new ProductPicture {
+            productLegoFalcon.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_lego_falcon_2.png"), "image/png", pictureService.GetPictureSeName(productLegoFalcon.Name))).Id,
                 DisplayOrder = 1,
             });
@@ -8545,7 +8830,8 @@ namespace PowerStore.Services.Installation
 
 
 
-            var productLegoHogwarts = new Product {
+            var productLegoHogwarts = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Lego Hogwarts",
@@ -8583,17 +8869,20 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productLegoHogwarts);
-            productLegoHogwarts.ProductPictures.Add(new ProductPicture {
+            productLegoHogwarts.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_lego_hogwarts_1.png"), "image/png", pictureService.GetPictureSeName(productLegoHogwarts.Name))).Id,
                 DisplayOrder = 1,
             });
-            productLegoHogwarts.ProductPictures.Add(new ProductPicture {
+            productLegoHogwarts.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_lego_hogwarts_2.png"), "image/png", pictureService.GetPictureSeName(productLegoHogwarts.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productLegoHogwarts);
 
-            var productLegoCity = new Product {
+            var productLegoCity = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Lego City Police Base",
@@ -8631,11 +8920,13 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productLegoCity);
-            productLegoCity.ProductPictures.Add(new ProductPicture {
+            productLegoCity.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_LegoCity_1.png"), "image/png", pictureService.GetPictureSeName(productLegoCity.Name))).Id,
                 DisplayOrder = 1,
             });
-            productLegoCity.ProductPictures.Add(new ProductPicture {
+            productLegoCity.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_LegoCity_2.png"), "image/png", pictureService.GetPictureSeName(productLegoCity.Name))).Id,
                 DisplayOrder = 2,
             });
@@ -8647,7 +8938,8 @@ namespace PowerStore.Services.Installation
 
             #region Balls
 
-            var productAdidasBall = new Product {
+            var productAdidasBall = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Adidas Ball",
@@ -8685,14 +8977,16 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productAdidasBall);
-            productAdidasBall.ProductPictures.Add(new ProductPicture {
+            productAdidasBall.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_adidasball.png"), "image/png", pictureService.GetPictureSeName(productAdidasBall.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productAdidasBall);
 
 
-            var productMikasa = new Product {
+            var productMikasa = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Volleyball Ball",
@@ -8730,14 +9024,16 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productMikasa);
-            productMikasa.ProductPictures.Add(new ProductPicture {
+            productMikasa.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_mikasa.png"), "image/png", pictureService.GetPictureSeName(productMikasa.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(productMikasa);
 
 
-            var productSpalding = new Product {
+            var productSpalding = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "Spalding Basketball Ball",
@@ -8764,6 +9060,7 @@ namespace PowerStore.Services.Installation
                 Published = true,
                 CreatedOnUtc = DateTime.UtcNow,
                 UpdatedOnUtc = DateTime.UtcNow,
+                ShowOnHomePage = true,
                 ProductCategories =
                 {
                     new ProductCategory
@@ -8774,7 +9071,8 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productSpalding);
-            productSpalding.ProductPictures.Add(new ProductPicture {
+            productSpalding.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_spalding.png"), "image/png", pictureService.GetPictureSeName(productSpalding.Name))).Id,
                 DisplayOrder = 1,
             });
@@ -8787,7 +9085,8 @@ namespace PowerStore.Services.Installation
             #region Gift Cards
 
 
-            var product25GiftCard = new Product {
+            var product25GiftCard = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "$25 Virtual Gift Card",
@@ -8818,14 +9117,16 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(product25GiftCard);
-            product25GiftCard.ProductPictures.Add(new ProductPicture {
+            product25GiftCard.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_25giftcart.png"), "image/png", pictureService.GetPictureSeName(product25GiftCard.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(product25GiftCard);
 
 
-            var product50GiftCard = new Product {
+            var product50GiftCard = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "$50 Physical Gift Card",
@@ -8863,14 +9164,16 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(product50GiftCard);
-            product50GiftCard.ProductPictures.Add(new ProductPicture {
+            product50GiftCard.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_50giftcart.png"), "image/png", pictureService.GetPictureSeName(product50GiftCard.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(product50GiftCard);
 
 
-            var product100GiftCard = new Product {
+            var product100GiftCard = new Product
+            {
                 ProductType = ProductType.SimpleProduct,
                 VisibleIndividually = true,
                 Name = "$100 Physical Gift Card",
@@ -8906,13 +9209,15 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(product100GiftCard);
-            product100GiftCard.ProductPictures.Add(new ProductPicture {
+            product100GiftCard.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_100giftcart.png"), "image/png", pictureService.GetPictureSeName(product100GiftCard.Name))).Id,
                 DisplayOrder = 1,
             });
             await _productRepository.InsertAsync(product100GiftCard);
 
-            var productPlaystationBundlePack = new Product {
+            var productPlaystationBundlePack = new Product
+            {
                 ProductType = ProductType.BundledProduct,
                 VisibleIndividually = true,
                 Name = "Playstation 5 Kit",
@@ -8950,35 +9255,41 @@ namespace PowerStore.Services.Installation
                 }
             };
             allProducts.Add(productPlaystationBundlePack);
-            productPlaystationBundlePack.ProductPictures.Add(new ProductPicture {
+            productPlaystationBundlePack.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_sony_ps5_console_1.png"), "image/png", pictureService.GetPictureSeName(productPlaystationBundlePack.Name))).Id,
                 DisplayOrder = 1,
             });
-            productPlaystationBundlePack.ProductPictures.Add(new ProductPicture {
+            productPlaystationBundlePack.ProductPictures.Add(new ProductPicture
+            {
                 PictureId = (await pictureService.InsertPicture(File.ReadAllBytes(sampleImagesPath + "product_sony_ps5_console_2.png"), "image/png", pictureService.GetPictureSeName(productPlaystationBundlePack.Name))).Id,
                 DisplayOrder = 2,
             });
             await _productRepository.InsertAsync(productPlaystationBundlePack);
 
-            var productbundle1 = new BundleProduct {
+            var productbundle1 = new BundleProduct
+            {
                 ProductBundleId = productPlaystationBundlePack.Id,
                 ProductId = productPs4.Id,
                 DisplayOrder = 1,
                 Quantity = 1
             };
-            var productbundle2 = new BundleProduct {
+            var productbundle2 = new BundleProduct
+            {
                 ProductBundleId = productPlaystationBundlePack.Id,
                 ProductId = productSonyPS5Pad.Id,
                 DisplayOrder = 2,
                 Quantity = 2
             };
-            var productbundle3 = new BundleProduct {
+            var productbundle3 = new BundleProduct
+            {
                 ProductBundleId = productPlaystationBundlePack.Id,
                 ProductId = productPs5Camera.Id,
                 DisplayOrder = 3,
                 Quantity = 1
             };
-            var productbundle4 = new BundleProduct {
+            var productbundle4 = new BundleProduct
+            {
                 ProductBundleId = productPlaystationBundlePack.Id,
                 ProductId = productCod.Id,
                 DisplayOrder = 4,
@@ -8996,7 +9307,8 @@ namespace PowerStore.Services.Installation
             foreach (var product in allProducts)
             {
                 product.SeName = SeoExtensions.GenerateSlug(product.Name, false, false);
-                await _urlRecordRepository.InsertAsync(new UrlRecord {
+                await _urlRecordRepository.InsertAsync(new UrlRecord
+                {
                     EntityId = product.Id,
                     EntityName = "Product",
                     LanguageId = "",
@@ -9013,436 +9325,512 @@ namespace PowerStore.Services.Installation
             //related products
 
             productMikasa.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productMikasa.Id,
                     ProductId2 = productSpalding.Id,
                 });
 
             productMikasa.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productMikasa.Id,
                     ProductId2 = productAdidasBall.Id,
                 });
 
             productSpalding.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productSpalding.Id,
                     ProductId2 = productMikasa.Id,
                 });
 
             productSpalding.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productSpalding.Id,
                     ProductId2 = productAdidasBall.Id,
                 });
 
             productAdidasBall.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productAdidasBall.Id,
                     ProductId2 = productMikasa.Id,
                 });
 
             productAdidasBall.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productAdidasBall.Id,
                     ProductId2 = productSpalding.Id,
                 });
 
             productGTA.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productGTA.Id,
                     ProductId2 = productCyberpunk.Id,
                 });
 
             productGTA.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productGTA.Id,
                     ProductId2 = productCod.Id,
                 });
 
             productCyberpunk.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productCyberpunk.Id,
                     ProductId2 = productGTA.Id,
                 });
 
             productCyberpunk.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productCyberpunk.Id,
                     ProductId2 = productCod.Id,
                 });
 
             productLegoCity.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productLegoCity.Id,
                     ProductId2 = productLegoHogwarts.Id,
                 });
 
             productLegoCity.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productLegoCity.Id,
                     ProductId2 = productLegoFalcon.Id,
                 });
 
             productLegoHogwarts.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productLegoHogwarts.Id,
                     ProductId2 = productLegoCity.Id,
                 });
 
             productLegoHogwarts.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productLegoHogwarts.Id,
                     ProductId2 = productLegoFalcon.Id,
                 });
 
             productLegoFalcon.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productLegoFalcon.Id,
                     ProductId2 = productLegoHogwarts.Id,
                 });
 
             productLegoFalcon.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productLegoFalcon.Id,
                     ProductId2 = productLegoCity.Id,
                 });
 
             productLenovoLegionY740.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productLenovoLegionY740.Id,
                     ProductId2 = productDellXPS.Id,
                 });
 
             productLenovoLegionY740.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productLenovoLegionY740.Id,
                     ProductId2 = productMiNotebook.Id,
                 });
 
             productLenovoLegionY740.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productLenovoLegionY740.Id,
                     ProductId2 = productAsusMixedReality.Id,
                 });
 
             productLenovoLegionY740.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productLenovoLegionY740.Id,
                     ProductId2 = productAcerNitro.Id,
                 });
 
             productDellXPS.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productDellXPS.Id,
                     ProductId2 = productLenovoLegionY740.Id,
                 });
 
             productDellXPS.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productDellXPS.Id,
                     ProductId2 = productMiNotebook.Id,
                 });
 
             productDellXPS.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productDellXPS.Id,
                     ProductId2 = productAcerMonitor.Id,
                 });
 
             productDellXPS.RelatedProducts.Add(
-                 new RelatedProduct {
+                 new RelatedProduct
+                 {
                      ProductId1 = productDellXPS.Id,
                      ProductId2 = productDellG5.Id,
                  });
 
             productMiNotebook.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productMiNotebook.Id,
                     ProductId2 = productDellXPS.Id,
                 });
 
             productMiNotebook.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productMiNotebook.Id,
                     ProductId2 = productAcerMonitor.Id,
                 });
 
             productMiNotebook.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productMiNotebook.Id,
                     ProductId2 = productLenovoLegionY740.Id,
                 });
 
             productMiNotebook.RelatedProducts.Add(
-                 new RelatedProduct {
+                 new RelatedProduct
+                 {
                      ProductId1 = productMiNotebook.Id,
                      ProductId2 = productAcerNitro.Id,
                  });
 
             productAcerNitro.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productAcerNitro.Id,
                     ProductId2 = productDellXPS.Id,
                 });
 
             productAcerNitro.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productAcerNitro.Id,
                     ProductId2 = productAcerProjector.Id,
                 });
 
             productAcerNitro.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productAcerNitro.Id,
                     ProductId2 = productLenovoLegionY740.Id,
                 });
 
             productAcerNitro.RelatedProducts.Add(
-                 new RelatedProduct {
+                 new RelatedProduct
+                 {
                      ProductId1 = productAcerNitro.Id,
                      ProductId2 = productDellG5.Id,
                  });
 
             productDellG5.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productDellG5.Id,
                     ProductId2 = productLenovoLegionY740.Id,
                 });
 
             productDellG5.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productDellG5.Id,
                     ProductId2 = productMiNotebook.Id,
                 });
 
             productDellG5.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productDellG5.Id,
                     ProductId2 = productAcerNitro.Id,
                 });
 
             productDellG5.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productDellG5.Id,
                     ProductId2 = productAcerMonitor.Id,
                 });
             productPs5Camera.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productPs5Camera.Id,
                     ProductId2 = productPlaystationBundlePack.Id,
                 });
             productPs5Camera.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productPs5Camera.Id,
                     ProductId2 = productPs4.Id,
                 });
 
             productPs5Camera.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productPs5Camera.Id,
                     ProductId2 = productDellG5.Id,
                 });
             productPs5Camera.RelatedProducts.Add(
-                 new RelatedProduct {
+                 new RelatedProduct
+                 {
                      ProductId1 = productPs5Camera.Id,
                      ProductId2 = productAcerNitro.Id,
                  });
             productAcerProjector.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productAcerProjector.Id,
-                    ProductId2 = productRedmiNote9.Id,
+                    ProductId2 = Iphone13ProMax.Id,
                 });
 
             productAcerProjector.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productAcerProjector.Id,
                     ProductId2 = productDerbyKit.Id,
                 });
 
             productAcerProjector.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productAcerProjector.Id,
                     ProductId2 = productAcerMonitor.Id,
                 });
 
             productAcerProjector.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productAcerProjector.Id,
                     ProductId2 = productPocoF2Pro.Id,
                 });
             productRedmiK30.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productRedmiK30.Id,
-                    ProductId2 = productRedmiNote9.Id,
+                    ProductId2 = Iphone13ProMax.Id,
                 });
 
             productRedmiK30.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productRedmiK30.Id,
                     ProductId2 = productPocoF2Pro.Id,
                 });
             productRedmiK30.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productRedmiK30.Id,
                     ProductId2 = productMiSmartBand.Id,
                 });
 
             productRedmiK30.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productRedmiK30.Id,
                     ProductId2 = productMiBeard.Id,
                 });
 
-            productRedmiNote9.RelatedProducts.Add(
-                new RelatedProduct {
-                    ProductId1 = productRedmiNote9.Id,
+            Iphone13ProMax.RelatedProducts.Add(
+                new RelatedProduct
+                {
+                    ProductId1 = Iphone13ProMax.Id,
                     ProductId2 = productRedmiK30.Id,
                 });
-            productRedmiNote9.RelatedProducts.Add(
-                new RelatedProduct {
-                    ProductId1 = productRedmiNote9.Id,
+            Iphone13ProMax.RelatedProducts.Add(
+                new RelatedProduct
+                {
+                    ProductId1 = Iphone13ProMax.Id,
                     ProductId2 = productPocoF2Pro.Id,
                 });
 
-            productRedmiNote9.RelatedProducts.Add(
-                new RelatedProduct {
-                    ProductId1 = productRedmiNote9.Id,
+            Iphone13ProMax.RelatedProducts.Add(
+                new RelatedProduct
+                {
+                    ProductId1 = Iphone13ProMax.Id,
                     ProductId2 = productMiSmartBand.Id,
                 });
-            productRedmiNote9.RelatedProducts.Add(
-                new RelatedProduct {
-                    ProductId1 = productRedmiNote9.Id,
+            Iphone13ProMax.RelatedProducts.Add(
+                new RelatedProduct
+                {
+                    ProductId1 = Iphone13ProMax.Id,
                     ProductId2 = productMiBeard.Id,
                 });
             productPocoF2Pro.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productPocoF2Pro.Id,
                     ProductId2 = productRedmiK30.Id,
                 });
             productPocoF2Pro.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productPocoF2Pro.Id,
-                    ProductId2 = productRedmiNote9.Id,
+                    ProductId2 = Iphone13ProMax.Id,
                 });
 
             productPocoF2Pro.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productPocoF2Pro.Id,
                     ProductId2 = productMiSmartBand.Id,
                 });
             productPocoF2Pro.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productPocoF2Pro.Id,
                     ProductId2 = productMiBeard.Id,
                 });
 
             productAdidasNitrocharge.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productAdidasNitrocharge.Id,
                     ProductId2 = productChicagoBulls.Id,
                 });
 
             productAdidasNitrocharge.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productAdidasNitrocharge.Id,
                     ProductId2 = productAdidasPredator.Id,
                 });
 
             productAdidasNitrocharge.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productAdidasNitrocharge.Id,
                     ProductId2 = productAdidasTurfs.Id,
                 });
             productAdidasNitrocharge.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productAdidasNitrocharge.Id,
                     ProductId2 = productNikeKids.Id,
                 });
             productChicagoBulls.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productChicagoBulls.Id,
                     ProductId2 = productAdidasNitrocharge.Id,
                 });
             productChicagoBulls.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productChicagoBulls.Id,
                     ProductId2 = productAdidasPredator.Id,
                 });
 
             productChicagoBulls.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productChicagoBulls.Id,
                     ProductId2 = productAdidasTurfs.Id,
                 });
             productChicagoBulls.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productChicagoBulls.Id,
                     ProductId2 = productNikeKids.Id,
                 });
 
             productDerbyShirt.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productDerbyShirt.Id,
                     ProductId2 = productChicagoBulls.Id,
                 });
 
             productDerbyShirt.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productDerbyShirt.Id,
                     ProductId2 = productNikeKids.Id,
                 });
             productDerbyShirt.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productDerbyShirt.Id,
                     ProductId2 = productPsgKit.Id,
                 });
             productDerbyShirt.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productDerbyShirt.Id,
                     ProductId2 = productVivoactive.Id,
                 });
             productSonyPS5Pad.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productSonyPS5Pad.Id,
                     ProductId2 = productBuildComputer.Id,
                 });
             productSonyPS5Pad.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productSonyPS5Pad.Id,
                     ProductId2 = productLenovoIdeaPadDual.Id,
                 });
             productSonyPS5Pad.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productSonyPS5Pad.Id,
                     ProductId2 = productDellXPS.Id,
                 });
             productSonyPS5Pad.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productSonyPS5Pad.Id,
                     ProductId2 = productMiNotebook.Id,
                 });
 
             productLenovoIdeaPadDual.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productLenovoIdeaPadDual.Id,
                     ProductId2 = productBuildComputer.Id,
                 });
 
             productLenovoIdeaPadDual.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productLenovoIdeaPadDual.Id,
                     ProductId2 = productSonyPS5Pad.Id,
                 });
 
             productLenovoIdeaPadDual.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productLenovoIdeaPadDual.Id,
                     ProductId2 = productDellXPS.Id,
                 });
 
             productLenovoIdeaPadDual.RelatedProducts.Add(
-                new RelatedProduct {
+                new RelatedProduct
+                {
                     ProductId1 = productLenovoIdeaPadDual.Id,
                     ProductId2 = productMiNotebook.Id,
                 });
@@ -9525,9 +9913,9 @@ namespace PowerStore.Services.Installation
             await AddProductTag(productCyberpunk, "digital");
             await AddProductTag(productForerunner, "apparel");
             await AddProductTag(productForerunner, "cool");
-            await AddProductTag(productRedmiNote9, "awesome");
-            await AddProductTag(productRedmiNote9, "compact");
-            await AddProductTag(productRedmiNote9, "cell");
+            await AddProductTag(Iphone13ProMax, "awesome");
+            await AddProductTag(Iphone13ProMax, "compact");
+            await AddProductTag(Iphone13ProMax, "cell");
             await AddProductTag(productGTA, "digital");
             await AddProductTag(productGTA, "game");
             await AddProductTag(productPocoF2Pro, "awesome");
@@ -9561,7 +9949,8 @@ namespace PowerStore.Services.Installation
 
                 //rating from 4 to 5
                 var rating = random.Next(4, 6);
-                var productReview = new ProductReview {
+                var productReview = new ProductReview
+                {
                     CustomerId = defaultCustomer.Id,
                     ProductId = product.Id,
                     IsApproved = true,
@@ -9611,13 +10000,15 @@ namespace PowerStore.Services.Installation
                                         },
                                 };
             await _discountRepository.InsertAsync(discounts);
-            var coupon1 = new DiscountCoupon {
+            var coupon1 = new DiscountCoupon
+            {
                 CouponCode = "123",
                 DiscountId = _discountRepository.Table.Where(x => x.Name == "Sample discount with coupon code").FirstOrDefault().Id
             };
             await _discountCouponRepository.InsertAsync(coupon1);
 
-            var coupon2 = new DiscountCoupon {
+            var coupon2 = new DiscountCoupon
+            {
                 CouponCode = "456",
                 DiscountId = _discountRepository.Table.Where(x => x.Name == "'20% order total' discount").FirstOrDefault().Id
             };
@@ -9654,7 +10045,8 @@ namespace PowerStore.Services.Installation
             foreach (var blogPost in blogPosts)
             {
                 var seName = SeoExtensions.GenerateSlug(blogPost.Title, false, false);
-                await _urlRecordRepository.InsertAsync(new UrlRecord {
+                await _urlRecordRepository.InsertAsync(new UrlRecord
+                {
                     EntityId = blogPost.Id,
                     EntityName = "BlogPost",
                     LanguageId = "",
@@ -9707,7 +10099,8 @@ namespace PowerStore.Services.Installation
             foreach (var newsItem in news)
             {
                 newsItem.SeName = SeoExtensions.GenerateSlug(newsItem.Title, false, false);
-                await _urlRecordRepository.InsertAsync(new UrlRecord {
+                await _urlRecordRepository.InsertAsync(new UrlRecord
+                {
                     EntityId = newsItem.Id,
                     EntityName = "NewsItem",
                     LanguageId = "",
@@ -10549,7 +10942,8 @@ namespace PowerStore.Services.Installation
 
         protected virtual async Task InstallWarehouses()
         {
-            var warehouse1address = new Address {
+            var warehouse1address = new Address
+            {
                 Address1 = "21 West 52nd Street",
                 City = "New York",
                 StateProvinceId = _stateProvinceRepository.Table.FirstOrDefault(sp => sp.Name == "New York").Id,
@@ -10558,7 +10952,8 @@ namespace PowerStore.Services.Installation
                 CreatedOnUtc = DateTime.UtcNow,
             };
 
-            var warehouse2address = new Address {
+            var warehouse2address = new Address
+            {
                 Address1 = "300 South Spring Stree",
                 City = "Los Angeles",
                 StateProvinceId = _stateProvinceRepository.Table.FirstOrDefault(sp => sp.Name == "California").Id,
@@ -10588,7 +10983,8 @@ namespace PowerStore.Services.Installation
 
         protected virtual async Task InstallPickupPoints()
         {
-            var addresspoint = new Address {
+            var addresspoint = new Address
+            {
                 Address1 = "21 West 52nd Street",
                 City = "New York",
                 StateProvinceId = _stateProvinceRepository.Table.FirstOrDefault(sp => sp.Name == "New York").Id,
@@ -10598,7 +10994,8 @@ namespace PowerStore.Services.Installation
             };
             await _addressRepository.InsertAsync(addresspoint);
 
-            var point = new PickupPoint() {
+            var point = new PickupPoint()
+            {
                 Address = addresspoint,
                 Name = "My Store - New York",
             };
@@ -10643,7 +11040,8 @@ namespace PowerStore.Services.Installation
             foreach (var vendor in vendors)
             {
                 var seName = SeoExtensions.GenerateSlug(vendor.Name, false, false);
-                await _urlRecordRepository.InsertAsync(new UrlRecord {
+                await _urlRecordRepository.InsertAsync(new UrlRecord
+                {
                     EntityId = vendor.Id,
                     EntityName = "Vendor",
                     LanguageId = "",
@@ -10657,7 +11055,8 @@ namespace PowerStore.Services.Installation
 
         protected virtual async Task InstallAffiliates()
         {
-            var affiliateAddress = new Address {
+            var affiliateAddress = new Address
+            {
                 FirstName = "John",
                 LastName = "Smith",
                 Email = "affiliate_email@gmail.com",
@@ -10671,7 +11070,8 @@ namespace PowerStore.Services.Installation
                 CreatedOnUtc = DateTime.UtcNow,
             };
             await _addressRepository.InsertAsync(affiliateAddress);
-            var affilate = new Affiliate {
+            var affilate = new Affiliate
+            {
                 Active = true,
                 Address = affiliateAddress
             };
@@ -10683,7 +11083,8 @@ namespace PowerStore.Services.Installation
             var productTag = _productTagRepository.Table.FirstOrDefault(pt => pt.Name == tag);
             if (productTag == null)
             {
-                productTag = new ProductTag {
+                productTag = new ProductTag
+                {
                     Name = tag,
                     SeName = SeoExtensions.GenerateSlug(tag, false, false),
                 };

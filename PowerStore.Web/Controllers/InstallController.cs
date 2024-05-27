@@ -60,15 +60,19 @@ namespace PowerStore.Web.Controllers
             if (installed)
                 return View(new InstallModel() { Installed = true });
 
-            var model = new InstallModel {
+            var model = new InstallModel
+            {
                 AdminEmail = "admin@yourstore.com",
-                InstallSampleData = false,
+                InstallSampleData = true,
+                MongoDBServerName = "127.0.0.1",
+                MongoDBDatabaseName = "PowerStore",
                 DatabaseConnectionString = "",
                 DataProvider = "mongodb",
             };
             foreach (var lang in locService.GetAvailableLanguages())
             {
-                model.AvailableLanguages.Add(new SelectListItem {
+                model.AvailableLanguages.Add(new SelectListItem
+                {
                     Value = Url.Action("ChangeLanguage", "Install", new { language = lang.Code }),
                     Text = lang.Name,
                     Selected = locService.GetCurrentLanguage().Code == lang.Code,
@@ -77,7 +81,8 @@ namespace PowerStore.Web.Controllers
             //prepare collation list
             foreach (var col in locService.GetAvailableCollations())
             {
-                model.AvailableCollation.Add(new SelectListItem {
+                model.AvailableCollation.Add(new SelectListItem
+                {
                     Value = col.Value,
                     Text = col.Name,
                     Selected = locService.GetCurrentLanguage().Code == col.Value,
@@ -171,7 +176,8 @@ namespace PowerStore.Web.Controllers
                 try
                 {
                     //save settings
-                    var settings = new DataSettings {
+                    var settings = new DataSettings
+                    {
                         DataProvider = "mongodb",
                         DataConnectionString = connectionString
                     };
@@ -240,7 +246,8 @@ namespace PowerStore.Web.Controllers
             //prepare language list
             foreach (var lang in locService.GetAvailableLanguages())
             {
-                model.AvailableLanguages.Add(new SelectListItem {
+                model.AvailableLanguages.Add(new SelectListItem
+                {
                     Value = Url.Action("ChangeLanguage", "Install", new { language = lang.Code }),
                     Text = lang.Name,
                     Selected = locService.GetCurrentLanguage().Code == lang.Code,
@@ -250,7 +257,8 @@ namespace PowerStore.Web.Controllers
             //prepare collation list
             foreach (var col in locService.GetAvailableCollations())
             {
-                model.AvailableCollation.Add(new SelectListItem {
+                model.AvailableCollation.Add(new SelectListItem
+                {
                     Value = col.Value,
                     Text = col.Name,
                     Selected = locService.GetCurrentLanguage().Code == col.Value,
