@@ -1,1 +1,0 @@
-define(["modules/forms/module","bootstrap-validator"],function(a){"use strict";a.registerDirective("bootstrapAttributeForm",function(){return{restrict:"E",replace:!0,templateUrl:"build/modules/forms/directives/bootstrap-validation/bootstrap-attribute-form.tpl.html",link:function(a,b){b.bootstrapValidator()}}})});
