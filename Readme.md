@@ -1,8 +1,8 @@
 
 # Power Store - Multi-Store E-Commerce Platform
 
-Welcome to Power Store, the open-source multi-store e-commerce application that offers flexibility and scalability for your online business. Manage multiple stores, currencies, languages, and payment options seamlessly.
-![Power Store](https://github.com/MattyCode1/PowerStore/blob/main/wwwroot/Preview1.png?raw=true)
+Welcome to Power Store (Formerly Grand Store), the open-source multi-store e-commerce application that offers flexibility and scalability for your online business. Manage multiple stores, currencies, languages, and payment options seamlessly.
+![Power Store](https://res.cloudinary.com/bitsdevelopments/image/upload/v1581007120/PowerStoreBanner)
 ## Features
 
 - **Multi-Store Support:**
@@ -38,22 +38,27 @@ Welcome to Power Store, the open-source multi-store e-commerce application that 
 
 ## Roadmap
 
-### Version 1.0.0 (Current Release)
+### Version 1.0.0
 - Basic multi-store functionality.
 - Multi-currency and multi-language support.
 - Integration with popular payment gateways.
 
-### Version 1.1.0 (Upcoming Release)
+### Version 1.1.0
 - Enhanced product management features.
 - User authentication and authorization improvements.
 - Additional language support.
 
-### Version 1.2.0 (Future Release)
+### Version 1.2.0 (Current Release)
 - Advanced reporting and analytics.
 - Expanded support for additional payment gateways.
 - Integration with third-party services.
+- 
+### Version 1.2.0  (Future Release)
+- Creating Mobile Applications.
+- Add Auctions Feature.
+- Integration with GoHigh Level.
 
-## Getting Started
+## Getting Started (Developer)
 
 Follow these steps to get Power Store up and running on your local machine:
 
@@ -61,6 +66,16 @@ Follow these steps to get Power Store up and running on your local machine:
 2. Install dependencies: `nuget restore PowertStore.sln`
 3. Configure the database and environment variables.
 4. Run the application.
+5. 
+## Getting Started (User)
+
+Follow these steps to get Power Store up and running on your local machine:
+
+1. Download Release Folder
+2. Deploy Using IIS
+3. Start The Application
+4. On Installation Page Configure the database Connection.
+5. Configure Your Store
 
 ## Contributing
 
